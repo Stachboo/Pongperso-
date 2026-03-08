@@ -1,0 +1,383 @@
+[
+  {
+    "id": 1,
+    "name": "Diwali",
+    "year": 2002,
+    "producer": "Steven 'Lenky' Marsden",
+    "label": "VP Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 100,
+    "description": "L'un des riddims les plus célèbres et commercialement réussis de l'histoire du dancehall. Son rythme distinctif a propulsé plusieurs hits internationaux.",
+    "voicings": [
+      { "artist": "Sean Paul", "title": "Get Busy", "views": 285000000 },
+      { "artist": "Bounty Killer", "title": "Sufferer", "views": 12000000 },
+      { "artist": "Wayne Wonder", "title": "No Letting Go", "views": 98000000 },
+      { "artist": "T.O.K.", "title": "Footprints", "views": 8500000 },
+      { "artist": "Elephant Man", "title": "Pon De River Pon De Bank", "views": 45000000 },
+      { "artist": "Beenie Man", "title": "Dude", "views": 72000000 },
+      { "artist": "Lumidee", "title": "Never Leave You (Uh Oooh)", "views": 65000000 },
+      { "artist": "Spragga Benz", "title": "Shizzle My Nizzle", "views": 3200000 },
+      { "artist": "Vybz Kartel", "title": "Stookie", "views": 4500000 },
+      { "artist": "Mr. Vegas", "title": "Pull Up", "views": 7800000 }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Bam Bam",
+    "year": 1982,
+    "producer": "Sly & Robbie",
+    "label": "Taxi Records",
+    "type": "classique",
+    "genre": "dancehall",
+    "bpm": 88,
+    "description": "Un des riddims les plus samplés de tous les temps. La version de Sister Nancy est devenue un hymne mondial.",
+    "voicings": [
+      { "artist": "Sister Nancy", "title": "Bam Bam", "views": 520000000 },
+      { "artist": "Chaka Demus & Pliers", "title": "Murder She Wrote", "views": 380000000 },
+      { "artist": "Yellowman", "title": "Nobody Move Nobody Get Hurt", "views": 15000000 },
+      { "artist": "Shaggy", "title": "Hope", "views": 22000000 },
+      { "artist": "Cocoa Tea", "title": "Young Lover", "views": 5600000 },
+      { "artist": "Cutty Ranks", "title": "Limb by Limb", "views": 8900000 },
+      { "artist": "General Degree", "title": "Traffic Blocking", "views": 4200000 },
+      { "artist": "Kanye West", "title": "Famous (sample)", "views": 310000000 }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Sleng Teng",
+    "year": 1985,
+    "producer": "King Jammy",
+    "label": "Jammy's Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 82,
+    "description": "Le riddim qui a révolutionné la musique jamaïcaine en inaugurant l'ère digitale. Créé sur un Casio MT-40.",
+    "voicings": [
+      { "artist": "Wayne Smith", "title": "Under Mi Sleng Teng", "views": 28000000 },
+      { "artist": "Johnny Osbourne", "title": "Buddy Bye", "views": 9500000 },
+      { "artist": "Half Pint", "title": "Level the Vibes", "views": 3800000 },
+      { "artist": "Tenor Saw", "title": "Pumpkin Belly", "views": 2700000 },
+      { "artist": "Frankie Paul", "title": "Tidal Wave", "views": 1900000 },
+      { "artist": "Barrington Levy", "title": "Too Experience", "views": 4200000 }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Stalag",
+    "year": 1973,
+    "producer": "Winston Riley",
+    "label": "Techniques Records",
+    "type": "classique",
+    "genre": "reggae",
+    "bpm": 78,
+    "description": "Aussi connu sous le nom 'Stalag 17'. L'un des riddims les plus voicés de l'histoire avec plus de 300 versions connues.",
+    "voicings": [
+      { "artist": "Sister Nancy", "title": "Bam Bam", "views": 520000000 },
+      { "artist": "Tenor Saw", "title": "Ring the Alarm", "views": 42000000 },
+      { "artist": "Ini Kamoze", "title": "World A Music", "views": 3400000 },
+      { "artist": "Super Cat", "title": "Boops", "views": 6700000 },
+      { "artist": "Shabba Ranks", "title": "Peanie Peanie", "views": 5100000 },
+      { "artist": "Yellowman", "title": "Zungguzungguguzungguzeng", "views": 18000000 },
+      { "artist": "Nicodemus", "title": "Boneman Connection", "views": 1200000 }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Real Rock",
+    "year": 1967,
+    "producer": "Coxsone Dodd",
+    "label": "Studio One",
+    "type": "classique",
+    "genre": "reggae",
+    "bpm": 72,
+    "description": "Un des plus anciens et plus réutilisés riddims jamaïcains, créé par Sound Dimension au Studio One.",
+    "voicings": [
+      { "artist": "Sound Dimension", "title": "Real Rock", "views": 5600000 },
+      { "artist": "Willie Williams", "title": "Armagideon Time", "views": 7200000 },
+      { "artist": "The Clash", "title": "Armagideon Time (cover)", "views": 12000000 },
+      { "artist": "John Holt", "title": "A Love I Can Feel", "views": 18000000 },
+      { "artist": "Horace Andy", "title": "Mr. Bassie", "views": 3400000 },
+      { "artist": "Augustus Pablo", "title": "Java Rock", "views": 2100000 }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Coolie Dance",
+    "year": 2004,
+    "producer": "Don Corleon",
+    "label": "Don Corleon Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 95,
+    "description": "Un riddim dancehall massif qui a dominé les sound systems au milieu des années 2000.",
+    "voicings": [
+      { "artist": "Vybz Kartel", "title": "Most Wanted", "views": 15000000 },
+      { "artist": "Elephant Man", "title": "Willie Bounce", "views": 28000000 },
+      { "artist": "Sean Paul", "title": "Never Gonna Be the Same", "views": 35000000 },
+      { "artist": "T.O.K.", "title": "Gal You A Lead", "views": 8700000 },
+      { "artist": "Beenie Man", "title": "Hmm Hmm", "views": 6200000 },
+      { "artist": "Busy Signal", "title": "Step Out", "views": 11000000 }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Punaany",
+    "year": 1992,
+    "producer": "Dave Kelly",
+    "label": "Madhouse Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 90,
+    "description": "Riddim emblématique de l'ère digitale du dancehall, produit par le légendaire Dave Kelly.",
+    "voicings": [
+      { "artist": "Shabba Ranks", "title": "Ting-A-Ling", "views": 22000000 },
+      { "artist": "Beenie Man", "title": "Slam", "views": 9800000 },
+      { "artist": "Mad Cobra", "title": "Press Trigger", "views": 3500000 },
+      { "artist": "Buju Banton", "title": "Batty Rider", "views": 7600000 },
+      { "artist": "Lady Saw", "title": "Find a Good Man", "views": 4100000 },
+      { "artist": "Bounty Killer", "title": "Down in the Ghetto", "views": 5200000 }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Playground",
+    "year": 2005,
+    "producer": "Don Corleon",
+    "label": "Don Corleon Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 92,
+    "description": "Un riddim doux et mélodique qui a porté certains des plus gros hits dancehall des années 2000.",
+    "voicings": [
+      { "artist": "Busy Signal", "title": "These Are the Days", "views": 14000000 },
+      { "artist": "Romain Virgo", "title": "Mi Caan Sleep", "views": 9200000 },
+      { "artist": "Tarrus Riley", "title": "She's Royal", "views": 52000000 },
+      { "artist": "Jah Cure", "title": "True Reflections", "views": 6700000 },
+      { "artist": "Christopher Martin", "title": "Big Deal", "views": 5400000 },
+      { "artist": "Queen Ifrica", "title": "Below the Waist", "views": 3100000 }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Diseases",
+    "year": 2006,
+    "producer": "Stephen 'Di Genius' McGregor",
+    "label": "Big Ship Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 98,
+    "description": "Un riddim dancehall agressif et sombre qui a marqué l'émergence de Di Genius comme producteur majeur.",
+    "voicings": [
+      { "artist": "Vybz Kartel", "title": "Emergency", "views": 18000000 },
+      { "artist": "Mavado", "title": "Weh Dem a Do", "views": 11000000 },
+      { "artist": "Aidonia", "title": "Lala Land", "views": 8500000 },
+      { "artist": "Bounty Killer", "title": "Nuh Fraid", "views": 4300000 },
+      { "artist": "Munga", "title": "Bad From Mi Born", "views": 6700000 },
+      { "artist": "Busy Signal", "title": "Gyal Anthem", "views": 5200000 }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Drop Leaf",
+    "year": 2005,
+    "producer": "Don Corleon",
+    "label": "Don Corleon Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 85,
+    "description": "Un riddim dancehall mélodieux qui a généré plusieurs hits majeurs dans les charts internationaux.",
+    "voicings": [
+      { "artist": "Vybz Kartel", "title": "Romping Shop (ft. Spice)", "views": 78000000 },
+      { "artist": "Mavado", "title": "On the Rock", "views": 7800000 },
+      { "artist": "I-Octane", "title": "Some Way Somehow", "views": 5600000 },
+      { "artist": "Serani", "title": "No Games", "views": 42000000 },
+      { "artist": "Konshens", "title": "Winner", "views": 9200000 },
+      { "artist": "Romain Virgo", "title": "Stay with Me", "views": 4500000 }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Full Up",
+    "year": 1968,
+    "producer": "Leroy Sibbles / Studio One",
+    "label": "Studio One",
+    "type": "classique",
+    "genre": "reggae",
+    "bpm": 76,
+    "description": "Un riddim fondamental du Studio One, parmi les plus réutilisés de l'histoire reggae.",
+    "voicings": [
+      { "artist": "The Heptones", "title": "I've Got a Feeling", "views": 2800000 },
+      { "artist": "Mighty Diamonds", "title": "Pass the Kouchie", "views": 32000000 },
+      { "artist": "Musical Youth", "title": "Pass the Dutchie (adaptation)", "views": 95000000 },
+      { "artist": "Sugar Minott", "title": "Good Thing Going", "views": 14000000 },
+      { "artist": "Wailing Souls", "title": "Things and Time", "views": 3600000 },
+      { "artist": "Freddie McGregor", "title": "Bobby Babylon", "views": 5100000 }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Buyout",
+    "year": 2013,
+    "producer": "Rvssian",
+    "label": "Head Concussion Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 108,
+    "description": "Un riddim moderne et énergique du producteur Rvssian qui a dominé les clubs et les ondes.",
+    "voicings": [
+      { "artist": "Popcaan", "title": "Everything Nice", "views": 62000000 },
+      { "artist": "Konshens", "title": "Bruk Off Yuh Back", "views": 85000000 },
+      { "artist": "Vybz Kartel", "title": "Colouring This Life", "views": 38000000 },
+      { "artist": "Aidonia", "title": "Tip Pon Yuh Toe", "views": 15000000 },
+      { "artist": "Dexta Daps", "title": "Morning Love", "views": 22000000 },
+      { "artist": "Alkaline", "title": "Things Mi Love", "views": 28000000 }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Drum Song",
+    "year": 2008,
+    "producer": "Troyton Music",
+    "label": "Troyton Music",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 105,
+    "description": "Un riddim rapide et percussif qui a été un favori des sound systems.",
+    "voicings": [
+      { "artist": "Busy Signal", "title": "Jail", "views": 25000000 },
+      { "artist": "Vybz Kartel", "title": "Go Go Wine", "views": 19000000 },
+      { "artist": "Elephant Man", "title": "Pon Di River", "views": 8900000 },
+      { "artist": "Konshens", "title": "Do Sumn", "views": 7200000 },
+      { "artist": "Demarco", "title": "Fallen Soldiers", "views": 4500000 }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Kette Drum",
+    "year": 2011,
+    "producer": "Chimney Records",
+    "label": "Chimney Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 95,
+    "description": "Un riddim dancehall influent produit par Chimney Records, mêlant sonorités traditionnelles et modernes.",
+    "voicings": [
+      { "artist": "Chronixx", "title": "Behind Curtain", "views": 18000000 },
+      { "artist": "Konshens", "title": "On Your Face", "views": 6800000 },
+      { "artist": "Popcaan", "title": "Ravin", "views": 12000000 },
+      { "artist": "Tommy Lee", "title": "Buss a Blank", "views": 9500000 },
+      { "artist": "Stein", "title": "Hot Up", "views": 3200000 }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Money Me A Look",
+    "year": 2006,
+    "producer": "Shocking Vibes",
+    "label": "Shocking Vibes",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 96,
+    "description": "Un riddim dancehall percutant qui reflète les réalités de la vie dans les ghettos de Kingston.",
+    "voicings": [
+      { "artist": "Mavado", "title": "Real McKoy", "views": 14000000 },
+      { "artist": "Vybz Kartel", "title": "Money Me A Look", "views": 11000000 },
+      { "artist": "Busy Signal", "title": "Money Flow", "views": 7800000 },
+      { "artist": "Elephant Man", "title": "Rah Rah", "views": 5400000 },
+      { "artist": "Bounty Killer", "title": "Gully Sit'n", "views": 4100000 }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Love Bump",
+    "year": 2007,
+    "producer": "Donovan 'Don' Germain",
+    "label": "Penthouse Records",
+    "type": "digital",
+    "genre": "lovers rock",
+    "bpm": 80,
+    "description": "Un riddim doux typique du lovers rock, parfait pour les slow jams jamaïcains.",
+    "voicings": [
+      { "artist": "Beres Hammond", "title": "I Feel Good", "views": 24000000 },
+      { "artist": "Tarrus Riley", "title": "Start Anew", "views": 8500000 },
+      { "artist": "Jah Cure", "title": "Longing For", "views": 12000000 },
+      { "artist": "Alaine", "title": "Sacrifice", "views": 6700000 },
+      { "artist": "Romain Virgo", "title": "Wanna Go Home", "views": 4300000 },
+      { "artist": "Cecile", "title": "Change the World", "views": 2900000 }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Filthy",
+    "year": 2010,
+    "producer": "Adde Instrumentals",
+    "label": "Adde Productions",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 100,
+    "description": "Un riddim dancehall lourd et agressif, populaire dans les sound clashes.",
+    "voicings": [
+      { "artist": "Vybz Kartel", "title": "Clarks", "views": 55000000 },
+      { "artist": "Popcaan", "title": "Clarks (ft. Gaza Slim)", "views": 18000000 },
+      { "artist": "Tommy Lee Sparta", "title": "Some Bwoy", "views": 7200000 },
+      { "artist": "Shawn Storm", "title": "Nah Lef", "views": 3800000 },
+      { "artist": "Lisa Hyper", "title": "Wine and Kotch", "views": 5100000 }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Head Concussion",
+    "year": 2012,
+    "producer": "Rvssian",
+    "label": "Head Concussion Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 102,
+    "description": "Un riddim signé Rvssian qui a contribué à l'internationalisation du dancehall moderne.",
+    "voicings": [
+      { "artist": "Sean Paul", "title": "Other Side of Love", "views": 48000000 },
+      { "artist": "Konshens", "title": "Gal a Bubble", "views": 72000000 },
+      { "artist": "Aidonia", "title": "Boom Boom", "views": 12000000 },
+      { "artist": "I-Octane", "title": "Wine Slow", "views": 8900000 },
+      { "artist": "Demarco", "title": "Duppy Know Who Fi Frighten", "views": 6500000 }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "MPLA / Freedom Blues",
+    "year": 1970,
+    "producer": "Coxsone Dodd",
+    "label": "Studio One",
+    "type": "classique",
+    "genre": "reggae",
+    "bpm": 74,
+    "description": "Un riddim roots emblématique du Studio One, nommé d'après le mouvement de libération angolais.",
+    "voicings": [
+      { "artist": "The Abyssinians", "title": "Declaration of Rights", "views": 8500000 },
+      { "artist": "Admiral Tibet", "title": "Serious Times", "views": 3200000 },
+      { "artist": "Junior Byles", "title": "Fade Away", "views": 4100000 },
+      { "artist": "Burning Spear", "title": "Slavery Days", "views": 15000000 },
+      { "artist": "Carlton & The Shoes", "title": "Love Me Forever", "views": 7600000 }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Juice",
+    "year": 1998,
+    "producer": "Steely & Clevie",
+    "label": "Steely & Clevie Records",
+    "type": "ragga",
+    "genre": "dancehall",
+    "bpm": 94,
+    "description": "Un riddim ragga percutant du duo légendaire Steely & Clevie, incontournable des années 90.",
+    "voicings": [
+      { "artist": "Mr. Vegas", "title": "Heads High", "views": 42000000 },
+      { "artist": "Beenie Man", "title": "Who Am I (Sim Simma)", "views": 88000000 },
+      { "artist": "Lady Saw", "title": "Sycamore Tree", "views": 5600000 },
+      { "artist": "Bounty Killer", "title": "It's a Party", "views": 7200000 },
+      { "artist": "General Degree", "title": "Miyagi", "views": 3800000 },
+      { "artist": "Buju Banton", "title": "Champion", "views": 18000000 }
+    ]
+  }
+]
