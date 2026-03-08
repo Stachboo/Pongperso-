@@ -7,6 +7,11 @@ async function loadRiddims() {
     applyFilters();
 }
 
+function getYoutubeSearchUrl(artist, title) {
+    const query = encodeURIComponent(`${artist} - ${title}`);
+    return `https://www.youtube.com/results?search_query=${query}`;
+}
+
 function formatViews(n) {
     if (n >= 1_000_000_000) return (n / 1_000_000_000).toFixed(1) + 'B';
     if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + 'M';
@@ -147,6 +152,7 @@ function renderRiddims(query) {
                         ${sortedVoicings.map((v, i) => {
                             const pct = (v.views / maxViews * 100).toFixed(1);
                             const rankClass = i === 0 ? 'top-1' : i === 1 ? 'top-2' : i === 2 ? 'top-3' : '';
+                            const ytUrl = getYoutubeSearchUrl(v.artist, v.title);
                             return `
                                 <div class="voicing-row">
                                     <span class="voicing-rank ${rankClass}">${i + 1}</span>
@@ -158,6 +164,9 @@ function renderRiddims(query) {
                                         <div class="voicing-bar" style="width: ${pct}%"></div>
                                     </div>
                                     <span class="voicing-views">${formatViews(v.views)}</span>
+                                    <a href="${ytUrl}" target="_blank" rel="noopener noreferrer" class="yt-link" title="Écouter sur YouTube">
+                                        <svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2c-.3-1-1-1.8-2-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.5.6c-1 .3-1.7 1.1-2 2.1C0 8.1 0 12 0 12s0 3.9.5 5.8c.3 1 1 1.8 2 2.1 1.9.6 9.5.6 9.5.6s7.6 0 9.5-.6c1-.3 1.7-1.1 2-2.1.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+                                    </a>
                                 </div>
                             `;
                         }).join('')}
