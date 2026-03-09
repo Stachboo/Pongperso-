@@ -67,6 +67,23 @@ header {
     font-weight: 300;
 }
 
+/* === BACK LINK (riddim page) === */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    transition: opacity 0.2s;
+}
+
+.back-link:hover {
+    opacity: 0.8;
+}
+
 /* === CONTROLS === */
 main {
     max-width: 1100px;
@@ -185,84 +202,108 @@ main {
     color: var(--text-muted);
 }
 
-/* === RIDDIM CARDS === */
-.riddim-list {
-    display: flex;
-    flex-direction: column;
+/* === RIDDIM GRID (Home page) === */
+.riddim-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
 }
 
-.riddim-card {
+.riddim-tile {
+    display: flex;
+    flex-direction: column;
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 16px;
-    overflow: hidden;
-    transition: border-color 0.2s, transform 0.2s;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
 }
 
-.riddim-card:hover {
+.riddim-tile:hover {
     border-color: var(--gold);
-    transform: translateY(-2px);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(242, 169, 0, 0.1);
 }
 
-.riddim-header {
+.tile-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 1.5rem 1.5rem 0.8rem;
-    cursor: pointer;
-    gap: 1rem;
+    margin-bottom: 0.5rem;
 }
 
-.riddim-info {
+.tile-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--text);
+    line-height: 1.2;
+}
+
+.tile-year {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-muted);
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+}
+
+.tile-producer {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+}
+
+.tile-tags {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.tile-artists {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
     flex: 1;
 }
 
-.riddim-name {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--text);
-    margin-bottom: 0.3rem;
-}
-
-.riddim-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    align-items: center;
-    font-size: 0.85rem;
+.tile-artist {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.6rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.06);
     color: var(--text-muted);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.riddim-meta .separator {
-    color: var(--border);
+.tile-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--border);
+    margin-top: auto;
 }
 
-.riddim-stats {
-    text-align: right;
-    flex-shrink: 0;
-}
-
-.riddim-total-views {
+.tile-views {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--gold);
 }
 
-.riddim-voicing-count {
+.tile-voicings {
     font-size: 0.8rem;
     color: var(--text-muted);
 }
 
-.riddim-tags {
-    display: flex;
-    gap: 0.5rem;
-    padding: 0 1.5rem 1rem;
-    flex-wrap: wrap;
-}
-
+/* === TAGS === */
 .tag {
     padding: 0.2rem 0.7rem;
     border-radius: 20px;
@@ -296,57 +337,103 @@ main {
     border: 1px solid rgba(224, 60, 49, 0.3);
 }
 
-.riddim-description {
-    padding: 0 1.5rem 1rem;
-    font-size: 0.9rem;
+/* === RIDDIM PAGE (individual) === */
+.riddim-page {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.riddim-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.riddim-page-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+.riddim-page-meta {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 1rem;
     color: var(--text-muted);
-    line-height: 1.5;
 }
 
-/* === VOICINGS TABLE === */
-.voicings-section {
-    border-top: 1px solid var(--border);
-    padding: 0;
+.riddim-page-producer {
+    color: var(--gold);
+    font-weight: 600;
 }
 
-.voicings-toggle {
+.separator {
+    color: var(--border);
+}
+
+.riddim-page-stats {
+    display: flex;
+    gap: 1.5rem;
+    flex-shrink: 0;
+}
+
+.riddim-page-stat {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.riddim-page-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.riddim-page-description {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    padding: 1.2rem 1.5rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.riddim-page-voicings {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.voicings-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.8rem;
-    width: 100%;
-    background: none;
-    border: none;
-    color: var(--gold);
+    gap: 0.8rem;
+}
+
+.voicings-count {
     font-size: 0.85rem;
     font-weight: 600;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.2s;
+    background: var(--gold);
+    color: var(--dark-bg);
+    padding: 0.1rem 0.6rem;
+    border-radius: 10px;
 }
 
-.voicings-toggle:hover {
-    background: rgba(242, 169, 0, 0.05);
-}
-
-.voicings-toggle .arrow {
-    transition: transform 0.3s;
-    font-size: 0.7rem;
-}
-
-.voicings-toggle .arrow.open {
-    transform: rotate(180deg);
-}
-
-.voicings-list {
-    display: none;
-}
-
-.voicings-list.open {
-    display: block;
-}
-
+/* === VOICING ROWS (shared) === */
 .voicing-row {
     display: flex;
     align-items: center;
@@ -354,6 +441,10 @@ main {
     border-top: 1px solid rgba(255, 255, 255, 0.04);
     gap: 1rem;
     transition: background 0.15s;
+}
+
+.voicing-row:first-child {
+    border-top: none;
 }
 
 .voicing-row:hover {
@@ -495,17 +586,22 @@ footer {
         gap: 1rem;
     }
 
-    .riddim-header {
+    .riddim-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .riddim-page-header {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 1rem;
     }
 
-    .riddim-stats {
-        text-align: left;
+    .riddim-page-name {
+        font-size: 1.8rem;
     }
 
-    .riddim-name {
-        font-size: 1.2rem;
+    .riddim-page-stats {
+        flex-wrap: wrap;
+        gap: 1rem;
     }
 
     .voicing-row {
@@ -531,16 +627,8 @@ footer {
         padding: 1.5rem 1rem;
     }
 
-    .riddim-header {
-        padding: 1rem 1rem 0.5rem;
-    }
-
-    .riddim-tags {
-        padding: 0 1rem 0.8rem;
-    }
-
-    .riddim-description {
-        padding: 0 1rem 0.8rem;
+    .riddim-page-name {
+        font-size: 1.5rem;
     }
 
     .voicing-row {
