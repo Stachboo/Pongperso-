@@ -1,27 +1,47 @@
+// Riddim detail page with i18n
+const t = getT();
+
+// Nav
+document.getElementById('mainNav').innerHTML = `
+    <a href="index.html" class="nav-link">${t.navHome}</a>
+    <a href="explorer.html" class="nav-link">${t.navExplorer}</a>
+    ${buildLangSwitcher()}
+`;
+
+// Back link
+document.getElementById('backText').textContent = t.backToCatalog;
+
+// Footer
+document.getElementById('footer').innerHTML = `
+    <p>&copy; 2026 ${t.siteTitle} &mdash; ${t.footerText}</p>
+    <p class="footer-note">${t.footerNote}</p>
+`;
+
 async function loadRiddim() {
     const params = new URLSearchParams(window.location.search);
     const id = parseInt(params.get('id'));
 
     if (!id) {
-        window.location.href = 'index.html';
+        window.location.href = 'explorer.html';
         return;
     }
 
-    const response = await fetch('data/riddims.json');
+    const response = await fetch('../data/riddims.json');
     const riddims = await response.json();
     const riddim = riddims.find(r => r.id === id);
 
     if (!riddim) {
         document.getElementById('riddimDetail').innerHTML = `
             <div class="no-results">
-                <h3>Riddim introuvable</h3>
-                <p><a href="index.html" style="color: var(--gold);">Retour à l'accueil</a></p>
+                <h3>${t.riddimNotFound}</h3>
+                <p><a href="index.html" style="color: var(--gold);">${t.backToHome}</a></p>
             </div>
         `;
         return;
     }
 
-    document.title = `${riddim.name} - World Music Contest`;
+    document.title = `${riddim.name} - ${t.siteTitle}`;
+    document.querySelector('meta[name="description"]').content = t.metaDescRiddim;
     renderRiddimPage(riddim);
 }
 
@@ -39,6 +59,16 @@ function getTotalViews(riddim) {
 function getYoutubeSearchUrl(artist, title) {
     const query = encodeURIComponent(`${artist} - ${title}`);
     return `https://www.youtube.com/results?search_query=${query}`;
+}
+
+function translateType(type) {
+    const map = { classique: t.typeClassique, ragga: t.typeRagga, digital: t.typeDigital };
+    return map[type] || type;
+}
+
+function translateGenre(genre) {
+    const map = { reggae: t.genreReggae, dancehall: t.genreDancehall, 'lovers rock': t.genreLovers, soca: t.genreSoca };
+    return map[genre] || genre;
 }
 
 function renderRiddimPage(riddim) {
@@ -60,15 +90,15 @@ function renderRiddimPage(riddim) {
                 <div class="riddim-page-stats">
                     <div class="riddim-page-stat">
                         <span class="stat-value">${formatViews(totalViews)}</span>
-                        <span class="stat-label">Vues totales</span>
+                        <span class="stat-label">${t.totalViews}</span>
                     </div>
                     <div class="riddim-page-stat">
                         <span class="stat-value">${riddim.voicings.length}</span>
-                        <span class="stat-label">Voicings</span>
+                        <span class="stat-label">${t.voicingsTitle}</span>
                     </div>
                     <div class="riddim-page-stat">
                         <span class="stat-value">${riddim.year}</span>
-                        <span class="stat-label">Année</span>
+                        <span class="stat-label">${t.year}</span>
                     </div>
                     ${riddim.bpm ? `
                     <div class="riddim-page-stat">
@@ -79,8 +109,8 @@ function renderRiddimPage(riddim) {
             </div>
 
             <div class="riddim-page-tags">
-                <span class="tag tag-genre">${riddim.genre}</span>
-                <span class="tag tag-type">${riddim.type}</span>
+                <span class="tag tag-genre">${translateGenre(riddim.genre)}</span>
+                <span class="tag tag-type">${translateType(riddim.type)}</span>
                 <span class="tag tag-year">${riddim.year}</span>
                 ${riddim.bpm ? `<span class="tag tag-bpm">${riddim.bpm} BPM</span>` : ''}
             </div>
@@ -88,7 +118,7 @@ function renderRiddimPage(riddim) {
             <p class="riddim-page-description">${riddim.description}</p>
 
             <div class="riddim-page-voicings">
-                <h2 class="voicings-heading">Voicings <span class="voicings-count">${riddim.voicings.length}</span></h2>
+                <h2 class="voicings-heading">${t.voicingsTitle} <span class="voicings-count">${riddim.voicings.length}</span></h2>
                 <div class="voicings-table">
                     ${sortedVoicings.map((v, i) => {
                         const pct = (v.views / maxViews * 100).toFixed(1);
@@ -105,7 +135,7 @@ function renderRiddimPage(riddim) {
                                     <div class="voicing-bar" style="width: ${pct}%"></div>
                                 </div>
                                 <span class="voicing-views">${formatViews(v.views)}</span>
-                                <a href="${ytUrl}" target="_blank" rel="noopener noreferrer" class="yt-link" title="Écouter sur YouTube">
+                                <a href="${ytUrl}" target="_blank" rel="noopener noreferrer" class="yt-link" title="${t.listenOnYt}">
                                     <svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2c-.3-1-1-1.8-2-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.5.6c-1 .3-1.7 1.1-2 2.1C0 8.1 0 12 0 12s0 3.9.5 5.8c.3 1 1 1.8 2 2.1 1.9.6 9.5.6 9.5.6s7.6 0 9.5-.6c1-.3 1.7-1.1 2-2.1.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
                                 </a>
                             </div>

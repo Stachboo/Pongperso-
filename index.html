@@ -3,208 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Music Contest - La Base de Données des Riddims Jamaïcains</title>
-    <meta name="description" content="Explorez la plus grande base de données de riddims jamaïcains. Dancehall, Reggae, Lovers Rock : découvrez chaque riddim, ses voicings et leurs statistiques de streaming.">
-    <meta name="keywords" content="riddim, dancehall, reggae, jamaïque, voicing, beat, instrumental, sound system, dub plate">
-    <meta property="og:title" content="World Music Contest - Base de Données Riddims">
-    <meta property="og:description" content="La référence des riddims jamaïcains. Explorez, recherchez et découvrez l'histoire de chaque riddim.">
-    <meta property="og:type" content="website">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>World Music Contest - Riddim Database</title>
+    <meta name="description" content="The largest Jamaican riddim database. Dancehall, Reggae, Lovers Rock.">
+    <link rel="alternate" hreflang="fr" href="fr/index.html">
+    <link rel="alternate" hreflang="en" href="en/index.html">
+    <link rel="alternate" hreflang="es" href="es/index.html">
+    <link rel="alternate" hreflang="pt" href="pt/index.html">
+    <link rel="alternate" hreflang="ja" href="ja/index.html">
+    <link rel="alternate" hreflang="x-default" href="en/index.html">
+    <script>
+        (function() {
+            var lang = (navigator.language || navigator.userLanguage || 'en').substring(0, 2).toLowerCase();
+            var supported = ['fr', 'en', 'es', 'pt', 'ja'];
+            if (supported.indexOf(lang) === -1) lang = 'en';
+            window.location.replace(lang + '/index.html');
+        })();
+    </script>
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=fr/index.html">
+    </noscript>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <h1 class="logo">World Music <span>Contest</span></h1>
-            <p class="tagline">La référence des riddims jamaïcains</p>
-            <nav class="main-nav">
-                <a href="index.html" class="nav-link active">Accueil</a>
-                <a href="explorer.html" class="nav-link">Explorer les Riddims</a>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <!-- HERO -->
-        <section class="hero">
-            <h2 class="hero-title">Chaque riddim.<br>Chaque voicing.<br><span>Classé par popularité.</span></h2>
-            <p class="hero-text">
-                Plongez dans l'univers des riddims jamaïcains, ces instrumentales légendaires
-                qui ont façonné le dancehall, le reggae et la musique mondiale depuis les années 60.
-            </p>
-            <a href="explorer.html" class="cta-button">
-                Explorer la base de données
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-            </a>
-        </section>
-
-        <!-- STATS COUNTER -->
-        <section class="home-stats" id="homeStats">
-            <!-- Filled by JS -->
-        </section>
-
-        <!-- QU'EST-CE QU'UN RIDDIM -->
-        <section class="content-section">
-            <h2 class="section-title">Qu'est-ce qu'un riddim ?</h2>
-            <div class="content-grid">
-                <div class="content-block">
-                    <p>
-                        Un <strong>riddim</strong> (de l'anglais "rhythm") est une instrumentale jamaïcaine
-                        sur laquelle plusieurs artistes enregistrent leurs propres versions vocales,
-                        appelées <strong>voicings</strong>. C'est le fondement même de la musique jamaïcaine
-                        depuis les années 1960.
-                    </p>
-                    <p>
-                        Contrairement à la musique occidentale traditionnelle o&ugrave; chaque chanson a
-                        sa propre production, un seul riddim peut donner naissance à des dizaines,
-                        voire des centaines de morceaux différents. C'est ce qui rend la culture
-                        musicale jamaïcaine unique au monde.
-                    </p>
-                </div>
-                <div class="content-block">
-                    <p>
-                        Des riddims comme le <strong>Bam Bam</strong> de Sly & Robbie (1982),
-                        le <strong>Sleng Teng</strong> de King Jammy (1985) ou le <strong>Diwali</strong>
-                        de Lenky Marsden (2002) ont traversé les décennies et continuent d'influencer
-                        la musique contemporaine, du hip-hop à l'afrobeats.
-                    </p>
-                    <p>
-                        Notre base de données recense les riddims les plus emblématiques, leurs voicings
-                        et les statistiques de streaming associées, pour préserver et valoriser
-                        ce patrimoine musical inestimable.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- LES GENRES -->
-        <section class="content-section">
-            <h2 class="section-title">Les genres</h2>
-            <div class="genre-grid">
-                <div class="genre-card">
-                    <div class="genre-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
-                            <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
-                        </svg>
-                    </div>
-                    <h3>Reggae</h3>
-                    <p>Le genre fondateur. N&eacute; à la fin des années 60 en Jamaïque, le reggae est caractérisé par son offbeat rythmique et ses basses profondes. Les riddims reggae du Studio One restent parmi les plus samplés au monde.</p>
-                </div>
-                <div class="genre-card">
-                    <div class="genre-icon genre-icon-dancehall">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
-                            <path d="M12 3v18M3 12h18M5.5 5.5l13 13M18.5 5.5l-13 13"/>
-                        </svg>
-                    </div>
-                    <h3>Dancehall</h3>
-                    <p>Évolution digitale du reggae apparue dans les années 80. Le dancehall se distingue par ses rythmes plus rapides, ses synthétiseurs et sa culture des sound systems. C'est le genre le plus prolifique en riddims.</p>
-                </div>
-                <div class="genre-card">
-                    <div class="genre-icon genre-icon-lovers">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                        </svg>
-                    </div>
-                    <h3>Lovers Rock</h3>
-                    <p>Le c&ocirc;té romantique de la musique jamaïcaine. N&eacute; dans la diaspora jamaïcaine à Londres, le lovers rock privilégie les mélodies douces et les thèmes sentimentaux sur des riddims chaleureux.</p>
-                </div>
-                <div class="genre-card">
-                    <div class="genre-icon genre-icon-soca">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
-                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                        </svg>
-                    </div>
-                    <h3>Soca</h3>
-                    <p>Fusion de soul et calypso originaire de Trinidad et Tobago. Le soca partage des riddims avec le dancehall et apporte une énergie festive et carnival unique à la culture caribéenne.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- COMMENT ÇA MARCHE -->
-        <section class="content-section">
-            <h2 class="section-title">Comment utiliser la base de données</h2>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3>Explorez</h3>
-                    <p>Parcourez notre catalogue de riddims. Filtrez par genre, type, décennie ou recherchez un artiste spécifique.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3>Découvrez</h3>
-                    <p>Cliquez sur un riddim pour voir tous ses voicings, les artistes qui l'ont utilisé et les statistiques de streaming.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3>Écoutez</h3>
-                    <p>Chaque voicing dispose d'un lien direct vers YouTube pour écouter les morceaux et comparer les versions.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA FINAL -->
-        <section class="cta-section">
-            <h2>Prêt à explorer ?</h2>
-            <p>Découvrez les riddims qui ont façonné la musique jamaïcaine depuis plus de 60 ans.</p>
-            <a href="explorer.html" class="cta-button">
-                Accéder au catalogue
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-            </a>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 World Music Contest &mdash; La musique jamaïcaine, organisée.</p>
-        <p class="footer-note">Les vues sont approximatives et proviennent des principales plateformes de streaming.</p>
-    </footer>
-
-    <script>
-        async function loadHomeStats() {
-            const response = await fetch('data/riddims.json');
-            const riddims = await response.json();
-            const totalRiddims = riddims.length;
-            const totalVoicings = riddims.reduce((s, r) => s + r.voicings.length, 0);
-            const totalViews = riddims.reduce((s, r) => s + r.voicings.reduce((vs, v) => vs + v.views, 0), 0);
-            const genres = new Set(riddims.map(r => r.genre));
-            const decades = new Set(riddims.map(r => Math.floor(r.year / 10) * 10 + 's'));
-
-            function formatViews(n) {
-                if (n >= 1e9) return (n / 1e9).toFixed(1) + 'B';
-                if (n >= 1e6) return (n / 1e6).toFixed(1) + 'M';
-                if (n >= 1e3) return (n / 1e3).toFixed(1) + 'K';
-                return n.toString();
-            }
-
-            document.getElementById('homeStats').innerHTML = `
-                <div class="home-stat">
-                    <span class="home-stat-value">${totalRiddims}</span>
-                    <span class="home-stat-label">Riddims référencés</span>
-                </div>
-                <div class="home-stat">
-                    <span class="home-stat-value">${totalVoicings}</span>
-                    <span class="home-stat-label">Voicings catalogués</span>
-                </div>
-                <div class="home-stat">
-                    <span class="home-stat-value">${formatViews(totalViews)}</span>
-                    <span class="home-stat-label">Vues cumulées</span>
-                </div>
-                <div class="home-stat">
-                    <span class="home-stat-value">${genres.size}</span>
-                    <span class="home-stat-label">Genres musicaux</span>
-                </div>
-                <div class="home-stat">
-                    <span class="home-stat-value">${decades.size}</span>
-                    <span class="home-stat-label">Décennies couvertes</span>
-                </div>
-            `;
-        }
-        loadHomeStats();
-    </script>
+    <p>Redirecting... <a href="fr/index.html">Francais</a> | <a href="en/index.html">English</a> | <a href="es/index.html">Espanol</a> | <a href="pt/index.html">Portugues</a> | <a href="ja/index.html">日本語</a></p>
 </body>
 </html>
