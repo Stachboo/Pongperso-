@@ -7,11 +7,6 @@ async function loadRiddims() {
     applyFilters();
 }
 
-function getYoutubeSearchUrl(artist, title) {
-    const query = encodeURIComponent(`${artist} - ${title}`);
-    return `https://www.youtube.com/results?search_query=${query}`;
-}
-
 function formatViews(n) {
     if (n >= 1_000_000_000) return (n / 1_000_000_000).toFixed(1) + 'B';
     if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + 'M';
@@ -21,17 +16,6 @@ function formatViews(n) {
 
 function getTotalViews(riddim) {
     return riddim.voicings.reduce((sum, v) => sum + v.views, 0);
-}
-
-function escapeRegex(str) {
-    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
-function highlightText(text, query) {
-    if (!query) return text;
-    const escaped = escapeRegex(query);
-    const regex = new RegExp(`(${escaped})`, 'gi');
-    return text.replace(regex, '<mark>$1</mark>');
 }
 
 function applyFilters() {
@@ -72,7 +56,7 @@ function applyFilters() {
     });
 
     renderStats();
-    renderRiddims(query);
+    renderGrid();
 }
 
 function renderStats() {
@@ -101,8 +85,8 @@ function renderStats() {
     `;
 }
 
-function renderRiddims(query) {
-    const container = document.getElementById('riddimList');
+function renderGrid() {
+    const container = document.getElementById('riddimGrid');
 
     if (filteredRiddims.length === 0) {
         container.innerHTML = `
@@ -116,80 +100,33 @@ function renderRiddims(query) {
 
     container.innerHTML = filteredRiddims.map(riddim => {
         const totalViews = getTotalViews(riddim);
-        const sortedVoicings = [...riddim.voicings].sort((a, b) => b.views - a.views);
-        const maxViews = sortedVoicings[0]?.views || 1;
-        const cardId = `riddim-${riddim.id}`;
+        const topArtists = [...riddim.voicings]
+            .sort((a, b) => b.views - a.views)
+            .slice(0, 3)
+            .map(v => v.artist);
 
         return `
-            <article class="riddim-card" id="${cardId}">
-                <div class="riddim-header" onclick="toggleVoicings('${cardId}')">
-                    <div class="riddim-info">
-                        <h2 class="riddim-name">${highlightText(riddim.name, query)}</h2>
-                        <div class="riddim-meta">
-                            <span>${highlightText(riddim.producer, query)}</span>
-                            <span class="separator">&bull;</span>
-                            <span>${riddim.label}</span>
-                        </div>
-                    </div>
-                    <div class="riddim-stats">
-                        <div class="riddim-total-views">${formatViews(totalViews)} vues</div>
-                        <div class="riddim-voicing-count">${riddim.voicings.length} voicings</div>
-                    </div>
+            <a href="riddim.html?id=${riddim.id}" class="riddim-tile">
+                <div class="tile-header">
+                    <h2 class="tile-name">${riddim.name}</h2>
+                    <span class="tile-year">${riddim.year}</span>
                 </div>
-                <div class="riddim-tags">
+                <div class="tile-producer">${riddim.producer}</div>
+                <div class="tile-tags">
                     <span class="tag tag-genre">${riddim.genre}</span>
                     <span class="tag tag-type">${riddim.type}</span>
-                    <span class="tag tag-year">${riddim.year}</span>
                     ${riddim.bpm ? `<span class="tag tag-bpm">${riddim.bpm} BPM</span>` : ''}
                 </div>
-                <p class="riddim-description">${riddim.description}</p>
-                <div class="voicings-section">
-                    <button class="voicings-toggle" onclick="toggleVoicings('${cardId}')">
-                        <span>Voir les voicings</span>
-                        <span class="arrow" id="arrow-${cardId}">&#9660;</span>
-                    </button>
-                    <div class="voicings-list" id="voicings-${cardId}">
-                        ${sortedVoicings.map((v, i) => {
-                            const pct = (v.views / maxViews * 100).toFixed(1);
-                            const rankClass = i === 0 ? 'top-1' : i === 1 ? 'top-2' : i === 2 ? 'top-3' : '';
-                            const ytUrl = getYoutubeSearchUrl(v.artist, v.title);
-                            return `
-                                <div class="voicing-row">
-                                    <span class="voicing-rank ${rankClass}">${i + 1}</span>
-                                    <div class="voicing-details">
-                                        <div class="voicing-title">${highlightText(v.title, query)}</div>
-                                        <div class="voicing-artist">${highlightText(v.artist, query)}</div>
-                                    </div>
-                                    <div class="voicing-bar-container">
-                                        <div class="voicing-bar" style="width: ${pct}%"></div>
-                                    </div>
-                                    <span class="voicing-views">${formatViews(v.views)}</span>
-                                    <a href="${ytUrl}" target="_blank" rel="noopener noreferrer" class="yt-link" title="Écouter sur YouTube">
-                                        <svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2c-.3-1-1-1.8-2-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.5.6c-1 .3-1.7 1.1-2 2.1C0 8.1 0 12 0 12s0 3.9.5 5.8c.3 1 1 1.8 2 2.1 1.9.6 9.5.6 9.5.6s7.6 0 9.5-.6c1-.3 1.7-1.1 2-2.1.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
-                                    </a>
-                                </div>
-                            `;
-                        }).join('')}
-                    </div>
+                <div class="tile-artists">
+                    ${topArtists.map(a => `<span class="tile-artist">${a}</span>`).join('')}
                 </div>
-            </article>
+                <div class="tile-footer">
+                    <span class="tile-views">${formatViews(totalViews)} vues</span>
+                    <span class="tile-voicings">${riddim.voicings.length} voicings</span>
+                </div>
+            </a>
         `;
     }).join('');
-}
-
-function toggleVoicings(cardId) {
-    const list = document.getElementById(`voicings-${cardId}`);
-    const arrow = document.getElementById(`arrow-${cardId}`);
-    const toggle = list.previousElementSibling;
-
-    list.classList.toggle('open');
-    arrow.classList.toggle('open');
-
-    if (list.classList.contains('open')) {
-        toggle.querySelector('span:first-child').textContent = 'Masquer les voicings';
-    } else {
-        toggle.querySelector('span:first-child').textContent = 'Voir les voicings';
-    }
 }
 
 // Event listeners
