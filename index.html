@@ -3,86 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Music Contest - La Base de Données des Riddims Jamaïcains</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>World Music Contest - Riddim Database</title>
+    <meta name="description" content="The largest Jamaican riddim database. Dancehall, Reggae, Lovers Rock.">
+    <link rel="alternate" hreflang="fr" href="fr/index.html">
+    <link rel="alternate" hreflang="en" href="en/index.html">
+    <link rel="alternate" hreflang="es" href="es/index.html">
+    <link rel="alternate" hreflang="pt" href="pt/index.html">
+    <link rel="alternate" hreflang="ja" href="ja/index.html">
+    <link rel="alternate" hreflang="x-default" href="en/index.html">
+    <script>
+        (function() {
+            var lang = (navigator.language || navigator.userLanguage || 'en').substring(0, 2).toLowerCase();
+            var supported = ['fr', 'en', 'es', 'pt', 'ja'];
+            if (supported.indexOf(lang) === -1) lang = 'en';
+            window.location.replace(lang + '/index.html');
+        })();
+    </script>
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=fr/index.html">
+    </noscript>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <h1 class="logo">World Music <span>Contest</span></h1>
-            <p class="tagline">Chaque riddim. Chaque voicing. Classé par popularité.</p>
-        </div>
-    </header>
-
-    <main>
-        <section class="controls">
-            <div class="search-bar">
-                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-                </svg>
-                <input type="text" id="searchInput" placeholder="Rechercher un riddim, un artiste, un titre...">
-            </div>
-            <div class="filters">
-                <div class="filter-group">
-                    <label for="genreFilter">Genre</label>
-                    <select id="genreFilter">
-                        <option value="">Tous</option>
-                        <option value="reggae">Reggae</option>
-                        <option value="dancehall">Dancehall</option>
-                        <option value="lovers rock">Lovers Rock</option>
-                        <option value="soca">Soca</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label for="typeFilter">Type</label>
-                    <select id="typeFilter">
-                        <option value="">Tous</option>
-                        <option value="classique">Classique</option>
-                        <option value="ragga">Ragga</option>
-                        <option value="digital">Digital</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label for="decadeFilter">Décennie</label>
-                    <select id="decadeFilter">
-                        <option value="">Toutes</option>
-                        <option value="1960">1960s</option>
-                        <option value="1970">1970s</option>
-                        <option value="1980">1980s</option>
-                        <option value="1990">1990s</option>
-                        <option value="2000">2000s</option>
-                        <option value="2010">2010s</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label for="sortBy">Trier par</label>
-                    <select id="sortBy">
-                        <option value="views">Vues totales</option>
-                        <option value="name">Nom A-Z</option>
-                        <option value="year">Année</option>
-                        <option value="voicings">Nb. de voicings</option>
-                    </select>
-                </div>
-            </div>
-        </section>
-
-        <section class="stats-bar" id="statsBar">
-            <!-- Filled by JS -->
-        </section>
-
-        <section class="riddim-grid" id="riddimGrid">
-            <!-- Filled by JS -->
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 World Music Contest &mdash; La musique jamaïcaine, organisée.</p>
-        <p class="footer-note">Les vues sont approximatives et proviennent des principales plateformes de streaming.</p>
-    </footer>
-
-    <script src="script.js"></script>
+    <p>Redirecting... <a href="fr/index.html">Francais</a> | <a href="en/index.html">English</a> | <a href="es/index.html">Espanol</a> | <a href="pt/index.html">Portugues</a> | <a href="ja/index.html">日本語</a></p>
 </body>
 </html>
