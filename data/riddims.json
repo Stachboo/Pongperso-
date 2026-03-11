@@ -379,5 +379,38 @@
       { "artist": "General Degree", "title": "Miyagi", "views": 3800000 },
       { "artist": "Buju Banton", "title": "Champion", "views": 18000000 }
     ]
+  },
+  {
+    "id": 21,
+    "name": "WYFL",
+    "year": 2025,
+    "producer": "DJ Mac & CrashDummy",
+    "label": "oneJAHnre Music Group",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 101,
+    "description": "Le riddim-monstre de fin 2025 qui a pris d'assaut le dancehall mondial. Produit par DJ Mac et CrashDummy, le WYFL riddim a vu plus de 200 artistes enregistrer leur version en quelques mois. Cinq morceaux du même riddim se sont retrouvés simultanément dans le Top 30 YouTube Jamaïque et le Top 10 iTunes Reggae US. Il marque aussi le retour historique de Vybz Kartel et Mavado sur un même riddim.",
+    "voicings": [
+      { "artist": "Skippa", "title": "WYFL", "views": 48000000 },
+      { "artist": "Mavado", "title": "Bad & BBC Rich", "views": 15000000 },
+      { "artist": "Vybz Kartel", "title": "SYM", "views": 12000000 },
+      { "artist": "Buju Banton", "title": "X Rated", "views": 9500000 },
+      { "artist": "Spice", "title": "Clean And Fresh", "views": 8200000 },
+      { "artist": "Chronic Law", "title": "Badness Upgrade 2.0", "views": 7800000 },
+      { "artist": "Valiant", "title": "Oh When", "views": 7200000 },
+      { "artist": "Masicka", "title": "Evil", "views": 6500000 },
+      { "artist": "Tommy Lee Sparta", "title": "Asalam Halukum", "views": 5800000 },
+      { "artist": "Jahshii", "title": "Expensive Structure", "views": 5400000 },
+      { "artist": "Skeng", "title": "Ruff", "views": 4900000 },
+      { "artist": "Elephant Man", "title": "Gal U Body Hot", "views": 4200000 },
+      { "artist": "Bounty Killer", "title": "A Lie", "views": 3800000 },
+      { "artist": "Govana", "title": "Real Killa", "views": 3500000 },
+      { "artist": "Anthony B", "title": "Box Ah Rubbaz", "views": 3200000 },
+      { "artist": "Silk Boss", "title": "Position", "views": 2900000 },
+      { "artist": "Ding Dong", "title": "Bun Bun", "views": 2600000 },
+      { "artist": "Nigy Boy", "title": "Risk It All", "views": 2300000 },
+      { "artist": "Mr. Vegas", "title": "Gallis Code", "views": 2100000 },
+      { "artist": "Shatta Wale", "title": "Danger", "views": 1800000 }
+    ]
   }
 ]
