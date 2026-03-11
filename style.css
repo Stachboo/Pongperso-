@@ -45,22 +45,28 @@ header {
     margin: 0 auto;
 }
 
-.logo {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-    font-size: 3rem;
-    letter-spacing: -1px;
-    color: var(--text);
+.logo-block {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
+    gap: 0.8rem;
+    margin-bottom: 0.3rem;
 }
 
 .logo-img {
-    width: 56px;
-    height: 56px;
-    border-radius: 12px;
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+    object-fit: contain;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 2.4rem;
+    letter-spacing: -1px;
+    color: var(--text);
+    text-align: center;
 }
 
 .logo span {
@@ -887,13 +893,14 @@ footer {
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
-    .logo {
-        font-size: 2.2rem;
+    .logo-img {
+        width: 90px;
+        height: 90px;
+        border-radius: 16px;
     }
 
-    .logo-img {
-        width: 44px;
-        height: 44px;
+    .logo {
+        font-size: 1.8rem;
     }
 
     .tagline {
@@ -1008,14 +1015,14 @@ footer {
         padding: 1.5rem 1rem;
     }
 
-    .logo {
-        font-size: 1.8rem;
+    .logo-img {
+        width: 70px;
+        height: 70px;
+        border-radius: 12px;
     }
 
-    .logo-img {
-        width: 36px;
-        height: 36px;
-        border-radius: 8px;
+    .logo {
+        font-size: 1.5rem;
     }
 
     .hero-title {
