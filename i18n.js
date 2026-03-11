@@ -93,7 +93,11 @@ const TRANSLATIONS = {
         decade1980: "1980s",
         decade1990: "1990s",
         decade2000: "2000s",
-        decade2010: "2010s"
+        decade2010: "2010s",
+        // Share
+        shareTitle: "Partager",
+        shareCopied: "Lien copi\u00e9 !",
+        shareText: "D\u00e9couvrez World Music Contest, la base de donn\u00e9es des riddims jama\u00efcains !"
     },
     en: {
         lang: "en",
@@ -173,7 +177,10 @@ const TRANSLATIONS = {
         footerText: "Jamaican music, organized.",
         footerNote: "Views are approximate and sourced from major streaming platforms.",
         decade1960: "1960s", decade1970: "1970s", decade1980: "1980s",
-        decade1990: "1990s", decade2000: "2000s", decade2010: "2010s"
+        decade1990: "1990s", decade2000: "2000s", decade2010: "2010s",
+        shareTitle: "Share",
+        shareCopied: "Link copied!",
+        shareText: "Check out World Music Contest, the Jamaican riddim database!"
     },
     es: {
         lang: "es",
@@ -253,7 +260,10 @@ const TRANSLATIONS = {
         footerText: "La m\u00fasica jamaicana, organizada.",
         footerNote: "Las vistas son aproximadas y provienen de las principales plataformas de streaming.",
         decade1960: "1960s", decade1970: "1970s", decade1980: "1980s",
-        decade1990: "1990s", decade2000: "2000s", decade2010: "2010s"
+        decade1990: "1990s", decade2000: "2000s", decade2010: "2010s",
+        shareTitle: "Compartir",
+        shareCopied: "\u00a1Enlace copiado!",
+        shareText: "\u00a1Descubre World Music Contest, la base de datos de riddims jamaicanos!"
     },
     pt: {
         lang: "pt",
@@ -333,7 +343,10 @@ const TRANSLATIONS = {
         footerText: "A m\u00fasica jamaicana, organizada.",
         footerNote: "As visualiza\u00e7\u00f5es s\u00e3o aproximadas e provenientes das principais plataformas de streaming.",
         decade1960: "1960s", decade1970: "1970s", decade1980: "1980s",
-        decade1990: "1990s", decade2000: "2000s", decade2010: "2010s"
+        decade1990: "1990s", decade2000: "2000s", decade2010: "2010s",
+        shareTitle: "Compartilhar",
+        shareCopied: "Link copiado!",
+        shareText: "Confira o World Music Contest, o banco de dados de riddims jamaicanos!"
     },
     ja: {
         lang: "ja",
@@ -413,7 +426,10 @@ const TRANSLATIONS = {
         footerText: "\u30b8\u30e3\u30de\u30a4\u30ab\u97f3\u697d\u3001\u6574\u7406\u6e08\u307f\u3002",
         footerNote: "\u518d\u751f\u6570\u306f\u6982\u7b97\u3067\u3042\u308a\u3001\u4e3b\u8981\u30b9\u30c8\u30ea\u30fc\u30df\u30f3\u30b0\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\u304b\u3089\u53d6\u5f97\u3057\u3066\u3044\u307e\u3059\u3002",
         decade1960: "1960\u5e74\u4ee3", decade1970: "1970\u5e74\u4ee3", decade1980: "1980\u5e74\u4ee3",
-        decade1990: "1990\u5e74\u4ee3", decade2000: "2000\u5e74\u4ee3", decade2010: "2010\u5e74\u4ee3"
+        decade1990: "1990\u5e74\u4ee3", decade2000: "2000\u5e74\u4ee3", decade2010: "2010\u5e74\u4ee3",
+        shareTitle: "\u30b7\u30a7\u30a2",
+        shareCopied: "\u30ea\u30f3\u30af\u3092\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f\uff01",
+        shareText: "World Music Contest\u3092\u30c1\u30a7\u30c3\u30af\uff01\u30b8\u30e3\u30de\u30a4\u30ab\u30f3\u30ea\u30c7\u30a3\u30e0\u306e\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\uff01"
     }
 };
 
@@ -439,6 +455,66 @@ function getLangBase() {
     const match = path.match(/^(.*\/(fr|en|es|pt|ja)\/)/);
     if (match) return match[1];
     return `/${lang}/`;
+}
+
+// Build floating share button
+function buildShareButton() {
+    const t = getT();
+    const shareHTML = `
+    <div class="share-fab" id="shareFab">
+        <button class="share-fab-btn" id="shareFabBtn" title="${t.shareTitle}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+                <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+            </svg>
+        </button>
+        <div class="share-menu" id="shareMenu">
+            <a class="share-option share-whatsapp" id="shareWhatsApp" target="_blank" rel="noopener noreferrer" title="WhatsApp">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+            <a class="share-option share-x" id="shareX" target="_blank" rel="noopener noreferrer" title="X">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a class="share-option share-facebook" id="shareFacebook" target="_blank" rel="noopener noreferrer" title="Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <button class="share-option share-copy" id="shareCopy" title="${t.shareCopied}">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                </svg>
+            </button>
+        </div>
+    </div>`;
+
+    document.body.insertAdjacentHTML('beforeend', shareHTML);
+
+    const fab = document.getElementById('shareFab');
+    const fabBtn = document.getElementById('shareFabBtn');
+    const menu = document.getElementById('shareMenu');
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent(t.shareText);
+
+    fabBtn.addEventListener('click', () => {
+        fab.classList.toggle('open');
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!fab.contains(e.target)) {
+            fab.classList.remove('open');
+        }
+    });
+
+    document.getElementById('shareWhatsApp').href = `https://wa.me/?text=${text}%20${url}`;
+    document.getElementById('shareX').href = `https://x.com/intent/tweet?text=${text}&url=${url}`;
+    document.getElementById('shareFacebook').href = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+
+    document.getElementById('shareCopy').addEventListener('click', () => {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            const btn = document.getElementById('shareCopy');
+            btn.classList.add('copied');
+            setTimeout(() => btn.classList.remove('copied'), 2000);
+        });
+    });
 }
 
 // Build language switcher HTML

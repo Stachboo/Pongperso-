@@ -226,5 +226,8 @@ document.getElementById('typeFilter').addEventListener('change', applyFilters);
 document.getElementById('decadeFilter').addEventListener('change', applyFilters);
 document.getElementById('sortBy').addEventListener('change', applyFilters);
 
+// Share button
+buildShareButton();
+
 // Init
 loadRiddims();

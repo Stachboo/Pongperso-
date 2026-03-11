@@ -1032,6 +1032,121 @@ footer {
     background: #555;
 }
 
+/* === SHARE FAB === */
+.share-fab {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.share-fab-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent-gradient);
+    border: none;
+    color: var(--dark-bg);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(242, 169, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.share-fab-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(242, 169, 0, 0.4);
+}
+
+.share-fab.open .share-fab-btn {
+    transform: rotate(45deg);
+}
+
+.share-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.25s, transform 0.25s;
+}
+
+.share-fab.open .share-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.share-option {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.share-option:hover {
+    transform: scale(1.15);
+}
+
+.share-whatsapp {
+    background: #25D366;
+    color: white;
+}
+
+.share-x {
+    background: #000;
+    color: white;
+}
+
+.share-facebook {
+    background: #1877F2;
+    color: white;
+}
+
+.share-copy {
+    background: var(--card-bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.share-copy.copied {
+    background: var(--green);
+    color: white;
+    border-color: var(--green);
+}
+
+@media (max-width: 480px) {
+    .share-fab {
+        bottom: 1.2rem;
+        right: 1.2rem;
+    }
+
+    .share-fab-btn {
+        width: 48px;
+        height: 48px;
+    }
+
+    .share-option {
+        width: 40px;
+        height: 40px;
+    }
+}
+
 /* === HIGHLIGHT MATCH === */
 mark {
     background: rgba(242, 169, 0, 0.3);
