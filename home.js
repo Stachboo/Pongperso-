@@ -126,6 +126,9 @@
         <p class="footer-note">${t.footerNote}</p>
     `;
 
+    // Share button
+    buildShareButton();
+
     // Load stats
     loadHomeStats();
 

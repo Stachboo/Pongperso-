@@ -10,16 +10,56 @@
     "bpm": 100,
     "description": "L'un des riddims les plus célèbres et commercialement réussis de l'histoire du dancehall. Son rythme distinctif a propulsé plusieurs hits internationaux.",
     "voicings": [
-      { "artist": "Sean Paul", "title": "Get Busy", "views": 285000000 },
-      { "artist": "Bounty Killer", "title": "Sufferer", "views": 12000000 },
-      { "artist": "Wayne Wonder", "title": "No Letting Go", "views": 98000000 },
-      { "artist": "T.O.K.", "title": "Footprints", "views": 8500000 },
-      { "artist": "Elephant Man", "title": "Pon De River Pon De Bank", "views": 45000000 },
-      { "artist": "Beenie Man", "title": "Dude", "views": 72000000 },
-      { "artist": "Lumidee", "title": "Never Leave You (Uh Oooh)", "views": 65000000 },
-      { "artist": "Spragga Benz", "title": "Shizzle My Nizzle", "views": 3200000 },
-      { "artist": "Vybz Kartel", "title": "Stookie", "views": 4500000 },
-      { "artist": "Mr. Vegas", "title": "Pull Up", "views": 7800000 }
+      {
+        "artist": "Sean Paul",
+        "title": "Get Busy",
+        "views": 285000000
+      },
+      {
+        "artist": "Bounty Killer",
+        "title": "Sufferer",
+        "views": 12000000
+      },
+      {
+        "artist": "Wayne Wonder",
+        "title": "No Letting Go",
+        "views": 98000000
+      },
+      {
+        "artist": "T.O.K.",
+        "title": "Footprints",
+        "views": 8500000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Pon De River Pon De Bank",
+        "views": 45000000
+      },
+      {
+        "artist": "Beenie Man",
+        "title": "Dude",
+        "views": 72000000
+      },
+      {
+        "artist": "Lumidee",
+        "title": "Never Leave You (Uh Oooh)",
+        "views": 65000000
+      },
+      {
+        "artist": "Spragga Benz",
+        "title": "Shizzle My Nizzle",
+        "views": 3200000
+      },
+      {
+        "artist": "Vybz Kartel",
+        "title": "Stookie",
+        "views": 4500000
+      },
+      {
+        "artist": "Mr. Vegas",
+        "title": "Pull Up",
+        "views": 7800000
+      }
     ]
   },
   {
@@ -33,14 +73,46 @@
     "bpm": 88,
     "description": "Un des riddims les plus samplés de tous les temps. La version de Sister Nancy est devenue un hymne mondial.",
     "voicings": [
-      { "artist": "Sister Nancy", "title": "Bam Bam", "views": 520000000 },
-      { "artist": "Chaka Demus & Pliers", "title": "Murder She Wrote", "views": 380000000 },
-      { "artist": "Yellowman", "title": "Nobody Move Nobody Get Hurt", "views": 15000000 },
-      { "artist": "Shaggy", "title": "Hope", "views": 22000000 },
-      { "artist": "Cocoa Tea", "title": "Young Lover", "views": 5600000 },
-      { "artist": "Cutty Ranks", "title": "Limb by Limb", "views": 8900000 },
-      { "artist": "General Degree", "title": "Traffic Blocking", "views": 4200000 },
-      { "artist": "Kanye West", "title": "Famous (sample)", "views": 310000000 }
+      {
+        "artist": "Sister Nancy",
+        "title": "Bam Bam",
+        "views": 520000000
+      },
+      {
+        "artist": "Chaka Demus & Pliers",
+        "title": "Murder She Wrote",
+        "views": 380000000
+      },
+      {
+        "artist": "Yellowman",
+        "title": "Nobody Move Nobody Get Hurt",
+        "views": 15000000
+      },
+      {
+        "artist": "Shaggy",
+        "title": "Hope",
+        "views": 22000000
+      },
+      {
+        "artist": "Cocoa Tea",
+        "title": "Young Lover",
+        "views": 5600000
+      },
+      {
+        "artist": "Cutty Ranks",
+        "title": "Limb by Limb",
+        "views": 8900000
+      },
+      {
+        "artist": "General Degree",
+        "title": "Traffic Blocking",
+        "views": 4200000
+      },
+      {
+        "artist": "Kanye West",
+        "title": "Famous (sample)",
+        "views": 310000000
+      }
     ]
   },
   {
@@ -54,12 +126,36 @@
     "bpm": 82,
     "description": "Le riddim qui a révolutionné la musique jamaïcaine en inaugurant l'ère digitale. Créé sur un Casio MT-40.",
     "voicings": [
-      { "artist": "Wayne Smith", "title": "Under Mi Sleng Teng", "views": 28000000 },
-      { "artist": "Johnny Osbourne", "title": "Buddy Bye", "views": 9500000 },
-      { "artist": "Half Pint", "title": "Level the Vibes", "views": 3800000 },
-      { "artist": "Tenor Saw", "title": "Pumpkin Belly", "views": 2700000 },
-      { "artist": "Frankie Paul", "title": "Tidal Wave", "views": 1900000 },
-      { "artist": "Barrington Levy", "title": "Too Experience", "views": 4200000 }
+      {
+        "artist": "Wayne Smith",
+        "title": "Under Mi Sleng Teng",
+        "views": 28000000
+      },
+      {
+        "artist": "Johnny Osbourne",
+        "title": "Buddy Bye",
+        "views": 9500000
+      },
+      {
+        "artist": "Half Pint",
+        "title": "Level the Vibes",
+        "views": 3800000
+      },
+      {
+        "artist": "Tenor Saw",
+        "title": "Pumpkin Belly",
+        "views": 2700000
+      },
+      {
+        "artist": "Frankie Paul",
+        "title": "Tidal Wave",
+        "views": 1900000
+      },
+      {
+        "artist": "Barrington Levy",
+        "title": "Too Experience",
+        "views": 4200000
+      }
     ]
   },
   {
@@ -73,13 +169,41 @@
     "bpm": 78,
     "description": "Aussi connu sous le nom 'Stalag 17'. L'un des riddims les plus voicés de l'histoire avec plus de 300 versions connues.",
     "voicings": [
-      { "artist": "Sister Nancy", "title": "Bam Bam", "views": 520000000 },
-      { "artist": "Tenor Saw", "title": "Ring the Alarm", "views": 42000000 },
-      { "artist": "Ini Kamoze", "title": "World A Music", "views": 3400000 },
-      { "artist": "Super Cat", "title": "Boops", "views": 6700000 },
-      { "artist": "Shabba Ranks", "title": "Peanie Peanie", "views": 5100000 },
-      { "artist": "Yellowman", "title": "Zungguzungguguzungguzeng", "views": 18000000 },
-      { "artist": "Nicodemus", "title": "Boneman Connection", "views": 1200000 }
+      {
+        "artist": "Sister Nancy",
+        "title": "Bam Bam",
+        "views": 520000000
+      },
+      {
+        "artist": "Tenor Saw",
+        "title": "Ring the Alarm",
+        "views": 42000000
+      },
+      {
+        "artist": "Ini Kamoze",
+        "title": "World A Music",
+        "views": 3400000
+      },
+      {
+        "artist": "Super Cat",
+        "title": "Boops",
+        "views": 6700000
+      },
+      {
+        "artist": "Shabba Ranks",
+        "title": "Peanie Peanie",
+        "views": 5100000
+      },
+      {
+        "artist": "Yellowman",
+        "title": "Zungguzungguguzungguzeng",
+        "views": 18000000
+      },
+      {
+        "artist": "Nicodemus",
+        "title": "Boneman Connection",
+        "views": 1200000
+      }
     ]
   },
   {
@@ -93,12 +217,36 @@
     "bpm": 72,
     "description": "Un des plus anciens et plus réutilisés riddims jamaïcains, créé par Sound Dimension au Studio One.",
     "voicings": [
-      { "artist": "Sound Dimension", "title": "Real Rock", "views": 5600000 },
-      { "artist": "Willie Williams", "title": "Armagideon Time", "views": 7200000 },
-      { "artist": "The Clash", "title": "Armagideon Time (cover)", "views": 12000000 },
-      { "artist": "John Holt", "title": "A Love I Can Feel", "views": 18000000 },
-      { "artist": "Horace Andy", "title": "Mr. Bassie", "views": 3400000 },
-      { "artist": "Augustus Pablo", "title": "Java Rock", "views": 2100000 }
+      {
+        "artist": "Sound Dimension",
+        "title": "Real Rock",
+        "views": 5600000
+      },
+      {
+        "artist": "Willie Williams",
+        "title": "Armagideon Time",
+        "views": 7200000
+      },
+      {
+        "artist": "The Clash",
+        "title": "Armagideon Time (cover)",
+        "views": 12000000
+      },
+      {
+        "artist": "John Holt",
+        "title": "A Love I Can Feel",
+        "views": 18000000
+      },
+      {
+        "artist": "Horace Andy",
+        "title": "Mr. Bassie",
+        "views": 3400000
+      },
+      {
+        "artist": "Augustus Pablo",
+        "title": "Java Rock",
+        "views": 2100000
+      }
     ]
   },
   {
@@ -112,12 +260,36 @@
     "bpm": 95,
     "description": "Un riddim dancehall massif qui a dominé les sound systems au milieu des années 2000.",
     "voicings": [
-      { "artist": "Vybz Kartel", "title": "Most Wanted", "views": 15000000 },
-      { "artist": "Elephant Man", "title": "Willie Bounce", "views": 28000000 },
-      { "artist": "Sean Paul", "title": "Never Gonna Be the Same", "views": 35000000 },
-      { "artist": "T.O.K.", "title": "Gal You A Lead", "views": 8700000 },
-      { "artist": "Beenie Man", "title": "Hmm Hmm", "views": 6200000 },
-      { "artist": "Busy Signal", "title": "Step Out", "views": 11000000 }
+      {
+        "artist": "Vybz Kartel",
+        "title": "Most Wanted",
+        "views": 15000000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Willie Bounce",
+        "views": 28000000
+      },
+      {
+        "artist": "Sean Paul",
+        "title": "Never Gonna Be the Same",
+        "views": 35000000
+      },
+      {
+        "artist": "T.O.K.",
+        "title": "Gal You A Lead",
+        "views": 8700000
+      },
+      {
+        "artist": "Beenie Man",
+        "title": "Hmm Hmm",
+        "views": 6200000
+      },
+      {
+        "artist": "Busy Signal",
+        "title": "Step Out",
+        "views": 11000000
+      }
     ]
   },
   {
@@ -131,12 +303,36 @@
     "bpm": 90,
     "description": "Riddim emblématique de l'ère digitale du dancehall, produit par le légendaire Dave Kelly.",
     "voicings": [
-      { "artist": "Shabba Ranks", "title": "Ting-A-Ling", "views": 22000000 },
-      { "artist": "Beenie Man", "title": "Slam", "views": 9800000 },
-      { "artist": "Mad Cobra", "title": "Press Trigger", "views": 3500000 },
-      { "artist": "Buju Banton", "title": "Batty Rider", "views": 7600000 },
-      { "artist": "Lady Saw", "title": "Find a Good Man", "views": 4100000 },
-      { "artist": "Bounty Killer", "title": "Down in the Ghetto", "views": 5200000 }
+      {
+        "artist": "Shabba Ranks",
+        "title": "Ting-A-Ling",
+        "views": 22000000
+      },
+      {
+        "artist": "Beenie Man",
+        "title": "Slam",
+        "views": 9800000
+      },
+      {
+        "artist": "Mad Cobra",
+        "title": "Press Trigger",
+        "views": 3500000
+      },
+      {
+        "artist": "Buju Banton",
+        "title": "Batty Rider",
+        "views": 7600000
+      },
+      {
+        "artist": "Lady Saw",
+        "title": "Find a Good Man",
+        "views": 4100000
+      },
+      {
+        "artist": "Bounty Killer",
+        "title": "Down in the Ghetto",
+        "views": 5200000
+      }
     ]
   },
   {
@@ -150,12 +346,36 @@
     "bpm": 92,
     "description": "Un riddim doux et mélodique qui a porté certains des plus gros hits dancehall des années 2000.",
     "voicings": [
-      { "artist": "Busy Signal", "title": "These Are the Days", "views": 14000000 },
-      { "artist": "Romain Virgo", "title": "Mi Caan Sleep", "views": 9200000 },
-      { "artist": "Tarrus Riley", "title": "She's Royal", "views": 52000000 },
-      { "artist": "Jah Cure", "title": "True Reflections", "views": 6700000 },
-      { "artist": "Christopher Martin", "title": "Big Deal", "views": 5400000 },
-      { "artist": "Queen Ifrica", "title": "Below the Waist", "views": 3100000 }
+      {
+        "artist": "Busy Signal",
+        "title": "These Are the Days",
+        "views": 14000000
+      },
+      {
+        "artist": "Romain Virgo",
+        "title": "Mi Caan Sleep",
+        "views": 9200000
+      },
+      {
+        "artist": "Tarrus Riley",
+        "title": "She's Royal",
+        "views": 52000000
+      },
+      {
+        "artist": "Jah Cure",
+        "title": "True Reflections",
+        "views": 6700000
+      },
+      {
+        "artist": "Christopher Martin",
+        "title": "Big Deal",
+        "views": 5400000
+      },
+      {
+        "artist": "Queen Ifrica",
+        "title": "Below the Waist",
+        "views": 3100000
+      }
     ]
   },
   {
@@ -169,12 +389,36 @@
     "bpm": 98,
     "description": "Un riddim dancehall agressif et sombre qui a marqué l'émergence de Di Genius comme producteur majeur.",
     "voicings": [
-      { "artist": "Vybz Kartel", "title": "Emergency", "views": 18000000 },
-      { "artist": "Mavado", "title": "Weh Dem a Do", "views": 11000000 },
-      { "artist": "Aidonia", "title": "Lala Land", "views": 8500000 },
-      { "artist": "Bounty Killer", "title": "Nuh Fraid", "views": 4300000 },
-      { "artist": "Munga", "title": "Bad From Mi Born", "views": 6700000 },
-      { "artist": "Busy Signal", "title": "Gyal Anthem", "views": 5200000 }
+      {
+        "artist": "Vybz Kartel",
+        "title": "Emergency",
+        "views": 18000000
+      },
+      {
+        "artist": "Mavado",
+        "title": "Weh Dem a Do",
+        "views": 11000000
+      },
+      {
+        "artist": "Aidonia",
+        "title": "Lala Land",
+        "views": 8500000
+      },
+      {
+        "artist": "Bounty Killer",
+        "title": "Nuh Fraid",
+        "views": 4300000
+      },
+      {
+        "artist": "Munga",
+        "title": "Bad From Mi Born",
+        "views": 6700000
+      },
+      {
+        "artist": "Busy Signal",
+        "title": "Gyal Anthem",
+        "views": 5200000
+      }
     ]
   },
   {
@@ -188,12 +432,36 @@
     "bpm": 85,
     "description": "Un riddim dancehall mélodieux qui a généré plusieurs hits majeurs dans les charts internationaux.",
     "voicings": [
-      { "artist": "Vybz Kartel", "title": "Romping Shop (ft. Spice)", "views": 78000000 },
-      { "artist": "Mavado", "title": "On the Rock", "views": 7800000 },
-      { "artist": "I-Octane", "title": "Some Way Somehow", "views": 5600000 },
-      { "artist": "Serani", "title": "No Games", "views": 42000000 },
-      { "artist": "Konshens", "title": "Winner", "views": 9200000 },
-      { "artist": "Romain Virgo", "title": "Stay with Me", "views": 4500000 }
+      {
+        "artist": "Vybz Kartel",
+        "title": "Romping Shop (ft. Spice)",
+        "views": 78000000
+      },
+      {
+        "artist": "Mavado",
+        "title": "On the Rock",
+        "views": 7800000
+      },
+      {
+        "artist": "I-Octane",
+        "title": "Some Way Somehow",
+        "views": 5600000
+      },
+      {
+        "artist": "Serani",
+        "title": "No Games",
+        "views": 42000000
+      },
+      {
+        "artist": "Konshens",
+        "title": "Winner",
+        "views": 9200000
+      },
+      {
+        "artist": "Romain Virgo",
+        "title": "Stay with Me",
+        "views": 4500000
+      }
     ]
   },
   {
@@ -207,12 +475,36 @@
     "bpm": 76,
     "description": "Un riddim fondamental du Studio One, parmi les plus réutilisés de l'histoire reggae.",
     "voicings": [
-      { "artist": "The Heptones", "title": "I've Got a Feeling", "views": 2800000 },
-      { "artist": "Mighty Diamonds", "title": "Pass the Kouchie", "views": 32000000 },
-      { "artist": "Musical Youth", "title": "Pass the Dutchie (adaptation)", "views": 95000000 },
-      { "artist": "Sugar Minott", "title": "Good Thing Going", "views": 14000000 },
-      { "artist": "Wailing Souls", "title": "Things and Time", "views": 3600000 },
-      { "artist": "Freddie McGregor", "title": "Bobby Babylon", "views": 5100000 }
+      {
+        "artist": "The Heptones",
+        "title": "I've Got a Feeling",
+        "views": 2800000
+      },
+      {
+        "artist": "Mighty Diamonds",
+        "title": "Pass the Kouchie",
+        "views": 32000000
+      },
+      {
+        "artist": "Musical Youth",
+        "title": "Pass the Dutchie (adaptation)",
+        "views": 95000000
+      },
+      {
+        "artist": "Sugar Minott",
+        "title": "Good Thing Going",
+        "views": 14000000
+      },
+      {
+        "artist": "Wailing Souls",
+        "title": "Things and Time",
+        "views": 3600000
+      },
+      {
+        "artist": "Freddie McGregor",
+        "title": "Bobby Babylon",
+        "views": 5100000
+      }
     ]
   },
   {
@@ -226,12 +518,36 @@
     "bpm": 108,
     "description": "Un riddim moderne et énergique du producteur Rvssian qui a dominé les clubs et les ondes.",
     "voicings": [
-      { "artist": "Popcaan", "title": "Everything Nice", "views": 62000000 },
-      { "artist": "Konshens", "title": "Bruk Off Yuh Back", "views": 85000000 },
-      { "artist": "Vybz Kartel", "title": "Colouring This Life", "views": 38000000 },
-      { "artist": "Aidonia", "title": "Tip Pon Yuh Toe", "views": 15000000 },
-      { "artist": "Dexta Daps", "title": "Morning Love", "views": 22000000 },
-      { "artist": "Alkaline", "title": "Things Mi Love", "views": 28000000 }
+      {
+        "artist": "Popcaan",
+        "title": "Everything Nice",
+        "views": 62000000
+      },
+      {
+        "artist": "Konshens",
+        "title": "Bruk Off Yuh Back",
+        "views": 85000000
+      },
+      {
+        "artist": "Vybz Kartel",
+        "title": "Colouring This Life",
+        "views": 38000000
+      },
+      {
+        "artist": "Aidonia",
+        "title": "Tip Pon Yuh Toe",
+        "views": 15000000
+      },
+      {
+        "artist": "Dexta Daps",
+        "title": "Morning Love",
+        "views": 22000000
+      },
+      {
+        "artist": "Alkaline",
+        "title": "Things Mi Love",
+        "views": 28000000
+      }
     ]
   },
   {
@@ -245,11 +561,31 @@
     "bpm": 105,
     "description": "Un riddim rapide et percussif qui a été un favori des sound systems.",
     "voicings": [
-      { "artist": "Busy Signal", "title": "Jail", "views": 25000000 },
-      { "artist": "Vybz Kartel", "title": "Go Go Wine", "views": 19000000 },
-      { "artist": "Elephant Man", "title": "Pon Di River", "views": 8900000 },
-      { "artist": "Konshens", "title": "Do Sumn", "views": 7200000 },
-      { "artist": "Demarco", "title": "Fallen Soldiers", "views": 4500000 }
+      {
+        "artist": "Busy Signal",
+        "title": "Jail",
+        "views": 25000000
+      },
+      {
+        "artist": "Vybz Kartel",
+        "title": "Go Go Wine",
+        "views": 19000000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Pon Di River",
+        "views": 8900000
+      },
+      {
+        "artist": "Konshens",
+        "title": "Do Sumn",
+        "views": 7200000
+      },
+      {
+        "artist": "Demarco",
+        "title": "Fallen Soldiers",
+        "views": 4500000
+      }
     ]
   },
   {
@@ -263,11 +599,31 @@
     "bpm": 95,
     "description": "Un riddim dancehall influent produit par Chimney Records, mêlant sonorités traditionnelles et modernes.",
     "voicings": [
-      { "artist": "Chronixx", "title": "Behind Curtain", "views": 18000000 },
-      { "artist": "Konshens", "title": "On Your Face", "views": 6800000 },
-      { "artist": "Popcaan", "title": "Ravin", "views": 12000000 },
-      { "artist": "Tommy Lee", "title": "Buss a Blank", "views": 9500000 },
-      { "artist": "Stein", "title": "Hot Up", "views": 3200000 }
+      {
+        "artist": "Chronixx",
+        "title": "Behind Curtain",
+        "views": 18000000
+      },
+      {
+        "artist": "Konshens",
+        "title": "On Your Face",
+        "views": 6800000
+      },
+      {
+        "artist": "Popcaan",
+        "title": "Ravin",
+        "views": 12000000
+      },
+      {
+        "artist": "Tommy Lee",
+        "title": "Buss a Blank",
+        "views": 9500000
+      },
+      {
+        "artist": "Stein",
+        "title": "Hot Up",
+        "views": 3200000
+      }
     ]
   },
   {
@@ -281,11 +637,31 @@
     "bpm": 96,
     "description": "Un riddim dancehall percutant qui reflète les réalités de la vie dans les ghettos de Kingston.",
     "voicings": [
-      { "artist": "Mavado", "title": "Real McKoy", "views": 14000000 },
-      { "artist": "Vybz Kartel", "title": "Money Me A Look", "views": 11000000 },
-      { "artist": "Busy Signal", "title": "Money Flow", "views": 7800000 },
-      { "artist": "Elephant Man", "title": "Rah Rah", "views": 5400000 },
-      { "artist": "Bounty Killer", "title": "Gully Sit'n", "views": 4100000 }
+      {
+        "artist": "Mavado",
+        "title": "Real McKoy",
+        "views": 14000000
+      },
+      {
+        "artist": "Vybz Kartel",
+        "title": "Money Me A Look",
+        "views": 11000000
+      },
+      {
+        "artist": "Busy Signal",
+        "title": "Money Flow",
+        "views": 7800000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Rah Rah",
+        "views": 5400000
+      },
+      {
+        "artist": "Bounty Killer",
+        "title": "Gully Sit'n",
+        "views": 4100000
+      }
     ]
   },
   {
@@ -299,12 +675,36 @@
     "bpm": 80,
     "description": "Un riddim doux typique du lovers rock, parfait pour les slow jams jamaïcains.",
     "voicings": [
-      { "artist": "Beres Hammond", "title": "I Feel Good", "views": 24000000 },
-      { "artist": "Tarrus Riley", "title": "Start Anew", "views": 8500000 },
-      { "artist": "Jah Cure", "title": "Longing For", "views": 12000000 },
-      { "artist": "Alaine", "title": "Sacrifice", "views": 6700000 },
-      { "artist": "Romain Virgo", "title": "Wanna Go Home", "views": 4300000 },
-      { "artist": "Cecile", "title": "Change the World", "views": 2900000 }
+      {
+        "artist": "Beres Hammond",
+        "title": "I Feel Good",
+        "views": 24000000
+      },
+      {
+        "artist": "Tarrus Riley",
+        "title": "Start Anew",
+        "views": 8500000
+      },
+      {
+        "artist": "Jah Cure",
+        "title": "Longing For",
+        "views": 12000000
+      },
+      {
+        "artist": "Alaine",
+        "title": "Sacrifice",
+        "views": 6700000
+      },
+      {
+        "artist": "Romain Virgo",
+        "title": "Wanna Go Home",
+        "views": 4300000
+      },
+      {
+        "artist": "Cecile",
+        "title": "Change the World",
+        "views": 2900000
+      }
     ]
   },
   {
@@ -318,11 +718,31 @@
     "bpm": 100,
     "description": "Un riddim dancehall lourd et agressif, populaire dans les sound clashes.",
     "voicings": [
-      { "artist": "Vybz Kartel", "title": "Clarks", "views": 55000000 },
-      { "artist": "Popcaan", "title": "Clarks (ft. Gaza Slim)", "views": 18000000 },
-      { "artist": "Tommy Lee Sparta", "title": "Some Bwoy", "views": 7200000 },
-      { "artist": "Shawn Storm", "title": "Nah Lef", "views": 3800000 },
-      { "artist": "Lisa Hyper", "title": "Wine and Kotch", "views": 5100000 }
+      {
+        "artist": "Vybz Kartel",
+        "title": "Clarks",
+        "views": 55000000
+      },
+      {
+        "artist": "Popcaan",
+        "title": "Clarks (ft. Gaza Slim)",
+        "views": 18000000
+      },
+      {
+        "artist": "Tommy Lee Sparta",
+        "title": "Some Bwoy",
+        "views": 7200000
+      },
+      {
+        "artist": "Shawn Storm",
+        "title": "Nah Lef",
+        "views": 3800000
+      },
+      {
+        "artist": "Lisa Hyper",
+        "title": "Wine and Kotch",
+        "views": 5100000
+      }
     ]
   },
   {
@@ -336,11 +756,31 @@
     "bpm": 102,
     "description": "Un riddim signé Rvssian qui a contribué à l'internationalisation du dancehall moderne.",
     "voicings": [
-      { "artist": "Sean Paul", "title": "Other Side of Love", "views": 48000000 },
-      { "artist": "Konshens", "title": "Gal a Bubble", "views": 72000000 },
-      { "artist": "Aidonia", "title": "Boom Boom", "views": 12000000 },
-      { "artist": "I-Octane", "title": "Wine Slow", "views": 8900000 },
-      { "artist": "Demarco", "title": "Duppy Know Who Fi Frighten", "views": 6500000 }
+      {
+        "artist": "Sean Paul",
+        "title": "Other Side of Love",
+        "views": 48000000
+      },
+      {
+        "artist": "Konshens",
+        "title": "Gal a Bubble",
+        "views": 72000000
+      },
+      {
+        "artist": "Aidonia",
+        "title": "Boom Boom",
+        "views": 12000000
+      },
+      {
+        "artist": "I-Octane",
+        "title": "Wine Slow",
+        "views": 8900000
+      },
+      {
+        "artist": "Demarco",
+        "title": "Duppy Know Who Fi Frighten",
+        "views": 6500000
+      }
     ]
   },
   {
@@ -354,11 +794,31 @@
     "bpm": 74,
     "description": "Un riddim roots emblématique du Studio One, nommé d'après le mouvement de libération angolais.",
     "voicings": [
-      { "artist": "The Abyssinians", "title": "Declaration of Rights", "views": 8500000 },
-      { "artist": "Admiral Tibet", "title": "Serious Times", "views": 3200000 },
-      { "artist": "Junior Byles", "title": "Fade Away", "views": 4100000 },
-      { "artist": "Burning Spear", "title": "Slavery Days", "views": 15000000 },
-      { "artist": "Carlton & The Shoes", "title": "Love Me Forever", "views": 7600000 }
+      {
+        "artist": "The Abyssinians",
+        "title": "Declaration of Rights",
+        "views": 8500000
+      },
+      {
+        "artist": "Admiral Tibet",
+        "title": "Serious Times",
+        "views": 3200000
+      },
+      {
+        "artist": "Junior Byles",
+        "title": "Fade Away",
+        "views": 4100000
+      },
+      {
+        "artist": "Burning Spear",
+        "title": "Slavery Days",
+        "views": 15000000
+      },
+      {
+        "artist": "Carlton & The Shoes",
+        "title": "Love Me Forever",
+        "views": 7600000
+      }
     ]
   },
   {
@@ -372,12 +832,1948 @@
     "bpm": 94,
     "description": "Un riddim ragga percutant du duo légendaire Steely & Clevie, incontournable des années 90.",
     "voicings": [
-      { "artist": "Mr. Vegas", "title": "Heads High", "views": 42000000 },
-      { "artist": "Beenie Man", "title": "Who Am I (Sim Simma)", "views": 88000000 },
-      { "artist": "Lady Saw", "title": "Sycamore Tree", "views": 5600000 },
-      { "artist": "Bounty Killer", "title": "It's a Party", "views": 7200000 },
-      { "artist": "General Degree", "title": "Miyagi", "views": 3800000 },
-      { "artist": "Buju Banton", "title": "Champion", "views": 18000000 }
+      {
+        "artist": "Mr. Vegas",
+        "title": "Heads High",
+        "views": 42000000
+      },
+      {
+        "artist": "Beenie Man",
+        "title": "Who Am I (Sim Simma)",
+        "views": 88000000
+      },
+      {
+        "artist": "Lady Saw",
+        "title": "Sycamore Tree",
+        "views": 5600000
+      },
+      {
+        "artist": "Bounty Killer",
+        "title": "It's a Party",
+        "views": 7200000
+      },
+      {
+        "artist": "General Degree",
+        "title": "Miyagi",
+        "views": 3800000
+      },
+      {
+        "artist": "Buju Banton",
+        "title": "Champion",
+        "views": 18000000
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Relationship",
+    "year": 2008,
+    "producer": "Arif Cooper",
+    "label": "Fresh Ear Productions",
+    "type": "digital",
+    "genre": "lovers rock",
+    "bpm": 80,
+    "description": "Un riddim lovers rock doux et romantique produit par Arif Cooper, ayant généré une compilation massive avec 18 voicings.",
+    "voicings": [
+      {
+        "artist": "Sean Paul",
+        "title": "Hold My Hand",
+        "views": 28000000
+      },
+      {
+        "artist": "Collie Buddz",
+        "title": "Now She's Gone",
+        "views": 5200000
+      },
+      {
+        "artist": "Christopher Martin",
+        "title": "Watch Me Lord",
+        "views": 3800000
+      },
+      {
+        "artist": "Alaine",
+        "title": "Love Loud And Clear",
+        "views": 4100000
+      },
+      {
+        "artist": "Ce'Cile",
+        "title": "Promise",
+        "views": 2400000
+      },
+      {
+        "artist": "T.O.K",
+        "title": "Single Moms (Keep Your Head Up)",
+        "views": 3600000
+      },
+      {
+        "artist": "Duane Stephenson",
+        "title": "Forever Yours (Return)",
+        "views": 2900000
+      },
+      {
+        "artist": "Voicemail",
+        "title": "Grow Old With You",
+        "views": 1800000
+      },
+      {
+        "artist": "Charly Black",
+        "title": "Mind So Free",
+        "views": 1500000
+      },
+      {
+        "artist": "I-Wayne",
+        "title": "What Will They Do",
+        "views": 1200000
+      },
+      {
+        "artist": "Nadine Sutherland",
+        "title": "Down On My Knees",
+        "views": 980000
+      },
+      {
+        "artist": "J-Status ft. Shontelle",
+        "title": "Pieces (Remix)",
+        "views": 1400000
+      },
+      {
+        "artist": "Daville",
+        "title": "Just Another Day",
+        "views": 850000
+      },
+      {
+        "artist": "Ginjah",
+        "title": "Guilty Conscience",
+        "views": 720000
+      },
+      {
+        "artist": "Sanjay",
+        "title": "Slipping Away",
+        "views": 540000
+      },
+      {
+        "artist": "Wyre",
+        "title": "Uprising",
+        "views": 380000
+      },
+      {
+        "artist": "Karl Morrison",
+        "title": "When U Smile",
+        "views": 310000
+      },
+      {
+        "artist": "Munehiro",
+        "title": "Secret Lover",
+        "views": 250000
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Brighter Days",
+    "year": 2013,
+    "producer": "Silly Walks Discotheque",
+    "label": "Silly Walks Discotheque",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 84,
+    "description": "Un riddim reggae roots feel-good produit en Allemagne par Silly Walks Discotheque, porté par le hit de Busy Signal.",
+    "voicings": [
+      {
+        "artist": "Busy Signal & RC",
+        "title": "Dreams Of Brighter Days",
+        "views": 18000000
+      },
+      {
+        "artist": "Romain Virgo",
+        "title": "Soul Provider",
+        "views": 6500000
+      },
+      {
+        "artist": "Christopher Martin",
+        "title": "Look On My Face",
+        "views": 4200000
+      },
+      {
+        "artist": "Exco Levi",
+        "title": "Jah Nah Sleep",
+        "views": 1800000
+      },
+      {
+        "artist": "Fiji & J Boog",
+        "title": "Lonely Days",
+        "views": 2400000
+      },
+      {
+        "artist": "Loyal Flames",
+        "title": "Break Free",
+        "views": 650000
+      },
+      {
+        "artist": "Hezron",
+        "title": "Everytime",
+        "views": 480000
+      },
+      {
+        "artist": "Etzia",
+        "title": "Go Away",
+        "views": 320000
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Cardiac Bass",
+    "year": 2010,
+    "producer": "ZJ Chrome",
+    "label": "CR203 Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 90,
+    "description": "Un riddim dancehall mélodique produit par ZJ Chrome qui a marqué les charts avec des titres comme Paper Loving de Christopher Martin.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "Not A Love Song",
+        "views": 8500000
+      },
+      {
+        "artist": "Vybz Kartel",
+        "title": "She Holding On",
+        "views": 5200000
+      },
+      {
+        "artist": "Christopher Martin",
+        "title": "Paper Loving",
+        "views": 22000000
+      },
+      {
+        "artist": "Jah Cure",
+        "title": "Before I Leave",
+        "views": 7800000
+      },
+      {
+        "artist": "Alaine",
+        "title": "Up",
+        "views": 3600000
+      },
+      {
+        "artist": "I-Octane",
+        "title": "Hold Her In My Arms",
+        "views": 2800000
+      },
+      {
+        "artist": "Ce'Cile",
+        "title": "When You're Gone",
+        "views": 1500000
+      },
+      {
+        "artist": "Bugle",
+        "title": "Always There",
+        "views": 1200000
+      },
+      {
+        "artist": "Lutan Fyah",
+        "title": "Ungrateful",
+        "views": 850000
+      },
+      {
+        "artist": "Keida",
+        "title": "75",
+        "views": 620000
+      },
+      {
+        "artist": "Craig (Voicemail)",
+        "title": "In This Life",
+        "views": 480000
+      },
+      {
+        "artist": "Raine Seville",
+        "title": "Listen",
+        "views": 350000
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Danger Luv",
+    "year": 2011,
+    "producer": "Troy Hinds",
+    "label": "Troyton Music",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 80,
+    "description": "Un riddim dancehall émotionnel de Troyton Music, mêlant énergie raw et mélodies lovers.",
+    "voicings": [
+      {
+        "artist": "Mavado",
+        "title": "Luv Me Girl",
+        "views": 9500000
+      },
+      {
+        "artist": "Tarrus Riley",
+        "title": "Dangerous Luv",
+        "views": 6200000
+      },
+      {
+        "artist": "Konshens",
+        "title": "Trust No One",
+        "views": 4800000
+      },
+      {
+        "artist": "Aidonia",
+        "title": "Stay In My Arms",
+        "views": 3200000
+      },
+      {
+        "artist": "I-Octane",
+        "title": "Who Wanna See I Fall",
+        "views": 2600000
+      },
+      {
+        "artist": "Bugle",
+        "title": "Call Him",
+        "views": 1400000
+      },
+      {
+        "artist": "Khago",
+        "title": "Nothing Like Life",
+        "views": 1100000
+      },
+      {
+        "artist": "Lutan Fyah",
+        "title": "No Wah Settle Down",
+        "views": 780000
+      },
+      {
+        "artist": "Bencil & Mr. G",
+        "title": "Life Of A Ghetto Soldier",
+        "views": 420000
+      },
+      {
+        "artist": "T Nez",
+        "title": "Press Play Pause",
+        "views": 350000
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Scriptures",
+    "year": 2013,
+    "producer": "Don Corleon",
+    "label": "Don Corleon Records",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 75,
+    "description": "Un riddim roots reggae spirituel produit par Don Corleon, porté par des voix puissantes comme Jah Cure et Chronixx.",
+    "voicings": [
+      {
+        "artist": "Jah Cure",
+        "title": "Stronger",
+        "views": 12000000
+      },
+      {
+        "artist": "Chronixx",
+        "title": "Most I",
+        "views": 8500000
+      },
+      {
+        "artist": "Morgan Heritage",
+        "title": "Ends Nah Meet",
+        "views": 4200000
+      },
+      {
+        "artist": "Tessanne Chin",
+        "title": "Call On Him",
+        "views": 3100000
+      },
+      {
+        "artist": "T.O.K",
+        "title": "Crying Out",
+        "views": 1800000
+      },
+      {
+        "artist": "Duane Stephenson",
+        "title": "To The Lord",
+        "views": 1500000
+      },
+      {
+        "artist": "Jah Vinci",
+        "title": "Nice Again",
+        "views": 920000
+      },
+      {
+        "artist": "Da Professor",
+        "title": "I Know Why",
+        "views": 380000
+      },
+      {
+        "artist": "Mitch",
+        "title": "Never Never",
+        "views": 210000
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Movie Star",
+    "year": 2009,
+    "producer": "Jordan McClure & David Hayle",
+    "label": "Chimney Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 95,
+    "description": "Un riddim dancehall énergique de Chimney Records avec une compilation massive de 18 voicings incluant Vybz Kartel et Mavado.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "Like A Movie",
+        "views": 15000000
+      },
+      {
+        "artist": "Mavado",
+        "title": "Let Me Go",
+        "views": 7200000
+      },
+      {
+        "artist": "Mavado",
+        "title": "Dem A Talk",
+        "views": 5800000
+      },
+      {
+        "artist": "Serani",
+        "title": "Give Me",
+        "views": 4500000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Walk Out",
+        "views": 3200000
+      },
+      {
+        "artist": "Demarco",
+        "title": "How U Hot So",
+        "views": 2800000
+      },
+      {
+        "artist": "Ishawna",
+        "title": "I Want You",
+        "views": 1900000
+      },
+      {
+        "artist": "Wayne Marshall",
+        "title": "Party",
+        "views": 1500000
+      },
+      {
+        "artist": "Black Ryno",
+        "title": "Can I",
+        "views": 1200000
+      },
+      {
+        "artist": "Bugle",
+        "title": "Dem A Fight",
+        "views": 850000
+      },
+      {
+        "artist": "Raine Seville",
+        "title": "Curious",
+        "views": 620000
+      },
+      {
+        "artist": "Leftside",
+        "title": "What A Way",
+        "views": 780000
+      },
+      {
+        "artist": "Jah Vinci & Shawn Storm",
+        "title": "Gaza Wine",
+        "views": 950000
+      },
+      {
+        "artist": "Delly Ranx ft. Jr",
+        "title": "Enemies",
+        "views": 420000
+      },
+      {
+        "artist": "Stein",
+        "title": "Easy",
+        "views": 380000
+      },
+      {
+        "artist": "Esco",
+        "title": "Dirty Weave",
+        "views": 250000
+      },
+      {
+        "artist": "Fire Linx",
+        "title": "Street Team Life",
+        "views": 120000
+      },
+      {
+        "artist": "Flex",
+        "title": "Gyallis 4 Eva",
+        "views": 180000
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Overproof",
+    "year": 2011,
+    "producer": "Justus Arison",
+    "label": "JA Productions / Full Strength",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 95,
+    "description": "Un riddim dancehall massif avec 20 voicings réunissant les plus grands noms de la scène jamaïcaine.",
+    "voicings": [
+      {
+        "artist": "Sean Paul & Zia Benjamin",
+        "title": "Standing There",
+        "views": 12000000
+      },
+      {
+        "artist": "Vybz Kartel ft. Gaza Indu",
+        "title": "Turn It Front Way",
+        "views": 8500000
+      },
+      {
+        "artist": "Mavado",
+        "title": "Settle Down (Destiny)",
+        "views": 6800000
+      },
+      {
+        "artist": "Beenie Man",
+        "title": "Let's Go",
+        "views": 4200000
+      },
+      {
+        "artist": "Bounty Killer",
+        "title": "Just A Sing Bout Gal",
+        "views": 2800000
+      },
+      {
+        "artist": "Aidonia",
+        "title": "Caribbean Girls",
+        "views": 5500000
+      },
+      {
+        "artist": "Gyptian",
+        "title": "All Over",
+        "views": 3600000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Dat Me Seh",
+        "views": 2200000
+      },
+      {
+        "artist": "Lady Saw",
+        "title": "Love Sick",
+        "views": 1800000
+      },
+      {
+        "artist": "Konshens",
+        "title": "Bad Gal",
+        "views": 3400000
+      },
+      {
+        "artist": "Demarco",
+        "title": "Nuff Gal",
+        "views": 1500000
+      },
+      {
+        "artist": "Tifa",
+        "title": "Dash Out",
+        "views": 2100000
+      },
+      {
+        "artist": "Kiprich",
+        "title": "Real Swagga",
+        "views": 950000
+      },
+      {
+        "artist": "Khago",
+        "title": "Tun Up Di Ting",
+        "views": 780000
+      },
+      {
+        "artist": "Wayne Marshall & Kurup",
+        "title": "Right Back",
+        "views": 620000
+      },
+      {
+        "artist": "Munga",
+        "title": "Party Hard",
+        "views": 850000
+      },
+      {
+        "artist": "Shurwayne Winchester",
+        "title": "Wine On It",
+        "views": 420000
+      },
+      {
+        "artist": "T'Nez",
+        "title": "Nah Leave",
+        "views": 350000
+      },
+      {
+        "artist": "Stein",
+        "title": "Party Hard Everyday",
+        "views": 280000
+      },
+      {
+        "artist": "Daniel Bedingfield",
+        "title": "Sometimes You Just Know",
+        "views": 450000
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Heart and Soul",
+    "year": 2011,
+    "producer": "Notice",
+    "label": "Notice Productions",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 85,
+    "description": "Un riddim reggae-dancehall émotionnel de Notice Productions avec 19 voicings mêlant amour et conscience.",
+    "voicings": [
+      {
+        "artist": "Jah Cure",
+        "title": "From My Heart",
+        "views": 11000000
+      },
+      {
+        "artist": "Busy Signal",
+        "title": "Missing You",
+        "views": 8200000
+      },
+      {
+        "artist": "Christopher Martin",
+        "title": "Girlfriends",
+        "views": 5400000
+      },
+      {
+        "artist": "Etana",
+        "title": "Wifey",
+        "views": 3800000
+      },
+      {
+        "artist": "T.O.K",
+        "title": "Find A Way",
+        "views": 2200000
+      },
+      {
+        "artist": "Chuck Fenda",
+        "title": "Warning",
+        "views": 1600000
+      },
+      {
+        "artist": "Hezron",
+        "title": "Can't Come Between",
+        "views": 850000
+      },
+      {
+        "artist": "Chevaughn",
+        "title": "When You're Here",
+        "views": 720000
+      },
+      {
+        "artist": "Future Fambo",
+        "title": "Puff Puff Pass",
+        "views": 580000
+      },
+      {
+        "artist": "D Major",
+        "title": "That's What Loves About",
+        "views": 450000
+      },
+      {
+        "artist": "Iba Mahr",
+        "title": "Burning",
+        "views": 380000
+      },
+      {
+        "artist": "Million Stylez",
+        "title": "Where's My Wife",
+        "views": 620000
+      },
+      {
+        "artist": "Richie Loop",
+        "title": "Your Love I Miss",
+        "views": 340000
+      },
+      {
+        "artist": "Ras Penco",
+        "title": "Marijuana",
+        "views": 280000
+      },
+      {
+        "artist": "Further Notice",
+        "title": "In This World",
+        "views": 150000
+      },
+      {
+        "artist": "Sugaroy & Conrad Crystal",
+        "title": "World Prayer",
+        "views": 120000
+      },
+      {
+        "artist": "Fire T",
+        "title": "She Is So Fine",
+        "views": 95000
+      },
+      {
+        "artist": "Omari",
+        "title": "Heart & Soul",
+        "views": 85000
+      },
+      {
+        "artist": "Brown Shuga",
+        "title": "Baby Come To Me",
+        "views": 72000
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "name": "City Life",
+    "year": 2010,
+    "producer": "2 Hard Records",
+    "label": "2 Hard Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 85,
+    "description": "Un riddim dancehall-reggae de 2 Hard Records porté par Sean Paul et Tarrus Riley.",
+    "voicings": [
+      {
+        "artist": "Sean Paul",
+        "title": "Beat Of My Heart",
+        "views": 15000000
+      },
+      {
+        "artist": "Tarrus Riley",
+        "title": "Who's Responsible",
+        "views": 4800000
+      },
+      {
+        "artist": "Queen Ifrica",
+        "title": "Times Like These",
+        "views": 2600000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Let Me Be The Man",
+        "views": 1800000
+      },
+      {
+        "artist": "Assassin (Agent Sasco)",
+        "title": "Something's Gotta Give",
+        "views": 1200000
+      },
+      {
+        "artist": "Wayne Marshall",
+        "title": "Telepathic",
+        "views": 950000
+      },
+      {
+        "artist": "Tony Rebel",
+        "title": "Love Soldier",
+        "views": 620000
+      },
+      {
+        "artist": "Denyque",
+        "title": "Supergirl",
+        "views": 480000
+      },
+      {
+        "artist": "Natel",
+        "title": "Miles Away",
+        "views": 210000
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Good Love",
+    "year": 2009,
+    "producer": "Yard Vybz Entertainment",
+    "label": "Yard Vybz Entertainment",
+    "type": "digital",
+    "genre": "lovers rock",
+    "bpm": 80,
+    "description": "Un riddim lovers rock doux de Yard Vybz Entertainment avec des voix romantiques de Jah Cure et Gyptian.",
+    "voicings": [
+      {
+        "artist": "Jah Cure ft. Phyllisia",
+        "title": "Call On Me",
+        "views": 18000000
+      },
+      {
+        "artist": "Gyptian",
+        "title": "Butterfly",
+        "views": 8500000
+      },
+      {
+        "artist": "Christopher Martin",
+        "title": "Melody To My Song",
+        "views": 3200000
+      },
+      {
+        "artist": "Wayne Marshall",
+        "title": "Good Love",
+        "views": 1800000
+      },
+      {
+        "artist": "Tanya Stephens",
+        "title": "Reminiscing",
+        "views": 1200000
+      },
+      {
+        "artist": "Tami Chin",
+        "title": "Forever Ur Girl",
+        "views": 650000
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Anger Management",
+    "year": 2004,
+    "producer": "Craig Marsh, Serani & David Constantine",
+    "label": "Daseca Productions",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 100,
+    "description": "Un riddim dancehall agressif de Daseca Productions avec 20 voicings regroupant les poids lourds du dancehall.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "Naah Shot A Soul",
+        "views": 6800000
+      },
+      {
+        "artist": "Vybz Kartel",
+        "title": "Mrs. Jaw",
+        "views": 4500000
+      },
+      {
+        "artist": "Bounty Killer",
+        "title": "Talk To Dem",
+        "views": 3200000
+      },
+      {
+        "artist": "Beenie Man ft. Martina",
+        "title": "Gangsta Life",
+        "views": 2800000
+      },
+      {
+        "artist": "Mavado",
+        "title": "Real McKoy",
+        "views": 5500000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Dirt Bed",
+        "views": 2100000
+      },
+      {
+        "artist": "Wayne Marshall",
+        "title": "Gangsta's Paradise",
+        "views": 1500000
+      },
+      {
+        "artist": "Alaine",
+        "title": "Anything (Only For You)",
+        "views": 3800000
+      },
+      {
+        "artist": "Sizzla",
+        "title": "Gun Shot",
+        "views": 1800000
+      },
+      {
+        "artist": "Kiprich",
+        "title": "Wouldn't Find Out",
+        "views": 920000
+      },
+      {
+        "artist": "Bling Dawg",
+        "title": "Mi Nuh Care",
+        "views": 680000
+      },
+      {
+        "artist": "Singer J",
+        "title": "Tek It Too Far",
+        "views": 450000
+      },
+      {
+        "artist": "Da'Ville",
+        "title": "New Friend",
+        "views": 380000
+      },
+      {
+        "artist": "Predator",
+        "title": "Head A Rest",
+        "views": 250000
+      },
+      {
+        "artist": "Delly Ranks",
+        "title": "Silly Clown",
+        "views": 320000
+      },
+      {
+        "artist": "Tornado & Bugle",
+        "title": "Real Badman",
+        "views": 180000
+      },
+      {
+        "artist": "Jagwa",
+        "title": "Mek Gal Bawl",
+        "views": 120000
+      },
+      {
+        "artist": "Zumjay",
+        "title": "Superstars",
+        "views": 150000
+      },
+      {
+        "artist": "Flex",
+        "title": "Wah Dem Love Mi Fah",
+        "views": 95000
+      },
+      {
+        "artist": "Kikaki",
+        "title": "Come A Mi Yard",
+        "views": 85000
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Fight Fi War",
+    "year": 2009,
+    "producer": "TJ Records",
+    "label": "TJ Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 100,
+    "description": "Un riddim dancehall brut de TJ Records dominé par Vybz Kartel avec 4 voicings, emblématique de l'ère Gaza.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "Last Man Standing",
+        "views": 9200000
+      },
+      {
+        "artist": "Vybz Kartel",
+        "title": "Sumaddy Affi Bawl",
+        "views": 5800000
+      },
+      {
+        "artist": "Vybz Kartel",
+        "title": "Mama",
+        "views": 12000000
+      },
+      {
+        "artist": "Vybz Kartel",
+        "title": "Don Run",
+        "views": 4200000
+      },
+      {
+        "artist": "Popcaan",
+        "title": "My War",
+        "views": 3500000
+      },
+      {
+        "artist": "Blak Ryno & Jah Vinci",
+        "title": "Fight Fi War",
+        "views": 1800000
+      },
+      {
+        "artist": "Blak Ryno",
+        "title": "Money Haffi Mek",
+        "views": 1200000
+      },
+      {
+        "artist": "Jah Vinci",
+        "title": "Money",
+        "views": 850000
+      },
+      {
+        "artist": "Dosa Medicine",
+        "title": "Dem Diss",
+        "views": 320000
+      },
+      {
+        "artist": "Meeshach",
+        "title": "Beg Fi Peace",
+        "views": 180000
+      },
+      {
+        "artist": "Youngy",
+        "title": "Real Bitch",
+        "views": 120000
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Military",
+    "year": 2004,
+    "producer": "Christopher Birch & Shane Brown",
+    "label": "Birchill Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 100,
+    "description": "Un riddim dancehall puissant de Birchill Records avec 20 voicings incluant la crème du dancehall mid-2000s.",
+    "voicings": [
+      {
+        "artist": "Sean Paul",
+        "title": "U A Pro (Dip It Low)",
+        "views": 18000000
+      },
+      {
+        "artist": "Vybz Kartel",
+        "title": "4 Star (General Fi Di Army)",
+        "views": 7500000
+      },
+      {
+        "artist": "Bounty Killer",
+        "title": "Warlord Walk",
+        "views": 3800000
+      },
+      {
+        "artist": "Beenie Man",
+        "title": "Bun Judas",
+        "views": 2500000
+      },
+      {
+        "artist": "Sizzla",
+        "title": "I'm With The Girls",
+        "views": 1800000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Badmind Anthem",
+        "views": 3200000
+      },
+      {
+        "artist": "T.O.K",
+        "title": "Inna Mi Bed",
+        "views": 2800000
+      },
+      {
+        "artist": "Lady Saw",
+        "title": "Pound Fi Pound",
+        "views": 1500000
+      },
+      {
+        "artist": "Assassin (Agent Sasco)",
+        "title": "Step Pon Dem",
+        "views": 1200000
+      },
+      {
+        "artist": "Mad Cobra",
+        "title": "Put Gun Shot",
+        "views": 850000
+      },
+      {
+        "artist": "Tanya Stephens",
+        "title": "T.A.N.Y.A.",
+        "views": 1100000
+      },
+      {
+        "artist": "Capleton",
+        "title": "They Don't Know Me",
+        "views": 920000
+      },
+      {
+        "artist": "Macka Diamond",
+        "title": "Mr Teki Back",
+        "views": 680000
+      },
+      {
+        "artist": "Ce'Cile",
+        "title": "Tell Me",
+        "views": 750000
+      },
+      {
+        "artist": "Brick & Lace",
+        "title": "Swat",
+        "views": 520000
+      },
+      {
+        "artist": "Ward 21",
+        "title": "May I",
+        "views": 420000
+      },
+      {
+        "artist": "Kiprich",
+        "title": "If Yuh Si",
+        "views": 380000
+      },
+      {
+        "artist": "Tanto Metro & Devonte",
+        "title": "Let It Go",
+        "views": 650000
+      },
+      {
+        "artist": "Tami Chynn",
+        "title": "Goodie Good",
+        "views": 480000
+      },
+      {
+        "artist": "General Degree",
+        "title": "Pressure Dem",
+        "views": 350000
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Tropical Escape",
+    "year": 2013,
+    "producer": "Jordan McClure & David Hayle",
+    "label": "Chimney Records",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 80,
+    "description": "Un riddim reggae revival emblématique de Chimney Records, symbole du renouveau roots porté par Tarrus Riley et Chronixx.",
+    "voicings": [
+      {
+        "artist": "Tarrus Riley",
+        "title": "Gimme Likkle One Drop",
+        "views": 22000000
+      },
+      {
+        "artist": "Chronixx",
+        "title": "Ain't No Giving In",
+        "views": 15000000
+      },
+      {
+        "artist": "Christopher Martin",
+        "title": "Too Big",
+        "views": 4500000
+      },
+      {
+        "artist": "Romain Virgo",
+        "title": "Everlasting Love",
+        "views": 6800000
+      },
+      {
+        "artist": "Alaine",
+        "title": "Amazing",
+        "views": 3200000
+      },
+      {
+        "artist": "Ce'Cile",
+        "title": "Life Is So Precious",
+        "views": 1100000
+      },
+      {
+        "artist": "I-Octane",
+        "title": "What About The Poor",
+        "views": 1800000
+      },
+      {
+        "artist": "Queen Ifrica",
+        "title": "Let's Get Silly",
+        "views": 920000
+      },
+      {
+        "artist": "Kabaka Pyramid",
+        "title": "No Capitalist",
+        "views": 1500000
+      },
+      {
+        "artist": "D Major",
+        "title": "Can't Let Me Go",
+        "views": 650000
+      },
+      {
+        "artist": "Zagga",
+        "title": "Never Give Up",
+        "views": 380000
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Cure Pain",
+    "year": 2016,
+    "producer": "Good Good Productions",
+    "label": "Good Good Productions",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 100,
+    "description": "Un riddim dancehall moderne de Good Good Productions avec 16 voicings mêlant ancienne et nouvelle génération.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "I'll Take You There",
+        "views": 11000000
+      },
+      {
+        "artist": "Mavado",
+        "title": "Big League",
+        "views": 7500000
+      },
+      {
+        "artist": "Alkaline",
+        "title": "My Side Of The Story",
+        "views": 5200000
+      },
+      {
+        "artist": "Sizzla",
+        "title": "No Phase Me",
+        "views": 2800000
+      },
+      {
+        "artist": "Demarco",
+        "title": "Bun Friend Killa",
+        "views": 1800000
+      },
+      {
+        "artist": "Christopher Martin",
+        "title": "One Life",
+        "views": 3500000
+      },
+      {
+        "artist": "I-Octane",
+        "title": "No Badda Dan Jah",
+        "views": 1500000
+      },
+      {
+        "artist": "Masicka",
+        "title": "Everything Mi Want",
+        "views": 2200000
+      },
+      {
+        "artist": "Ky-Mani Marley",
+        "title": "Rule My Heart",
+        "views": 1800000
+      },
+      {
+        "artist": "Jahmiel",
+        "title": "Where Were U",
+        "views": 1200000
+      },
+      {
+        "artist": "Bugle",
+        "title": "Priority",
+        "views": 850000
+      },
+      {
+        "artist": "Vershon",
+        "title": "Tie Mi",
+        "views": 620000
+      },
+      {
+        "artist": "Ryming King",
+        "title": "Substance",
+        "views": 280000
+      },
+      {
+        "artist": "Kapella Don",
+        "title": "In My Life",
+        "views": 180000
+      },
+      {
+        "artist": "Showtime Damion",
+        "title": "Live Mi Life",
+        "views": 120000
+      },
+      {
+        "artist": "Bryka",
+        "title": "Shall & I Will",
+        "views": 95000
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Gaza World",
+    "year": 2011,
+    "producer": "TJ Records",
+    "label": "TJ Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 105,
+    "description": "Un riddim dancehall Gaza de TJ Records dominé par Vybz Kartel, Popcaan et Tommy Lee Sparta.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "Life",
+        "views": 8500000
+      },
+      {
+        "artist": "Vybz Kartel",
+        "title": "Real Bad Man",
+        "views": 6200000
+      },
+      {
+        "artist": "Popcaan",
+        "title": "Cah Believe",
+        "views": 4800000
+      },
+      {
+        "artist": "Tommy Lee Sparta",
+        "title": "Money Make Friend",
+        "views": 3500000
+      },
+      {
+        "artist": "Popcaan",
+        "title": "Middle Day",
+        "views": 2800000
+      },
+      {
+        "artist": "Jah Vinci",
+        "title": "Money Me A Pree",
+        "views": 1500000
+      },
+      {
+        "artist": "Sheba",
+        "title": "Money",
+        "views": 450000
+      },
+      {
+        "artist": "G Whizz",
+        "title": "Bartender",
+        "views": 320000
+      },
+      {
+        "artist": "Chan Dizzy",
+        "title": "Dat Mi Know",
+        "views": 280000
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Remedy",
+    "year": 2010,
+    "producer": "Rvssian (Anju Blaxx)",
+    "label": "Head Concussion Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 95,
+    "description": "Un riddim dancehall brut de Head Concussion Records avec Vybz Kartel, Popcaan et Aidonia.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "Grab Up Yuh Crotches",
+        "views": 7800000
+      },
+      {
+        "artist": "Popcaan",
+        "title": "Dem Sell We Out",
+        "views": 3500000
+      },
+      {
+        "artist": "Aidonia",
+        "title": "Nuh Trust Fren",
+        "views": 2800000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Dem A Wicked",
+        "views": 1500000
+      },
+      {
+        "artist": "Jah Vinci",
+        "title": "Remedy",
+        "views": 920000
+      },
+      {
+        "artist": "Chan Dizzy",
+        "title": "All Dem A Chat",
+        "views": 580000
+      },
+      {
+        "artist": "Chan Dizzy",
+        "title": "No Sah",
+        "views": 420000
+      },
+      {
+        "artist": "Suhverto",
+        "title": "Hypocrite Fren",
+        "views": 150000
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "name": "EDF",
+    "year": 2011,
+    "producer": "DJ Vtrine",
+    "label": "Vtrine Prod / Shatta Sound",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 100,
+    "description": "Un riddim shatta-dancehall antillais produit par DJ Vtrine, mêlant artistes jamaïcains et antillais dans un style unique.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "EDF Riddim (voicing exclusive)",
+        "views": 3200000
+      },
+      {
+        "artist": "Panik-J ft. Politik Nai",
+        "title": "DJ Pull Up",
+        "views": 1800000
+      },
+      {
+        "artist": "Varsko Kidman",
+        "title": "Bay Dwet",
+        "views": 850000
+      },
+      {
+        "artist": "Admiral T",
+        "title": "Perle Rare",
+        "views": 4500000
+      },
+      {
+        "artist": "Calif",
+        "title": "Ça Vient Du Ghetto",
+        "views": 620000
+      },
+      {
+        "artist": "Celo",
+        "title": "Tchune K Baw Li",
+        "views": 350000
+      },
+      {
+        "artist": "Elvys",
+        "title": "Fanm Madinina",
+        "views": 280000
+      },
+      {
+        "artist": "Panik-J",
+        "title": "Nou En Le Sa",
+        "views": 420000
+      },
+      {
+        "artist": "Leerod Banton",
+        "title": "Artiste Local",
+        "views": 180000
+      },
+      {
+        "artist": "Taï J",
+        "title": "Meh Luv Di Pumpum",
+        "views": 150000
+      },
+      {
+        "artist": "Toupi",
+        "title": "More Faya",
+        "views": 120000
+      },
+      {
+        "artist": "Celo",
+        "title": "Pa Fè So",
+        "views": 210000
+      },
+      {
+        "artist": "Kryssy",
+        "title": "Géré Sa",
+        "views": 95000
+      },
+      {
+        "artist": "M.T",
+        "title": "Ba Lé Pattes",
+        "views": 85000
+      },
+      {
+        "artist": "T-Toxyk",
+        "title": "Système",
+        "views": 72000
+      },
+      {
+        "artist": "Mr Chao",
+        "title": "Pé Pa Test Mada",
+        "views": 65000
+      },
+      {
+        "artist": "Ti Blica",
+        "title": "Nou Ka Fon",
+        "views": 58000
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Day Rave",
+    "year": 2008,
+    "producer": "Stephen 'Di Genius' McGregor",
+    "label": "Di Genius Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 116,
+    "description": "Un riddim dancehall rapide et percutant de Di Genius, favori des sound systems avec Mavado en tête d'affiche.",
+    "voicings": [
+      {
+        "artist": "Mavado",
+        "title": "Real Killa (No Chorus)",
+        "views": 12000000
+      },
+      {
+        "artist": "Vybz Kartel & Jah Vinci",
+        "title": "Weh Dem A Go",
+        "views": 5500000
+      },
+      {
+        "artist": "Busy Signal",
+        "title": "Mek She Stamma",
+        "views": 4200000
+      },
+      {
+        "artist": "Elephant Man & Ding Dong",
+        "title": "Dip Again",
+        "views": 3800000
+      },
+      {
+        "artist": "Aidonia",
+        "title": "Gyal Seh Woiii",
+        "views": 2600000
+      },
+      {
+        "artist": "Blak Ryno",
+        "title": "Thug Anthem",
+        "views": 1800000
+      },
+      {
+        "artist": "Tony Matterhorn",
+        "title": "Never Stop",
+        "views": 1200000
+      },
+      {
+        "artist": "Voicemail",
+        "title": "Tell Dem Fi Gweh",
+        "views": 850000
+      },
+      {
+        "artist": "Chino",
+        "title": "Wine And Touch Ur Toe",
+        "views": 680000
+      },
+      {
+        "artist": "Laden",
+        "title": "Neva Dash Weh",
+        "views": 520000
+      },
+      {
+        "artist": "Bramma",
+        "title": "Whatever",
+        "views": 350000
+      },
+      {
+        "artist": "Mr. Easy",
+        "title": "Screw Pan Face",
+        "views": 280000
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Boxing Day",
+    "year": 2009,
+    "producer": "Notnice (Ainsley Morris)",
+    "label": "Adidijahiem Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 100,
+    "description": "Un riddim dancehall Gaza hardcore produit par Notnice, avec une énergie brute et agressive.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "Sumaddy A Guh Get Gunshot",
+        "views": 5800000
+      },
+      {
+        "artist": "Popcaan & Dosa Medicine",
+        "title": "Inna Grave Dem A Guh",
+        "views": 2200000
+      },
+      {
+        "artist": "Shawn Storm",
+        "title": "Mek Dem Mumma Bawl",
+        "views": 1500000
+      },
+      {
+        "artist": "Blak Ryno",
+        "title": "When Mi Buss My Gun",
+        "views": 1200000
+      },
+      {
+        "artist": "Dotta Coppa",
+        "title": "When The Chrome A Spit",
+        "views": 450000
+      },
+      {
+        "artist": "Merital Family",
+        "title": "Dem A Bawl",
+        "views": 380000
+      },
+      {
+        "artist": "Avalanche",
+        "title": "Dunns River Fall",
+        "views": 220000
+      },
+      {
+        "artist": "Jah Vinci",
+        "title": "Start War",
+        "views": 650000
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "name": "England Town",
+    "year": 2009,
+    "producer": "Notnice (Ainsley Morris)",
+    "label": "Adijahiem / Notnice Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 100,
+    "description": "Un riddim dancehall Gaza de Notnice avec 15 voicings, dominé par Vybz Kartel et Popcaan.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "Nah Let Go",
+        "views": 8500000
+      },
+      {
+        "artist": "Vybz Kartel ft. Sheba",
+        "title": "Gal A Weh Me Do You",
+        "views": 4200000
+      },
+      {
+        "artist": "Popcaan",
+        "title": "Nuh Ordinary Girl",
+        "views": 3500000
+      },
+      {
+        "artist": "Blak Ryno & Jah Vinci",
+        "title": "Mi Feel A Way",
+        "views": 1200000
+      },
+      {
+        "artist": "Lisa Hyper",
+        "title": "Man Short",
+        "views": 1800000
+      },
+      {
+        "artist": "Shawn Storm",
+        "title": "What Mi Really Like",
+        "views": 920000
+      },
+      {
+        "artist": "Merciless",
+        "title": "Di Letter",
+        "views": 650000
+      },
+      {
+        "artist": "Lutan Fyah",
+        "title": "Nuh Fraid",
+        "views": 480000
+      },
+      {
+        "artist": "Gaza Kim",
+        "title": "Amen",
+        "views": 250000
+      },
+      {
+        "artist": "Flippa Mafia",
+        "title": "Extra",
+        "views": 380000
+      },
+      {
+        "artist": "Flippa Mafia",
+        "title": "The Gal Dem",
+        "views": 320000
+      },
+      {
+        "artist": "Dosa Medicine",
+        "title": "Finer Type",
+        "views": 180000
+      },
+      {
+        "artist": "Bookey & Maxwell",
+        "title": "Flossing All Day",
+        "views": 120000
+      },
+      {
+        "artist": "Cindy Rella",
+        "title": "I'm Gonna Love You",
+        "views": 95000
+      },
+      {
+        "artist": "Likkle Dainjah",
+        "title": "All I Need",
+        "views": 85000
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Guardian Angel",
+    "year": 2007,
+    "producer": "Arif Cooper",
+    "label": "Fresh Ear Productions / VP Records",
+    "type": "digital",
+    "genre": "lovers rock",
+    "bpm": 85,
+    "description": "Un riddim lovers rock/reggae classique d'Arif Cooper avec 19 voicings, dominé par le hit de Jah Cure.",
+    "voicings": [
+      {
+        "artist": "Jah Cure",
+        "title": "To Your Arms With Love",
+        "views": 25000000
+      },
+      {
+        "artist": "Vybz Kartel",
+        "title": "Missing You A Lot",
+        "views": 8500000
+      },
+      {
+        "artist": "T.O.K",
+        "title": "Guardian Angel",
+        "views": 12000000
+      },
+      {
+        "artist": "Richie Spice",
+        "title": "The World Is A Cycle",
+        "views": 5200000
+      },
+      {
+        "artist": "Alaine",
+        "title": "Rise In Love",
+        "views": 6800000
+      },
+      {
+        "artist": "Christopher Martin",
+        "title": "Take My Love",
+        "views": 3500000
+      },
+      {
+        "artist": "Wayne Marshall",
+        "title": "Give Me Strength",
+        "views": 1800000
+      },
+      {
+        "artist": "Da'Ville",
+        "title": "Give Thanks For What You've Got",
+        "views": 2200000
+      },
+      {
+        "artist": "Voicemail",
+        "title": "Best Days Of My Life",
+        "views": 1500000
+      },
+      {
+        "artist": "Tami Chynn",
+        "title": "Over And Over Again",
+        "views": 1200000
+      },
+      {
+        "artist": "Million Stylez",
+        "title": "Give Thanks For Life",
+        "views": 850000
+      },
+      {
+        "artist": "Sanjay",
+        "title": "Man Of My Word",
+        "views": 620000
+      },
+      {
+        "artist": "General Degree",
+        "title": "Always",
+        "views": 480000
+      },
+      {
+        "artist": "Jamelody",
+        "title": "My King",
+        "views": 350000
+      },
+      {
+        "artist": "Camar",
+        "title": "Before You Go Away",
+        "views": 280000
+      },
+      {
+        "artist": "Karl Morrison",
+        "title": "Your Love",
+        "views": 220000
+      },
+      {
+        "artist": "Sadiki",
+        "title": "Mary's Story",
+        "views": 180000
+      },
+      {
+        "artist": "Jah Hem",
+        "title": "Missing You",
+        "views": 150000
+      },
+      {
+        "artist": "Ricky B",
+        "title": "How Do I",
+        "views": 95000
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Set Me Free",
+    "year": 2010,
+    "producer": "Stephen 'Di Genius' McGregor",
+    "label": "Heart Of Love Productions / Greensleeves Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 95,
+    "description": "Un riddim dancehall de Di Genius avec 15 voicings incluant Mavado, Vybz Kartel et Elephant Man.",
+    "voicings": [
+      {
+        "artist": "Mavado",
+        "title": "House Cleaning",
+        "views": 8500000
+      },
+      {
+        "artist": "Vybz Kartel",
+        "title": "Love Dem",
+        "views": 5200000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Gyal Waah Wi",
+        "views": 2800000
+      },
+      {
+        "artist": "Beenie Man & Versitile",
+        "title": "My Money A Mine",
+        "views": 2200000
+      },
+      {
+        "artist": "Mr. Vegas",
+        "title": "Won't Back Down",
+        "views": 1800000
+      },
+      {
+        "artist": "Ding Dong",
+        "title": "How Yuh Bad So",
+        "views": 1500000
+      },
+      {
+        "artist": "Assassin (Agent Sasco)",
+        "title": "Hand To Mouth",
+        "views": 1200000
+      },
+      {
+        "artist": "Wayne Marshall",
+        "title": "Dem Lost",
+        "views": 850000
+      },
+      {
+        "artist": "Bugle",
+        "title": "Mirror",
+        "views": 620000
+      },
+      {
+        "artist": "Suku (Ward 21)",
+        "title": "Walk And Live",
+        "views": 450000
+      },
+      {
+        "artist": "Flippa Mafia",
+        "title": "Dem Style Ya",
+        "views": 320000
+      },
+      {
+        "artist": "Bramma",
+        "title": "Friendz To The End",
+        "views": 280000
+      },
+      {
+        "artist": "Patex",
+        "title": "Tell Mi How",
+        "views": 180000
+      },
+      {
+        "artist": "Jim Cro",
+        "title": "Ask Bad Mind",
+        "views": 120000
+      },
+      {
+        "artist": "Ataru ft. Bibi Gardener",
+        "title": "Dem Get Caught",
+        "views": 85000
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Klappaz",
+    "year": 2011,
+    "producer": "Anju Blaxx (A. Myrie)",
+    "label": "UIM Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 95,
+    "description": "Un riddim dancehall hard de UIM Records avec Vybz Kartel, Sizzla et Tommy Lee en tête d'affiche.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "Duh Weh U Wah Fi Duh",
+        "views": 6500000
+      },
+      {
+        "artist": "Sizzla",
+        "title": "Highway (Blessings My Way)",
+        "views": 3800000
+      },
+      {
+        "artist": "Tommy Lee",
+        "title": "Grave Yard",
+        "views": 4500000
+      },
+      {
+        "artist": "Jahmiel",
+        "title": "Dem Bad Mind",
+        "views": 1800000
+      },
+      {
+        "artist": "Versatile",
+        "title": "Nuh Bad",
+        "views": 920000
+      },
+      {
+        "artist": "Future Fambo",
+        "title": "Party Tonight",
+        "views": 680000
+      },
+      {
+        "artist": "Blak Diamon",
+        "title": "Pre-Me-Fah",
+        "views": 420000
+      },
+      {
+        "artist": "Merital",
+        "title": "Bad Like We",
+        "views": 280000
+      },
+      {
+        "artist": "Kid Kurpt",
+        "title": "Nuh Fuck & Stuck",
+        "views": 180000
+      },
+      {
+        "artist": "Cregis",
+        "title": "Nah Beg",
+        "views": 120000
+      }
     ]
   }
 ]

@@ -147,4 +147,5 @@ function renderRiddimPage(riddim) {
     `;
 }
 
+buildShareButton();
 loadRiddim();
