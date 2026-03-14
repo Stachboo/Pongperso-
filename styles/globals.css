@@ -1,0 +1,258 @@
+/* ══════════════════════════════════════════════════════════════════════════════
+   WMC — GLOBAL STYLES
+   World Music Contest — Jamaican Riddim Database
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   IMPORTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@import url("tokens.css");
+@import url("typography.css");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap");
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESET — Modern CSS Reset
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HEADINGS — Bebas Neue
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display-condensed);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+}
+
+h4 {
+  font-size: var(--font-size-xl);
+}
+
+h5 {
+  font-size: var(--font-size-lg);
+}
+
+h6 {
+  font-size: var(--font-size-md);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LINKS — Or par défaut
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+a {
+  color: var(--color-brand-gold);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-brand-gold-light);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-brand-gold);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   GRAIN OVERLAY — Texture subtile
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.grain-overlay {
+  position: relative;
+  isolation: isolate;
+}
+
+.grain-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-above);
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   GLOW EFFECTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.glow-gold {
+  box-shadow: var(--shadow-gold);
+}
+
+.glow-green {
+  box-shadow: var(--shadow-green);
+}
+
+.glow-red {
+  box-shadow: var(--shadow-red);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   GRADIENTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.gradient-jam {
+  background: linear-gradient(135deg, var(--color-brand-gold) 0%, var(--color-brand-green) 100%);
+}
+
+.gradient-jam-text {
+  background: linear-gradient(135deg, var(--color-brand-gold) 0%, var(--color-brand-green) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-fire {
+  background: linear-gradient(135deg, var(--color-brand-red) 0%, var(--color-brand-gold) 100%);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SCRIPT ACCENT — Dancing Script
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.text-script {
+  font-family: var(--font-display-script);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-brand-gold);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CARD BASE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.card-base {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  transition: border-color var(--transition-base),
+              transform var(--transition-base),
+              box-shadow var(--transition-base);
+}
+
+.card-base:hover {
+  border-color: var(--color-border-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SCROLLBAR — Custom
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-text-muted);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SELECTION
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+::selection {
+  background: rgba(245, 166, 35, 0.3);
+  color: var(--color-text-primary);
+}
