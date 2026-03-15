@@ -1,0 +1,71 @@
+/* ══════════════════════════════════════════════════════════════════════════════
+   WMC — PAGE PRODUCTEURS (LISTE)
+   Grille 2 colonnes desktop / 1 colonne mobile
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   EN-TÊTE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.header {
+  margin-bottom: var(--space-10);
+}
+
+.title {
+  font-family: var(--font-display-condensed);
+  font-weight: var(--font-weight-regular);
+  font-size: clamp(2.5rem, 6vw, 3rem);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  line-height: 1;
+  display: inline;
+}
+
+.titleScript {
+  font-family: var(--font-display-script);
+  font-size: var(--font-size-xl);
+  color: var(--color-brand-gold);
+  margin-left: var(--space-3);
+}
+
+.brushStroke {
+  display: block;
+  width: 260px;
+  height: 12px;
+  margin-top: var(--space-2);
+}
+
+.counter {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+  margin-top: var(--space-3);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   GRILLE DE CARTES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
