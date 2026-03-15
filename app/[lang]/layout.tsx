@@ -28,7 +28,7 @@ export default async function LangLayout({
     <>
       <Header lang={locale} dict={dict} />
       <main>{children}</main>
-      <Footer dict={dict} />
+      <Footer lang={locale} dict={dict} />
       <ShareButton dict={dict} />
     </>
   );
