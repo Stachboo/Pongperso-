@@ -21,8 +21,8 @@ interface ProducerDetailProps {
 function styleBadgeClass(style: string): string {
   const s = style.toLowerCase();
   if (s === 'dancehall') return styles.badgeGold;
-  if (s === 'reggae' || s === 'lovers rock' || s === 'reggae revival') return styles.badgeGreen;
-  if (s === 'r&b' || s === 'pop' || s === 'latin') return styles.badgeRed;
+  if (s === 'reggae' || s === 'lovers rock' || s === 'reggae revival' || s === 'roots reggae') return styles.badgeGreen;
+  if (s === 'r&b' || s === 'pop' || s === 'latin' || s === 'shatta' || s === 'dancehall antillais') return styles.badgeRed;
   return styles.badgeMuted;
 }
 
@@ -58,10 +58,8 @@ export default function ProducerDetail({ producer, lang }: ProducerDetailProps) 
 
         {/* Label + Origine + Période */}
         <div className={styles.metaRow}>
-          <span className={styles.metaItem}>{producer.label}</span>
-          <span className={styles.metaSep} aria-hidden="true">·</span>
+          <span className={styles.metaPill}>{producer.label}</span>
           <span className={styles.metaItem}>{producer.origin}</span>
-          <span className={styles.metaSep} aria-hidden="true">·</span>
           <span className={styles.metaItem}>{producer.active}</span>
         </div>
 
@@ -79,7 +77,7 @@ export default function ProducerDetail({ producer, lang }: ProducerDetailProps) 
       <section aria-label="Histoire du producteur">
         <h2 className={styles.sectionTitle}>
           Histoire
-          <span className={styles.sectionAccent}>le parcours</span>
+          <span className={styles.sectionAccent}>&amp; contexte</span>
         </h2>
         <p className={styles.descriptionText}>{producer.description}</p>
       </section>
@@ -92,8 +90,8 @@ export default function ProducerDetail({ producer, lang }: ProducerDetailProps) 
         <ul className={styles.achievementList} role="list">
           {producer.achievements.map((achievement) => (
             <li key={achievement} className={styles.achievementItem}>
-              <svg className={styles.starIcon} width="14" height="14" viewBox="0 0 24 24" fill="var(--color-brand-gold)" aria-hidden="true">
-                <path d="M12 2l2.09 6.26L20.18 9l-5.09 3.74L17.18 19 12 15.27 6.82 19l2.09-6.26L3.82 9l6.09-.74z" />
+              <svg className={styles.starIcon} width="12" height="12" viewBox="0 0 24 24" fill="var(--color-brand-gold)" aria-hidden="true">
+                <path d="M12 0l3 9h9l-7.5 5.5L19.5 24 12 18l-7.5 6 3-9.5L0 9h9z" />
               </svg>
               <span>{achievement}</span>
             </li>
@@ -105,7 +103,7 @@ export default function ProducerDetail({ producer, lang }: ProducerDetailProps) 
 
       {/* ═══ SECTION D — Riddims dans WMC ═══ */}
       <section aria-label="Riddims documentés">
-        <h2 className={styles.sectionTitle}>
+        <h2 className={styles.sectionTitleLg}>
           Riddims documentés
           <span className={styles.riddimCount}>{matchedRiddims.length}</span>
         </h2>

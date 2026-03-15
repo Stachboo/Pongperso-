@@ -77,11 +77,12 @@
 .producerName {
   font-family: var(--font-display-condensed);
   font-weight: var(--font-weight-regular);
-  font-size: clamp(40px, 6vw, 64px);
+  font-size: clamp(36px, 5vw, 64px);
   letter-spacing: var(--letter-spacing-wide);
   text-transform: uppercase;
   color: var(--color-text-primary);
   line-height: 0.95;
+  margin: 0;
 }
 
 
@@ -95,15 +96,20 @@
   flex-wrap: wrap;
 }
 
-.metaItem {
+.metaPill {
   font-family: var(--font-body);
-  font-size: var(--font-size-base);
-  color: var(--color-text-secondary);
+  font-size: 13px;
+  color: var(--color-brand-gold);
+  background: rgba(245, 166, 35, 0.1);
+  border: 1px solid rgba(245, 166, 35, 0.3);
+  border-radius: var(--radius-full);
+  padding: 3px 12px;
 }
 
-.metaSep {
-  color: var(--color-brand-gold);
-  font-size: var(--font-size-base);
+.metaItem {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-text-muted);
 }
 
 
@@ -149,9 +155,19 @@
   line-height: var(--line-height-heading);
 }
 
+.sectionTitleLg {
+  font-family: var(--font-display-condensed);
+  font-size: 24px;
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-6);
+  line-height: var(--line-height-heading);
+}
+
 .sectionAccent {
   font-family: var(--font-display-script);
-  font-size: var(--font-size-lg);
+  font-size: 16px;
   color: var(--color-brand-gold);
   text-transform: none;
   letter-spacing: normal;
@@ -168,7 +184,8 @@
   font-size: 16px;
   color: var(--color-text-secondary);
   line-height: 1.75;
-  max-width: 720px;
+  max-width: 680px;
+  margin: 0;
 }
 
 
@@ -227,7 +244,7 @@
 .riddimGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-4);
+  gap: 16px;
 }
 
 /* Fallback quand aucun riddim n'est trouvé dans la BDD */
@@ -245,6 +262,7 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: var(--space-3);
+  margin-top: 0;
 }
 
 .fallbackPills {
@@ -283,8 +301,8 @@
   border-radius: var(--radius-full);
   padding: 6px 16px;
   text-decoration: none;
-  transition: border-color var(--transition-fast) ease,
-              color var(--transition-fast) ease;
+  transition: border-color 200ms ease,
+              color 200ms ease;
 }
 
 .artistPill:hover {
@@ -308,16 +326,9 @@
   }
 
   .metaRow {
-    gap: var(--space-2);
-  }
-
-  .metaSep {
-    display: none;
-  }
-
-  .metaRow {
     flex-direction: column;
     align-items: flex-start;
+    gap: var(--space-2);
   }
 
   .riddimGrid {

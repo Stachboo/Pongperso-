@@ -11,8 +11,8 @@
   padding: 24px;
   text-decoration: none;
   color: inherit;
-  transition: transform var(--transition-base) ease,
-              box-shadow var(--transition-base) ease;
+  transition: transform 250ms ease,
+              box-shadow 250ms ease;
 }
 
 .card:hover {
@@ -49,6 +49,7 @@
   letter-spacing: var(--letter-spacing-wide);
   text-transform: uppercase;
   line-height: 1.1;
+  margin: 0;
 }
 
 .labelBadge {
@@ -69,22 +70,24 @@
 
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   META — Origine + Période (icônes SVG)
+   META — Origine + Période
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .meta {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-top: 4px;
+  gap: 8px;
+  margin-top: 6px;
   flex-wrap: wrap;
 }
 
 .metaItem {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
   font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.metaDot {
   font-size: 12px;
   color: var(--color-text-muted);
 }
@@ -100,6 +103,7 @@
   color: var(--color-text-secondary);
   line-height: 1.6;
   margin-top: 12px;
+  margin-bottom: 0;
 }
 
 
@@ -128,6 +132,10 @@
 }
 
 .riddimPill {
+  display: inline-flex;
+}
+
+.riddimPillLink {
   font-family: var(--font-body);
   font-size: 12px;
   color: var(--color-text-secondary);
@@ -136,12 +144,13 @@
   border-radius: var(--radius-sm);
   padding: 4px 10px;
   text-decoration: none;
-  transition: border-color var(--transition-fast) ease,
-              color var(--transition-fast) ease;
+  transition: border-color 200ms ease,
+              color 200ms ease;
 }
 
-.card:hover .riddimPill {
-  border-color: rgba(245, 166, 35, 0.3);
+.riddimPillLink:hover {
+  border-color: var(--color-brand-gold);
+  color: var(--color-brand-gold);
 }
 
 
@@ -171,11 +180,10 @@
   font-family: var(--font-body);
   font-size: 13px;
   color: var(--color-brand-gold);
-  text-decoration: none;
 }
 
 .ctaArrow {
-  transition: transform var(--transition-fast) ease;
+  transition: transform 200ms ease;
 }
 
 .card:hover .ctaArrow {
@@ -192,7 +200,7 @@
     transition: none;
   }
 
-  .riddimPill {
+  .riddimPillLink {
     transition: none;
   }
 

@@ -8,7 +8,7 @@ import styles from './page.module.css';
 
 /* ══════════════════════════════════════════════════════════════════════════════
    WMC — PAGE PRODUCTEURS (LISTE)
-   Les 7 labels majeurs du dancehall et reggae jamaïcain
+   18 labels et producteurs du dancehall et reggae jamaïcain
    ══════════════════════════════════════════════════════════════════════════════ */
 
 export async function generateMetadata({
@@ -23,7 +23,7 @@ export async function generateMetadata({
   return {
     title: 'Producteurs — Les labels derrière les riddims jamaïcains | WMC',
     description:
-      'Découvrez les 7 labels et producteurs qui ont façonné le dancehall jamaïcain : Notnice, Di Genius, Chimney Records, Daseca, Birchill, Rvssian et Arif Cooper. Leurs riddims, artistes et histoire.',
+      'Découvrez les 18 labels et producteurs qui ont façonné le dancehall jamaïcain : Notnice, Di Genius, Chimney Records, Daseca, Birchill, Rvssian, Arif Cooper et bien d\'autres. Leurs riddims, artistes et histoire.',
     alternates: {
       canonical: `https://wmc-iota.vercel.app/${locale}/producteurs`,
       languages: hreflang,

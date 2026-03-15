@@ -12,10 +12,19 @@ import ProducerDetail from '@/components/ProducerDetail';
    ══════════════════════════════════════════════════════════════════════════════ */
 
 /** Producteurs individuels → Person, labels multi-personnes → Organization */
-const INDIVIDUAL_PRODUCERS = new Set(['notnice', 'di-genius', 'rvssian', 'arif-cooper']);
+const INDIVIDUAL_PRODUCERS = new Set([
+  'notnice-records',
+  'di-genius-records',
+  'rvssian-head-concussion',
+  'arif-cooper',
+  'zj-chrome-cr203',
+  'troyton-music',
+  'don-corleon-records',
+  'dj-vtrine',
+]);
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   generateStaticParams — 7 producteurs × 5 langues = 35 routes
+   generateStaticParams — 18 producteurs × 5 langues = 90 routes
    ═══════════════════════════════════════════════════════════════════════════ */
 
 export async function generateStaticParams() {
