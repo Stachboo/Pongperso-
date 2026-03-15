@@ -25,31 +25,31 @@ interface FooterColumn {
 export default function Footer({ lang, dict }: FooterProps) {
   const columns: FooterColumn[] = [
     {
-      title: 'Explorer',
+      title: dict.footerColExplore,
       links: [
-        { label: 'Explorer les riddims', href: `/${lang}/explorer` },
-        { label: 'Top Dancehall', href: `/${lang}/explorer?genre=dancehall` },
-        { label: 'Top Reggae', href: `/${lang}/explorer?genre=reggae` },
-        { label: 'Lovers Rock', href: `/${lang}/explorer?genre=lovers+rock` },
-        { label: 'Par décennie', href: `/${lang}/explorer?decade=1990` },
+        { label: dict.exploreRiddims, href: `/${lang}/explorer` },
+        { label: dict.footerTopDancehall, href: `/${lang}/explorer?genre=dancehall` },
+        { label: dict.footerTopReggae, href: `/${lang}/explorer?genre=reggae` },
+        { label: dict.footerLoversRock, href: `/${lang}/explorer?genre=lovers+rock` },
+        { label: dict.footerByDecade, href: `/${lang}/explorer?decade=1990` },
       ],
     },
     {
-      title: 'Informations',
+      title: dict.footerColInfo,
       links: [
-        { label: 'À propos', href: `/${lang}/about` },
-        { label: 'Méthodologie', href: `/${lang}/about#methodologie` },
-        { label: 'Ajouter un riddim', href: `/${lang}/about#contribuer` },
-        { label: 'Contact', href: `/${lang}/about#contact` },
-        { label: 'Presse', href: `/${lang}/about#presse` },
+        { label: dict.navAbout, href: `/${lang}/about` },
+        { label: dict.footerMethodology, href: `/${lang}/about#methodologie` },
+        { label: dict.footerAddRiddim, href: `/${lang}/about#contribuer` },
+        { label: dict.footerContact, href: `/${lang}/about#contact` },
+        { label: dict.footerPress, href: `/${lang}/about#presse` },
       ],
     },
     {
-      title: 'Légal',
+      title: dict.footerColLegal,
       links: [
-        { label: 'Mentions légales', href: `/${lang}/mentions-legales` },
-        { label: 'Politique de confidentialité', href: `/${lang}/confidentialite` },
-        { label: "Conditions d'utilisation", href: `/${lang}/conditions` },
+        { label: dict.footerLegalNotices, href: `/${lang}/mentions-legales` },
+        { label: dict.footerPrivacy, href: `/${lang}/confidentialite` },
+        { label: dict.footerTerms, href: `/${lang}/conditions` },
         { label: 'Sitemap', href: '/sitemap.xml' },
       ],
     },
@@ -76,9 +76,7 @@ export default function Footer({ lang, dict }: FooterProps) {
           <div className={styles.brandBlock}>
             <Logo variant="full" size={80} />
             <p className={styles.brandDesc}>
-              WMC est la base de données de référence des riddims jamaïcains.
-              Nous documentons chaque riddim, chaque voicing, classés
-              par popularité de streaming mondiale.
+              {dict.footerBrandDesc}
             </p>
           </div>
 
@@ -113,22 +111,22 @@ export default function Footer({ lang, dict }: FooterProps) {
           <div className={styles.miniStats}>
             <div className={styles.miniStat}>
               <span className={styles.miniStatValue}>500+</span>
-              <span className={styles.miniStatLabel}>Riddims</span>
+              <span className={styles.miniStatLabel}>{dict.statsRiddimsShort}</span>
             </div>
             <div className={styles.miniStat}>
               <span className={styles.miniStatValue}>5 000+</span>
-              <span className={styles.miniStatLabel}>Voicings</span>
+              <span className={styles.miniStatLabel}>{dict.statsVoicingsShort}</span>
             </div>
             <div className={styles.miniStat}>
               <span className={styles.miniStatValue}>5</span>
-              <span className={styles.miniStatLabel}>Langues</span>
+              <span className={styles.miniStatLabel}>{dict.footerLanguages}</span>
             </div>
           </div>
         </div>
 
         {/* ═══ BLOC 3 — Disclaimer ═══ */}
         <p className={styles.disclaimer}>
-          {dict.footerNote} WMC n&apos;est affilié à aucun label.
+          {dict.footerNote} {dict.footerDisclaimer}
         </p>
       </div>
     </footer>

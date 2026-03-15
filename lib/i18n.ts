@@ -119,6 +119,29 @@ export interface Dictionary {
   rank: string;
   artist: string;
   title: string;
+  /* Navigation */
+  navArtists: string;
+  navProducers: string;
+  navAbout: string;
+  navExplorerShort: string;
+  /* Footer */
+  footerColExplore: string;
+  footerColInfo: string;
+  footerColLegal: string;
+  footerTopDancehall: string;
+  footerTopReggae: string;
+  footerLoversRock: string;
+  footerByDecade: string;
+  footerMethodology: string;
+  footerAddRiddim: string;
+  footerContact: string;
+  footerPress: string;
+  footerLegalNotices: string;
+  footerPrivacy: string;
+  footerTerms: string;
+  footerBrandDesc: string;
+  footerLanguages: string;
+  footerDisclaimer: string;
 }
 
 const dictionaries: Record<Locale, Dictionary> = {
@@ -230,6 +253,27 @@ const dictionaries: Record<Locale, Dictionary> = {
     rank: '#',
     artist: 'Artiste',
     title: 'Titre',
+    navArtists: 'Artistes',
+    navProducers: 'Producteurs',
+    navAbout: 'À propos',
+    navExplorerShort: 'Explorer',
+    footerColExplore: 'Explorer',
+    footerColInfo: 'Informations',
+    footerColLegal: 'Légal',
+    footerTopDancehall: 'Top Dancehall',
+    footerTopReggae: 'Top Reggae',
+    footerLoversRock: 'Lovers Rock',
+    footerByDecade: 'Par décennie',
+    footerMethodology: 'Méthodologie',
+    footerAddRiddim: 'Ajouter un riddim',
+    footerContact: 'Contact',
+    footerPress: 'Presse',
+    footerLegalNotices: 'Mentions légales',
+    footerPrivacy: 'Politique de confidentialité',
+    footerTerms: "Conditions d'utilisation",
+    footerBrandDesc: 'WMC est la base de données de référence des riddims jamaïcains. Nous documentons chaque riddim, chaque voicing, classés par popularité de streaming mondiale.',
+    footerLanguages: 'Langues',
+    footerDisclaimer: "WMC n'est affilié à aucun label.",
   },
 
   en: {
@@ -340,6 +384,27 @@ const dictionaries: Record<Locale, Dictionary> = {
     rank: '#',
     artist: 'Artist',
     title: 'Title',
+    navArtists: 'Artists',
+    navProducers: 'Producers',
+    navAbout: 'About',
+    navExplorerShort: 'Explore',
+    footerColExplore: 'Explore',
+    footerColInfo: 'Information',
+    footerColLegal: 'Legal',
+    footerTopDancehall: 'Top Dancehall',
+    footerTopReggae: 'Top Reggae',
+    footerLoversRock: 'Lovers Rock',
+    footerByDecade: 'By decade',
+    footerMethodology: 'Methodology',
+    footerAddRiddim: 'Add a riddim',
+    footerContact: 'Contact',
+    footerPress: 'Press',
+    footerLegalNotices: 'Legal notices',
+    footerPrivacy: 'Privacy policy',
+    footerTerms: 'Terms of use',
+    footerBrandDesc: 'WMC is the reference database for Jamaican riddims. We document every riddim, every voicing, ranked by global streaming popularity.',
+    footerLanguages: 'Languages',
+    footerDisclaimer: 'WMC is not affiliated with any label.',
   },
 
   es: {
@@ -450,6 +515,27 @@ const dictionaries: Record<Locale, Dictionary> = {
     rank: '#',
     artist: 'Artista',
     title: 'Título',
+    navArtists: 'Artistas',
+    navProducers: 'Productores',
+    navAbout: 'Acerca de',
+    navExplorerShort: 'Explorar',
+    footerColExplore: 'Explorar',
+    footerColInfo: 'Información',
+    footerColLegal: 'Legal',
+    footerTopDancehall: 'Top Dancehall',
+    footerTopReggae: 'Top Reggae',
+    footerLoversRock: 'Lovers Rock',
+    footerByDecade: 'Por década',
+    footerMethodology: 'Metodología',
+    footerAddRiddim: 'Añadir un riddim',
+    footerContact: 'Contacto',
+    footerPress: 'Prensa',
+    footerLegalNotices: 'Aviso legal',
+    footerPrivacy: 'Política de privacidad',
+    footerTerms: 'Condiciones de uso',
+    footerBrandDesc: 'WMC es la base de datos de referencia de los riddims jamaicanos. Documentamos cada riddim, cada voicing, clasificados por popularidad de streaming mundial.',
+    footerLanguages: 'Idiomas',
+    footerDisclaimer: 'WMC no está afiliado a ningún sello discográfico.',
   },
 
   pt: {
@@ -560,6 +646,27 @@ const dictionaries: Record<Locale, Dictionary> = {
     rank: '#',
     artist: 'Artista',
     title: 'Título',
+    navArtists: 'Artistas',
+    navProducers: 'Produtores',
+    navAbout: 'Sobre',
+    navExplorerShort: 'Explorar',
+    footerColExplore: 'Explorar',
+    footerColInfo: 'Informações',
+    footerColLegal: 'Legal',
+    footerTopDancehall: 'Top Dancehall',
+    footerTopReggae: 'Top Reggae',
+    footerLoversRock: 'Lovers Rock',
+    footerByDecade: 'Por década',
+    footerMethodology: 'Metodologia',
+    footerAddRiddim: 'Adicionar um riddim',
+    footerContact: 'Contato',
+    footerPress: 'Imprensa',
+    footerLegalNotices: 'Avisos legais',
+    footerPrivacy: 'Política de privacidade',
+    footerTerms: 'Termos de uso',
+    footerBrandDesc: 'WMC é o banco de dados de referência dos riddims jamaicanos. Documentamos cada riddim, cada voicing, classificados por popularidade de streaming mundial.',
+    footerLanguages: 'Idiomas',
+    footerDisclaimer: 'WMC não é afiliado a nenhuma gravadora.',
   },
 
   ja: {
@@ -670,6 +777,27 @@ const dictionaries: Record<Locale, Dictionary> = {
     rank: '#',
     artist: 'アーティスト',
     title: 'タイトル',
+    navArtists: 'アーティスト',
+    navProducers: 'プロデューサー',
+    navAbout: '概要',
+    navExplorerShort: '探索',
+    footerColExplore: '探索',
+    footerColInfo: '情報',
+    footerColLegal: '法的情報',
+    footerTopDancehall: 'Top Dancehall',
+    footerTopReggae: 'Top Reggae',
+    footerLoversRock: 'Lovers Rock',
+    footerByDecade: '年代別',
+    footerMethodology: '方法論',
+    footerAddRiddim: 'リディムを追加',
+    footerContact: 'お問い合わせ',
+    footerPress: 'プレス',
+    footerLegalNotices: '法的通知',
+    footerPrivacy: 'プライバシーポリシー',
+    footerTerms: '利用規約',
+    footerBrandDesc: 'WMCはジャマイカンリディムのリファレンスデータベースです。すべてのリディム、すべてのボイシングを、世界のストリーミング人気順に記録しています。',
+    footerLanguages: '言語',
+    footerDisclaimer: 'WMCはいかなるレーベルにも所属していません。',
   },
 };
 

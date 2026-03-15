@@ -29,7 +29,7 @@ export default async function LangLayout({
 
   return (
     <>
-      <Navbar lang={locale} />
+      <Navbar lang={locale} dict={dict} />
       <PageWrapper>
         {children}
       </PageWrapper>

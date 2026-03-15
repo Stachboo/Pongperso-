@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Logo from '@/components/Logo';
-import { LOCALES, type Locale } from '@/lib/i18n';
+import { LOCALES, type Locale, type Dictionary } from '@/lib/i18n';
 import styles from './Navbar.module.css';
 
 /* ══════════════════════════════════════════════════════════════════════════════
@@ -14,6 +14,7 @@ import styles from './Navbar.module.css';
 
 interface NavbarProps {
   lang: string;
+  dict: Dictionary;
 }
 
 /** Drapeaux emoji par langue */
@@ -21,13 +22,13 @@ const FLAGS: Record<Locale, string> = {
   fr: '🇫🇷', en: '🇬🇧', es: '🇪🇸', pt: '🇧🇷', ja: '🇯🇵',
 };
 
-/** Liens de navigation */
+/** Liens de navigation — les clés de dictionnaire correspondantes */
 const NAV_LINKS = [
-  { key: 'home', labelFr: 'Accueil', path: '' },
-  { key: 'explorer', labelFr: 'Explorer', path: '/explorer' },
-  { key: 'artistes', labelFr: 'Artistes', path: '/artistes' },
-  { key: 'producteurs', labelFr: 'Producteurs', path: '/producteurs' },
-  { key: 'about', labelFr: 'À propos', path: '/about' },
+  { key: 'home', dictKey: 'navHome' as const, path: '' },
+  { key: 'explorer', dictKey: 'navExplorerShort' as const, path: '/explorer' },
+  { key: 'artistes', dictKey: 'navArtists' as const, path: '/artistes' },
+  { key: 'producteurs', dictKey: 'navProducers' as const, path: '/producteurs' },
+  { key: 'about', dictKey: 'navAbout' as const, path: '/about' },
 ] as const;
 
 
@@ -35,7 +36,7 @@ const NAV_LINKS = [
    COMPOSANT PRINCIPAL
    ═══════════════════════════════════════════════════════════════════════════ */
 
-export default function Navbar({ lang }: NavbarProps) {
+export default function Navbar({ lang, dict }: NavbarProps) {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -110,7 +111,7 @@ export default function Navbar({ lang }: NavbarProps) {
 
           {/* ═══ LOGO CENTRÉ (masqué sur la home) ═══ */}
           {!isHome && (
-            <Link href={`/${lang}`} className={styles.brand} aria-label="Retour à l'accueil">
+            <Link href={`/${lang}`} className={styles.brand} aria-label={dict.backToHome}>
               <Logo variant="icon" size={36} />
             </Link>
           )}
@@ -126,7 +127,7 @@ export default function Navbar({ lang }: NavbarProps) {
                 href={`/${lang}${link.path}`}
                 className={`${styles.navLink} ${isActive(link.path) ? styles.navLinkActive : ''}`}
               >
-                {link.labelFr}
+                {dict[link.dictKey]}
               </Link>
             ))}
           </div>
@@ -150,7 +151,7 @@ export default function Navbar({ lang }: NavbarProps) {
 
             {/* Bouton CTA Explorer (desktop) */}
             <Link href={`/${lang}/explorer`} className={styles.ctaBtn}>
-              Explorer
+              {dict.navExplorerShort}
             </Link>
 
             {/* Burger (mobile) */}
@@ -158,7 +159,6 @@ export default function Navbar({ lang }: NavbarProps) {
               type="button"
               className={styles.burger}
               onClick={toggleMenu}
-              aria-label={isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
             >
@@ -176,7 +176,6 @@ export default function Navbar({ lang }: NavbarProps) {
           id="mobile-menu"
           className={styles.drawer}
           role="dialog"
-          aria-label="Menu de navigation"
         >
           <div className={styles.drawerContent}>
 
@@ -188,7 +187,7 @@ export default function Navbar({ lang }: NavbarProps) {
                   href={`/${lang}${link.path}`}
                   className={`${styles.drawerLink} ${isActive(link.path) ? styles.drawerLinkActive : ''}`}
                 >
-                  {link.labelFr}
+                  {dict[link.dictKey]}
                 </Link>
               ))}
             </div>
@@ -209,7 +208,7 @@ export default function Navbar({ lang }: NavbarProps) {
 
             {/* Bouton CTA mobile */}
             <Link href={`/${lang}/explorer`} className={styles.drawerCta}>
-              Explorer les riddims
+              {dict.exploreRiddims}
             </Link>
           </div>
         </div>
