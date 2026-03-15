@@ -261,8 +261,18 @@
 }
 
 .ctaBtn {
-  composes: cta;
+  display: inline-flex;
+  padding: var(--space-3) var(--space-8);
+  background: linear-gradient(135deg, var(--color-brand-gold), var(--color-brand-green));
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-md);
+  color: var(--color-bg-primary);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
 }
+.ctaBtn:hover { opacity: 0.9; }
 
 /* ═══ Responsive ═══ */
 @media (max-width: 768px) {

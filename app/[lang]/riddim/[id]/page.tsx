@@ -24,9 +24,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ lang: string; id: string }>;
+  params: { lang: string; id: string };
 }): Promise<Metadata> {
-  const { lang, id } = await params;
+  const { lang, id } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const dict = getDictionary(locale);
   const riddim = getRiddimById(Number(id));
@@ -44,9 +44,9 @@ export async function generateMetadata({
 export default async function RiddimPage({
   params,
 }: {
-  params: Promise<{ lang: string; id: string }>;
+  params: { lang: string; id: string };
 }) {
-  const { lang, id } = await params;
+  const { lang, id } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const dict = getDictionary(locale);
   const riddim = getRiddimById(Number(id));

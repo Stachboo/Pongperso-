@@ -11,10 +11,12 @@ interface ShareButtonProps {
 export default function ShareButton({ dict }: ShareButtonProps) {
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [currentUrl, setCurrentUrl] = useState('');
   const ref = useRef<HTMLDivElement>(null);
 
-  /* Ferme le menu au clic extérieur */
+  /* Ferme le menu au clic extérieur + récupère l'URL */
   useEffect(() => {
+    setCurrentUrl(window.location.href);
     const handler = (e: MouseEvent) => {
       if (ref.current && !ref.current.contains(e.target as Node)) {
         setOpen(false);
@@ -24,11 +26,11 @@ export default function ShareButton({ dict }: ShareButtonProps) {
     return () => document.removeEventListener('click', handler);
   }, []);
 
-  const getUrl = () => encodeURIComponent(window.location.href);
-  const getText = () => encodeURIComponent(dict.shareText);
+  const encodedUrl = encodeURIComponent(currentUrl);
+  const encodedText = encodeURIComponent(dict.shareText);
 
   const handleCopy = useCallback(() => {
-    navigator.clipboard.writeText(window.location.href).then(() => {
+    navigator.clipboard.writeText(currentUrl).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     });
@@ -40,7 +42,7 @@ export default function ShareButton({ dict }: ShareButtonProps) {
       <div className={`${styles.menu} ${open ? styles.menuOpen : ''}`}>
         <a
           className={`${styles.option} ${styles.whatsapp}`}
-          href={`https://wa.me/?text=${getText()}%20${getUrl()}`}
+          href={`https://wa.me/?text=${encodedText}%20${encodedUrl}`}
           target="_blank"
           rel="noopener noreferrer"
           title="WhatsApp"
@@ -49,7 +51,7 @@ export default function ShareButton({ dict }: ShareButtonProps) {
         </a>
         <a
           className={`${styles.option} ${styles.x}`}
-          href={`https://x.com/intent/tweet?text=${getText()}&url=${getUrl()}`}
+          href={`https://x.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`}
           target="_blank"
           rel="noopener noreferrer"
           title="X"
@@ -58,7 +60,7 @@ export default function ShareButton({ dict }: ShareButtonProps) {
         </a>
         <a
           className={`${styles.option} ${styles.facebook}`}
-          href={`https://www.facebook.com/sharer/sharer.php?u=${getUrl()}`}
+          href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
           target="_blank"
           rel="noopener noreferrer"
           title="Facebook"
