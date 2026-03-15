@@ -1,44 +1,48 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-const locales = ['fr', 'en', 'es', 'pt', 'ja'];
-const defaultLocale = 'fr';
-
 export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+  try {
+    const pathname = request.nextUrl.pathname;
 
-  // Skip static files and internal Next.js routes
-  if (
-    pathname.startsWith('/_next') ||
-    pathname.startsWith('/api') ||
-    pathname.includes('.')
-  ) {
-    return NextResponse.next();
-  }
-
-  // Check if pathname already has a locale prefix
-  for (const locale of locales) {
-    if (pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)) {
+    // Skip any path with a file extension (static assets)
+    if (pathname.includes('.')) {
       return NextResponse.next();
     }
-  }
 
-  // Detect preferred locale from Accept-Language header
-  const acceptLang = request.headers.get('accept-language') || '';
-  let detected = defaultLocale;
-  for (const locale of locales) {
-    if (acceptLang.toLowerCase().includes(locale)) {
-      detected = locale;
-      break;
+    // Skip internal paths
+    if (pathname.startsWith('/_next') || pathname.startsWith('/api') || pathname.startsWith('/_vercel')) {
+      return NextResponse.next();
     }
-  }
 
-  // Redirect to locale-prefixed path
-  const url = request.nextUrl.clone();
-  url.pathname = `/${detected}${pathname === '/' ? '' : pathname}`;
-  return NextResponse.redirect(url);
+    const locales = ['fr', 'en', 'es', 'pt', 'ja'];
+
+    // Already has a locale prefix — pass through
+    for (let i = 0; i < locales.length; i++) {
+      if (pathname === '/' + locales[i] || pathname.startsWith('/' + locales[i] + '/')) {
+        return NextResponse.next();
+      }
+    }
+
+    // Detect locale from Accept-Language
+    const acceptLang = (request.headers.get('accept-language') || '').toLowerCase();
+    let locale = 'fr';
+    for (let i = 0; i < locales.length; i++) {
+      if (acceptLang.includes(locales[i])) {
+        locale = locales[i];
+        break;
+      }
+    }
+
+    // Redirect to locale-prefixed path
+    const newPathname = '/' + locale + (pathname === '/' ? '' : pathname);
+    return NextResponse.redirect(new URL(newPathname, request.url));
+  } catch (e) {
+    // If anything fails, just pass through — never crash
+    return NextResponse.next();
+  }
 }
 
 export const config = {
-  matcher: ['/((?!_next).*)'],
+  matcher: '/',
 };
