@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const locales = ['fr', 'en', 'es', 'pt', 'ja'];
-const defaultLocale = 'fr';
+var locales = ['fr', 'en', 'es', 'pt', 'ja'];
+var defaultLocale = 'fr';
 
 export function middleware(request: NextRequest) {
   var pathname = request.nextUrl.pathname;
@@ -35,6 +35,6 @@ export function middleware(request: NextRequest) {
   return NextResponse.redirect(url);
 }
 
-export const config = {
-  matcher: '/',
+export var config = {
+  matcher: ['/', '/explorer', '/riddim/:path*'],
 };
