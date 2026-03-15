@@ -1,55 +1,171 @@
-/* WMC — Riddim Detail Page */
+/* ══════════════════════════════════════════════════════════════════════════════
+   WMC — RIDDIM DETAIL
+   Page de détail complète d'un riddim — SEO, voicings, riddims similaires
+   ══════════════════════════════════════════════════════════════════════════════ */
 
-.container {
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ARTICLE — Conteneur global
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.article {
   max-width: 900px;
   margin: 0 auto;
-  padding: var(--space-8) var(--space-6);
+  padding: 0 var(--space-6);
+  padding-bottom: var(--space-16);
 }
 
-.backLink {
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DIVIDER — Séparateur entre sections
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--color-border);
+  margin: var(--space-12) 0;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION A — Header
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.header {
+  position: relative;
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-10) var(--space-8);
+  margin-top: var(--space-8);
+  overflow: hidden;
+}
+
+.headerContent {
+  position: relative;
+  z-index: var(--z-above);
+}
+
+
+/* Triangles décoratifs */
+
+.decoTriangleLeft,
+.decoTriangleRight {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  opacity: 0.08;
+}
+
+.decoTriangleLeft {
+  top: 0;
+  left: 0;
+  fill: var(--color-brand-gold);
+}
+
+.decoTriangleRight {
+  bottom: 0;
+  right: 0;
+  fill: var(--color-brand-green);
+}
+
+
+/* Breadcrumb */
+
+.breadcrumb {
+  margin-bottom: var(--space-6);
+}
+
+.breadcrumbList {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.breadcrumbLink {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.breadcrumbLink:hover {
+  color: var(--color-brand-gold);
+}
+
+.breadcrumbSep {
+  margin: 0 var(--space-2);
+  color: var(--color-brand-gold);
+  font-size: 13px;
+}
+
+.breadcrumbCurrent {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+
+/* Nom du riddim */
+
+.riddimName {
+  font-family: var(--font-display-condensed);
+  font-weight: var(--font-weight-regular);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  line-height: 0.95;
+  position: relative;
+  display: inline-block;
+}
+
+.brushStroke {
+  display: block;
+  width: 100%;
+  height: 12px;
+  margin-top: var(--space-2);
+}
+
+.brushStroke svg {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Méta-informations */
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  margin-top: var(--space-6);
+}
+
+.metaItem {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
   font-family: var(--font-body);
   font-size: var(--font-size-base);
   color: var(--color-text-secondary);
-  text-decoration: none;
-  margin-bottom: var(--space-8);
-  transition: color var(--transition-fast);
-}
-.backLink:hover { color: var(--color-brand-gold); }
-
-/* Header */
-.header {
-  margin-bottom: var(--space-8);
 }
 
-.riddimName {
-  font-family: var(--font-display-condensed);
-  font-weight: var(--font-weight-regular);
-  font-size: var(--font-size-4xl);
-  letter-spacing: var(--letter-spacing-wide);
-  text-transform: uppercase;
-  color: var(--color-text-primary);
-  line-height: var(--line-height-display);
+.metaItem svg {
+  color: var(--color-brand-gold);
+  flex-shrink: 0;
 }
 
-.producerLabel {
-  font-family: var(--font-body);
-  font-size: var(--font-size-lg);
-  color: var(--color-text-secondary);
-  margin-top: var(--space-2);
-}
 
-/* Tags */
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  margin-top: var(--space-4);
-}
+/* Badge genre */
 
-.tag {
+.genreBadge {
   display: inline-flex;
   align-items: center;
   padding: var(--space-1) var(--space-3);
@@ -62,16 +178,19 @@
   line-height: 1;
 }
 
-.tagGold   { background: rgba(245,166,35,0.15); color: var(--color-brand-gold); }
-.tagGreen  { background: rgba(29,185,84,0.15); color: var(--color-brand-green); }
-.tagRed    { background: rgba(230,57,70,0.15); color: var(--color-brand-red); }
-.tagMuted  { background: rgba(255,255,255,0.06); color: var(--color-text-secondary); }
+.badgeGold   { background: rgba(245, 166, 35, 0.15); color: var(--color-brand-gold); }
+.badgeGreen  { background: rgba(29, 185, 84, 0.15); color: var(--color-brand-green); }
+.badgeRed    { background: rgba(230, 57, 70, 0.15); color: var(--color-brand-red); }
+.badgeMuted  { background: rgba(255, 255, 255, 0.06); color: var(--color-text-secondary); }
 
-/* Stats row */
-.stats {
+
+/* Stats rapides */
+
+.statsRow {
   display: flex;
+  align-items: center;
   gap: var(--space-6);
-  margin-top: var(--space-6);
+  margin-top: var(--space-8);
   flex-wrap: wrap;
 }
 
@@ -98,35 +217,64 @@
   text-transform: uppercase;
 }
 
-/* Description */
-.desc {
-  margin-top: var(--space-8);
-  font-family: var(--font-body);
-  font-size: var(--font-size-md);
-  color: var(--color-text-secondary);
-  line-height: var(--line-height-body-relaxed);
-  max-width: 640px;
+.statDivider {
+  width: 1px;
+  height: 32px;
+  background: var(--color-border);
 }
 
-/* Voicings */
-.voicingsSection {
-  margin-top: var(--space-10);
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION B — Contexte historique
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.contextSection {
+  /* pas de padding supplémentaire */
 }
 
-.voicingsHeading {
+.sectionTitle {
   font-family: var(--font-display-condensed);
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-xl);
   letter-spacing: var(--letter-spacing-wide);
   text-transform: uppercase;
   color: var(--color-text-primary);
   margin-bottom: var(--space-6);
+  line-height: var(--line-height-heading);
+}
+
+.sectionTitleScript {
+  font-family: var(--font-display-script);
+  font-size: var(--font-size-xl);
+  color: var(--color-brand-gold);
+  text-transform: none;
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.contextText {
+  font-family: var(--font-body);
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+  max-width: 640px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION C — Tableau des voicings
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.voicingsSection {
+  /* pas de padding supplémentaire */
 }
 
 .voicingsCount {
   color: var(--color-brand-gold);
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-lg);
   margin-left: var(--space-2);
 }
+
+
+/* Tableau */
 
 .table {
   width: 100%;
@@ -136,20 +284,37 @@
 .tableHead th {
   font-family: var(--font-body);
   font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   color: var(--color-text-muted);
-  letter-spacing: var(--letter-spacing-widest);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   text-align: left;
   padding: var(--space-2) var(--space-3);
   border-bottom: 1px solid var(--color-border);
 }
 
+.thViews {
+  text-align: right !important;
+}
+
+.thActions {
+  text-align: right !important;
+  width: 80px;
+}
+
+
+/* Lignes du tableau */
+
 .tableRow {
   transition: background var(--transition-fast);
 }
+
+.tableRow:nth-child(even) {
+  background: rgba(255, 255, 255, 0.015);
+}
+
 .tableRow:hover {
-  background: rgba(255,255,255,0.03);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .tableRow td {
@@ -161,64 +326,261 @@
   vertical-align: middle;
 }
 
+
+/* Colonne rang */
+
 .rankCell {
   width: 40px;
-  font-weight: var(--font-weight-bold);
+}
+
+.rankBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display-condensed);
+  font-size: var(--font-size-base);
+  line-height: 1;
   color: var(--color-text-muted);
 }
-.rankTop1 { color: var(--color-brand-gold); }
-.rankTop2 { color: var(--color-brand-green); }
-.rankTop3 { color: var(--color-brand-red); }
 
-.artistCell { font-weight: var(--font-weight-semibold); }
-.titleCell  { color: var(--color-text-secondary); }
+.rankGold {
+  background: var(--color-brand-gold);
+  color: #000;
+}
+
+.rankSilver {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--color-text-primary);
+}
+
+.rankBronze {
+  background: rgba(180, 100, 20, 0.4);
+  color: var(--color-text-primary);
+}
+
+
+/* Colonnes artiste et titre */
+
+.artistCell {
+  max-width: 200px;
+}
+
+.artistName {
+  font-weight: var(--font-weight-bold);
+  font-size: 15px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.titleMobile {
+  display: none;
+}
+
+.titleCell {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
 .viewsCell {
   text-align: right;
   white-space: nowrap;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
 }
 
-.viewsBar {
-  display: inline-block;
-  height: 6px;
-  border-radius: var(--radius-full);
-  background: linear-gradient(90deg, var(--color-brand-gold), var(--color-brand-green));
-  margin-right: var(--space-2);
-  vertical-align: middle;
-  min-width: 4px;
+
+/* Colonne actions */
+
+.actionsCell {
+  text-align: right;
+  white-space: nowrap;
 }
 
-.ytLink {
+.actionSpotify,
+.actionYoutube {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-1);
-  color: var(--color-brand-gold);
-  text-decoration: none;
-  font-size: var(--font-size-sm);
-  white-space: nowrap;
-  transition: opacity var(--transition-fast);
-}
-.ytLink:hover { opacity: 0.8; }
-
-/* Not found */
-.notFound {
-  text-align: center;
-  padding: var(--space-16) var(--space-6);
+  justify-content: center;
+  opacity: 0.5;
+  transition: opacity 200ms ease;
+  margin-left: var(--space-2);
 }
 
-.notFoundTitle {
-  font-family: var(--font-display-condensed);
-  font-size: var(--font-size-3xl);
+.actionSpotify:hover,
+.actionYoutube:hover {
+  opacity: 1;
+}
+
+.actionSpotify {
+  color: var(--color-brand-green);
+}
+
+.actionYoutube {
+  color: var(--color-brand-red);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION D — Riddims similaires
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.similarSection {
+  /* pas de padding supplémentaire */
+}
+
+.similarWrapper {
+  position: relative;
+}
+
+.similarGrid {
+  display: flex;
+  gap: var(--space-4);
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: var(--space-2) 0;
+}
+
+.similarGrid::-webkit-scrollbar {
+  display: none;
+}
+
+.similarCard {
+  flex-shrink: 0;
+  width: 220px;
+}
+
+
+/* Flèches de navigation */
+
+.scrollBtn {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
   color: var(--color-text-primary);
-  letter-spacing: var(--letter-spacing-wide);
-  text-transform: uppercase;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-above);
+  transition: background var(--transition-fast),
+              border-color var(--transition-fast);
 }
 
-@media (max-width: 768px) {
-  .riddimName { font-size: var(--font-size-3xl); }
-  .stats { gap: var(--space-4); }
-  .tableHead { display: none; }
-  .tableRow { display: flex; flex-wrap: wrap; gap: var(--space-1); padding: var(--space-3) 0; }
-  .tableRow td { border-bottom: none; padding: var(--space-1) var(--space-2); }
-  .table { border-top: 1px solid var(--color-border); }
+.scrollBtn:hover {
+  background: var(--color-bg-card);
+  border-color: var(--color-border-accent);
+}
+
+.scrollBtnLeft {
+  left: -18px;
+}
+
+.scrollBtnRight {
+  right: -18px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE — Desktop
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (min-width: 769px) {
+  .scrollBtn {
+    display: inline-flex;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE — Mobile
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 640px) {
+  .header {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .metaRow {
+    gap: var(--space-3);
+  }
+
+  .statsRow {
+    gap: var(--space-4);
+  }
+
+  .statDivider {
+    height: 24px;
+  }
+
+  /* Masquer colonnes actions et titre, regrouper dans artistCell */
+  .thActions,
+  .actionsCell {
+    display: none;
+  }
+
+  .titleCell {
+    display: none;
+  }
+
+  .titleMobile {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+
+  .artistCell {
+    max-width: none;
+  }
+
+  .divider {
+    margin: var(--space-8) 0;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ACCESSIBILITÉ — prefers-reduced-motion
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .tableRow {
+    transition: none;
+  }
+
+  .actionSpotify,
+  .actionYoutube {
+    transition: none;
+  }
+
+  .scrollBtn {
+    transition: none;
+  }
+
+  .similarGrid {
+    scroll-behavior: auto;
+  }
+
+  .brushStroke svg path {
+    animation: none;
+  }
 }
