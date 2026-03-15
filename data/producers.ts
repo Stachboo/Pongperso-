@@ -1,6 +1,6 @@
 /* ══════════════════════════════════════════════════════════════════════════════
    WMC — DONNÉES PRODUCTEURS
-   18 labels et producteurs du dancehall et reggae jamaïcain
+   30 labels et producteurs du dancehall et reggae jamaïcain
    ══════════════════════════════════════════════════════════════════════════════ */
 
 export interface Producer {
@@ -247,14 +247,14 @@ export const producers: Producer[] = [
     style: ['Dancehall', 'Latin'],
     description:
       "Tarik Johnston fonde Head Concussion Records à 17 ans en 2007. Fils d'un musicien, il apprend piano et batterie dès l'enfance. Percée en 2010 avec Life Sweet de Vybz Kartel, puis Straight Jeans and Fitted dépasse 25 millions de vues YouTube. Il s'impose ensuite sur le marché latin avec Sean Paul et Farruko.",
-    notableRiddims: ['Remedy Riddim', 'Klappaz Riddim'],
+    notableRiddims: ['Remedy Riddim', 'Buyout Riddim', 'Head Concussion Riddim'],
     keyArtists: ['Vybz Kartel', 'Popcaan', 'Sean Paul', 'Farruko', 'Aidonia', 'Sizzla'],
     achievements: [
       'Head Concussion Records fondé à 17 ans',
       'Straight Jeans and Fitted — 25M+ vues YouTube',
       'Certification RIAA Platine (Sean Paul & Farruko)',
     ],
-    riddimIds: ['remedy-riddim', 'klappaz-riddim'],
+    riddimIds: ['remedy-riddim', 'buyout-riddim', 'head-concussion-riddim'],
   },
   {
     id: 'dj-vtrine',
@@ -312,5 +312,235 @@ export const producers: Producer[] = [
       'Album Kyng Midas #9 Billboard Reggae (2019)',
     ],
     riddimIds: ['boxing-day-riddim', 'england-town-riddim'],
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // LÉGENDES FONDATRICES & PRODUCTEURS MANQUANTS — 12 ajouts
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  {
+    id: 'lenky-marsden',
+    name: "Steven 'Lenky' Marsden",
+    label: 'VP Records',
+    origin: 'Jamaïque',
+    founded: '1999',
+    active: '1999 – présent',
+    style: ['Dancehall'],
+    description:
+      "Steven 'Lenky' Marsden est le créateur du Diwali Riddim (2002), l'un des riddims les plus célèbres et commercialement réussis de l'histoire du dancehall. Ce riddim digital au rythme distinctif a propulsé plusieurs hits internationaux — Get Busy de Sean Paul (#1 Billboard Hot 100), No Letting Go de Wayne Wonder et Dude de Beenie Man. Un projet fondateur du dancehall mainstream mondial.",
+    notableRiddims: ['Diwali Riddim'],
+    keyArtists: ['Sean Paul', 'Wayne Wonder', 'Beenie Man', 'Bounty Killer', 'Elephant Man', 'T.O.K.', 'Lumidee', 'Vybz Kartel'],
+    achievements: [
+      'Diwali — Sean Paul Get Busy #1 Billboard Hot 100',
+      'Wayne Wonder No Letting Go — top 10 mondial',
+      'Beenie Man Dude — 72M+ vues YouTube',
+    ],
+    riddimIds: ['diwali-riddim'],
+  },
+  {
+    id: 'sly-and-robbie',
+    name: 'Sly & Robbie',
+    label: 'Taxi Records',
+    origin: 'Kingston, Jamaïque',
+    founded: '1975',
+    active: '1975 – présent',
+    style: ['Reggae', 'Dancehall', 'Dub'],
+    description:
+      "Sly Dunbar (batterie) et Robbie Shakespeare (basse) forment le duo rythmique le plus influent de l'histoire jamaïcaine. Leur label Taxi Records a façonné le son reggae et dancehall des années 70 à aujourd'hui. Le Bam Bam Riddim (1982) est devenu un hymne mondial grâce à Sister Nancy (520M+ vues) et a été samplé par Kanye West sur Famous. Chaka Demus & Pliers y ont placé Murder She Wrote (380M+ vues).",
+    notableRiddims: ['Bam Bam Riddim'],
+    keyArtists: ['Sister Nancy', 'Chaka Demus & Pliers', 'Yellowman', 'Shaggy', 'Cocoa Tea', 'Cutty Ranks'],
+    achievements: [
+      'Bam Bam — Sister Nancy 520M+ vues, hymne mondial',
+      'Murder She Wrote — Chaka Demus & Pliers, 380M+ vues',
+      'Samplé par Kanye West sur Famous (2016)',
+    ],
+    riddimIds: ['bam-bam-riddim'],
+  },
+  {
+    id: 'king-jammy',
+    name: 'King Jammy',
+    label: "Jammy's Records",
+    origin: 'Kingston, Jamaïque',
+    founded: '1977',
+    active: '1977 – présent',
+    style: ['Digital Dancehall', 'Dub'],
+    description:
+      "Lloyd 'King Jammy' James est le producteur qui a révolutionné la musique jamaïcaine en inaugurant l'ère digitale avec le Sleng Teng Riddim (1985), créé sur un Casio MT-40. Under Mi Sleng Teng de Wayne Smith est considéré comme le premier hit dancehall entièrement digital — un point de rupture qui a transformé la production musicale jamaïcaine pour toujours.",
+    notableRiddims: ['Sleng Teng Riddim'],
+    keyArtists: ['Wayne Smith', 'Johnny Osbourne', 'Half Pint', 'Tenor Saw', 'Barrington Levy', 'Frankie Paul'],
+    achievements: [
+      'Sleng Teng — premier riddim digital, révolution 1985',
+      'Wayne Smith Under Mi Sleng Teng — classique fondateur',
+      "Casio MT-40 — l'instrument qui a changé le dancehall",
+    ],
+    riddimIds: ['sleng-teng-riddim'],
+  },
+  {
+    id: 'winston-riley',
+    name: 'Winston Riley',
+    label: 'Techniques Records',
+    origin: 'Kingston, Jamaïque',
+    founded: '1968',
+    active: '1968 – 2012',
+    style: ['Reggae', 'Dancehall'],
+    description:
+      "Winston Riley est le producteur légendaire de Techniques Records et créateur du Stalag Riddim (1973), aussi connu sous le nom Stalag 17. Avec plus de 300 versions connues, c'est l'un des riddims les plus voicés de l'histoire de la musique jamaïcaine. Ring the Alarm de Tenor Saw et Zungguzungguguzungguzeng de Yellowman en sont les voicings les plus iconiques.",
+    notableRiddims: ['Stalag Riddim'],
+    keyArtists: ['Tenor Saw', 'Yellowman', 'Sister Nancy', 'Super Cat', 'Shabba Ranks', 'Ini Kamoze', 'Nicodemus'],
+    achievements: [
+      'Stalag — 300+ versions, riddim le plus voicé de tous les temps',
+      'Ring the Alarm — Tenor Saw, classique absolu',
+      'Zungguzungguguzungguzeng — Yellowman, hit mondial',
+    ],
+    riddimIds: ['stalag-riddim'],
+  },
+  {
+    id: 'dave-kelly',
+    name: 'Dave Kelly',
+    label: 'Madhouse Records',
+    origin: 'Kingston, Jamaïque',
+    founded: '1990',
+    active: '1990 – présent',
+    style: ['Dancehall'],
+    description:
+      "Dave Kelly est le légendaire producteur derrière Madhouse Records, l'un des labels les plus influents de l'ère digitale du dancehall. Le Punaany Riddim (1992) est un riddim emblématique qui a réuni Shabba Ranks, Beenie Man, Buju Banton, Mad Cobra et Bounty Killer — le gotha du dancehall 90s — sur un instrumental percutant et minimal.",
+    notableRiddims: ['Punaany Riddim', 'Buyout Riddim'],
+    keyArtists: ['Shabba Ranks', 'Beenie Man', 'Buju Banton', 'Mad Cobra', 'Lady Saw', 'Bounty Killer'],
+    achievements: [
+      'Punaany — riddim fondateur du dancehall digital 90s',
+      'Shabba Ranks Ting-A-Ling — hit international',
+      'Madhouse Records — label incontournable des années 90',
+    ],
+    riddimIds: ['punaany-riddim'],
+  },
+  {
+    id: 'leroy-sibbles-studio-one',
+    name: 'Leroy Sibbles',
+    label: 'Studio One',
+    origin: 'Kingston, Jamaïque',
+    founded: '1963',
+    active: '1963 – présent',
+    style: ['Reggae', 'Rocksteady'],
+    description:
+      "Leroy Sibbles, bassiste et leader des Heptones, est le créateur de nombreuses lignes de basse fondamentales du Studio One. Le Full Up Riddim (1968) est l'un des riddims les plus réutilisés de l'histoire reggae — Pass the Kouchie des Mighty Diamonds (adapté en Pass the Dutchie par Musical Youth, 95M+ vues) et Good Thing Going de Sugar Minott en sont les voicings les plus célèbres.",
+    notableRiddims: ['Full Up Riddim'],
+    keyArtists: ['The Heptones', 'Mighty Diamonds', 'Musical Youth', 'Sugar Minott', 'Wailing Souls', 'Freddie McGregor'],
+    achievements: [
+      'Full Up — riddim fondamental du Studio One',
+      'Pass the Dutchie — Musical Youth, hit mondial #1 UK',
+      'Good Thing Going — Sugar Minott, classique lovers rock',
+    ],
+    riddimIds: ['full-up-riddim'],
+  },
+  {
+    id: 'coxsone-dodd',
+    name: 'Coxsone Dodd',
+    label: 'Studio One',
+    origin: 'Kingston, Jamaïque',
+    founded: '1954',
+    active: '1954 – 2004',
+    style: ['Ska', 'Rocksteady', 'Reggae'],
+    description:
+      "Clement 'Coxsone' Dodd est le fondateur du légendaire Studio One, considéré comme le Motown de la Jamaïque. Ses productions ont défini le son jamaïcain du ska au reggae. Le Real Rock Riddim (1967) et le MPLA / Freedom Blues Riddim (1970) sont deux piliers du catalogue — réutilisés des centaines de fois. The Clash a repris Armagideon Time de Willie Williams, et Burning Spear y a gravé Slavery Days.",
+    notableRiddims: ['Real Rock Riddim', 'MPLA / Freedom Blues Riddim'],
+    keyArtists: ['Sound Dimension', 'Willie Williams', 'The Clash', 'John Holt', 'The Abyssinians', 'Burning Spear', 'Horace Andy'],
+    achievements: [
+      'Studio One — le Motown de la Jamaïque, fondé en 1954',
+      'Real Rock — un des plus anciens riddims encore voicés',
+      'Armagideon Time — repris par The Clash',
+    ],
+    riddimIds: ['real-rock-riddim', 'mpla-freedom-blues-riddim'],
+  },
+  {
+    id: 'shocking-vibes',
+    name: 'Shocking Vibes',
+    label: 'Shocking Vibes',
+    origin: 'Kingston, Jamaïque',
+    founded: '1995',
+    active: '1995 – présent',
+    style: ['Dancehall'],
+    description:
+      "Shocking Vibes est un label dancehall de Kingston à l'origine du Money Me A Look Riddim (2006), un riddim percutant qui reflète les réalités de la vie dans les ghettos de Kingston. Mavado (Real McKoy, 14M vues), Vybz Kartel et Busy Signal y livrent des voicings emblématiques de la rivalité Gully/Gaza.",
+    notableRiddims: ['Money Me A Look Riddim'],
+    keyArtists: ['Mavado', 'Vybz Kartel', 'Busy Signal', 'Elephant Man', 'Bounty Killer'],
+    achievements: [
+      'Money Me A Look — Mavado Real McKoy, 14M+ vues',
+      'Riddim emblématique de la rivalité Gully vs Gaza',
+    ],
+    riddimIds: ['money-me-a-look-riddim'],
+  },
+  {
+    id: 'don-germain-penthouse',
+    name: "Donovan 'Don' Germain",
+    label: 'Penthouse Records',
+    origin: 'Kingston, Jamaïque',
+    founded: '1987',
+    active: '1987 – présent',
+    style: ['Lovers Rock', 'Reggae'],
+    description:
+      "Donovan 'Don' Germain est le fondateur de Penthouse Records, l'un des labels les plus respectés du reggae jamaïcain. Spécialiste du lovers rock et du reggae smooth, il produit le Love Bump Riddim (2007) qui réunit Beres Hammond (24M vues), Tarrus Riley, Jah Cure et Alaine — le gratin du reggae romantique jamaïcain contemporain.",
+    notableRiddims: ['Love Bump Riddim'],
+    keyArtists: ['Beres Hammond', 'Tarrus Riley', 'Jah Cure', 'Alaine', 'Romain Virgo', 'Cecile'],
+    achievements: [
+      'Penthouse Records — pilier du lovers rock jamaïcain',
+      'Beres Hammond I Feel Good — 24M+ vues',
+      'Love Bump — casting all-star du reggae romantique',
+    ],
+    riddimIds: ['love-bump-riddim'],
+  },
+  {
+    id: 'adde-instrumentals',
+    name: 'Adde Instrumentals',
+    label: 'Adde Productions',
+    origin: 'Jamaïque',
+    founded: '2008',
+    active: '2008 – présent',
+    style: ['Dancehall'],
+    description:
+      "Adde Instrumentals est le producteur derrière Adde Productions, auteur du Filthy Riddim (2010) — le riddim qui a lancé le phénomène mondial Clarks de Vybz Kartel (55M+ vues). Ce riddim dancehall lourd et agressif, populaire dans les sound clashes, a également propulsé Popcaan avec Clarks ft. Gaza Slim.",
+    notableRiddims: ['Filthy Riddim'],
+    keyArtists: ['Vybz Kartel', 'Popcaan', 'Tommy Lee Sparta', 'Shawn Storm', 'Lisa Hyper'],
+    achievements: [
+      'Clarks — Vybz Kartel, 55M+ vues, phénomène mondial',
+      'Filthy — riddim populaire en sound clash',
+    ],
+    riddimIds: ['filthy-riddim'],
+  },
+  {
+    id: 'steely-and-clevie',
+    name: 'Steely & Clevie',
+    label: 'Steely & Clevie Records',
+    origin: 'Kingston, Jamaïque',
+    founded: '1987',
+    active: '1987 – 2009',
+    style: ['Dancehall', 'Ragga'],
+    description:
+      "Wycliffe 'Steely' Johnson et Cleveland 'Clevie' Browne forment le duo de production légendaire des années 90. Héritiers spirituels de Sly & Robbie, ils définissent le son ragga dancehall. Le Juice Riddim (1998) produit deux classiques absolus — Heads High de Mr. Vegas (42M vues) et Who Am I (Sim Simma) de Beenie Man (88M vues) — ainsi que Champion de Buju Banton.",
+    notableRiddims: ['Juice Riddim'],
+    keyArtists: ['Mr. Vegas', 'Beenie Man', 'Buju Banton', 'Lady Saw', 'Bounty Killer', 'General Degree'],
+    achievements: [
+      'Beenie Man Who Am I — 88M+ vues, hit mondial',
+      'Mr. Vegas Heads High — 42M+ vues, classique dancehall',
+      'Buju Banton Champion — hymne du dancehall 90s',
+    ],
+    riddimIds: ['juice-riddim'],
+  },
+  {
+    id: 'anju-blaxx-uim',
+    name: 'Anju Blaxx',
+    label: 'UIM Records',
+    origin: 'Kingston, Jamaïque',
+    founded: '2005',
+    active: '2005 – présent',
+    style: ['Dancehall'],
+    description:
+      "Anju Blaxx (A. Myrie) est le producteur derrière UIM Records, l'un des labels dancehall les plus actifs des années 2010. Le Klappaz Riddim (2011) est un riddim dancehall hard avec Vybz Kartel, Sizzla et Tommy Lee en tête d'affiche, totalisant 10 voicings — dont des artistes émergents comme Jahmiel et Versatile qui feront carrière.",
+    notableRiddims: ['Klappaz Riddim'],
+    keyArtists: ['Vybz Kartel', 'Sizzla', 'Tommy Lee Sparta', 'Jahmiel', 'Versatile', 'Future Fambo'],
+    achievements: [
+      'Klappaz — 10 voicings, Kartel + Sizzla + Tommy Lee',
+      'UIM Records — label dancehall de référence',
+    ],
+    riddimIds: ['klappaz-riddim'],
   },
 ];
