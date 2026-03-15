@@ -40,6 +40,9 @@ export default function Navbar({ lang }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  /** Détecte si on est sur la page d'accueil */
+  const isHome = pathname === `/${lang}` || pathname === `/${lang}/`;
+
   /* ── Scroll detection ── */
   useEffect(() => {
     function onScroll() {
@@ -105,11 +108,15 @@ export default function Navbar({ lang }: NavbarProps) {
       >
         <div className={styles.inner}>
 
-          {/* ═══ BLOC GAUCHE — Logo + Tagline ═══ */}
-          <Link href={`/${lang}`} className={styles.brand}>
-            <Logo variant="horizontal" size={40} />
-            <span className={styles.tagline}>La référence des riddims</span>
-          </Link>
+          {/* ═══ LOGO CENTRÉ (masqué sur la home) ═══ */}
+          {!isHome && (
+            <Link href={`/${lang}`} className={styles.brand} aria-label="Retour à l'accueil">
+              <Logo variant="icon" size={36} />
+            </Link>
+          )}
+
+          {/* Spacer pour garder le burger à droite quand pas de logo */}
+          {isHome && <div className={styles.spacer} />}
 
           {/* ═══ BLOC CENTRE — Navigation desktop ═══ */}
           <div className={styles.navLinks}>
