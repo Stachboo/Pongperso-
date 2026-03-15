@@ -1,9 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import type { Riddim } from '@/types/riddim';
-import type { Locale } from '@/lib/i18n';
-import { getDictionary } from '@/lib/i18n';
-import { getTotalViews, formatViews, allRiddims } from '@/lib/data';
+import type { Dictionary } from '@/lib/i18n';
+import { getTotalViews, formatViews, getYoutubeSearchUrl, allRiddims } from '@/lib/data';
 import { generateContextText } from '@/utils/generateContextText';
 import RiddimCard from '@/components/RiddimCard';
 import styles from './RiddimDetail.module.css';
@@ -15,19 +14,20 @@ import styles from './RiddimDetail.module.css';
 
 interface RiddimDetailProps {
   riddim: Riddim;
-  lang: Locale;
+  lang: string;
+  dict: Dictionary;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
    Utilitaires
    ═══════════════════════════════════════════════════════════════════════════ */
 
-function genreBadgeClass(genre: string): string {
+function genreTagClass(genre: string): string {
   const g = genre.toLowerCase();
-  if (g === 'dancehall') return styles.badgeGold;
-  if (g === 'reggae' || g === 'roots') return styles.badgeGreen;
-  if (g === 'lovers rock') return styles.badgeRed;
-  return styles.badgeMuted;
+  if (g === 'dancehall') return styles.tagGold;
+  if (g === 'reggae' || g === 'roots') return styles.tagGreen;
+  if (g === 'lovers rock') return styles.tagRed;
+  return styles.tagMuted;
 }
 
 function getDecade(year: number): string {
@@ -37,11 +37,6 @@ function getDecade(year: number): string {
 function getSpotifySearchUrl(artist: string, title: string): string {
   const q = encodeURIComponent(`${artist} ${title}`);
   return `https://open.spotify.com/search/${q}`;
-}
-
-function getYoutubeSearchUrl(artist: string, title: string): string {
-  const q = encodeURIComponent(`${artist} ${title} riddim`);
-  return `https://www.youtube.com/results?search_query=${q}`;
 }
 
 function getSimilarRiddims(riddim: Riddim, limit: number): Riddim[] {
@@ -94,14 +89,6 @@ function SpotifyIcon() {
   );
 }
 
-function YoutubeIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-    </svg>
-  );
-}
-
 function ChevronLeftIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -123,10 +110,10 @@ function ChevronRightIcon() {
    COMPOSANT PRINCIPAL
    ═══════════════════════════════════════════════════════════════════════════ */
 
-export default function RiddimDetail({ riddim, lang }: RiddimDetailProps) {
-  const dict = getDictionary(lang);
+export default function RiddimDetail({ riddim, lang, dict }: RiddimDetailProps) {
   const totalViews = getTotalViews(riddim);
   const sortedVoicings = [...riddim.voicings].sort((a, b) => b.views - a.views);
+  const maxViews = sortedVoicings[0]?.views ?? 1;
   const topArtist = sortedVoicings[0]?.artist ?? '—';
   const decade = getDecade(riddim.year);
   const contextText = generateContextText(riddim);
@@ -134,6 +121,11 @@ export default function RiddimDetail({ riddim, lang }: RiddimDetailProps) {
 
   return (
     <article className={styles.article}>
+
+      {/* ═══ Back link (original) ═══ */}
+      <Link href={`/${lang}/explorer`} className={styles.backLink}>
+        ← {dict.backToCatalog}
+      </Link>
 
       {/* ═══ SECTION A — Header ═══ */}
       <header className={styles.header}>
@@ -177,7 +169,30 @@ export default function RiddimDetail({ riddim, lang }: RiddimDetailProps) {
             </span>
           </h1>
 
-          {/* Méta-informations */}
+          {/* Producteur · Label (original) */}
+          <p className={styles.producerLabel}>
+            {riddim.producer} · {riddim.label}
+          </p>
+
+          {/* Tags (original : genre + type + année + BPM) */}
+          <div className={styles.tags}>
+            <span className={`${styles.tag} ${genreTagClass(riddim.genre)}`}>
+              {riddim.genre}
+            </span>
+            <span className={`${styles.tag} ${styles.tagMuted}`}>
+              {riddim.type}
+            </span>
+            <span className={`${styles.tag} ${styles.tagMuted}`}>
+              {riddim.year}
+            </span>
+            {riddim.bpm > 0 && (
+              <span className={`${styles.tag} ${styles.tagMuted}`}>
+                {riddim.bpm} BPM
+              </span>
+            )}
+          </div>
+
+          {/* Méta-informations avec icônes */}
           <div className={styles.metaRow}>
             <span className={styles.metaItem}>
               <CalendarIcon />
@@ -191,23 +206,22 @@ export default function RiddimDetail({ riddim, lang }: RiddimDetailProps) {
               <LabelIcon />
               {riddim.label}
             </span>
-            <span className={`${styles.genreBadge} ${genreBadgeClass(riddim.genre)}`}>
-              {riddim.genre}
-            </span>
           </div>
 
-          {/* Stats rapides */}
-          <div className={styles.statsRow}>
+          {/* Stats (original totalViews + nouvelles stats) */}
+          <div className={styles.stats}>
+            <div className={styles.stat}>
+              <span className={styles.statValue}>{formatViews(totalViews)}</span>
+              <span className={styles.statLabel}>{dict.totalViews}</span>
+            </div>
             <div className={styles.stat}>
               <span className={styles.statValue}>{riddim.voicings.length}</span>
               <span className={styles.statLabel}>{dict.voicingsTitle}</span>
             </div>
-            <div className={styles.statDivider} />
             <div className={styles.stat}>
               <span className={styles.statValue}>{topArtist}</span>
               <span className={styles.statLabel}>Top Artist</span>
             </div>
-            <div className={styles.statDivider} />
             <div className={styles.stat}>
               <span className={styles.statValue}>{decade}</span>
               <span className={styles.statLabel}>{dict.filterDecade}</span>
@@ -215,6 +229,9 @@ export default function RiddimDetail({ riddim, lang }: RiddimDetailProps) {
           </div>
         </div>
       </header>
+
+      {/* Description (original) */}
+      <p className={styles.desc}>{riddim.description}</p>
 
       <div className={styles.divider} />
 
@@ -231,7 +248,7 @@ export default function RiddimDetail({ riddim, lang }: RiddimDetailProps) {
 
       {/* ═══ SECTION C — Tableau des voicings ═══ */}
       <section aria-label="Liste des voicings" className={styles.voicingsSection}>
-        <h2 className={styles.sectionTitle}>
+        <h2 className={styles.voicingsHeading}>
           {dict.voicingsTitle}
           <span className={styles.voicingsCount}>({riddim.voicings.length})</span>
         </h2>
@@ -239,34 +256,41 @@ export default function RiddimDetail({ riddim, lang }: RiddimDetailProps) {
         <table className={styles.table} aria-label={`Voicings du riddim ${riddim.name}`}>
           <thead className={styles.tableHead}>
             <tr>
-              <th scope="col">#</th>
+              <th scope="col">{dict.rank}</th>
               <th scope="col">{dict.artist}</th>
               <th scope="col">{dict.title}</th>
-              <th scope="col" className={styles.thViews}>{dict.views}</th>
-              <th scope="col" className={styles.thActions}>Actions</th>
+              <th scope="col" style={{ textAlign: 'right' }}>{dict.views}</th>
+              <th scope="col" className={styles.thActions}></th>
             </tr>
           </thead>
           <tbody>
             {sortedVoicings.map((v, i) => {
               const rank = i + 1;
               const rankClass =
-                rank === 1 ? styles.rankGold :
-                rank === 2 ? styles.rankSilver :
-                rank === 3 ? styles.rankBronze :
+                rank === 1 ? styles.rankTop1 :
+                rank === 2 ? styles.rankTop2 :
+                rank === 3 ? styles.rankTop3 :
                 '';
+              const barWidth = Math.max(4, (v.views / maxViews) * 80);
 
               return (
                 <tr key={`${v.artist}-${v.title}`} className={styles.tableRow}>
-                  <td className={styles.rankCell}>
-                    <span className={`${styles.rankBadge} ${rankClass}`}>{rank}</span>
-                  </td>
-                  <td className={styles.artistCell}>
-                    <span className={styles.artistName}>{v.artist}</span>
-                    <span className={styles.titleMobile}>{v.title}</span>
-                  </td>
+                  <td className={`${styles.rankCell} ${rankClass}`}>{rank}</td>
+                  <td className={styles.artistCell}>{v.artist}</td>
                   <td className={styles.titleCell}>{v.title}</td>
-                  <td className={styles.viewsCell}>{formatViews(v.views)}</td>
+                  <td className={styles.viewsCell}>
+                    <span className={styles.viewsBar} style={{ width: `${barWidth}px` }} />
+                    {formatViews(v.views)}
+                  </td>
                   <td className={styles.actionsCell}>
+                    <a
+                      href={getYoutubeSearchUrl(v.artist, v.title)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.ytLink}
+                    >
+                      ▶ {dict.listenOnYt}
+                    </a>
                     <a
                       href={getSpotifySearchUrl(v.artist, v.title)}
                       target="_blank"
@@ -275,15 +299,6 @@ export default function RiddimDetail({ riddim, lang }: RiddimDetailProps) {
                       aria-label={`Rechercher ${v.artist} ${v.title} sur Spotify`}
                     >
                       <SpotifyIcon />
-                    </a>
-                    <a
-                      href={getYoutubeSearchUrl(v.artist, v.title)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.actionYoutube}
-                      aria-label={`Rechercher ${v.artist} ${v.title} sur YouTube`}
-                    >
-                      <YoutubeIcon />
                     </a>
                   </td>
                 </tr>

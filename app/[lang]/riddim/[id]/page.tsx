@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getDictionary, isValidLocale, LOCALES, type Locale } from '@/lib/i18n';
-import { getRiddimById, allRiddims, getTotalViews, formatViews } from '@/lib/data';
+import { getRiddimById, allRiddims } from '@/lib/data';
 import RiddimDetail from '@/components/RiddimDetail';
 
 /* ══════════════════════════════════════════════════════════════════════════════
@@ -157,6 +157,7 @@ export default async function RiddimPage({
 }) {
   const { lang, id } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
+  const dict = getDictionary(locale);
   const riddim = getRiddimById(Number(id));
 
   if (!riddim) {
@@ -171,7 +172,7 @@ export default async function RiddimPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <RiddimDetail riddim={riddim} lang={locale} />
+      <RiddimDetail riddim={riddim} lang={locale} dict={dict} />
     </>
   );
 }
