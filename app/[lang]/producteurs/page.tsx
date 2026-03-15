@@ -23,7 +23,7 @@ export async function generateMetadata({
   return {
     title: 'Producteurs — Les labels derrière les riddims jamaïcains | WMC',
     description:
-      'Découvrez les 7 producteurs qui ont façonné le dancehall jamaïcain : Notnice, Di Genius, Chimney Records, Daseca, Birchill, Rvssian et Arif Cooper.',
+      'Découvrez les 7 labels et producteurs qui ont façonné le dancehall jamaïcain : Notnice, Di Genius, Chimney Records, Daseca, Birchill, Rvssian et Arif Cooper. Leurs riddims, artistes et histoire.',
     alternates: {
       canonical: `https://wmc-iota.vercel.app/${locale}/producteurs`,
       languages: hreflang,
