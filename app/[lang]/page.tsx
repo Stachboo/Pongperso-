@@ -1,8 +1,9 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { getDictionary, isValidLocale, type Locale } from '@/lib/i18n';
-import { getCatalogStats, formatViews } from '@/lib/data';
+import { allRiddims, getCatalogStats, formatViews } from '@/lib/data';
+import { generateHreflang, BASE_URL } from '@/utils/seo';
+import Link from 'next/link';
 import Logo from '@/components/Logo';
 import styles from './page.module.css';
 
@@ -19,9 +20,27 @@ export async function generateMetadata({
   const { lang } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const dict = getDictionary(locale);
+  const canonicalUrl = `${BASE_URL}/${locale}`;
+  const hreflang = generateHreflang('', locale);
+
   return {
     title: `${dict.siteTitle} — ${dict.taglineHome}`,
     description: dict.metaDescHome,
+    openGraph: {
+      title: `${dict.siteTitle} — ${dict.taglineHome}`,
+      description: dict.metaDescHome,
+      type: 'website',
+      url: canonicalUrl,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${dict.siteTitle} — ${dict.taglineHome}`,
+      description: dict.metaDescHome,
+    },
+    alternates: {
+      canonical: canonicalUrl,
+      languages: hreflang,
+    },
   };
 }
 

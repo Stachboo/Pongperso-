@@ -1,12 +1,15 @@
 import React from 'react';
 import { LOCALES, type Locale, getDictionary, isValidLocale } from '@/lib/i18n';
-import Header from '@/components/Header';
+import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import PageWrapper from '@/components/PageWrapper';
+import ScrollToTop from '@/components/ScrollToTop';
 import ShareButton from '@/components/ShareButton';
 
 /* ══════════════════════════════════════════════════════════════════════════════
    WMC — LANGUAGE LAYOUT
    Layout partagé pour toutes les pages d'une langue
+   Navbar fixe + PageWrapper (fadeIn + padding) + Footer + ScrollToTop
    ══════════════════════════════════════════════════════════════════════════════ */
 
 export async function generateStaticParams() {
@@ -26,9 +29,12 @@ export default async function LangLayout({
 
   return (
     <>
-      <Header lang={locale} dict={dict} />
-      <main>{children}</main>
+      <Navbar lang={locale} />
+      <PageWrapper>
+        {children}
+      </PageWrapper>
       <Footer lang={locale} dict={dict} />
+      <ScrollToTop />
       <ShareButton dict={dict} />
     </>
   );
