@@ -10,7 +10,10 @@ export function middleware(request: NextRequest) {
   const hasLocale = LOCALES.some(
     (l) => pathname.startsWith(`/${l}/`) || pathname === `/${l}`,
   );
-  if (hasLocale) return;
+  if (hasLocale) return NextResponse.next();
+
+  /* Skip les fichiers statiques (avec extension) */
+  if (pathname.includes('.')) return NextResponse.next();
 
   /* Détecte la langue préférée depuis Accept-Language */
   const accept = request.headers.get('accept-language') ?? '';
@@ -18,11 +21,11 @@ export function middleware(request: NextRequest) {
     LOCALES.find((l) => accept.toLowerCase().includes(l)) ?? DEFAULT_LOCALE;
 
   /* Redirige vers /{locale}{path} */
-  return NextResponse.redirect(
-    new URL(`/${preferred}${pathname === '/' ? '' : pathname}`, request.url),
-  );
+  const url = request.nextUrl.clone();
+  url.pathname = `/${preferred}${pathname === '/' ? '' : pathname}`;
+  return NextResponse.redirect(url);
 }
 
 export const config = {
-  matcher: ['/((?!_next|assets|api|favicon\\.ico|manifest\\.json|og-image\\.png).*)'],
+  matcher: ['/((?!_next/static|_next/image|api|favicon\\.ico|manifest\\.json|og-image\\.png|logo|.*\\.png$|.*\\.svg$|.*\\.ico$).*)'],
 };
