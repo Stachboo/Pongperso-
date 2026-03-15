@@ -1,40 +1,33 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-var locales = ['fr', 'en', 'es', 'pt', 'ja'];
-var defaultLocale = 'fr';
-
 export function middleware(request: NextRequest) {
-  var pathname = request.nextUrl.pathname;
+  const pathname = request.nextUrl.pathname;
 
-  // Skip files with extensions (static assets)
-  if (pathname.includes('.')) {
-    return NextResponse.next();
-  }
+  const locales = ['fr', 'en', 'es', 'pt', 'ja'];
 
-  // Skip if path already has a locale
-  for (var i = 0; i < locales.length; i++) {
-    if (pathname === '/' + locales[i] || pathname.startsWith('/' + locales[i] + '/')) {
-      return NextResponse.next();
-    }
-  }
+  // Check if pathname already has a locale
+  const pathnameHasLocale = locales.some(
+    (locale) => pathname.startsWith('/' + locale + '/') || pathname === '/' + locale
+  );
 
-  // Detect preferred language from Accept-Language header
-  var accept = request.headers.get('accept-language') || '';
-  var acceptLower = accept.toLowerCase();
-  var preferred = defaultLocale;
-  for (var j = 0; j < locales.length; j++) {
-    if (acceptLower.includes(locales[j])) {
-      preferred = locales[j];
+  if (pathnameHasLocale) return NextResponse.next();
+
+  // Detect preferred locale from Accept-Language
+  const acceptLanguage = request.headers.get('accept-language') || '';
+  let locale = 'fr';
+  for (const l of locales) {
+    if (acceptLanguage.toLowerCase().includes(l)) {
+      locale = l;
       break;
     }
   }
 
-  // Redirect to /{locale}{path}
-  var url = request.nextUrl.clone();
-  url.pathname = '/' + preferred + (pathname === '/' ? '' : pathname);
-  return NextResponse.redirect(url);
+  // Redirect: e.g. /explorer -> /fr/explorer
+  return NextResponse.redirect(
+    new URL('/' + locale + (pathname === '/' ? '' : pathname), request.url)
+  );
 }
 
-export var config = {
-  matcher: ['/', '/explorer', '/riddim/:path*'],
+export const config = {
+  matcher: ['/((?!_next|api|favicon.ico|manifest.json|og-image.png|logo-|Logo\\.png|logo\\.svg).*)'],
 };
