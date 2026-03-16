@@ -74,11 +74,6 @@
     "description": "Un des riddims les plus samplés de tous les temps. La version de Sister Nancy est devenue un hymne mondial.",
     "voicings": [
       {
-        "artist": "Sister Nancy",
-        "title": "Bam Bam",
-        "views": 520000000
-      },
-      {
         "artist": "Chaka Demus & Pliers",
         "title": "Murder She Wrote",
         "views": 380000000
@@ -107,11 +102,6 @@
         "artist": "General Degree",
         "title": "Traffic Blocking",
         "views": 4200000
-      },
-      {
-        "artist": "Kanye West",
-        "title": "Famous (sample)",
-        "views": 310000000
       }
     ]
   },
@@ -718,16 +708,6 @@
     "bpm": 100,
     "description": "Un riddim dancehall lourd et agressif, populaire dans les sound clashes.",
     "voicings": [
-      {
-        "artist": "Vybz Kartel",
-        "title": "Clarks",
-        "views": 55000000
-      },
-      {
-        "artist": "Popcaan",
-        "title": "Clarks (ft. Gaza Slim)",
-        "views": 18000000
-      },
       {
         "artist": "Tommy Lee Sparta",
         "title": "Some Bwoy",
@@ -1669,11 +1649,6 @@
         "artist": "Beenie Man ft. Martina",
         "title": "Gangsta Life",
         "views": 2800000
-      },
-      {
-        "artist": "Mavado",
-        "title": "Real McKoy",
-        "views": 5500000
       },
       {
         "artist": "Elephant Man",
