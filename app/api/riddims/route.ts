@@ -51,18 +51,22 @@ export async function POST(req: NextRequest) {
   switch (action) {
     // ─── Déplacer un voicing d'un riddim à un autre ──────────────────────
     case 'move-voicing': {
-      const { fromRiddimId, toRiddimId, voicingIndex } = body;
+      const { fromRiddimId, toRiddimId, voicingArtist, voicingTitle } = body;
       const fromRiddim = riddims.find((r: { id: number }) => r.id === fromRiddimId);
       const toRiddim = riddims.find((r: { id: number }) => r.id === toRiddimId);
 
       if (!fromRiddim || !toRiddim) {
         return NextResponse.json({ error: 'Riddim introuvable' }, { status: 404 });
       }
-      if (voicingIndex < 0 || voicingIndex >= fromRiddim.voicings.length) {
-        return NextResponse.json({ error: 'Index voicing invalide' }, { status: 400 });
+
+      const idx = fromRiddim.voicings.findIndex(
+        (v: { artist: string; title: string }) => v.artist === voicingArtist && v.title === voicingTitle
+      );
+      if (idx === -1) {
+        return NextResponse.json({ error: `Voicing "${voicingArtist} — ${voicingTitle}" introuvable dans ce riddim` }, { status: 400 });
       }
 
-      const [voicing] = fromRiddim.voicings.splice(voicingIndex, 1);
+      const [voicing] = fromRiddim.voicings.splice(idx, 1);
       toRiddim.voicings.push(voicing);
       toRiddim.voicings.sort((a: { views: number }, b: { views: number }) => b.views - a.views);
 
@@ -72,17 +76,21 @@ export async function POST(req: NextRequest) {
 
     // ─── Supprimer un voicing ────────────────────────────────────────────
     case 'delete-voicing': {
-      const { riddimId, voicingIndex } = body;
+      const { riddimId, voicingArtist, voicingTitle } = body;
       const riddim = riddims.find((r: { id: number }) => r.id === riddimId);
 
       if (!riddim) {
         return NextResponse.json({ error: 'Riddim introuvable' }, { status: 404 });
       }
-      if (voicingIndex < 0 || voicingIndex >= riddim.voicings.length) {
-        return NextResponse.json({ error: 'Index voicing invalide' }, { status: 400 });
+
+      const idx = riddim.voicings.findIndex(
+        (v: { artist: string; title: string }) => v.artist === voicingArtist && v.title === voicingTitle
+      );
+      if (idx === -1) {
+        return NextResponse.json({ error: `Voicing "${voicingArtist} — ${voicingTitle}" introuvable` }, { status: 400 });
       }
 
-      const [deleted] = riddim.voicings.splice(voicingIndex, 1);
+      const [deleted] = riddim.voicings.splice(idx, 1);
       await writeRiddims(riddims);
       return NextResponse.json({ success: true, deletedVoicing: deleted });
     }
@@ -109,39 +117,47 @@ export async function POST(req: NextRequest) {
 
     // ─── Modifier un voicing existant ─────────────────────────────────────
     case 'edit-voicing': {
-      const { riddimId, voicingIndex, artist, title, views } = body;
+      const { riddimId, originalArtist, originalTitle, artist, title, views } = body;
       const riddim = riddims.find((r: { id: number }) => r.id === riddimId);
 
       if (!riddim) {
         return NextResponse.json({ error: 'Riddim introuvable' }, { status: 404 });
-      }
-      if (voicingIndex < 0 || voicingIndex >= riddim.voicings.length) {
-        return NextResponse.json({ error: 'Index voicing invalide' }, { status: 400 });
       }
       if (!artist || !title) {
         return NextResponse.json({ error: 'Artiste et titre requis' }, { status: 400 });
       }
 
-      riddim.voicings[voicingIndex] = {
+      const idx = riddim.voicings.findIndex(
+        (v: { artist: string; title: string }) => v.artist === originalArtist && v.title === originalTitle
+      );
+      if (idx === -1) {
+        return NextResponse.json({ error: `Voicing "${originalArtist} — ${originalTitle}" introuvable` }, { status: 400 });
+      }
+
+      riddim.voicings[idx] = {
         artist,
         title,
-        views: views ?? riddim.voicings[voicingIndex].views,
+        views: views ?? riddim.voicings[idx].views,
       };
 
       await writeRiddims(riddims);
-      return NextResponse.json({ success: true, updatedVoicing: riddim.voicings[voicingIndex] });
+      return NextResponse.json({ success: true, updatedVoicing: riddim.voicings[idx] });
     }
 
     // ─── Réordonner un voicing (monter/descendre) ───────────────────────
     case 'reorder-voicing': {
-      const { riddimId, voicingIndex, direction } = body;
+      const { riddimId, voicingArtist, voicingTitle, direction } = body;
       const riddim = riddims.find((r: { id: number }) => r.id === riddimId);
 
       if (!riddim) {
         return NextResponse.json({ error: 'Riddim introuvable' }, { status: 404 });
       }
-      if (voicingIndex < 0 || voicingIndex >= riddim.voicings.length) {
-        return NextResponse.json({ error: 'Index voicing invalide' }, { status: 400 });
+
+      const voicingIndex = riddim.voicings.findIndex(
+        (v: { artist: string; title: string }) => v.artist === voicingArtist && v.title === voicingTitle
+      );
+      if (voicingIndex === -1) {
+        return NextResponse.json({ error: `Voicing "${voicingArtist} — ${voicingTitle}" introuvable` }, { status: 400 });
       }
 
       const targetIndex = direction === 'up' ? voicingIndex - 1 : voicingIndex + 1;

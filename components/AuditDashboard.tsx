@@ -64,12 +64,12 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
   const [searchQuery, setSearchQuery] = useState('');
 
   // ─── Modal states ───────────────────────────────────────────────────────────
-  const [moveModal, setMoveModal] = useState<{ riddimId: number; voicingIndex: number } | null>(null);
+  const [moveModal, setMoveModal] = useState<{ riddimId: number; artist: string; title: string } | null>(null);
   const [moveTargetId, setMoveTargetId] = useState<number | ''>('');
-  const [deleteConfirm, setDeleteConfirm] = useState<{ riddimId: number; voicingIndex: number; artist: string; title: string } | null>(null);
+  const [deleteConfirm, setDeleteConfirm] = useState<{ riddimId: number; artist: string; title: string } | null>(null);
   const [showAddVoicing, setShowAddVoicing] = useState(false);
   const [newVoicing, setNewVoicing] = useState(EMPTY_VOICING);
-  const [editModal, setEditModal] = useState<{ riddimId: number; voicingIndex: number; artist: string; title: string; views: number } | null>(null);
+  const [editModal, setEditModal] = useState<{ riddimId: number; originalArtist: string; originalTitle: string; artist: string; title: string; views: number } | null>(null);
   const [showCreateRiddim, setShowCreateRiddim] = useState(false);
   const [newRiddim, setNewRiddim] = useState(EMPTY_RIDDIM);
   const [newRiddimVoicings, setNewRiddimVoicings] = useState<{ artist: string; title: string; views: number }[]>([]);
@@ -156,7 +156,8 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
       action: 'move-voicing',
       fromRiddimId: moveModal.riddimId,
       toRiddimId: Number(moveTargetId),
-      voicingIndex: moveModal.voicingIndex,
+      voicingArtist: moveModal.artist,
+      voicingTitle: moveModal.title,
     });
     if (result) {
       setMoveModal(null);
@@ -169,7 +170,8 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
     const result = await apiCall({
       action: 'delete-voicing',
       riddimId: deleteConfirm.riddimId,
-      voicingIndex: deleteConfirm.voicingIndex,
+      voicingArtist: deleteConfirm.artist,
+      voicingTitle: deleteConfirm.title,
     });
     if (result) setDeleteConfirm(null);
   };
@@ -194,7 +196,8 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
     const result = await apiCall({
       action: 'edit-voicing',
       riddimId: editModal.riddimId,
-      voicingIndex: editModal.voicingIndex,
+      originalArtist: editModal.originalArtist,
+      originalTitle: editModal.originalTitle,
       artist: editModal.artist,
       title: editModal.title,
       views: editModal.views,
@@ -202,11 +205,12 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
     if (result) setEditModal(null);
   };
 
-  const handleReorderVoicing = async (riddimId: number, voicingIndex: number, direction: 'up' | 'down') => {
+  const handleReorderVoicing = async (riddimId: number, artist: string, title: string, direction: 'up' | 'down') => {
     await apiCall({
       action: 'reorder-voicing',
       riddimId,
-      voicingIndex,
+      voicingArtist: artist,
+      voicingTitle: title,
       direction,
     });
   };
@@ -479,7 +483,7 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
                             className={styles.actionReorder}
                             title="Monter"
                             disabled={i === 0 || loading}
-                            onClick={() => handleReorderVoicing(currentRiddim.id, i, 'up')}
+                            onClick={() => handleReorderVoicing(currentRiddim.id, v.artist, v.title, 'up')}
                           >
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                               <polyline points="18 15 12 9 6 15"/>
@@ -489,7 +493,7 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
                             className={styles.actionReorder}
                             title="Descendre"
                             disabled={i === currentRiddim.voicings.length - 1 || loading}
-                            onClick={() => handleReorderVoicing(currentRiddim.id, i, 'down')}
+                            onClick={() => handleReorderVoicing(currentRiddim.id, v.artist, v.title, 'down')}
                           >
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                               <polyline points="6 9 12 15 18 9"/>
@@ -498,7 +502,7 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
                           <button
                             className={styles.actionEdit}
                             title="Modifier ce voicing"
-                            onClick={() => setEditModal({ riddimId: currentRiddim.id, voicingIndex: i, artist: v.artist, title: v.title, views: v.views })}
+                            onClick={() => setEditModal({ riddimId: currentRiddim.id, originalArtist: v.artist, originalTitle: v.title, artist: v.artist, title: v.title, views: v.views })}
                           >
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                               <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
@@ -508,7 +512,7 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
                           <button
                             className={styles.actionMove}
                             title="Déplacer vers un autre riddim"
-                            onClick={() => { setMoveModal({ riddimId: currentRiddim.id, voicingIndex: i }); setMoveTargetId(''); }}
+                            onClick={() => { setMoveModal({ riddimId: currentRiddim.id, artist: v.artist, title: v.title }); setMoveTargetId(''); }}
                           >
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                               <path d="M5 9l-3 3 3 3"/><path d="M9 5l3-3 3 3"/><path d="M15 19l3 3 3-3"/><path d="M19 9l3 3-3 3"/>
@@ -518,7 +522,7 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
                           <button
                             className={styles.actionDelete}
                             title="Supprimer ce voicing"
-                            onClick={() => setDeleteConfirm({ riddimId: currentRiddim.id, voicingIndex: i, artist: v.artist, title: v.title })}
+                            onClick={() => setDeleteConfirm({ riddimId: currentRiddim.id, artist: v.artist, title: v.title })}
                           >
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                               <polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
