@@ -121,6 +121,14 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
   const currentRiddim = selectedRiddim !== null ? riddims.find(r => r.id === selectedRiddim) : null;
 
   // ─── API helpers ────────────────────────────────────────────────────────────
+  const refreshData = useCallback(async () => {
+    try {
+      const res = await fetch('/api/riddims');
+      const data = await res.json();
+      setRiddims(data);
+    } catch { /* ignore */ }
+  }, []);
+
   const apiCall = useCallback(async (body: Record<string, unknown>) => {
     setLoading(true);
     setErrorMsg(null);
@@ -132,14 +140,12 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
       });
       const data = await res.json();
       if (!res.ok) {
-        const msg = data.error || 'Erreur serveur';
-        setErrorMsg(msg);
+        setErrorMsg(data.error || 'Erreur serveur');
+        // Resync même en cas d'erreur pour éviter l'état périmé
+        await refreshData();
         return null;
       }
-      // Refresh data
-      const freshRes = await fetch('/api/riddims');
-      const freshData = await freshRes.json();
-      setRiddims(freshData);
+      await refreshData();
       return data;
     } catch (err) {
       setErrorMsg(err instanceof Error ? err.message : 'Erreur réseau');
@@ -147,7 +153,7 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [refreshData]);
 
   // ─── CRUD handlers ─────────────────────────────────────────────────────────
   const handleMoveVoicing = async () => {
