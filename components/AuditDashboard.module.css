@@ -478,7 +478,7 @@
   gap: 0.3rem;
 }
 
-.actionMove, .actionDelete {
+.actionEdit, .actionReorder, .actionMove, .actionDelete {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -506,8 +506,26 @@
   border-color: rgba(239, 68, 68, 0.3);
 }
 
-.actionMove { color: var(--color-text-muted, #999); }
-.actionDelete { color: var(--color-text-muted, #999); }
+.actionEdit:hover {
+  opacity: 1;
+  color: #F2A900;
+  background: rgba(242, 169, 0, 0.1);
+  border-color: rgba(242, 169, 0, 0.3);
+}
+
+.actionReorder:hover {
+  opacity: 1;
+  color: #8B5CF6;
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.actionReorder:disabled {
+  opacity: 0.15;
+  cursor: not-allowed;
+}
+
+.actionEdit, .actionReorder, .actionMove, .actionDelete { color: var(--color-text-muted, #999); }
 
 /* ─── Inline Form ──────────────────────────────────────────────────────── */
 

@@ -107,6 +107,57 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: true, addedVoicing: newVoicing });
     }
 
+    // ─── Modifier un voicing existant ─────────────────────────────────────
+    case 'edit-voicing': {
+      const { riddimId, voicingIndex, artist, title, views } = body;
+      const riddim = riddims.find((r: { id: number }) => r.id === riddimId);
+
+      if (!riddim) {
+        return NextResponse.json({ error: 'Riddim introuvable' }, { status: 404 });
+      }
+      if (voicingIndex < 0 || voicingIndex >= riddim.voicings.length) {
+        return NextResponse.json({ error: 'Index voicing invalide' }, { status: 400 });
+      }
+      if (!artist || !title) {
+        return NextResponse.json({ error: 'Artiste et titre requis' }, { status: 400 });
+      }
+
+      riddim.voicings[voicingIndex] = {
+        artist,
+        title,
+        views: views ?? riddim.voicings[voicingIndex].views,
+      };
+
+      await writeRiddims(riddims);
+      return NextResponse.json({ success: true, updatedVoicing: riddim.voicings[voicingIndex] });
+    }
+
+    // ─── Réordonner un voicing (monter/descendre) ───────────────────────
+    case 'reorder-voicing': {
+      const { riddimId, voicingIndex, direction } = body;
+      const riddim = riddims.find((r: { id: number }) => r.id === riddimId);
+
+      if (!riddim) {
+        return NextResponse.json({ error: 'Riddim introuvable' }, { status: 404 });
+      }
+      if (voicingIndex < 0 || voicingIndex >= riddim.voicings.length) {
+        return NextResponse.json({ error: 'Index voicing invalide' }, { status: 400 });
+      }
+
+      const targetIndex = direction === 'up' ? voicingIndex - 1 : voicingIndex + 1;
+      if (targetIndex < 0 || targetIndex >= riddim.voicings.length) {
+        return NextResponse.json({ error: 'Déplacement impossible' }, { status: 400 });
+      }
+
+      // Swap
+      const temp = riddim.voicings[voicingIndex];
+      riddim.voicings[voicingIndex] = riddim.voicings[targetIndex];
+      riddim.voicings[targetIndex] = temp;
+
+      await writeRiddims(riddims);
+      return NextResponse.json({ success: true });
+    }
+
     // ─── Créer un nouveau riddim ─────────────────────────────────────────
     case 'create-riddim': {
       const { name, year, producer, label, type, genre, bpm, description, voicings } = body;
