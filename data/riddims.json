@@ -2750,5 +2750,5494 @@
         "views": 120000
       }
     ]
+  },
+  {
+    "name": "Live In Love",
+    "year": 2012,
+    "producer": "TJ Records",
+    "label": "TJ Records",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 0,
+    "description": "Riddim reggae lovers rock produit par TJ Records en 2012, mettant en vedette des artistes majeurs comme Tarrus Riley, I-Octane et J Boog. Ce riddim romantique et mélodieux est devenu un classique du genre avec des voicings très populaires.",
+    "voicings": [
+      {
+        "artist": "Tarrus Riley",
+        "title": "Sorry Is A Sorry Word",
+        "views": 15000000
+      },
+      {
+        "artist": "I-Octane",
+        "title": "Can't Get Over I",
+        "views": 3000000
+      },
+      {
+        "artist": "J Boog",
+        "title": "Love Me",
+        "views": 2500000
+      },
+      {
+        "artist": "Gyptian",
+        "title": "One More Time",
+        "views": 2000000
+      },
+      {
+        "artist": "Alaine",
+        "title": "Another Love Song",
+        "views": 1500000
+      },
+      {
+        "artist": "Bugle",
+        "title": "It's A Journey",
+        "views": 800000
+      },
+      {
+        "artist": "Peetah Morgan",
+        "title": "Caribbean Queen",
+        "views": 600000
+      },
+      {
+        "artist": "Red Rose",
+        "title": "All I Wanna Do",
+        "views": 300000
+      },
+      {
+        "artist": "Rasun",
+        "title": "Hard To Walk Away",
+        "views": 200000
+      },
+      {
+        "artist": "Delando",
+        "title": "When Your Love Went Away",
+        "views": 100000
+      }
+    ],
+    "id": 45
+  },
+  {
+    "name": "Soul Mate",
+    "year": 2013,
+    "producer": "Mr. G Music",
+    "label": "Mr. G Music",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 0,
+    "description": "Riddim reggae produit par Mr. G Music en 2013, avec des artistes comme Pressure, Ginjah et Tony Rebel. Un riddim roots doux et mélodieux axé sur les thèmes de l'amour et de la spiritualité.",
+    "voicings": [
+      {
+        "artist": "Pressure",
+        "title": "Your Love",
+        "views": 1200000
+      },
+      {
+        "artist": "Ginjah",
+        "title": "Quiet Place",
+        "views": 500000
+      },
+      {
+        "artist": "Tony Rebel",
+        "title": "Good Mood",
+        "views": 400000
+      },
+      {
+        "artist": "Bryka",
+        "title": "My Love Story",
+        "views": 200000
+      },
+      {
+        "artist": "Ultimate",
+        "title": "Caah Do Mi Nutten",
+        "views": 100000
+      }
+    ],
+    "id": 46
+  },
+  {
+    "name": "Lost Angel",
+    "year": 2011,
+    "producer": "So Unique Records",
+    "label": "So Unique Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall produit par So Unique Records en août 2011, distribué par Hapilos. Ce riddim est célèbre pour le hit massif de Popcaan 'Only Man She Want' qui a propulsé sa carrière internationale.",
+    "voicings": [
+      {
+        "artist": "Popcaan",
+        "title": "Only Man She Want",
+        "views": 45000000
+      },
+      {
+        "artist": "Vybz Kartel",
+        "title": "Love You Enuh",
+        "views": 5000000
+      },
+      {
+        "artist": "Tommy Lee",
+        "title": "A Million",
+        "views": 2000000
+      },
+      {
+        "artist": "Shawn Storm",
+        "title": "Real Man",
+        "views": 800000
+      },
+      {
+        "artist": "Gaza Slim",
+        "title": "Everything Fi Hold Him",
+        "views": 500000
+      },
+      {
+        "artist": "Sheba",
+        "title": "No Idiot Gal",
+        "views": 200000
+      },
+      {
+        "artist": "Stylysh",
+        "title": "Me a Wife",
+        "views": 100000
+      }
+    ],
+    "id": 47
+  },
+  {
+    "name": "Bubble Gum",
+    "year": 2011,
+    "producer": "Washroom Entertainment",
+    "label": "Washroom Entertainment",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall produit par Washroom Entertainment en 2011, avec un line-up impressionnant incluant T.O.K, Konshens, Alaine et Tessanne Chin. Un riddim dansant et énergique typique du dancehall moderne.",
+    "voicings": [
+      {
+        "artist": "Konshens",
+        "title": "Jah Love Mi",
+        "views": 3000000
+      },
+      {
+        "artist": "Alaine",
+        "title": "All Or Nothing",
+        "views": 1500000
+      },
+      {
+        "artist": "Tessanne Chin",
+        "title": "Call Fi Mi Cure",
+        "views": 1200000
+      },
+      {
+        "artist": "Demarco",
+        "title": "She Heard It Before",
+        "views": 1000000
+      },
+      {
+        "artist": "Wayne Marshall",
+        "title": "Real Love",
+        "views": 800000
+      },
+      {
+        "artist": "T.O.K",
+        "title": "Yardie",
+        "views": 700000
+      },
+      {
+        "artist": "Tifa",
+        "title": "Nuh Want Yuh No More",
+        "views": 600000
+      },
+      {
+        "artist": "VoiceMail",
+        "title": "Bubble Pon Mi",
+        "views": 400000
+      }
+    ],
+    "id": 48
+  },
+  {
+    "name": "Island Vibes",
+    "year": 2011,
+    "producer": "Chimney Records",
+    "label": "Chimney Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall produit par Chimney Records (Jordan McClure & David Hayles) en 2011. Un riddim vibrant avec des artistes comme Tarrus Riley, Konshens et I-Octane, capturant l'énergie insulaire jamaïcaine.",
+    "voicings": [
+      {
+        "artist": "Tarrus Riley",
+        "title": "Never Leave I",
+        "views": 3500000
+      },
+      {
+        "artist": "Konshens",
+        "title": "Represent",
+        "views": 2000000
+      },
+      {
+        "artist": "I-Octane",
+        "title": "Once More",
+        "views": 1500000
+      },
+      {
+        "artist": "Serani",
+        "title": "Don't Call The Cops",
+        "views": 1000000
+      },
+      {
+        "artist": "Bugle",
+        "title": "I Don't Worry",
+        "views": 800000
+      },
+      {
+        "artist": "Khago",
+        "title": "Energy",
+        "views": 500000
+      },
+      {
+        "artist": "Einstein",
+        "title": "Fall In Love",
+        "views": 200000
+      },
+      {
+        "artist": "Kibaki",
+        "title": "Jah Children Beware",
+        "views": 150000
+      }
+    ],
+    "id": 49
+  },
+  {
+    "name": "Pepper",
+    "year": 2011,
+    "producer": "Di Genius (Stephen McGregor)",
+    "label": "Di Genius Records / Bigship Music",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall énergique produit par Di Genius (Stephen McGregor) en février 2011. Ce riddim hard dancehall présente des artistes comme Mavado, Elephant Man et Aidonia avec des beats agressifs et percutants.",
+    "voicings": [
+      {
+        "artist": "Mavado",
+        "title": "Pepper",
+        "views": 4000000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "No Weapon",
+        "views": 1500000
+      },
+      {
+        "artist": "Aidonia",
+        "title": "Whine Yuh Body",
+        "views": 1200000
+      },
+      {
+        "artist": "Assassin (Agent Sasco)",
+        "title": "Nothing At All",
+        "views": 800000
+      },
+      {
+        "artist": "Chino",
+        "title": "Yeah Yeah",
+        "views": 600000
+      },
+      {
+        "artist": "Laden",
+        "title": "Go Deh Mi Gyal",
+        "views": 400000
+      },
+      {
+        "artist": "Bramma",
+        "title": "Nuh Trus People",
+        "views": 300000
+      },
+      {
+        "artist": "Volcanic",
+        "title": "Taking It Higher",
+        "views": 200000
+      }
+    ],
+    "id": 50
+  },
+  {
+    "name": "Antique",
+    "year": 2011,
+    "producer": "Don Corleon (Donovan Bennett)",
+    "label": "Don Corleon Records",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 0,
+    "description": "Riddim reggae produit par Don Corleon Records en novembre 2011. Un riddim mélodieux et sophistiqué avec des artistes de premier plan comme Tarrus Riley, Protoje, Romain Virgo et Vybz Kartel.",
+    "voicings": [
+      {
+        "artist": "Tarrus Riley",
+        "title": "Antique Loving",
+        "views": 2000000
+      },
+      {
+        "artist": "Protoje",
+        "title": "Stronger",
+        "views": 1500000
+      },
+      {
+        "artist": "Romain Virgo",
+        "title": "Never Go Under",
+        "views": 1200000
+      },
+      {
+        "artist": "Vybz Kartel & Gaza Slim",
+        "title": "Need Somebody",
+        "views": 1000000
+      },
+      {
+        "artist": "Kymani Marley",
+        "title": "Be Smart",
+        "views": 800000
+      },
+      {
+        "artist": "Capleton",
+        "title": "Nah Skylark",
+        "views": 500000
+      },
+      {
+        "artist": "Ce'Cile",
+        "title": "Green Light",
+        "views": 400000
+      },
+      {
+        "artist": "Da Professor & Ken Boothe",
+        "title": "Touch You",
+        "views": 200000
+      }
+    ],
+    "id": 51
+  },
+  {
+    "name": "Major & Minor",
+    "year": 2010,
+    "producer": "Don Corleon (Donovan Bennett)",
+    "label": "Don Corleon Records",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 0,
+    "description": "Double riddim produit par Don Corleon Records en septembre 2010, comprenant 19 titres répartis entre la partie Major et la partie Minor. Connu pour le hit mondial de J Boog 'Lets Do It Again' qui a dépassé 200 millions de streams sur Spotify.",
+    "voicings": [
+      {
+        "artist": "J Boog",
+        "title": "Lets Do It Again",
+        "views": 88000000
+      },
+      {
+        "artist": "Tarrus Riley",
+        "title": "Wildfire",
+        "views": 5000000
+      },
+      {
+        "artist": "Sean Paul",
+        "title": "All Night Long",
+        "views": 3000000
+      },
+      {
+        "artist": "Vybz Kartel",
+        "title": "A Like That",
+        "views": 2500000
+      },
+      {
+        "artist": "Jah Cure",
+        "title": "Respect",
+        "views": 2000000
+      },
+      {
+        "artist": "Ce'Cile",
+        "title": "Take My Heart",
+        "views": 1000000
+      },
+      {
+        "artist": "Wayne Marshall",
+        "title": "Work Hard",
+        "views": 800000
+      },
+      {
+        "artist": "Lutan Fyah",
+        "title": "Come Over",
+        "views": 600000
+      },
+      {
+        "artist": "Protoje",
+        "title": "Roll",
+        "views": 500000
+      },
+      {
+        "artist": "Tami Chynn",
+        "title": "Forbidden Love",
+        "views": 400000
+      }
+    ],
+    "id": 52
+  },
+  {
+    "name": "Forever",
+    "year": 2017,
+    "producer": "Armzhouse Records",
+    "label": "Armzhouse Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall produit par Armzhouse Records en 2017, dominé par le hit viral d'Alkaline 'Pretty Girl Team' qui a dépassé 10 millions de vues sur YouTube. Un riddim moderne et accrocheur avec Mavado et Kranium.",
+    "voicings": [
+      {
+        "artist": "Alkaline",
+        "title": "Pretty Girl Team",
+        "views": 25000000
+      },
+      {
+        "artist": "Mavado",
+        "title": "Forever",
+        "views": 5000000
+      },
+      {
+        "artist": "Kranium",
+        "title": "Give Thanks",
+        "views": 3000000
+      },
+      {
+        "artist": "I Octane",
+        "title": "Long Time",
+        "views": 2000000
+      },
+      {
+        "artist": "Jahmiel",
+        "title": "Find a Way",
+        "views": 1000000
+      },
+      {
+        "artist": "OCG",
+        "title": "Nuh Fall in Love",
+        "views": 500000
+      }
+    ],
+    "id": 53
+  },
+  {
+    "name": "Gangster City",
+    "year": 2010,
+    "producer": "Notnice (Ainsley Morris) & Vybz Kartel",
+    "label": "Adidjahiem Records / Notnice Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall hardcore produit par Notnice et Vybz Kartel en avril 2010, issu du camp Gaza/Portmore Empire. Un riddim sombre et puissant avec Popcaan, Tommy Lee Sparta et Shawn Storm.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "Thank You Jah (On & On)",
+        "views": 5000000
+      },
+      {
+        "artist": "Popcaan",
+        "title": "Gangster City",
+        "views": 4000000
+      },
+      {
+        "artist": "Tommy Lee Sparta",
+        "title": "Holding Out The Pressure",
+        "views": 2000000
+      },
+      {
+        "artist": "Shawn Storm",
+        "title": "My Life",
+        "views": 1000000
+      },
+      {
+        "artist": "Jah Vinci",
+        "title": "Oh Jah Jah",
+        "views": 800000
+      },
+      {
+        "artist": "Merital Family",
+        "title": "Pray",
+        "views": 300000
+      },
+      {
+        "artist": "G.Whizz",
+        "title": "Dem A Watch We Fah",
+        "views": 200000
+      }
+    ],
+    "id": 54
+  },
+  {
+    "name": "Summer Scheme",
+    "year": 2011,
+    "producer": "Don Corleon (Donovan Bennett)",
+    "label": "Don Corleon Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall estival produit par Don Corleon Records en mai 2011. Un riddim festif et ensoleillé avec Vybz Kartel, Sean Paul, J Boog et Wayne Marshall, parfait pour l'ambiance party.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "My Baby U",
+        "views": 3000000
+      },
+      {
+        "artist": "Sean Paul",
+        "title": "Gimme the Loving",
+        "views": 2000000
+      },
+      {
+        "artist": "J Boog",
+        "title": "I'm Fallen",
+        "views": 1500000
+      },
+      {
+        "artist": "Wayne Marshall",
+        "title": "It's Party Time",
+        "views": 800000
+      },
+      {
+        "artist": "Protoje & Keida",
+        "title": "All Again",
+        "views": 600000
+      },
+      {
+        "artist": "Toi",
+        "title": "You'll Be Mine",
+        "views": 200000
+      },
+      {
+        "artist": "Liquid",
+        "title": "Summer Scheme",
+        "views": 100000
+      }
+    ],
+    "id": 55
+  },
+  {
+    "name": "Country Bus",
+    "year": 2015,
+    "producer": "Chimney Records (Jordan McClure)",
+    "label": "Chimney Records",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 0,
+    "description": "Riddim reggae one drop produit par Chimney Records en 2015, agrémenté de guitares électriques chaleureuses. Un riddim très populaire avec un casting all-star incluant Tarrus Riley, Konshens, Morgan Heritage et J Boog.",
+    "voicings": [
+      {
+        "artist": "J Boog",
+        "title": "Let Me Love You",
+        "views": 15000000
+      },
+      {
+        "artist": "Tarrus Riley",
+        "title": "Cool Me Down",
+        "views": 8000000
+      },
+      {
+        "artist": "Konshens",
+        "title": "It's Gonna Be Okay",
+        "views": 5000000
+      },
+      {
+        "artist": "Morgan Heritage",
+        "title": "Talk Dem Ah Talk",
+        "views": 3000000
+      },
+      {
+        "artist": "Alaine",
+        "title": "Favourite Boy",
+        "views": 2500000
+      },
+      {
+        "artist": "Assassin (Agent Sasco)",
+        "title": "Country Bus",
+        "views": 2000000
+      },
+      {
+        "artist": "I Octane",
+        "title": "Life Aint Easy",
+        "views": 1500000
+      },
+      {
+        "artist": "Jemere Morgan ft. Gramps Morgan",
+        "title": "Try Jah Love",
+        "views": 1000000
+      },
+      {
+        "artist": "Dean Fraser",
+        "title": "Sax On The Bus",
+        "views": 500000
+      },
+      {
+        "artist": "Zagga",
+        "title": "Ladies Around The World",
+        "views": 300000
+      }
+    ],
+    "id": 56
+  },
+  {
+    "name": "Liquid",
+    "year": 2001,
+    "producer": "Jeremy Harding",
+    "label": "2 Hard Records / VP Records",
+    "type": "ragga",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall emblématique produit par Jeremy Harding pour 2 Hard Records en 2001, sorti dans la série Riddim Driven de VP Records. Connu pour le hit 'Log On' d'Elephant Man et 'Can You Do The Work' de Sean Paul & Ce'Cile.",
+    "voicings": [
+      {
+        "artist": "Elephant Man",
+        "title": "Log On",
+        "views": 12000000
+      },
+      {
+        "artist": "Sean Paul & Ce'Cile",
+        "title": "Can You Do The Work",
+        "views": 8000000
+      },
+      {
+        "artist": "Sean Paul",
+        "title": "Ignite It",
+        "views": 3000000
+      },
+      {
+        "artist": "Wayne Wonder",
+        "title": "Lovin' Spree",
+        "views": 2000000
+      },
+      {
+        "artist": "T.O.K.",
+        "title": "Keep It Blazin'",
+        "views": 1500000
+      },
+      {
+        "artist": "Lady Saw",
+        "title": "Tell Me What You Like",
+        "views": 1000000
+      },
+      {
+        "artist": "Mad Cobra",
+        "title": "She Ain't Feelin It",
+        "views": 800000
+      },
+      {
+        "artist": "Tanto Metro & Devonte",
+        "title": "Give It To Her",
+        "views": 600000
+      },
+      {
+        "artist": "Wayne Marshall",
+        "title": "Feelin' It",
+        "views": 400000
+      },
+      {
+        "artist": "General Degree",
+        "title": "Step Aside",
+        "views": 300000
+      }
+    ],
+    "id": 57
+  },
+  {
+    "name": "Bashment Time",
+    "year": 2018,
+    "producer": "Rvssian (Tarik Johnston)",
+    "label": "Head Concussion Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall produit par le super producteur Rvssian pour Head Concussion Records en février 2018. Un riddim bashment énergique avec Konshens, Charly Black, Shenseea et Christopher Martin.",
+    "voicings": [
+      {
+        "artist": "Konshens",
+        "title": "Gal Tan Up",
+        "views": 8000000
+      },
+      {
+        "artist": "Shenseea",
+        "title": "Position",
+        "views": 6000000
+      },
+      {
+        "artist": "Charly Black",
+        "title": "Tan Tuddy",
+        "views": 4000000
+      },
+      {
+        "artist": "Christopher Martin",
+        "title": "Mill On The Front",
+        "views": 3000000
+      },
+      {
+        "artist": "Tarrus Riley",
+        "title": "Nuh One Alone",
+        "views": 2000000
+      },
+      {
+        "artist": "Chan Dizzy",
+        "title": "No Trouble Mi",
+        "views": 800000
+      },
+      {
+        "artist": "Savage",
+        "title": "Whinning Work",
+        "views": 500000
+      },
+      {
+        "artist": "Loumi",
+        "title": "Jump On It",
+        "views": 200000
+      }
+    ],
+    "id": 58
+  },
+  {
+    "name": "Cold Heart",
+    "year": 2015,
+    "producer": "Robert Livingston",
+    "label": "Big Yard Music",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall moderne produit par Robert Livingston pour Big Yard Music (label fondé par Shaggy) en novembre 2015. Un mélange de chaleur reggae classique et d'edge moderne avec Busy Signal, Christopher Martin et Richie Spice.",
+    "voicings": [
+      {
+        "artist": "Busy Signal",
+        "title": "Free Up",
+        "views": 5000000
+      },
+      {
+        "artist": "Christopher Martin",
+        "title": "Indecisive",
+        "views": 3000000
+      },
+      {
+        "artist": "Richie Spice",
+        "title": "Nuh Leave Mi",
+        "views": 2000000
+      },
+      {
+        "artist": "D Major",
+        "title": "Deal Is Done",
+        "views": 1500000
+      },
+      {
+        "artist": "Denyque",
+        "title": "Don't You Know",
+        "views": 1000000
+      },
+      {
+        "artist": "General Degree",
+        "title": "Forever",
+        "views": 500000
+      },
+      {
+        "artist": "Javada",
+        "title": "Wake Up Beside You",
+        "views": 300000
+      },
+      {
+        "artist": "Tony Gold",
+        "title": "Only You",
+        "views": 200000
+      }
+    ],
+    "id": 59
+  },
+  {
+    "name": "Diamonds And Gold",
+    "year": 2013,
+    "producer": "DJ Frass",
+    "label": "DJ Frass Records",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 0,
+    "description": "Riddim reggae produit par DJ Frass Records en 2013, avec 17 titres. DJ Frass, habituellement connu pour ses productions dancehall percutantes, explore ici son côté reggae avec des artistes comme Jah Cure, Christopher Martin et Queen Ifrica.",
+    "voicings": [
+      {
+        "artist": "Jah Cure",
+        "title": "World Is In Trouble",
+        "views": 3000000
+      },
+      {
+        "artist": "Christopher Martin",
+        "title": "Baby I Love You",
+        "views": 2500000
+      },
+      {
+        "artist": "I-Octane",
+        "title": "Jah Jah Mission",
+        "views": 2000000
+      },
+      {
+        "artist": "Alaine",
+        "title": "Jah Is So Good",
+        "views": 1500000
+      },
+      {
+        "artist": "Queen Ifrica",
+        "title": "Corrupt System",
+        "views": 1200000
+      },
+      {
+        "artist": "Demarco",
+        "title": "Me She Want",
+        "views": 1000000
+      },
+      {
+        "artist": "Ce'Cile",
+        "title": "Always Be Around",
+        "views": 800000
+      },
+      {
+        "artist": "Chuck Fenda",
+        "title": "Stop Worry",
+        "views": 600000
+      },
+      {
+        "artist": "Iba Mahr",
+        "title": "Burn Out Bridges And Barriers",
+        "views": 500000
+      },
+      {
+        "artist": "T.O.K",
+        "title": "Diamonds And Gold",
+        "views": 400000
+      }
+    ],
+    "id": 60
+  },
+  {
+    "name": "Love Triangle",
+    "year": 2013,
+    "producer": "UIM Records",
+    "label": "UIM Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall produit par UIM Records en septembre 2013, avec 14 titres. Dominé par le hit 'No Games' de Vybz Kartel et '123' d'Alkaline, ce riddim explore les thèmes des relations amoureuses compliquées.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "No Games",
+        "views": 15000000
+      },
+      {
+        "artist": "Alkaline",
+        "title": "123",
+        "views": 8000000
+      },
+      {
+        "artist": "Bugle ft. Lady Saw",
+        "title": "Infidelity",
+        "views": 2000000
+      },
+      {
+        "artist": "Gaza Slim",
+        "title": "Starting Over",
+        "views": 1000000
+      },
+      {
+        "artist": "Blak Diamon",
+        "title": "Love Triangle",
+        "views": 500000
+      },
+      {
+        "artist": "Raine Seville",
+        "title": "Why Would You",
+        "views": 400000
+      },
+      {
+        "artist": "Jordanne Patrice",
+        "title": "All 4 You",
+        "views": 300000
+      },
+      {
+        "artist": "Nicky B",
+        "title": "Cheating",
+        "views": 150000
+      }
+    ],
+    "id": 61
+  },
+  {
+    "name": "Istanbul",
+    "year": 2006,
+    "producer": "Wayne Morris, Donovan Bennett, Paul Crossdale & Donald Dennis",
+    "label": "Purple Skunk Records",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 0,
+    "description": "Riddim reggae one drop produit par Purple Skunk Records en 2006, 7ème volet de la série Rhythm Streetz. Un riddim doux avec un riff de guitare muted syncopé et une ligne de basse discrète, mettant en vedette Jah Cure, Bounty Killer et Vybz Kartel.",
+    "voicings": [
+      {
+        "artist": "Jah Cure",
+        "title": "What Will It Take",
+        "views": 5000000
+      },
+      {
+        "artist": "Vybz Kartel",
+        "title": "Society",
+        "views": 3000000
+      },
+      {
+        "artist": "Bounty Killer",
+        "title": "Gangster Love",
+        "views": 2500000
+      },
+      {
+        "artist": "Wayne Wonder",
+        "title": "Love and Affection",
+        "views": 2000000
+      },
+      {
+        "artist": "T.O.K",
+        "title": "Marijuana",
+        "views": 1500000
+      },
+      {
+        "artist": "Fantan Mojah",
+        "title": "Friends",
+        "views": 1000000
+      },
+      {
+        "artist": "Anthony B",
+        "title": "Don't Worry",
+        "views": 800000
+      },
+      {
+        "artist": "Wayne Marshall & Alaine",
+        "title": "Dying for a Cure",
+        "views": 600000
+      },
+      {
+        "artist": "Natural Black",
+        "title": "Life Be the Same Way",
+        "views": 400000
+      },
+      {
+        "artist": "Teflon",
+        "title": "Get Up and Strive",
+        "views": 200000
+      }
+    ],
+    "id": 62
+  },
+  {
+    "name": "Twilight",
+    "year": 2018,
+    "producer": "Frenchie",
+    "label": "Maximum Sound",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 0,
+    "description": "Riddim reggae one drop produit par Frenchie pour Maximum Sound en 2018. Un riddim envoûtant et raffiné salué comme un projet de juggling de premier ordre, avec Christopher Martin, Etana, Sanchez et Duane Stephenson.",
+    "voicings": [
+      {
+        "artist": "Christopher Martin",
+        "title": "Bun Fi Bun",
+        "views": 5000000
+      },
+      {
+        "artist": "Etana",
+        "title": "Be Alright",
+        "views": 3000000
+      },
+      {
+        "artist": "Sanchez",
+        "title": "Share The Memory",
+        "views": 2000000
+      },
+      {
+        "artist": "Duane Stephenson",
+        "title": "Play That Song",
+        "views": 1500000
+      },
+      {
+        "artist": "Mr Vegas",
+        "title": "Black Princess",
+        "views": 1000000
+      },
+      {
+        "artist": "Ginjah",
+        "title": "Bring Heaven Down",
+        "views": 500000
+      },
+      {
+        "artist": "Lukie D",
+        "title": "Treat You Better",
+        "views": 400000
+      },
+      {
+        "artist": "Dean Fraser",
+        "title": "R.A. Super Special",
+        "views": 200000
+      },
+      {
+        "artist": "Jah Lil",
+        "title": "Expensive Tears",
+        "views": 150000
+      }
+    ],
+    "id": 63
+  },
+  {
+    "name": "Egyptian",
+    "year": 2003,
+    "producer": "Daniel 'Blaxx' Lewis",
+    "label": "Greensleeves Records",
+    "type": "ragga",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall produit par Daniel 'Blaxx' Lewis, sorti en 2003 dans la série Greensleeves Rhythm Album (Vol. 40). Un riddim dancehall classique avec 20 titres mettant en vedette Sean Paul, Vybz Kartel, Elephant Man et Bounty Killer.",
+    "voicings": [
+      {
+        "artist": "Sean Paul",
+        "title": "Get With It Girl",
+        "views": 3000000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Egyptian Dance",
+        "views": 2500000
+      },
+      {
+        "artist": "Vybz Kartel",
+        "title": "Sweet to the Belly",
+        "views": 2000000
+      },
+      {
+        "artist": "Bounty Killer",
+        "title": "Warlord Vex",
+        "views": 1500000
+      },
+      {
+        "artist": "T.O.K.",
+        "title": "Coulda Wha",
+        "views": 1200000
+      },
+      {
+        "artist": "Sizzla",
+        "title": "These Are the Days",
+        "views": 1000000
+      },
+      {
+        "artist": "Assassin",
+        "title": "It's a Girl Thing",
+        "views": 800000
+      },
+      {
+        "artist": "Junior Kelly",
+        "title": "Tek Them On",
+        "views": 500000
+      },
+      {
+        "artist": "General Degree",
+        "title": "Hotties",
+        "views": 400000
+      },
+      {
+        "artist": "Ward 21",
+        "title": "Where We Come From",
+        "views": 300000
+      }
+    ],
+    "id": 64
+  },
+  {
+    "name": "Serve And Protect",
+    "year": 2009,
+    "producer": "Donovan Germain",
+    "label": "Penthouse Records",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 0,
+    "description": "Riddim reggae produit par Donovan Germain pour Penthouse Records en janvier 2009, composé par Bunny-Ann Fletcher & Mitchum 'Khan' Chin. Un riddim roots conscious avec Sanchez, Queen Ifrica, Romain Virgo et Lutan Fyah.",
+    "voicings": [
+      {
+        "artist": "Romain Virgo",
+        "title": "Who Feels It Knows It",
+        "views": 4000000
+      },
+      {
+        "artist": "Queen Ifrica",
+        "title": "To Serve And Protect",
+        "views": 2000000
+      },
+      {
+        "artist": "Sanchez",
+        "title": "Longing To Come Home",
+        "views": 1500000
+      },
+      {
+        "artist": "Romain Virgo & Etana",
+        "title": "Who Feels It Knows It",
+        "views": 1200000
+      },
+      {
+        "artist": "Lutan Fyah",
+        "title": "Not A Dollar More",
+        "views": 800000
+      },
+      {
+        "artist": "Tony Rebel",
+        "title": "Life Is Too Short",
+        "views": 600000
+      },
+      {
+        "artist": "VoiceMail",
+        "title": "Perfect Gentleman",
+        "views": 500000
+      },
+      {
+        "artist": "Lukie D",
+        "title": "My Will",
+        "views": 300000
+      },
+      {
+        "artist": "Peetah Morgan",
+        "title": "I'm So Lost",
+        "views": 250000
+      },
+      {
+        "artist": "Kiprich",
+        "title": "Caney",
+        "views": 200000
+      }
+    ],
+    "id": 65
+  },
+  {
+    "name": "One Tribe",
+    "year": 2019,
+    "producer": "Ousman Dampha",
+    "label": "Idubs Musics",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 0,
+    "description": "Riddim reggae roots produit par Ousman Dampha pour Idubs Musics en 2019 (Vol. 1). Un projet panafricain avec des artistes comme Jah Mason, Naptali et Singer Jah, porté par des messages d'unité et de rassemblement.",
+    "voicings": [
+      {
+        "artist": "Jah Mason",
+        "title": "Forward Me Look On",
+        "views": 200000
+      },
+      {
+        "artist": "Naptali",
+        "title": "One Tribe",
+        "views": 150000
+      },
+      {
+        "artist": "Singer Jah",
+        "title": "Jah Guide",
+        "views": 80000
+      },
+      {
+        "artist": "Ezekiah Rose",
+        "title": "Rise Up",
+        "views": 60000
+      },
+      {
+        "artist": "Bai Conteh",
+        "title": "One Tribe Korah",
+        "views": 40000
+      }
+    ],
+    "id": 66
+  },
+  {
+    "name": "The Pleasure",
+    "year": 2010,
+    "producer": "Cashflow Records",
+    "label": "Cashflow Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall moderne produit par Cashflow Records en juillet 2010. Un riddim dansant avec des artistes comme Konshens, Ce'Cile, Christopher Martin et Gyptian, axé sur les thèmes de l'amour et du plaisir.",
+    "voicings": [
+      {
+        "artist": "Konshens",
+        "title": "No Retreat",
+        "views": 2000000
+      },
+      {
+        "artist": "Ce'Cile",
+        "title": "Look For Me",
+        "views": 1500000
+      },
+      {
+        "artist": "Christopher Martin",
+        "title": "My Ex-Girl",
+        "views": 1200000
+      },
+      {
+        "artist": "Gyptian",
+        "title": "More Life",
+        "views": 1000000
+      },
+      {
+        "artist": "Denyque",
+        "title": "Summer Love",
+        "views": 800000
+      },
+      {
+        "artist": "Khago",
+        "title": "Do It Herself",
+        "views": 500000
+      },
+      {
+        "artist": "Sophia Brown",
+        "title": "Let It Be Me",
+        "views": 300000
+      },
+      {
+        "artist": "Nellie Roxx",
+        "title": "Tonight",
+        "views": 200000
+      }
+    ],
+    "id": 67
+  },
+  {
+    "name": "Blessings",
+    "year": 2012,
+    "producer": "JA Productions",
+    "label": "JA Productions",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 0,
+    "description": "Riddim reggae produit par JA Productions en 2012, avec un casting impressionnant incluant Sizzla, Capleton, Gyptian et Etana. Un riddim roots puissant mêlant thèmes spirituels et sentimentaux avec 14 titres.",
+    "voicings": [
+      {
+        "artist": "Sizzla",
+        "title": "Make Me Yours",
+        "views": 3000000
+      },
+      {
+        "artist": "Gyptian",
+        "title": "Karma",
+        "views": 2500000
+      },
+      {
+        "artist": "Capleton",
+        "title": "Weh Dem A Try",
+        "views": 2000000
+      },
+      {
+        "artist": "Etana",
+        "title": "War",
+        "views": 1500000
+      },
+      {
+        "artist": "Duane Stephenson",
+        "title": "Gyal Yuh Nice",
+        "views": 1000000
+      },
+      {
+        "artist": "Wayne Marshall",
+        "title": "One Fake Friend",
+        "views": 800000
+      },
+      {
+        "artist": "Lutan Fyah",
+        "title": "Cherish The Earth",
+        "views": 600000
+      },
+      {
+        "artist": "Spragga Benz",
+        "title": "Do Right",
+        "views": 500000
+      },
+      {
+        "artist": "Turbulence",
+        "title": "Be My Lady",
+        "views": 300000
+      },
+      {
+        "artist": "I-Wayne ft. Fiya Star",
+        "title": "Motherly Love",
+        "views": 200000
+      }
+    ],
+    "id": 68
+  },
+  {
+    "name": "Reggae Island",
+    "year": 2015,
+    "producer": "RazzAttack Muzik",
+    "label": "RazzAttack Muzik",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 0,
+    "description": "Riddim reggae produit par RazzAttack Muzik en 2015 avec 15 titres. Un riddim insulaire mettant en vedette Christopher Martin, Dexta Daps, Serani et Bugle, avec des thèmes variés allant de l'amour à la résilience.",
+    "voicings": [
+      {
+        "artist": "Dexta Daps",
+        "title": "Scared To Love",
+        "views": 5000000
+      },
+      {
+        "artist": "Christopher Martin",
+        "title": "Fimi Island",
+        "views": 3000000
+      },
+      {
+        "artist": "Serani",
+        "title": "Dark Clouds",
+        "views": 2000000
+      },
+      {
+        "artist": "Bugle",
+        "title": "Did It Again",
+        "views": 1500000
+      },
+      {
+        "artist": "Teejay",
+        "title": "Never Lost My Way",
+        "views": 1000000
+      },
+      {
+        "artist": "Khago",
+        "title": "Battlefield",
+        "views": 600000
+      },
+      {
+        "artist": "Deep Jahi",
+        "title": "Through My Veins",
+        "views": 400000
+      },
+      {
+        "artist": "Jordanne Patrice",
+        "title": "Standing Tall",
+        "views": 300000
+      },
+      {
+        "artist": "Ryme Minista",
+        "title": "Heart Mind Soul",
+        "views": 200000
+      }
+    ],
+    "id": 69
+  },
+  {
+    "name": "Dancehall Sings",
+    "year": 2015,
+    "producer": "ZJ Chrome",
+    "label": "CR203 Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall massif produit par ZJ Chrome pour CR203 Records en février 2015, décliné en Love Edition et Roots Edition. Un projet ambitieux réunissant les plus grands noms du dancehall: Vybz Kartel, Mavado, Alkaline, Popcaan et Spice.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "Never Stay Around",
+        "views": 8000000
+      },
+      {
+        "artist": "Alkaline",
+        "title": "Weh You Did Deh",
+        "views": 6000000
+      },
+      {
+        "artist": "Mavado",
+        "title": "Kill Them Slowly",
+        "views": 5000000
+      },
+      {
+        "artist": "Popcaan",
+        "title": "Mad Me",
+        "views": 4000000
+      },
+      {
+        "artist": "Spice",
+        "title": "I Love You",
+        "views": 3000000
+      },
+      {
+        "artist": "Konshens",
+        "title": "Bad Man Heart",
+        "views": 2000000
+      },
+      {
+        "artist": "Christopher Martin",
+        "title": "Tell Me",
+        "views": 1500000
+      },
+      {
+        "artist": "Demarco",
+        "title": "Love & Happiness",
+        "views": 1200000
+      },
+      {
+        "artist": "I-Octane",
+        "title": "Gangsta World",
+        "views": 1000000
+      },
+      {
+        "artist": "Charly Black",
+        "title": "Now & Forever",
+        "views": 800000
+      }
+    ],
+    "id": 70
+  },
+  {
+    "name": "Think Twice",
+    "year": 2011,
+    "producer": "Dameon Gayle",
+    "label": "Warrior Musick Production",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 0,
+    "description": "Riddim reggae conscious produit par Dameon Gayle pour Warrior Musick Production en novembre 2011, inspiré par le hit de Phil Collins 'Another Day in Paradise'. Un riddim roots abordant la pauvreté, la violence et la foi rastafari avec Anthony B, Luciano et Fantan Mojah.",
+    "voicings": [
+      {
+        "artist": "Duane Stephenson",
+        "title": "Think Twice",
+        "views": 3000000
+      },
+      {
+        "artist": "Luciano",
+        "title": "I Can You Can",
+        "views": 2000000
+      },
+      {
+        "artist": "Anthony B",
+        "title": "Too Much Guns In Town",
+        "views": 1500000
+      },
+      {
+        "artist": "Fantan Mojah",
+        "title": "Rasta Got Soul",
+        "views": 1200000
+      },
+      {
+        "artist": "Lutan Fyah",
+        "title": "Rastafari Leads The Way",
+        "views": 800000
+      },
+      {
+        "artist": "Turbulence",
+        "title": "Stay Away",
+        "views": 500000
+      },
+      {
+        "artist": "Zamunda",
+        "title": "Forever Loving Jah",
+        "views": 400000
+      },
+      {
+        "artist": "Devano",
+        "title": "In This Jungle",
+        "views": 300000
+      },
+      {
+        "artist": "Sir Ford",
+        "title": "Ohh Lord",
+        "views": 150000
+      }
+    ],
+    "id": 71
+  },
+  {
+    "name": "Evidence",
+    "year": 2014,
+    "producer": "Patron House Productions",
+    "label": "Patron House Productions",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall produit par Patron House Productions en 2014. Les guitares, la basse et les synthétiseurs créent une ambiance énergique et festive. Le juggling rassemble un casting varié d'artistes dancehall.",
+    "voicings": [
+      {
+        "artist": "I Octane",
+        "title": "Don Talk",
+        "views": 500000
+      },
+      {
+        "artist": "Demarco",
+        "title": "Gone So Soon",
+        "views": 350000
+      },
+      {
+        "artist": "Navino",
+        "title": "Lighters Up",
+        "views": 200000
+      },
+      {
+        "artist": "Jah Vinci",
+        "title": "Love Triangle",
+        "views": 180000
+      },
+      {
+        "artist": "D'Angel",
+        "title": "No Stylings",
+        "views": 150000
+      },
+      {
+        "artist": "Shane O",
+        "title": "Sink In Back",
+        "views": 120000
+      }
+    ],
+    "id": 72
+  },
+  {
+    "name": "Nobody Has To Know",
+    "year": 2014,
+    "producer": "Lamar Michael Reynolds (PLMR Productions)",
+    "label": "Frequent Flyer Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim rendu célèbre par le hit massif de Kranium du même nom, certifié disque d'or aux États-Unis. Ce n'est pas un juggling traditionnel multi-artistes mais un riddim associé principalement à ce titre emblématique. Le morceau a propulsé Kranium vers un contrat avec Atlantic Records.",
+    "voicings": [
+      {
+        "artist": "Kranium",
+        "title": "Nobody Has To Know",
+        "views": 130000000
+      },
+      {
+        "artist": "Kranium ft. Ty Dolla $ign",
+        "title": "Nobody Has To Know (Remix)",
+        "views": 45000000
+      }
+    ],
+    "id": 73
+  },
+  {
+    "name": "Voicenote",
+    "year": 2015,
+    "producer": "Bigga Dondon Records / Adidjaheim Records",
+    "label": "Adidjaheim Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall moderne produit par Bigga Dondon Records en 2015, fortement associé au camp Gaza de Vybz Kartel. Le projet met en avant Vybz Kartel, Shawn Storm et PG 13 (les fils de Kartel), avec des morceaux à la fois musicaux et polémiques.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "Key Stone",
+        "views": 2500000
+      },
+      {
+        "artist": "PG 13 (Lil Vybz & Lil Addi)",
+        "title": "Radio",
+        "views": 800000
+      },
+      {
+        "artist": "Shawn Storm",
+        "title": "Calling",
+        "views": 300000
+      },
+      {
+        "artist": "Ali Watson",
+        "title": "Like You",
+        "views": 50000
+      },
+      {
+        "artist": "Tussan",
+        "title": "Like Addi Di Teacha",
+        "views": 40000
+      }
+    ],
+    "id": 74
+  },
+  {
+    "name": "Jambe An",
+    "year": 2015,
+    "producer": "DJ Kurt Riley",
+    "label": "Techniques Records / VPAL",
+    "type": "digital",
+    "genre": "soca",
+    "bpm": 0,
+    "description": "Riddim soca-dancehall produit par DJ Kurt Riley pour le légendaire label Techniques Records fondé par son père Winston Riley. Avec sa vibration soca-dancehall, ce riddim a été voicé par des artistes caribéens de renom dont Mavado, Charly Black et Machel Montano.",
+    "voicings": [
+      {
+        "artist": "Charly Black",
+        "title": "Gyal You A Party Animal",
+        "views": 347000000
+      },
+      {
+        "artist": "Mavado",
+        "title": "Goodbye To My Haters",
+        "views": 3000000
+      },
+      {
+        "artist": "Machel Montano & Timaya",
+        "title": "Better Than Them",
+        "views": 1500000
+      },
+      {
+        "artist": "Cecile",
+        "title": "Tie Him",
+        "views": 500000
+      },
+      {
+        "artist": "Camar",
+        "title": "Don't Stop Wine",
+        "views": 200000
+      },
+      {
+        "artist": "Notch",
+        "title": "Fiesta",
+        "views": 150000
+      }
+    ],
+    "id": 75
+  },
+  {
+    "name": "G Shock",
+    "year": 2011,
+    "producer": "D&H Records / Subkonshus Productions",
+    "label": "D&H Records / Subkonshus",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall massif produit par D&H Records et Subkonshus Productions en 2011, avec pas moins de 24 titres. Le projet rassemble des artistes jamaïcains et caribéens francophones, témoignant d'une portée internationale.",
+    "voicings": [
+      {
+        "artist": "Konshens",
+        "title": "Dis We Yet",
+        "views": 1500000
+      },
+      {
+        "artist": "Tiana",
+        "title": "No Ring Pon Me Finger",
+        "views": 800000
+      },
+      {
+        "artist": "Fambo",
+        "title": "Cyaa Stop It",
+        "views": 300000
+      },
+      {
+        "artist": "Darrio",
+        "title": "Girly Girly",
+        "views": 200000
+      },
+      {
+        "artist": "Xyclone",
+        "title": "Money Clap",
+        "views": 150000
+      },
+      {
+        "artist": "Delus",
+        "title": "18 and Over",
+        "views": 100000
+      }
+    ],
+    "id": 76
+  },
+  {
+    "name": "Jouvert",
+    "year": 2012,
+    "producer": "Anju Blaxx / UIM Records",
+    "label": "UIM Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall festif produit par Anju Blaxx pour UIM Records en février 2012. Avec 14 titres mêlant dancehall et influences soca, ce riddim capture l'énergie du carnaval caribéen avec des artistes comme Konshens, Demarco et Tommy Lee.",
+    "voicings": [
+      {
+        "artist": "Konshens",
+        "title": "Live It Up",
+        "views": 2000000
+      },
+      {
+        "artist": "Tommy Lee",
+        "title": "Gyal Yuh Perfect",
+        "views": 1500000
+      },
+      {
+        "artist": "Demarco",
+        "title": "Gal Dem Wan Wine",
+        "views": 800000
+      },
+      {
+        "artist": "Charly Black ft. Quickcook",
+        "title": "Welding (Wap Wap)",
+        "views": 600000
+      },
+      {
+        "artist": "Khago",
+        "title": "Peppery",
+        "views": 300000
+      },
+      {
+        "artist": "Lisa Hype",
+        "title": "Soca Whine",
+        "views": 150000
+      }
+    ],
+    "id": 77
+  },
+  {
+    "name": "Fairground",
+    "year": 2011,
+    "producer": "Frenchie",
+    "label": "Maximum Sound",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 0,
+    "description": "Riddim roots reggae moderne et énergique produit par Frenchie pour Maximum Sound en 2011. Sorti en format 7 pouces puis en téléchargement digital, il réunit des voix puissantes comme I-Octane, Konshens et Luciano sur une instrumentation roots raffinée.",
+    "voicings": [
+      {
+        "artist": "Konshens",
+        "title": "Tear The Road",
+        "views": 800000
+      },
+      {
+        "artist": "I-Octane",
+        "title": "My Place",
+        "views": 600000
+      },
+      {
+        "artist": "Christopher Martin",
+        "title": "Top A Top",
+        "views": 400000
+      },
+      {
+        "artist": "Luciano",
+        "title": "Identity",
+        "views": 200000
+      },
+      {
+        "artist": "Cecile",
+        "title": "Who You Love",
+        "views": 150000
+      },
+      {
+        "artist": "Fantan Mojah",
+        "title": "Road Code",
+        "views": 100000
+      }
+    ],
+    "id": 78
+  },
+  {
+    "name": "Smudge",
+    "year": 2011,
+    "producer": "TJ Records (Teetimus)",
+    "label": "TJ Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 100,
+    "description": "Riddim dancehall produit par TJ Records en 2011, avec un tempo de 100 BPM en tonalité de Do mineur. Popcaan y brille avec 'Party Shot (Raving Pt. 2)', un des titres les plus populaires du projet, aux côtés de Demarco et Bugle.",
+    "voicings": [
+      {
+        "artist": "Popcaan",
+        "title": "Party Shot (Raving Pt. 2)",
+        "views": 5000000
+      },
+      {
+        "artist": "Demarco",
+        "title": "Inform",
+        "views": 500000
+      },
+      {
+        "artist": "Bugle",
+        "title": "Live Fi Dis",
+        "views": 300000
+      },
+      {
+        "artist": "Propa Fade",
+        "title": "Friend",
+        "views": 100000
+      },
+      {
+        "artist": "Laden",
+        "title": "Style Deh Shot",
+        "views": 80000
+      }
+    ],
+    "id": 79
+  },
+  {
+    "name": "Movin Feva",
+    "year": 2012,
+    "producer": "Charlie Pro",
+    "label": "Charlie Pro Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall moderne produit par Charlie Pro Records, sorti le 20 février 2012. Avec 13 titres sur 38 minutes, il rassemble des artistes comme Busy Signal, Tarrus Riley et Bushman dans un mélange de vibes festives et conscientes.",
+    "voicings": [
+      {
+        "artist": "Busy Signal",
+        "title": "Whining Feva",
+        "views": 1500000
+      },
+      {
+        "artist": "Tarrus Riley",
+        "title": "We Run It (Jamaica)",
+        "views": 800000
+      },
+      {
+        "artist": "Bushman",
+        "title": "Always on My Mind",
+        "views": 200000
+      },
+      {
+        "artist": "Navino",
+        "title": "Nah Fight War Fi Man",
+        "views": 150000
+      },
+      {
+        "artist": "Future Fambo ft. Brain Damage",
+        "title": "Fashion Pro",
+        "views": 80000
+      },
+      {
+        "artist": "Chase Cross",
+        "title": "Living It Up",
+        "views": 60000
+      }
+    ],
+    "id": 80
+  },
+  {
+    "name": "All Night",
+    "year": 2017,
+    "producer": "Jordan McClure & David Hayle",
+    "label": "Chimney Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall majeur produit par Chimney Records en novembre 2017. Un casting impressionnant réunissant Alkaline, Mavado, Sean Paul, Tarrus Riley et Konshens sur une production moderne et polyvalente, rapidement devenue un favori des sound systems.",
+    "voicings": [
+      {
+        "artist": "Alkaline",
+        "title": "Suave",
+        "views": 15000000
+      },
+      {
+        "artist": "Mavado",
+        "title": "All Night",
+        "views": 8000000
+      },
+      {
+        "artist": "Sean Paul",
+        "title": "She Call Me",
+        "views": 3000000
+      },
+      {
+        "artist": "Tarrus Riley & Konshens",
+        "title": "Simple Blessings",
+        "views": 5000000
+      },
+      {
+        "artist": "Jahmiel",
+        "title": "Heaven",
+        "views": 2000000
+      },
+      {
+        "artist": "Christopher Martin",
+        "title": "Can't Dweet Again",
+        "views": 1500000
+      }
+    ],
+    "id": 81
+  },
+  {
+    "name": "Pleasure",
+    "year": 2010,
+    "producer": "Cash Flow Records",
+    "label": "Cash Flow Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall moderne produit par Cash Flow Records en juillet 2010, avec 9 titres sur environ 29 minutes. Un projet équilibré mêlant artistes établis comme Konshens, Gyptian et Ce'Cile à des talents émergents comme Denyque et Sophia Brown.",
+    "voicings": [
+      {
+        "artist": "Konshens",
+        "title": "No Retreat",
+        "views": 800000
+      },
+      {
+        "artist": "Gyptian",
+        "title": "More Life",
+        "views": 600000
+      },
+      {
+        "artist": "Ce'Cile",
+        "title": "Look For Me",
+        "views": 400000
+      },
+      {
+        "artist": "Chris Martin",
+        "title": "My Ex Girl",
+        "views": 350000
+      },
+      {
+        "artist": "Denyque",
+        "title": "Summer Love",
+        "views": 200000
+      },
+      {
+        "artist": "Khago",
+        "title": "Do It Herself",
+        "views": 150000
+      }
+    ],
+    "id": 82
+  },
+  {
+    "name": "Seduction",
+    "year": 2013,
+    "producer": "Hitmaker Muzik",
+    "label": "Hitmaker Muzik",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall sensuel produit par Hitmaker Muzik en 2013, avec 11 titres et 8 artistes uniques. Le projet met en avant des artistes comme Demarco, Kalado et Chevaughn sur une production aux sonorités séductrices et romantiques.",
+    "voicings": [
+      {
+        "artist": "Demarco",
+        "title": "Apartment",
+        "views": 1000000
+      },
+      {
+        "artist": "Kalado",
+        "title": "Bring Life",
+        "views": 500000
+      },
+      {
+        "artist": "Chevaughn",
+        "title": "I Want U",
+        "views": 300000
+      },
+      {
+        "artist": "Tiana",
+        "title": "Gal Broad Out",
+        "views": 200000
+      },
+      {
+        "artist": "Fiona",
+        "title": "Forever Man",
+        "views": 80000
+      },
+      {
+        "artist": "Rutine",
+        "title": "Drive Me Crazy",
+        "views": 50000
+      }
+    ],
+    "id": 83
+  },
+  {
+    "name": "Ocean Nights",
+    "year": 2015,
+    "producer": "4th Genna Music / G3 Musik",
+    "label": "4th Genna Music / G3 Musik",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall pop-moderne produit par 4th Genna Music et G3 Musik en 2015. Décrit comme un crossover sentimental entre pop et dancehall moderne, il met en vedette Aidonia, Konshens et Ishawna sur des sonorités romantiques et nocturnes.",
+    "voicings": [
+      {
+        "artist": "Aidonia",
+        "title": "Pretty Please",
+        "views": 2000000
+      },
+      {
+        "artist": "Konshens",
+        "title": "Sexperience",
+        "views": 1500000
+      },
+      {
+        "artist": "Ishawna",
+        "title": "Forever",
+        "views": 500000
+      },
+      {
+        "artist": "Jayds",
+        "title": "Come Over",
+        "views": 200000
+      },
+      {
+        "artist": "Deablo",
+        "title": "R.I.P",
+        "views": 150000
+      },
+      {
+        "artist": "Neeqah",
+        "title": "Lock It Up",
+        "views": 50000
+      }
+    ],
+    "id": 84
+  },
+  {
+    "name": "Destiny",
+    "year": 2018,
+    "producer": "Sean 'Young Pow' Diedrick",
+    "label": "Young Pow Production",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall produit par Young Pow Production en 2018, réunissant des poids lourds comme Popcaan, I Octane et Alaine. Le projet mélange vibrations conscientes et mélodies accrocheuses, avec le titre 'Where We Come From' de Popcaan en tête d'affiche.",
+    "voicings": [
+      {
+        "artist": "Popcaan",
+        "title": "Where We Come From",
+        "views": 32000000
+      },
+      {
+        "artist": "I Octane",
+        "title": "Where Di Fire Gone",
+        "views": 1000000
+      },
+      {
+        "artist": "Alaine",
+        "title": "Lucky You",
+        "views": 800000
+      },
+      {
+        "artist": "Christopher Ellis",
+        "title": "If You Knew",
+        "views": 300000
+      },
+      {
+        "artist": "Press Kay",
+        "title": "Destiny",
+        "views": 100000
+      },
+      {
+        "artist": "Irie Souljah",
+        "title": "Jah Jah Don't Leave Me",
+        "views": 80000
+      }
+    ],
+    "id": 85
+  },
+  {
+    "name": "Conquest Paradise",
+    "year": 2019,
+    "producer": "Damage Musiq",
+    "label": "Damage Musiq",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall produit par Damage Musiq en 2019, devenu viral grâce au titre 'Blessings' de Tommy Lee Sparta qui a cumulé plus de 81 millions de vues combinées sur YouTube. Le projet inclut aussi Chronic Law, Shane O et l'artiste ghanéen Shatta Wale.",
+    "voicings": [
+      {
+        "artist": "Tommy Lee Sparta",
+        "title": "Blessings",
+        "views": 81000000
+      },
+      {
+        "artist": "Chronic Law",
+        "title": "Bless Me",
+        "views": 5000000
+      },
+      {
+        "artist": "Shane O",
+        "title": "Hold On",
+        "views": 2000000
+      },
+      {
+        "artist": "Shatta Wale",
+        "title": "Heavy Load",
+        "views": 1500000
+      },
+      {
+        "artist": "Singer J",
+        "title": "Prayer",
+        "views": 300000
+      },
+      {
+        "artist": "Tamo J",
+        "title": "Victory",
+        "views": 100000
+      }
+    ],
+    "id": 86
+  },
+  {
+    "name": "Happy Hour",
+    "year": 2014,
+    "producer": "Jordan McClure & David Hayle",
+    "label": "Chimney Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall festif produit par Chimney Records en septembre 2014. Un projet majeur avec un casting de stars incluant Vybz Kartel, Mavado, Beenie Man, Alkaline, Tarrus Riley et RDX sur une production joyeuse et entraînante.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "Mi Nuh Trust People",
+        "views": 8000000
+      },
+      {
+        "artist": "Mavado",
+        "title": "Nah Use Dem",
+        "views": 4000000
+      },
+      {
+        "artist": "Alkaline",
+        "title": "A Bagga Tings",
+        "views": 3000000
+      },
+      {
+        "artist": "Beenie Man",
+        "title": "Badmind People",
+        "views": 2500000
+      },
+      {
+        "artist": "Demarco",
+        "title": "Bun Up Road",
+        "views": 2000000
+      },
+      {
+        "artist": "Tarrus Riley ft. Zagga",
+        "title": "Free Up",
+        "views": 1500000
+      },
+      {
+        "artist": "RDX",
+        "title": "Mr VSOP",
+        "views": 1000000
+      }
+    ],
+    "id": 87
+  },
+  {
+    "name": "So Bad",
+    "year": 2011,
+    "producer": "Young Vibez Productions",
+    "label": "Young Vibez Productions",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall produit par Young Vibez Productions en 2011. Le projet est dominé par la présence de Popcaan et Vybz Kartel, avec leur collaboration 'We Never Fear Dem' et le titre éponyme 'So Bad' de Popcaan, accompagnés de Bugle et Jahmiel.",
+    "voicings": [
+      {
+        "artist": "Popcaan",
+        "title": "So Bad",
+        "views": 3000000
+      },
+      {
+        "artist": "Popcaan & Vybz Kartel",
+        "title": "We Never Fear Dem",
+        "views": 5000000
+      },
+      {
+        "artist": "Bugle",
+        "title": "Nuh Trust",
+        "views": 500000
+      },
+      {
+        "artist": "Jahmiel",
+        "title": "Even When Me Rich",
+        "views": 400000
+      },
+      {
+        "artist": "Blak Diamon",
+        "title": "Yardie",
+        "views": 150000
+      },
+      {
+        "artist": "Propa Fade",
+        "title": "Mi Nuh Take Talk",
+        "views": 80000
+      }
+    ],
+    "id": 88
+  },
+  {
+    "name": "Sex Mate",
+    "year": 2014,
+    "producer": "Markus Records",
+    "label": "Markus Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall sensuel produit par Markus Records en juin 2014. Le projet réunit des poids lourds comme Vybz Kartel, Mavado, I Octane et Tifa sur une production aux sonorités séductrices et romantiques typiques du dancehall de cette époque.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "Tun Back Way",
+        "views": 5000000
+      },
+      {
+        "artist": "Mavado",
+        "title": "Tie Yuh",
+        "views": 8000000
+      },
+      {
+        "artist": "Tifa",
+        "title": "Out Of This World",
+        "views": 1500000
+      },
+      {
+        "artist": "I Octane",
+        "title": "Your Eyes",
+        "views": 800000
+      },
+      {
+        "artist": "Denyque",
+        "title": "Until You Come",
+        "views": 400000
+      },
+      {
+        "artist": "Bryka",
+        "title": "First Night",
+        "views": 200000
+      }
+    ],
+    "id": 89
+  },
+  {
+    "name": "Wrangla",
+    "year": 2015,
+    "producer": "Yellow Moon Records",
+    "label": "Yellow Moon Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall produit par Yellow Moon Records, sorti le 25 avril 2015. Avec 14 titres incluant Mavado, Alkaline, I-Octane et Masicka, ce riddim a été comparé au 'Wul Dem Riddim' du même label pour ses similitudes mélodiques.",
+    "voicings": [
+      {
+        "artist": "Mavado",
+        "title": "Up Like 7",
+        "views": 5000000
+      },
+      {
+        "artist": "Alkaline",
+        "title": "Whey Yuh Have",
+        "views": 4000000
+      },
+      {
+        "artist": "Masicka",
+        "title": "Check Again",
+        "views": 2000000
+      },
+      {
+        "artist": "I-Octane",
+        "title": "Nuh Bwoy",
+        "views": 1000000
+      },
+      {
+        "artist": "Shawn Storm",
+        "title": "Fully Bad",
+        "views": 800000
+      },
+      {
+        "artist": "Kiprich",
+        "title": "Rich Suh",
+        "views": 300000
+      }
+    ],
+    "id": 90
+  },
+  {
+    "name": "Purge 2K",
+    "year": 2015,
+    "producer": "Haad Rokk Muzik",
+    "label": "Haad Rokk Muzik",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall agressif produit par Haad Rokk Muzik, sorti le 17 mars 2015 avec 14 titres sur 45 minutes. Le projet réunit des figures majeures comme Vybz Kartel, Masicka, Ding Dong et Charly Black dans un style dancehall brut et énergique.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "Money Pon Mi Brain (C-T Scan)",
+        "views": 6000000
+      },
+      {
+        "artist": "Masicka",
+        "title": "Dem Ago Dead",
+        "views": 3000000
+      },
+      {
+        "artist": "Ding Dong",
+        "title": "We A Lead",
+        "views": 2000000
+      },
+      {
+        "artist": "Charly Black",
+        "title": "Badder Than Dem",
+        "views": 1000000
+      },
+      {
+        "artist": "Kiprich",
+        "title": "BreadMaker",
+        "views": 500000
+      },
+      {
+        "artist": "Darrio",
+        "title": "Kill Kill",
+        "views": 200000
+      }
+    ],
+    "id": 91
+  },
+  {
+    "name": "Shoot Out",
+    "year": 2008,
+    "producer": "Demarco & John John (Lloyd 'John John' James)",
+    "label": "John John Records / Awful Music",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall produit par Demarco et John John pour John John Records en 2008. Un projet solide avec des poids lourds comme Buju Banton, Mavado, Sizzla et Busy Signal, ainsi qu'un remix featuring Mykal Rose et Junior Gong (Damian Marley).",
+    "voicings": [
+      {
+        "artist": "Mavado",
+        "title": "Push Broom",
+        "views": 2000000
+      },
+      {
+        "artist": "Busy Signal",
+        "title": "No Escape",
+        "views": 1500000
+      },
+      {
+        "artist": "Buju Banton",
+        "title": "People Dem A Bawl",
+        "views": 1200000
+      },
+      {
+        "artist": "Sizzla",
+        "title": "Badman Sitten",
+        "views": 800000
+      },
+      {
+        "artist": "Demarco",
+        "title": "Duppy Know Who Fi Frighten",
+        "views": 600000
+      },
+      {
+        "artist": "TOK",
+        "title": "Unbelievable",
+        "views": 400000
+      },
+      {
+        "artist": "Mykal Rose ft. Junior Gong",
+        "title": "Shoot Out Remix",
+        "views": 300000
+      }
+    ],
+    "id": 92
+  },
+  {
+    "name": "Mad Ants",
+    "year": 2002,
+    "producer": "Donovan 'Vendetta' Bennett & Shiah Coore",
+    "label": "Don Corleon Records / Greensleeves Records",
+    "type": "ragga",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall classique du début des années 2000, produit par Don Corleon Records et sorti en décembre 2002. Un projet massif avec 37 titres mettant en vedette Bounty Killer, Beenie Man, Elephant Man et Sizzla, représentatif de l'âge d'or du dancehall digital.",
+    "voicings": [
+      {
+        "artist": "Bounty Killer",
+        "title": "Mad Ants",
+        "views": 1500000
+      },
+      {
+        "artist": "Beenie Man",
+        "title": "Mad Ants",
+        "views": 1000000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Mad Ants",
+        "views": 800000
+      },
+      {
+        "artist": "Wayne Marshall",
+        "title": "Mad Ants",
+        "views": 500000
+      },
+      {
+        "artist": "Sizzla",
+        "title": "Mad Ants",
+        "views": 700000
+      },
+      {
+        "artist": "Lukie D",
+        "title": "Mad Ants",
+        "views": 400000
+      }
+    ],
+    "id": 93
+  },
+  {
+    "name": "Martial Arts Pt.1",
+    "year": 2002,
+    "producer": "Cordel 'Scatta' Burrell / Craig 'Left Side' Parkes",
+    "label": "Kings Of Kings / Greensleeves Records",
+    "type": "ragga",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Considéré comme l'un des riddims les plus iconiques des années 2000, produit par Kings Of Kings pour le Greensleeves Rhythm Album #22. Le projet réunit des légendes comme Sizzla, Shabba Ranks, Capleton et Bounty Killer sur une production dancehall explosive.",
+    "voicings": [
+      {
+        "artist": "Sizzla",
+        "title": "Karate",
+        "views": 3000000
+      },
+      {
+        "artist": "Shabba Ranks",
+        "title": "Give Dem Di Shabba",
+        "views": 2000000
+      },
+      {
+        "artist": "Capleton",
+        "title": "Badness",
+        "views": 1500000
+      },
+      {
+        "artist": "Bounty Killer, Wayne Marshall & Richie Stephens",
+        "title": "Ladies Looking Fine",
+        "views": 1000000
+      },
+      {
+        "artist": "Ce'Cile",
+        "title": "Fool",
+        "views": 800000
+      },
+      {
+        "artist": "Lexxus & Jagwa",
+        "title": "Put Up Yuh Hand",
+        "views": 500000
+      },
+      {
+        "artist": "Frisco Kid",
+        "title": "Mash Up Di Place",
+        "views": 400000
+      }
+    ],
+    "id": 94
+  },
+  {
+    "name": "Bruk Out",
+    "year": 1998,
+    "producer": "Dave Kelly",
+    "label": "Madhouse Records",
+    "type": "ragga",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall classique produit par le légendaire Dave Kelly pour Madhouse Records en 1998. Un pilier de l'histoire du dancehall avec Bounty Killer, Baby Cham, Lady Saw et Spragga Benz, ce riddim reste un incontournable des sound systems.",
+    "voicings": [
+      {
+        "artist": "Bounty Killer",
+        "title": "Anytime",
+        "views": 3000000
+      },
+      {
+        "artist": "Baby Cham",
+        "title": "Can I Get A",
+        "views": 2000000
+      },
+      {
+        "artist": "Lady Saw",
+        "title": "Yeah",
+        "views": 1500000
+      },
+      {
+        "artist": "Spragga Benz",
+        "title": "Do It & Done",
+        "views": 1000000
+      },
+      {
+        "artist": "Wayne Wonder",
+        "title": "Informer",
+        "views": 800000
+      },
+      {
+        "artist": "T.O.K.",
+        "title": "Eagles Cry",
+        "views": 600000
+      },
+      {
+        "artist": "Mad Cobra",
+        "title": "War",
+        "views": 500000
+      }
+    ],
+    "id": 95
+  },
+  {
+    "name": "Bollywood",
+    "year": 2002,
+    "producer": "Byron Murray & Clifford Smith",
+    "label": "In The Streetz / Greensleeves Records",
+    "type": "ragga",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall emblématique de 2002 sorti comme Greensleeves Rhythm Album #30, samplant le titre indien 'Thoda Resham Lagta Hai' de Lata Mangeshkar. Ce mélange unique de sonorités bollywoodiennes et dancehall a produit des hits mémorables avec Capleton, Sizzla et Mr. Vegas.",
+    "voicings": [
+      {
+        "artist": "Capleton",
+        "title": "Lock Up",
+        "views": 2000000
+      },
+      {
+        "artist": "Sizzla",
+        "title": "Heat Is On",
+        "views": 1500000
+      },
+      {
+        "artist": "Beenie Man & Robyn",
+        "title": "Red Red",
+        "views": 1200000
+      },
+      {
+        "artist": "Mr. Vegas",
+        "title": "War",
+        "views": 800000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Bun It",
+        "views": 700000
+      },
+      {
+        "artist": "Tanya Stephens",
+        "title": "Addiction",
+        "views": 600000
+      },
+      {
+        "artist": "Ward 21",
+        "title": "Roll Up",
+        "views": 400000
+      }
+    ],
+    "id": 96
+  },
+  {
+    "name": "Lightning",
+    "year": 2000,
+    "producer": "2 Hard Productions",
+    "label": "2 Hard Records / Greensleeves Records",
+    "type": "ragga",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall classique de l'an 2000 produit par 2 Hard Productions, avec des riffs de cuivres caractéristiques qui lui donnent son identité. Un casting étoilé incluant Sean Paul, Bounty Killer, Mr. Vegas, T.O.K. et Ward 21 sur une production explosive.",
+    "voicings": [
+      {
+        "artist": "Sean Paul",
+        "title": "Shake It",
+        "views": 3000000
+      },
+      {
+        "artist": "Bounty Killer",
+        "title": "High Grade Forever",
+        "views": 2000000
+      },
+      {
+        "artist": "Mr. Vegas",
+        "title": "Five W",
+        "views": 1500000
+      },
+      {
+        "artist": "T.O.K.",
+        "title": "Bun Friend Enemy",
+        "views": 1000000
+      },
+      {
+        "artist": "Elephant Man ft. Wayne Marshall",
+        "title": "Hot Girls (The Club)",
+        "views": 800000
+      },
+      {
+        "artist": "Ward 21",
+        "title": "Don't Push It",
+        "views": 600000
+      },
+      {
+        "artist": "General Degree",
+        "title": "Yeah Man",
+        "views": 400000
+      }
+    ],
+    "id": 97
+  },
+  {
+    "name": "Money Mix",
+    "year": 2017,
+    "producer": "Good Good Productions",
+    "label": "Good Good Productions",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall majeur produit par Good Good Productions en avril 2017 avec 22 titres sur une heure. Un casting impressionnant réunissant Vybz Kartel, Mavado, Masicka, Shenseea, Spice, Ky-Mani Marley et bien d'autres sur une production moderne et percutante.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "Poco Man Skank",
+        "views": 15000000
+      },
+      {
+        "artist": "Mavado",
+        "title": "Fresh Cash",
+        "views": 5000000
+      },
+      {
+        "artist": "Masicka",
+        "title": "10 Outa 10",
+        "views": 4000000
+      },
+      {
+        "artist": "Shenseea & Boom Boom",
+        "title": "Wine",
+        "views": 3000000
+      },
+      {
+        "artist": "Spice & D'Angel",
+        "title": "No Worries",
+        "views": 2000000
+      },
+      {
+        "artist": "Ky-Mani Marley",
+        "title": "Angel",
+        "views": 1500000
+      },
+      {
+        "artist": "Tifa",
+        "title": "Chicken Head",
+        "views": 1000000
+      },
+      {
+        "artist": "I-Octane & Ding Dong",
+        "title": "Stop Wile Up",
+        "views": 800000
+      }
+    ],
+    "id": 98
+  },
+  {
+    "name": "Aurora Skies",
+    "year": 2012,
+    "producer": "Sounique-Mekhai",
+    "label": "So Unique Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall produit par Sounique-Mekhai en 2012, suite du succès du Lost Angel Riddim. Le projet rassemble des artistes majeurs comme Tommy Lee Sparta, Mr. Vegas, Agent Sasco et Bugle sur une instrumentation digitale énergique. Une deuxième partie (Pt. 2) a également été publiée la même année.",
+    "voicings": [
+      {
+        "artist": "Tommy Lee Sparta",
+        "title": "We Want Paper",
+        "views": 3500000
+      },
+      {
+        "artist": "Mr. Vegas",
+        "title": "Call Me",
+        "views": 800000
+      },
+      {
+        "artist": "Agent Sasco",
+        "title": "Talk To Much",
+        "views": 500000
+      },
+      {
+        "artist": "Bugle",
+        "title": "Another Day",
+        "views": 350000
+      },
+      {
+        "artist": "Khago",
+        "title": "Wine Pon Di Pole",
+        "views": 300000
+      },
+      {
+        "artist": "D'Angel",
+        "title": "Clothes Pin",
+        "views": 200000
+      },
+      {
+        "artist": "Jahmiel",
+        "title": "All Now",
+        "views": 150000
+      },
+      {
+        "artist": "Savage",
+        "title": "Da Wine Deh",
+        "views": 120000
+      }
+    ],
+    "id": 99
+  },
+  {
+    "name": "Summer Fling",
+    "year": 2011,
+    "producer": "Chimney Records",
+    "label": "Chimney Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Production Chimney Records sortie en 2011, ce riddim dancehall estival réunit Mavado, Tarrus Riley, Beenie Man et Tony Matterhorn. Le morceau phare 'Final Destination' de Mavado a marqué les sound systems de l'été cette année-là.",
+    "voicings": [
+      {
+        "artist": "Mavado",
+        "title": "Final Destination",
+        "views": 2500000
+      },
+      {
+        "artist": "Tarrus Riley",
+        "title": "Summer Fling",
+        "views": 1200000
+      },
+      {
+        "artist": "Beenie Man & Versatile",
+        "title": "I Love the Girls",
+        "views": 800000
+      },
+      {
+        "artist": "Tony Matterhorn",
+        "title": "No Body Knows",
+        "views": 400000
+      },
+      {
+        "artist": "Stein",
+        "title": "Shell Dung the Party",
+        "views": 300000
+      },
+      {
+        "artist": "Future Fambo & Richie Loop",
+        "title": "Good Good",
+        "views": 250000
+      },
+      {
+        "artist": "Supa Hype, Munga & Chi Ching",
+        "title": "Imma Need Security",
+        "views": 200000
+      }
+    ],
+    "id": 100
+  },
+  {
+    "name": "Drink Up",
+    "year": 2014,
+    "producer": "TJ Records",
+    "label": "TJ Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall produit par le prolifique TJ Records en 2014, avec un casting de poids lourds incluant Vybz Kartel, Mavado, Beenie Man et I-Octane. Le titre éponyme de Kartel et 'Hotter Than Bread' de Mavado ont dominé les charts dancehall à leur sortie.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "Drink Up",
+        "views": 5000000
+      },
+      {
+        "artist": "Mavado",
+        "title": "Hotter Than Bread",
+        "views": 3000000
+      },
+      {
+        "artist": "Beenie Man",
+        "title": "Champagne Fountain",
+        "views": 1500000
+      },
+      {
+        "artist": "I-Octane",
+        "title": "My Way",
+        "views": 800000
+      },
+      {
+        "artist": "Christopher Martin",
+        "title": "We A Di Vibe",
+        "views": 600000
+      },
+      {
+        "artist": "Shifta feat. Chenelle",
+        "title": "You And I",
+        "views": 200000
+      }
+    ],
+    "id": 101
+  },
+  {
+    "name": "Legends of Soul",
+    "year": 2015,
+    "producer": "Crawba Productions",
+    "label": "Young Entrepreneurs Productions",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 0,
+    "description": "Riddim reggae roots produit par Crawba Productions (Crawba Genius) en 2015, mettant en vedette des artistes conscients comme Capleton, Warrior King, Lutan Fyah et Da'Ville. Le projet a également été décliné en une édition zimbabwéenne avec des artistes locaux.",
+    "voicings": [
+      {
+        "artist": "Capleton",
+        "title": "Legends of Soul",
+        "views": 500000
+      },
+      {
+        "artist": "Charly Black",
+        "title": "Legends of Soul",
+        "views": 400000
+      },
+      {
+        "artist": "Da'Ville",
+        "title": "Legends of Soul",
+        "views": 350000
+      },
+      {
+        "artist": "Lutan Fyah",
+        "title": "Legends of Soul",
+        "views": 300000
+      },
+      {
+        "artist": "Warrior King",
+        "title": "Legends of Soul",
+        "views": 250000
+      },
+      {
+        "artist": "QQ",
+        "title": "Legends of Soul",
+        "views": 200000
+      },
+      {
+        "artist": "Zagga",
+        "title": "Legends of Soul",
+        "views": 150000
+      },
+      {
+        "artist": "X-Ale feat. Khago",
+        "title": "Legends of Soul",
+        "views": 100000
+      }
+    ],
+    "id": 102
+  },
+  {
+    "name": "Cali Roots",
+    "year": 2020,
+    "producer": "Collie Buddz / Johnny Cosmic",
+    "label": "Ineffable Records",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 0,
+    "description": "Série de compilations reggae annuelles lancée en 2020 par Collie Buddz et Johnny Cosmic pour Ineffable Records, liée au festival California Roots. Chaque édition rassemble plus de 20 artistes internationaux sur un même instrumental, avec des noms comme Jesse Royal, Anthony B, Kabaka Pyramid et Busy Signal.",
+    "voicings": [
+      {
+        "artist": "Collie Buddz",
+        "title": "Hold Firm",
+        "views": 2000000
+      },
+      {
+        "artist": "Jesse Royal",
+        "title": "Ooh La La",
+        "views": 800000
+      },
+      {
+        "artist": "Anthony B & Collie Buddz",
+        "title": "Chill Out",
+        "views": 600000
+      },
+      {
+        "artist": "SOJA & Collie Buddz",
+        "title": "A Brief History",
+        "views": 500000
+      },
+      {
+        "artist": "Kabaka Pyramid feat. MediSun",
+        "title": "Natural High",
+        "views": 400000
+      },
+      {
+        "artist": "Busy Signal",
+        "title": "A Thousand Times",
+        "views": 350000
+      },
+      {
+        "artist": "Konshens",
+        "title": "Blaze Away",
+        "views": 300000
+      },
+      {
+        "artist": "Alborosie",
+        "title": "See You Again",
+        "views": 250000
+      }
+    ],
+    "id": 103
+  },
+  {
+    "name": "Baba Tunde",
+    "year": 1999,
+    "producer": "Henfield Records",
+    "label": "Henfield Records",
+    "type": "classique",
+    "genre": "reggae",
+    "bpm": 0,
+    "description": "Riddim roots reggae classique produit par Henfield Records en 1999, basé sur le rythme 'Created by the Father' enregistré à l'origine par Errol Dunkley en 1974. Le nom 'Baba Tunde' signifie 'le père est revenu' en langue Yoruba. Le riddim a été repris plusieurs fois, notamment par Safire Music en 2001.",
+    "voicings": [
+      {
+        "artist": "Capleton",
+        "title": "Baba Tunde",
+        "views": 800000
+      },
+      {
+        "artist": "Luciano",
+        "title": "Baba Tunde",
+        "views": 600000
+      },
+      {
+        "artist": "Anthony B",
+        "title": "Baba Tunde",
+        "views": 500000
+      },
+      {
+        "artist": "Jah Cure",
+        "title": "Baba Tunde",
+        "views": 400000
+      },
+      {
+        "artist": "Norris Man",
+        "title": "Baba Tunde",
+        "views": 200000
+      },
+      {
+        "artist": "Beres Hammond",
+        "title": "La La La",
+        "views": 350000
+      },
+      {
+        "artist": "Bushman",
+        "title": "One Way",
+        "views": 250000
+      }
+    ],
+    "id": 104
+  },
+  {
+    "name": "High Supremacy",
+    "year": 2020,
+    "producer": "Damage Musiq",
+    "label": "Damage Musiq",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall produit par Damage Musiq en 2020, distribué par Zojak Worldwide. Le projet réunit Tommy Lee Sparta, Shatta Wale, Teejay et I-Octane sur un beat sombre et puissant. Une version 2.0 a également été publiée avec Rygin King et Jafrass.",
+    "voicings": [
+      {
+        "artist": "Tommy Lee Sparta",
+        "title": "Procreator",
+        "views": 2000000
+      },
+      {
+        "artist": "Shatta Wale",
+        "title": "Destiny",
+        "views": 1500000
+      },
+      {
+        "artist": "Teejay",
+        "title": "Gangsta Prayer",
+        "views": 1000000
+      },
+      {
+        "artist": "I-Octane",
+        "title": "Friend Killer",
+        "views": 600000
+      },
+      {
+        "artist": "Jah Vinci",
+        "title": "My Pain",
+        "views": 400000
+      },
+      {
+        "artist": "Shane O",
+        "title": "Star in the Sky",
+        "views": 350000
+      },
+      {
+        "artist": "Vershon",
+        "title": "No Trouble",
+        "views": 250000
+      },
+      {
+        "artist": "Tamo J",
+        "title": "Deliver Me",
+        "views": 150000
+      }
+    ],
+    "id": 105
+  },
+  {
+    "name": "Prosperous",
+    "year": 2019,
+    "producer": "Markus Records",
+    "label": "Markus Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall massif produit par Markus Records en avril 2019, distribué par Zojak Worldwide. Le projet comprend 24 titres avec des artistes comme Popcaan, Chronic Law, Bugle et D'Angel. 'Level Up' de Popcaan est le titre phare de cette compilation.",
+    "voicings": [
+      {
+        "artist": "Popcaan",
+        "title": "Level Up",
+        "views": 3000000
+      },
+      {
+        "artist": "Chronic Law & Sanity Dsane1",
+        "title": "Nuttn Don't Nice",
+        "views": 1200000
+      },
+      {
+        "artist": "Bugle",
+        "title": "Encouragement",
+        "views": 500000
+      },
+      {
+        "artist": "Vanessa Bling",
+        "title": "Jesus Wife",
+        "views": 400000
+      },
+      {
+        "artist": "D'Angel",
+        "title": "Start From Scratch",
+        "views": 350000
+      },
+      {
+        "artist": "Quada",
+        "title": "Team",
+        "views": 300000
+      },
+      {
+        "artist": "Vershon",
+        "title": "Switcher",
+        "views": 250000
+      },
+      {
+        "artist": "Navino",
+        "title": "Prosper",
+        "views": 200000
+      }
+    ],
+    "id": 106
+  },
+  {
+    "name": "Power House",
+    "year": 2019,
+    "producer": "Seanizzle Records / S-Lock Entertainment",
+    "label": "Seanizzle Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Méga-production dancehall de Seanizzle Records et S-Lock Entertainment sortie en 2019, avec un casting exceptionnel de 17 artistes. Vybz Kartel, Beenie Man, Busy Signal, Christopher Martin et Ishawna figurent parmi les voicings de ce riddim très joué dans les sound systems.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel & Lisa Hyper",
+        "title": "Come Ova",
+        "views": 5000000
+      },
+      {
+        "artist": "Teejay",
+        "title": "Stay Scheemin'",
+        "views": 2000000
+      },
+      {
+        "artist": "Busy Signal & Nadg",
+        "title": "Pree Man Suh",
+        "views": 1500000
+      },
+      {
+        "artist": "Christopher Martin",
+        "title": "All Night",
+        "views": 1200000
+      },
+      {
+        "artist": "Beenie Man & ZJ Liquid",
+        "title": "Secret",
+        "views": 1000000
+      },
+      {
+        "artist": "Intence",
+        "title": "Leave If You Wah Leave",
+        "views": 800000
+      },
+      {
+        "artist": "Ishawna",
+        "title": "Gree Wid You",
+        "views": 600000
+      },
+      {
+        "artist": "Demarco",
+        "title": "Happy",
+        "views": 500000
+      },
+      {
+        "artist": "I-Octane",
+        "title": "Suh We Dweet",
+        "views": 400000
+      }
+    ],
+    "id": 107
+  },
+  {
+    "name": "Aircraft",
+    "year": 2019,
+    "producer": "Chimney Records",
+    "label": "Chimney Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall produit par Jordan McClure et David Hayle pour Chimney Records en novembre 2019, distribué par Zojak Worldwide. Le projet a été un succès immédiat avec 5 titres en tendance sur YouTube Jamaïque dès le lendemain de sa sortie. Govana a tenu la première place pendant plus d'une semaine.",
+    "voicings": [
+      {
+        "artist": "Govana",
+        "title": "Up Front",
+        "views": 8000000
+      },
+      {
+        "artist": "Aidonia",
+        "title": "Aircraft",
+        "views": 5000000
+      },
+      {
+        "artist": "Shenseea",
+        "title": "Trick'a Treat",
+        "views": 4000000
+      },
+      {
+        "artist": "Teejay",
+        "title": "Draco",
+        "views": 3000000
+      },
+      {
+        "artist": "Chris Martin",
+        "title": "BIG BIG",
+        "views": 1500000
+      },
+      {
+        "artist": "Ding Dong",
+        "title": "Watch Dem",
+        "views": 1200000
+      },
+      {
+        "artist": "Intence",
+        "title": "Dream Life",
+        "views": 1000000
+      },
+      {
+        "artist": "Jahmiel",
+        "title": "Money Money",
+        "views": 800000
+      },
+      {
+        "artist": "Zagga",
+        "title": "Keep Calm",
+        "views": 400000
+      }
+    ],
+    "id": 108
+  },
+  {
+    "name": "Fresh Paint",
+    "year": 2019,
+    "producer": "Chimney Records",
+    "label": "Chimney Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Production dancehall de Chimney Records sortie en 2019, avec 8 artistes sur 15 pistes (versions clean et raw). Le riddim met en vedette Mavado, Shenseea, Kranium, Govana et Teejay sur un beat moderne et accrocheur typique du son Chimney.",
+    "voicings": [
+      {
+        "artist": "Mavado",
+        "title": "Fresh Paint",
+        "views": 3000000
+      },
+      {
+        "artist": "Shenseea",
+        "title": "Temptation Overdrive",
+        "views": 2500000
+      },
+      {
+        "artist": "Kranium",
+        "title": "So Me Move",
+        "views": 1500000
+      },
+      {
+        "artist": "Govana",
+        "title": "Getaway",
+        "views": 1200000
+      },
+      {
+        "artist": "Teejay",
+        "title": "After 4",
+        "views": 800000
+      },
+      {
+        "artist": "Jahvillani",
+        "title": "Live Forever",
+        "views": 600000
+      },
+      {
+        "artist": "Jahmiel",
+        "title": "Same Stories",
+        "views": 400000
+      },
+      {
+        "artist": "Moyann",
+        "title": "On My Mind",
+        "views": 300000
+      }
+    ],
+    "id": 109
+  },
+  {
+    "name": "Zion",
+    "year": 2004,
+    "producer": "Irie Ites / Mafia & Fluxy",
+    "label": "Irie Ites Records",
+    "type": "classique",
+    "genre": "reggae",
+    "bpm": 0,
+    "description": "Premier riddim produit par le label français Irie Ites en collaboration avec les producteurs britanniques Mafia & Fluxy, sorti en 2004 et réédité en 2021. Ce riddim roots reggae a connu un grand succès en France et à l'international, avec des voicings de Capleton, Morgan Heritage et Turbulence.",
+    "voicings": [
+      {
+        "artist": "Morgan Heritage feat. Ras Mac Bean",
+        "title": "Lion Is King",
+        "views": 500000
+      },
+      {
+        "artist": "Capleton",
+        "title": "Throw Us Down",
+        "views": 400000
+      },
+      {
+        "artist": "Turbulence",
+        "title": "Rastafari Livity",
+        "views": 300000
+      },
+      {
+        "artist": "Lutan Fyah",
+        "title": "Intoxicated",
+        "views": 250000
+      },
+      {
+        "artist": "Chezidek",
+        "title": "Better Not",
+        "views": 200000
+      },
+      {
+        "artist": "Tony Rebel",
+        "title": "Why People",
+        "views": 150000
+      },
+      {
+        "artist": "Lukie D",
+        "title": "Laugh",
+        "views": 100000
+      }
+    ],
+    "id": 110
+  },
+  {
+    "name": "High Rise",
+    "year": 2018,
+    "producer": "Synthdicate Music",
+    "label": "Synthdicate Music NYC",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 0,
+    "description": "Riddim reggae roots produit par Synthdicate Music, label basé à New York, sorti en 2018. Le projet réunit des vétérans du reggae comme Capleton, Pressure Busspipe, Fantan Mojah et Bugle sur un beat roots moderne et conscient.",
+    "voicings": [
+      {
+        "artist": "Capleton",
+        "title": "Won't Go Down",
+        "views": 400000
+      },
+      {
+        "artist": "Bugle",
+        "title": "Born A Winner",
+        "views": 300000
+      },
+      {
+        "artist": "Pressure Busspipe",
+        "title": "What They Sow",
+        "views": 250000
+      },
+      {
+        "artist": "Fantan Mojah",
+        "title": "Rat Race",
+        "views": 200000
+      },
+      {
+        "artist": "Turbulence",
+        "title": "Who Feels It",
+        "views": 150000
+      },
+      {
+        "artist": "Denise Belfon",
+        "title": "Black Woman",
+        "views": 100000
+      },
+      {
+        "artist": "Jah Thunder",
+        "title": "Joy",
+        "views": 80000
+      }
+    ],
+    "id": 111
+  },
+  {
+    "name": "Oneness",
+    "year": 2007,
+    "producer": "Oneness Records (Moritz von Korff)",
+    "label": "Oneness Records",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 71,
+    "description": "Premier riddim du label allemand Oneness Records basé à Munich, sorti en mars 2007. Production roots/lovers rock à 71 BPM, avec des artistes comme Luciano, Alborosie et Lutan Fyah. Ce projet a lancé la carrière prolifique du label dans le reggae européen.",
+    "voicings": [
+      {
+        "artist": "Luciano",
+        "title": "Use Jah Words",
+        "views": 400000
+      },
+      {
+        "artist": "Alborosie",
+        "title": "Right Or Wrong",
+        "views": 350000
+      },
+      {
+        "artist": "Lutan Fyah",
+        "title": "Hypocrits",
+        "views": 200000
+      },
+      {
+        "artist": "Spectacular",
+        "title": "Rally Round",
+        "views": 100000
+      },
+      {
+        "artist": "Earl 16 feat. Joseph Cotton",
+        "title": "Bun Down Soddom",
+        "views": 80000
+      },
+      {
+        "artist": "Skarra Mucci",
+        "title": "Glory Glory",
+        "views": 70000
+      },
+      {
+        "artist": "Jahcoustix",
+        "title": "Tears Of Happiness",
+        "views": 50000
+      },
+      {
+        "artist": "Uwe Banton",
+        "title": "Love Light",
+        "views": 40000
+      }
+    ],
+    "id": 112
+  },
+  {
+    "name": "The Empire",
+    "year": 2014,
+    "producer": "Riddim Wise",
+    "label": "Riddim Wise",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 0,
+    "description": "Compilation reggae consciente produite par Riddim Wise, sortie le 28 novembre 2014. Le projet de 11 titres réunit des artistes roots comme Anthony B, Lutan Fyah, Turbulence, Jah Mason et Exco Levi sur un instrumental reggae puissant.",
+    "voicings": [
+      {
+        "artist": "Anthony B",
+        "title": "Let It Play",
+        "views": 300000
+      },
+      {
+        "artist": "Lutan Fyah & Turbulence",
+        "title": "Criminal",
+        "views": 200000
+      },
+      {
+        "artist": "Exco Levi",
+        "title": "Irie JA",
+        "views": 150000
+      },
+      {
+        "artist": "Jah Mason",
+        "title": "Hail Far I",
+        "views": 120000
+      },
+      {
+        "artist": "Spectacular",
+        "title": "Tek Back",
+        "views": 80000
+      },
+      {
+        "artist": "Dan Fiyah Beats",
+        "title": "I Love Jah Jah",
+        "views": 60000
+      },
+      {
+        "artist": "Mikey Dangerous",
+        "title": "Protect Me Jah",
+        "views": 50000
+      }
+    ],
+    "id": 113
+  },
+  {
+    "name": "Kingston",
+    "year": 2019,
+    "producer": "Chimney Records",
+    "label": "Chimney Records",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 0,
+    "description": "Riddim reggae conscient produit par Chimney Records en février 2019, sorti en parallèle avec le St Andrew Riddim. Le projet met en vedette Bounty Killer, Busy Signal, Romain Virgo et Shenseea sur un beat reggae roots moderne.",
+    "voicings": [
+      {
+        "artist": "Shenseea",
+        "title": "Heartless",
+        "views": 3000000
+      },
+      {
+        "artist": "Romain Virgo",
+        "title": "Progress",
+        "views": 1500000
+      },
+      {
+        "artist": "Christopher Martin",
+        "title": "Search All You Want",
+        "views": 1000000
+      },
+      {
+        "artist": "Bounty Killer",
+        "title": "Inseparable",
+        "views": 800000
+      },
+      {
+        "artist": "Busy Signal",
+        "title": "What Is A Friend",
+        "views": 700000
+      },
+      {
+        "artist": "Alaine",
+        "title": "Man Crush Everyday",
+        "views": 500000
+      },
+      {
+        "artist": "Prohgres",
+        "title": "Only God Can Tell",
+        "views": 200000
+      },
+      {
+        "artist": "Zagga",
+        "title": "Argument Again",
+        "views": 150000
+      }
+    ],
+    "id": 114
+  },
+  {
+    "name": "Soul Survivor",
+    "year": 2020,
+    "producer": "Tru Ambassador Entertainment",
+    "label": "Tru Ambassador Entertainment",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall mélodieux produit par Jahvy Ambassador pour Tru Ambassador Entertainment en 2020, distribué par Zojak Worldwide. Le titre 'Gal Policy' de Kranium est devenu un hit mondial avec plus de 40 millions de vues YouTube, propulsant ce riddim au sommet.",
+    "voicings": [
+      {
+        "artist": "Kranium",
+        "title": "Gal Policy",
+        "views": 45000000
+      },
+      {
+        "artist": "Mavado",
+        "title": "Life",
+        "views": 5000000
+      },
+      {
+        "artist": "Alkaline",
+        "title": "Ocean Wave",
+        "views": 3000000
+      },
+      {
+        "artist": "Jahmiel",
+        "title": "Shepherd",
+        "views": 1500000
+      },
+      {
+        "artist": "Star Captyn",
+        "title": "Weed Stop",
+        "views": 500000
+      }
+    ],
+    "id": 115
+  },
+  {
+    "name": "Traffic",
+    "year": 2019,
+    "producer": "TJ Records",
+    "label": "TJ Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall produit par Linton 'TJ' White pour TJ Records en 2019, considéré comme un classique moderne du juggling dancehall. Le projet réunit Vybz Kartel, Popcaan, Masicka et Govana sur un beat qui a été en rotation constante dans les sound systems.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "Can't Trust",
+        "views": 4000000
+      },
+      {
+        "artist": "Popcaan",
+        "title": "Living The Dream",
+        "views": 3000000
+      },
+      {
+        "artist": "Masicka",
+        "title": "That's People",
+        "views": 2000000
+      },
+      {
+        "artist": "Christopher Martin",
+        "title": "Nobody Knows",
+        "views": 1500000
+      },
+      {
+        "artist": "Demarco",
+        "title": "My Friend",
+        "views": 800000
+      },
+      {
+        "artist": "Quada",
+        "title": "Do It Big",
+        "views": 500000
+      }
+    ],
+    "id": 116
+  },
+  {
+    "name": "Flammable",
+    "year": 2019,
+    "producer": "Good Good Productions",
+    "label": "Good Good Productions",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Méga-riddim dancehall produit par Good Good Productions en 2019, avec 17 titres incluant les plus grands noms du dancehall. Vybz Kartel, Mavado, Govana, Squash et Chronic Law figurent parmi les artistes de cette compilation très complète. Une première version avait été publiée en 2014 par Shortboss Muzik.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "Pretty From Morning",
+        "views": 6000000
+      },
+      {
+        "artist": "Mavado",
+        "title": "Flammable",
+        "views": 3000000
+      },
+      {
+        "artist": "Squash",
+        "title": "Pitch Black",
+        "views": 2500000
+      },
+      {
+        "artist": "Govana",
+        "title": "Titan",
+        "views": 2000000
+      },
+      {
+        "artist": "Chronic Law",
+        "title": "Natural Disaster",
+        "views": 1500000
+      },
+      {
+        "artist": "Jahmiel",
+        "title": "Can't Play Hypocrite",
+        "views": 800000
+      },
+      {
+        "artist": "I-Octane",
+        "title": "Live Big",
+        "views": 600000
+      },
+      {
+        "artist": "Beenie Man & Horro General",
+        "title": "Arrow",
+        "views": 500000
+      },
+      {
+        "artist": "Moyann",
+        "title": "Take Him Over",
+        "views": 400000
+      }
+    ],
+    "id": 117
+  },
+  {
+    "name": "World Government",
+    "year": 2020,
+    "producer": "ShabDon Records",
+    "label": "ShabDon Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall produit par ShabDon Records, sorti le 7 janvier 2020 pour l'anniversaire de Vybz Kartel. Le projet de 18 titres est dominé par le titre éponyme de Kartel et rassemble Squash, Teejay, Daddy1, Ding Dong et Chronic Law sur un beat puissant.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "World Government",
+        "views": 8000000
+      },
+      {
+        "artist": "Squash",
+        "title": "Mighty",
+        "views": 3000000
+      },
+      {
+        "artist": "Teejay",
+        "title": "High Grade",
+        "views": 2000000
+      },
+      {
+        "artist": "Daddy1",
+        "title": "Trending King",
+        "views": 1500000
+      },
+      {
+        "artist": "Ding Dong",
+        "title": "Fi Wi Dancehall",
+        "views": 1200000
+      },
+      {
+        "artist": "Chronic Law",
+        "title": "Cyaah Stop",
+        "views": 1000000
+      },
+      {
+        "artist": "Rygin King",
+        "title": "New Machine",
+        "views": 800000
+      },
+      {
+        "artist": "Demarco",
+        "title": "Sinking Boat",
+        "views": 600000
+      },
+      {
+        "artist": "Sikka Rymes",
+        "title": "Loyalty",
+        "views": 500000
+      },
+      {
+        "artist": "Lisa Hyper",
+        "title": "Gaza First Lady",
+        "views": 400000
+      }
+    ],
+    "id": 118
+  },
+  {
+    "name": "Busta Beat",
+    "year": 1997,
+    "producer": "Patrick Roberts",
+    "label": "Shocking Vibes",
+    "type": "classique",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall classique produit par Patrick Roberts pour Shocking Vibes en 1997, basé sur le sample de 'Put Your Hands Where My Eyes Could See' de Busta Rhymes. Aussi connu comme le 'Bad Mind Is Active Riddim', il met en vedette Beenie Man, Mad Cobra et d'autres artistes phares de l'époque.",
+    "voicings": [
+      {
+        "artist": "Beenie Man",
+        "title": "Bad Mind Is Active",
+        "views": 2000000
+      },
+      {
+        "artist": "Mad Cobra",
+        "title": "Got It Going",
+        "views": 500000
+      },
+      {
+        "artist": "Daddy Screw",
+        "title": "You Are The Girl For Me",
+        "views": 300000
+      },
+      {
+        "artist": "Goofy",
+        "title": "Mi Willing",
+        "views": 200000
+      },
+      {
+        "artist": "Little Lenny",
+        "title": "The Freaks",
+        "views": 150000
+      },
+      {
+        "artist": "Snagga Puss",
+        "title": "Good Hygiene",
+        "views": 100000
+      },
+      {
+        "artist": "Future Troubles",
+        "title": "John Go Deh",
+        "views": 80000
+      }
+    ],
+    "id": 119
+  },
+  {
+    "name": "Gwaan Bad",
+    "year": 2014,
+    "producer": "DJ Frass Records",
+    "label": "DJ Frass Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall produit par DJ Frass Records en 2014, rendant hommage au légendaire 'Bruk Out Riddim' des années 90. Le projet rassemble un casting impressionnant avec Vybz Kartel, Mavado, Buju Banton, Elephant Man et Lady Saw parmi les 19 voicings.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "Make Di Star Shine",
+        "views": 4000000
+      },
+      {
+        "artist": "Mavado",
+        "title": "Nuh Trust Fren",
+        "views": 3000000
+      },
+      {
+        "artist": "Buju Banton",
+        "title": "Make It",
+        "views": 2500000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Ketch Di Dance",
+        "views": 1500000
+      },
+      {
+        "artist": "Lady Saw",
+        "title": "Pay Yuh Fi Lef",
+        "views": 800000
+      },
+      {
+        "artist": "Agent Sasco",
+        "title": "Talk To Much",
+        "views": 600000
+      },
+      {
+        "artist": "I-Octane",
+        "title": "Don't Give A F**k",
+        "views": 500000
+      },
+      {
+        "artist": "Leftside",
+        "title": "Wickedest Wine",
+        "views": 400000
+      },
+      {
+        "artist": "Bugle",
+        "title": "Dem Love Sweets",
+        "views": 300000
+      }
+    ],
+    "id": 120
+  },
+  {
+    "name": "Pop Style",
+    "year": 2013,
+    "producer": "DJ Frass Records",
+    "label": "DJ Frass Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall produit par DJ Frass Records en 2013, avec un casting de poids lourds incluant Mavado, Buju Banton, Elephant Man, Spice et Agent Sasco. Le titre a été en rotation constante dans les sound systems jamaïcains à sa sortie.",
+    "voicings": [
+      {
+        "artist": "Mavado",
+        "title": "March Out",
+        "views": 3000000
+      },
+      {
+        "artist": "Buju Banton",
+        "title": "Nah Duh Wah Dem A Do",
+        "views": 2000000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Pop Style",
+        "views": 1500000
+      },
+      {
+        "artist": "Spice",
+        "title": "Pon Top",
+        "views": 1200000
+      },
+      {
+        "artist": "Agent Sasco",
+        "title": "Guh Deh Mi Gal",
+        "views": 800000
+      },
+      {
+        "artist": "I-Octane",
+        "title": "Nuh Care Who Vex",
+        "views": 600000
+      },
+      {
+        "artist": "Spragga Benz",
+        "title": "Listen To Mi Argument",
+        "views": 400000
+      },
+      {
+        "artist": "Bugle",
+        "title": "Mi Nuh Like Dem",
+        "views": 300000
+      }
+    ],
+    "id": 121
+  },
+  {
+    "name": "Fire Starta",
+    "year": 2015,
+    "producer": "DJ Sunshine",
+    "label": "Yellow Moon Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall produit par DJ Sunshine pour Yellow Moon Records en 2015. Malgré un nombre limité de voicings (5 artistes), le projet se distingue par la qualité de son casting avec Mavado, Alkaline, I-Octane et Beenie Man.",
+    "voicings": [
+      {
+        "artist": "Alkaline",
+        "title": "Champion Boy",
+        "views": 5000000
+      },
+      {
+        "artist": "Mavado",
+        "title": "Funeral Bell",
+        "views": 3000000
+      },
+      {
+        "artist": "Beenie Man",
+        "title": "Suh Mi Born",
+        "views": 1000000
+      },
+      {
+        "artist": "I-Octane",
+        "title": "Straight Stinger",
+        "views": 600000
+      },
+      {
+        "artist": "OC G",
+        "title": "Jah Guide Me",
+        "views": 100000
+      }
+    ],
+    "id": 122
+  },
+  {
+    "name": "True Loyalty",
+    "year": 2021,
+    "producer": "Ziah Records / Brainfood Intl",
+    "label": "Ziah Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall produit par Ziah Records en collaboration avec Brainfood Intl en 2021. Le projet de 13 titres met en vedette I-Octane, Fantan Mojah, Teflon et Dane Ray sur un beat qui explore les thèmes de loyauté et persévérance.",
+    "voicings": [
+      {
+        "artist": "I-Octane feat. Unstoppable Fyah",
+        "title": "Stacking Up Di Dollar",
+        "views": 300000
+      },
+      {
+        "artist": "Fantan Mojah",
+        "title": "Wagonist",
+        "views": 200000
+      },
+      {
+        "artist": "Teflon",
+        "title": "Money In My Pocket",
+        "views": 150000
+      },
+      {
+        "artist": "Dane Ray",
+        "title": "Loyalty",
+        "views": 120000
+      },
+      {
+        "artist": "Dotta Coppa",
+        "title": "Mankind",
+        "views": 80000
+      },
+      {
+        "artist": "Shakespeare",
+        "title": "Chap It",
+        "views": 60000
+      },
+      {
+        "artist": "Ovadose",
+        "title": "Blood",
+        "views": 50000
+      }
+    ],
+    "id": 123
+  },
+  {
+    "name": "MP40",
+    "year": 2013,
+    "producer": "Omar Miller",
+    "label": "Miller 9 Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 0,
+    "description": "Riddim dancehall agressif produit par Omar Miller pour Miller 9 Records en 2013, connu pour avoir été le terrain d'affrontements lyriques entre Popcaan et Blak Ryno, ainsi qu'entre Shane O et Versatile. Le projet de 10 titres est dominé par des diss tracks et des thèmes de confrontation.",
+    "voicings": [
+      {
+        "artist": "Popcaan",
+        "title": "Killa From Mi Bawn",
+        "views": 3000000
+      },
+      {
+        "artist": "Blak Ryno",
+        "title": "Dead Dem A Guh Dead",
+        "views": 1000000
+      },
+      {
+        "artist": "Mad Cobra",
+        "title": "Headless Body",
+        "views": 500000
+      },
+      {
+        "artist": "Jah Vinci",
+        "title": "Clap Up The Rifle Dem",
+        "views": 400000
+      },
+      {
+        "artist": "Shane O",
+        "title": "Nuffi Test",
+        "views": 300000
+      },
+      {
+        "artist": "Versatile",
+        "title": "Dem A Guh Dead",
+        "views": 250000
+      },
+      {
+        "artist": "Jahmiel",
+        "title": "Tell Yuh Business",
+        "views": 200000
+      },
+      {
+        "artist": "Turbulence feat. Wissy",
+        "title": "Hell Affi Guh Raise",
+        "views": 100000
+      }
+    ],
+    "id": 124
+  },
+  {
+    "name": "Outbreak",
+    "year": 2009,
+    "producer": "Di Genius (Stephen McGregor)",
+    "label": "Di Genius Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 95,
+    "description": "Riddim dancehall digital produit par Di Genius en 2009, avec un lineup impressionnant de 15 artistes majeurs. Ce riddim énergique a été porté par des voicings puissants de Mavado, Busy Signal, Elephant Man et T.O.K.",
+    "voicings": [
+      {
+        "artist": "Mavado",
+        "title": "Sting Dem",
+        "views": 850000
+      },
+      {
+        "artist": "Busy Signal",
+        "title": "Ms. Rubba Waist",
+        "views": 620000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Shell Down",
+        "views": 480000
+      },
+      {
+        "artist": "Aidonia",
+        "title": "Supm Fi You",
+        "views": 350000
+      },
+      {
+        "artist": "T.O.K",
+        "title": "Forever",
+        "views": 300000
+      },
+      {
+        "artist": "Busy Signal",
+        "title": "Any How Dem Dis",
+        "views": 280000
+      },
+      {
+        "artist": "Laden",
+        "title": "Pree Dem A Pree",
+        "views": 200000
+      },
+      {
+        "artist": "Assassin",
+        "title": "Nah Sell Out",
+        "views": 180000
+      },
+      {
+        "artist": "Chino",
+        "title": "Who God Bless",
+        "views": 150000
+      },
+      {
+        "artist": "Tony Matterhorn",
+        "title": "Dash Out",
+        "views": 120000
+      }
+    ],
+    "id": 125
+  },
+  {
+    "name": "Tripple Bounce",
+    "year": 2009,
+    "producer": "Di Genius (Stephen McGregor)",
+    "label": "CR203 Records / VP Music Group",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 100,
+    "description": "Riddim dancehall emblématique produit par Di Genius en 2009, distribué par VP Music Group. Compilation de 18 titres dominée par Vybz Kartel avec le tube 'Bicycle', devenu un classique mondial du dancehall.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "Bicycle",
+        "views": 15000000
+      },
+      {
+        "artist": "Mavado",
+        "title": "Hope And Pray",
+        "views": 2500000
+      },
+      {
+        "artist": "Aidonia",
+        "title": "Bruk Out",
+        "views": 2000000
+      },
+      {
+        "artist": "Beenie Man",
+        "title": "Whateva Mi Like",
+        "views": 1200000
+      },
+      {
+        "artist": "Mr. Vegas",
+        "title": "Gallis",
+        "views": 1000000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Represent",
+        "views": 800000
+      },
+      {
+        "artist": "Leftside",
+        "title": "Time To Party",
+        "views": 600000
+      },
+      {
+        "artist": "Vybz Kartel",
+        "title": "Mr. Officer",
+        "views": 500000
+      },
+      {
+        "artist": "Laden",
+        "title": "Running Di Place",
+        "views": 350000
+      },
+      {
+        "artist": "Voicemail",
+        "title": "Nuh Behaviour",
+        "views": 300000
+      }
+    ],
+    "id": 126
+  },
+  {
+    "name": "Immortal",
+    "year": 2019,
+    "producer": "Usain Bolt",
+    "label": "Usain Bolt Productions",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 90,
+    "description": "Riddim dancehall digital produit par le légendaire sprinter Usain Bolt en 2019. Ce projet unique réunit des artistes majeurs comme Vybz Kartel, Masicka et Demarco sur une production moderne et agressive.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "Adiadking",
+        "views": 3500000
+      },
+      {
+        "artist": "Masicka",
+        "title": "Currency",
+        "views": 2800000
+      },
+      {
+        "artist": "Ding Dong",
+        "title": "Piggy Bank",
+        "views": 1500000
+      },
+      {
+        "artist": "Demarco",
+        "title": "Artificial",
+        "views": 1200000
+      },
+      {
+        "artist": "Chris Martin",
+        "title": "Ready",
+        "views": 800000
+      },
+      {
+        "artist": "Munga Honorable",
+        "title": "Surround Sound",
+        "views": 500000
+      }
+    ],
+    "id": 127
+  },
+  {
+    "name": "Duss",
+    "year": 2010,
+    "producer": "NotNice & Vybz Kartel",
+    "label": "Adidjahiem Records / NotNice Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 88,
+    "description": "Riddim dancehall co-produit par NotNice et Vybz Kartel en 2010 pour le label Adidjahiem Records. Production emblématique de l'ère Gaza, mettant en vedette les artistes du camp Kartel dont Popcaan et Shawn Storm.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "Can't Satisfy (She Wah More)",
+        "views": 2000000
+      },
+      {
+        "artist": "Popcaan",
+        "title": "Mi Like You",
+        "views": 1500000
+      },
+      {
+        "artist": "Vybz Kartel ft. Jah Vinci",
+        "title": "Leadeth Me",
+        "views": 800000
+      },
+      {
+        "artist": "Shawn Storm",
+        "title": "Whine Up Yuh Body",
+        "views": 500000
+      },
+      {
+        "artist": "Gaza Slim",
+        "title": "Moving On",
+        "views": 300000
+      },
+      {
+        "artist": "Gaza Maxwell",
+        "title": "Sumptn Fi Sumptn",
+        "views": 150000
+      }
+    ],
+    "id": 128
+  },
+  {
+    "name": "Eternal",
+    "year": 2011,
+    "producer": "NotNice (Ainsley Morris)",
+    "label": "NotNice Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 85,
+    "description": "Riddim dancehall produit par NotNice en 2011, dans la lignée des productions de l'ère Gaza. Compilation de 6 titres dominée par Vybz Kartel et Popcaan, avec des thèmes variés allant du conscient au hardcore.",
+    "voicings": [
+      {
+        "artist": "Vybz Kartel",
+        "title": "Life Goes On",
+        "views": 1800000
+      },
+      {
+        "artist": "Popcaan",
+        "title": "City (Gangster City Pt. 2)",
+        "views": 1200000
+      },
+      {
+        "artist": "Jah Vinci",
+        "title": "Mamma Love",
+        "views": 500000
+      },
+      {
+        "artist": "Shawn Storm",
+        "title": "Dem Badmind",
+        "views": 300000
+      },
+      {
+        "artist": "Merital Family",
+        "title": "Meet Me (On & On)",
+        "views": 150000
+      },
+      {
+        "artist": "Gaza Maxwell",
+        "title": "Miss You",
+        "views": 100000
+      }
+    ],
+    "id": 129
+  },
+  {
+    "name": "Break Away",
+    "year": 2016,
+    "producer": "Chimney Records",
+    "label": "Chimney Records",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 82,
+    "description": "Riddim dancehall produit par Chimney Records en 2016, réunissant des artistes de premier plan. Ce riddim mélodique met en avant Chris Martin, Dexta Daps et Masicka avec des voicings allant du romantique au hardcore.",
+    "voicings": [
+      {
+        "artist": "Dexta Daps",
+        "title": "1 Minute",
+        "views": 5000000
+      },
+      {
+        "artist": "Chris Martin",
+        "title": "Pirate Of The Caribbean",
+        "views": 2000000
+      },
+      {
+        "artist": "Masicka",
+        "title": "Fly Ova Dem",
+        "views": 1800000
+      },
+      {
+        "artist": "Jahmiel",
+        "title": "Break Away",
+        "views": 1200000
+      },
+      {
+        "artist": "Kabaka Pyramid",
+        "title": "Wake Up & See",
+        "views": 600000
+      },
+      {
+        "artist": "Vershon",
+        "title": "Break Away",
+        "views": 400000
+      }
+    ],
+    "id": 130
+  },
+  {
+    "name": "Kush Morning",
+    "year": 2012,
+    "producer": "Dynasty & Twelve 9 Records",
+    "label": "Dynasty / Twelve 9 Records",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 75,
+    "description": "Riddim reggae roots moderne produit par Dynasty et Twelve 9 Records en 2012. Compilation de 9 titres mêlant reggae conscient et vibes positives, avec des artistes comme Capleton, Collie Buddz et Kranium.",
+    "voicings": [
+      {
+        "artist": "Collie Buddz",
+        "title": "I Feel So Good",
+        "views": 1500000
+      },
+      {
+        "artist": "Capleton",
+        "title": "Fire Fire",
+        "views": 800000
+      },
+      {
+        "artist": "Kranium",
+        "title": "Gotta Believe",
+        "views": 600000
+      },
+      {
+        "artist": "I-Octane",
+        "title": "Run Mi Out",
+        "views": 500000
+      },
+      {
+        "artist": "Serani",
+        "title": "Dear Lord",
+        "views": 400000
+      },
+      {
+        "artist": "Jah Vinci",
+        "title": "Real Woman",
+        "views": 300000
+      },
+      {
+        "artist": "Jah Sun ft. Peter Morgan",
+        "title": "Heart Like Lion",
+        "views": 200000
+      },
+      {
+        "artist": "Ikaya",
+        "title": "Brand New",
+        "views": 100000
+      }
+    ],
+    "id": 131
+  },
+  {
+    "name": "St. Andrew",
+    "year": 2019,
+    "producer": "Chimney Records",
+    "label": "Chimney Records",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 78,
+    "description": "Riddim reggae chaleureux produit par Chimney Records en 2019, rendant hommage à la paroisse de St. Andrew en Jamaïque. Compilation de 9 titres réunissant des légendes du reggae comme Tarrus Riley, Morgan Heritage et Romain Virgo.",
+    "voicings": [
+      {
+        "artist": "Tarrus Riley",
+        "title": "Jamaican Proverbs",
+        "views": 1200000
+      },
+      {
+        "artist": "Romain Virgo",
+        "title": "Melanin",
+        "views": 1000000
+      },
+      {
+        "artist": "Morgan Heritage",
+        "title": "We Don't Want Dem",
+        "views": 800000
+      },
+      {
+        "artist": "Alaine",
+        "title": "You Give Me Hope",
+        "views": 600000
+      },
+      {
+        "artist": "Queen Ifrica",
+        "title": "To See",
+        "views": 400000
+      },
+      {
+        "artist": "Tony Rebel",
+        "title": "Man A Big Man",
+        "views": 350000
+      },
+      {
+        "artist": "Pressure Busspipe",
+        "title": "Work",
+        "views": 300000
+      }
+    ],
+    "id": 132
+  },
+  {
+    "name": "Fire Avenue",
+    "year": 2018,
+    "producer": "Sheldon Pennicott & Sekou Davis",
+    "label": "Young Veterans Music",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 72,
+    "description": "Riddim reggae roots moderne produit par Young Veterans en 2018, décrit comme une production magnifique et sans faille. Compilation de 13 titres réunissant des piliers du reggae conscient comme Capleton, Luciano, Anthony B et Pressure Busspipe.",
+    "voicings": [
+      {
+        "artist": "Capleton",
+        "title": "Rasta Run This",
+        "views": 500000
+      },
+      {
+        "artist": "Anthony B",
+        "title": "Jamaica Land",
+        "views": 400000
+      },
+      {
+        "artist": "Luciano",
+        "title": "How Can I",
+        "views": 350000
+      },
+      {
+        "artist": "Pressure Busspipe",
+        "title": "Nah Stop",
+        "views": 300000
+      },
+      {
+        "artist": "Fantan Mojah",
+        "title": "No Time for Them",
+        "views": 200000
+      },
+      {
+        "artist": "Ginjah",
+        "title": "Many Mountains",
+        "views": 150000
+      },
+      {
+        "artist": "Zamunda",
+        "title": "Africa We Deh Yah",
+        "views": 120000
+      },
+      {
+        "artist": "Shuga",
+        "title": "Real Love",
+        "views": 100000
+      }
+    ],
+    "id": 133
+  },
+  {
+    "name": "Bedrock",
+    "year": 2006,
+    "producer": "In Time Music",
+    "label": "In Time Music",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 76,
+    "description": "Riddim reggae/dancehall produit par In Time Music en 2006, avec une compilation de 15 titres. Production solide réunissant des artistes majeurs comme Richie Spice, Sizzla, Wayne Wonder, Anthony B et Capleton.",
+    "voicings": [
+      {
+        "artist": "Richie Spice",
+        "title": "Lynch & Pinch",
+        "views": 800000
+      },
+      {
+        "artist": "Sizzla",
+        "title": "No Wickedness A Zion",
+        "views": 600000
+      },
+      {
+        "artist": "Wayne Wonder",
+        "title": "Grimey",
+        "views": 500000
+      },
+      {
+        "artist": "Capleton",
+        "title": "Paegans A Cry",
+        "views": 400000
+      },
+      {
+        "artist": "Anthony B",
+        "title": "Money Love",
+        "views": 350000
+      },
+      {
+        "artist": "Christopher Martin",
+        "title": "I Dont Have It",
+        "views": 300000
+      },
+      {
+        "artist": "Luciano",
+        "title": "Too Much Guns",
+        "views": 250000
+      },
+      {
+        "artist": "Chuck Fender",
+        "title": "Eyes Like A Bird",
+        "views": 200000
+      }
+    ],
+    "id": 134
+  },
+  {
+    "name": "Tenement Yard",
+    "year": 2012,
+    "producer": "Di Genius (Stephen McGregor)",
+    "label": "Di Genius Production",
+    "type": "digital",
+    "genre": "dancehall",
+    "bpm": 95,
+    "description": "Riddim dancehall massif produit par Di Genius en 2012, avec 18 titres et 17 artistes. Production énergique réunissant les plus grands noms du dancehall jamaïcain dont Mavado, Beenie Man, Aidonia et Elephant Man.",
+    "voicings": [
+      {
+        "artist": "Mavado",
+        "title": "Cyaan Hold Me",
+        "views": 2000000
+      },
+      {
+        "artist": "Aidonia",
+        "title": "Yuh Can Wine",
+        "views": 1500000
+      },
+      {
+        "artist": "Beenie Man",
+        "title": "Come Outta Mi Way",
+        "views": 1200000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Raising",
+        "views": 800000
+      },
+      {
+        "artist": "I Octane",
+        "title": "Load Di Ting Dem",
+        "views": 600000
+      },
+      {
+        "artist": "T.O.K",
+        "title": "Stop Pree Me",
+        "views": 500000
+      },
+      {
+        "artist": "Agent Sasco",
+        "title": "More Dem A Fight",
+        "views": 400000
+      },
+      {
+        "artist": "Anthony B",
+        "title": "Nuh Bad Like Da Bwoy Ya",
+        "views": 300000
+      },
+      {
+        "artist": "Serani",
+        "title": "Make Me Stronger",
+        "views": 250000
+      }
+    ],
+    "id": 135
+  },
+  {
+    "name": "Confession",
+    "year": 2006,
+    "producer": "Shane Brown",
+    "label": "Juke Boxx Productions",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 78,
+    "description": "Riddim reggae produit par Shane Brown pour Juke Boxx Productions en 2006. Compilation de 23 titres réunissant des artistes comme Richie Spice, Sizzla, Lady Saw, Junior Kelly et Tanya Stephens sur un instrumental riche et mélodique.",
+    "voicings": [
+      {
+        "artist": "Richie Spice",
+        "title": "Confession",
+        "views": 600000
+      },
+      {
+        "artist": "Sizzla",
+        "title": "Confessions",
+        "views": 500000
+      },
+      {
+        "artist": "Lady Saw",
+        "title": "Confess",
+        "views": 400000
+      },
+      {
+        "artist": "Junior Kelly",
+        "title": "Jah Time",
+        "views": 350000
+      },
+      {
+        "artist": "Chris Martin",
+        "title": "Don't Go",
+        "views": 300000
+      },
+      {
+        "artist": "Tanya Stephens",
+        "title": "Weak Heart",
+        "views": 250000
+      },
+      {
+        "artist": "T.O.K",
+        "title": "Like Paradise",
+        "views": 200000
+      },
+      {
+        "artist": "Chuck Fenda",
+        "title": "Walk And Sleep",
+        "views": 180000
+      },
+      {
+        "artist": "Anthony Cruz",
+        "title": "Let It Go Girl",
+        "views": 150000
+      }
+    ],
+    "id": 136
+  },
+  {
+    "name": "The Downtown",
+    "year": 2012,
+    "producer": "Dan Fiyah Beats",
+    "label": "Riddim Wise",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 74,
+    "description": "Riddim reggae roots produit par le label montréalais Riddim Wise en 2012, rendant hommage au quartier mythique de downtown Kingston. Compilation de 13 titres mêlant artistes jamaïcains et canadiens dont Sizzla, Lutan Fyah et Turbulence.",
+    "voicings": [
+      {
+        "artist": "Sizzla Kalonji",
+        "title": "Take Me",
+        "views": 400000
+      },
+      {
+        "artist": "Lutan Fyah",
+        "title": "Bossman",
+        "views": 300000
+      },
+      {
+        "artist": "Turbulence ft. I-Shenko",
+        "title": "Obeah Man",
+        "views": 200000
+      },
+      {
+        "artist": "Mikey General",
+        "title": "Promise",
+        "views": 150000
+      },
+      {
+        "artist": "Face T",
+        "title": "Talk Of The Town",
+        "views": 100000
+      },
+      {
+        "artist": "Prince Koloni",
+        "title": "Jah Live",
+        "views": 80000
+      },
+      {
+        "artist": "Mikey Dangerous",
+        "title": "Higher Than High",
+        "views": 60000
+      }
+    ],
+    "id": 137
+  },
+  {
+    "name": "Bookshelf",
+    "year": 1998,
+    "producer": "Tony 'CD' Kelly",
+    "label": "K-Licious Music",
+    "type": "ragga",
+    "genre": "dancehall",
+    "bpm": 100,
+    "description": "Riddim dancehall classique produit par Tony CD Kelly en 1998, considéré parmi les 10 meilleurs riddims de la fin des années 90. Avec ses percussions rebondissantes et ses accords d'orgue synthétisé, ce riddim a dominé les dancehalls jamaïcains en 1998.",
+    "voicings": [
+      {
+        "artist": "Beenie Man",
+        "title": "Bookshelf",
+        "views": 3000000
+      },
+      {
+        "artist": "Sean Paul",
+        "title": "Deport Dem",
+        "views": 2500000
+      },
+      {
+        "artist": "Mr. Vegas",
+        "title": "Jack It Up",
+        "views": 2000000
+      },
+      {
+        "artist": "Lady Saw",
+        "title": "No Matta Me",
+        "views": 1500000
+      },
+      {
+        "artist": "Wayne Wonder",
+        "title": "Watching You",
+        "views": 1200000
+      },
+      {
+        "artist": "Tanya Stephens",
+        "title": "From You Hot",
+        "views": 800000
+      },
+      {
+        "artist": "Spragga Benz",
+        "title": "Cute and Little & Tight",
+        "views": 600000
+      },
+      {
+        "artist": "Tanto Metro & Devonte",
+        "title": "Say Wooee",
+        "views": 500000
+      },
+      {
+        "artist": "Frisco Kid & Mr. Easy",
+        "title": "Bashment Time",
+        "views": 400000
+      }
+    ],
+    "id": 138
+  },
+  {
+    "name": "Baddis",
+    "year": 1998,
+    "producer": "Richard 'Shams' Browne",
+    "label": "Hi-Profile Records",
+    "type": "ragga",
+    "genre": "dancehall",
+    "bpm": 98,
+    "description": "Riddim dancehall ragga produit par Richard 'Shams' Browne en 1998 pour Hi-Profile Records. Production dure et agressive typique de l'ère dancehall fin des années 90, avec des artistes comme Lady Saw, Red Rat et Beenie Man.",
+    "voicings": [
+      {
+        "artist": "Beenie Man",
+        "title": "Number One",
+        "views": 1500000
+      },
+      {
+        "artist": "Lady Saw ft. T.O.K",
+        "title": "Hardcore Lover",
+        "views": 1200000
+      },
+      {
+        "artist": "Red Rat",
+        "title": "Caan Sleep",
+        "views": 800000
+      },
+      {
+        "artist": "Mr. Vegas",
+        "title": "Pop Style",
+        "views": 700000
+      },
+      {
+        "artist": "Tanya Stephens",
+        "title": "Freaky Type",
+        "views": 500000
+      },
+      {
+        "artist": "Frisco Kid",
+        "title": "Fire Fire",
+        "views": 300000
+      },
+      {
+        "artist": "Red Rat",
+        "title": "Rumours",
+        "views": 250000
+      },
+      {
+        "artist": "Degree",
+        "title": "Miss Gotti",
+        "views": 200000
+      }
+    ],
+    "id": 139
+  },
+  {
+    "name": "Punanny",
+    "year": 1986,
+    "producer": "Steely & Clevie / King Jammy",
+    "label": "King Jammy's",
+    "type": "classique",
+    "genre": "dancehall",
+    "bpm": 108,
+    "description": "Riddim dancehall légendaire créé par Steely & Clevie au studio de King Jammy en 1986. Élu 'Plus grand riddim dancehall de tous les temps' en 2020, devant le Sleng Teng. Ce riddim fondateur a été relické d'innombrables fois depuis sa création.",
+    "voicings": [
+      {
+        "artist": "Admiral Bailey",
+        "title": "Punanny",
+        "views": 3000000
+      },
+      {
+        "artist": "Shabba Ranks",
+        "title": "Needle Eye",
+        "views": 2500000
+      },
+      {
+        "artist": "Beenie Man",
+        "title": "Girls Dem Sugar",
+        "views": 5000000
+      },
+      {
+        "artist": "Cocoa Tea",
+        "title": "Sonia Come Home",
+        "views": 1500000
+      },
+      {
+        "artist": "Sanchez",
+        "title": "Ebony Eyes",
+        "views": 1200000
+      },
+      {
+        "artist": "Wayne Wonder",
+        "title": "Dedicated to My Favorite Girl",
+        "views": 800000
+      },
+      {
+        "artist": "Richie Stephens",
+        "title": "Here and Now",
+        "views": 600000
+      },
+      {
+        "artist": "Beenie Man",
+        "title": "Romie",
+        "views": 500000
+      }
+    ],
+    "id": 140
+  },
+  {
+    "name": "Famine",
+    "year": 2002,
+    "producer": "Scatta Productions (Leftside, Dia & Scatta)",
+    "label": "King of Kings / Greensleeves Records",
+    "type": "ragga",
+    "genre": "dancehall",
+    "bpm": 95,
+    "description": "Riddim dancehall ragga produit par Scatta Productions en 2002, sorti comme Greensleeves Rhythm Album #25. Compilation massive de 22 titres réunissant les plus grands noms du dancehall dont Bounty Killer, Beenie Man, Sizzla et Elephant Man.",
+    "voicings": [
+      {
+        "artist": "Bounty Killer",
+        "title": "Famine",
+        "views": 1500000
+      },
+      {
+        "artist": "Beenie Man",
+        "title": "Famine",
+        "views": 1200000
+      },
+      {
+        "artist": "Sizzla",
+        "title": "Famine",
+        "views": 800000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Famine",
+        "views": 700000
+      },
+      {
+        "artist": "T.O.K",
+        "title": "Famine",
+        "views": 600000
+      },
+      {
+        "artist": "Mr Vegas",
+        "title": "Famine",
+        "views": 500000
+      },
+      {
+        "artist": "Lady Saw",
+        "title": "Any Ship",
+        "views": 400000
+      },
+      {
+        "artist": "Lexxus",
+        "title": "Goodhole",
+        "views": 300000
+      },
+      {
+        "artist": "Merciless",
+        "title": "Pick A Number",
+        "views": 250000
+      }
+    ],
+    "id": 141
+  },
+  {
+    "name": "Tixx",
+    "year": 2000,
+    "producer": "Christopher 'CJ' James",
+    "label": "CJ Records / Greensleeves Records",
+    "type": "ragga",
+    "genre": "dancehall",
+    "bpm": 92,
+    "description": "Riddim dancehall ragga produit par CJ James en 2000, sorti comme partie du Greensleeves Rhythm Album #10. Basé sur un sample du classique reggae 'Truth & Rights' de Johnny Osbourne, ce riddim est porté par le hit de Sizzla 'To The Point'.",
+    "voicings": [
+      {
+        "artist": "Sizzla",
+        "title": "To The Point",
+        "views": 2000000
+      },
+      {
+        "artist": "Beenie Man",
+        "title": "Straight Prison",
+        "views": 1000000
+      },
+      {
+        "artist": "Mr. Vegas",
+        "title": "Some-Boy",
+        "views": 800000
+      },
+      {
+        "artist": "Ward 21",
+        "title": "For Da Ladies",
+        "views": 500000
+      },
+      {
+        "artist": "Elephant Man & Ward 21",
+        "title": "Anything A Anything",
+        "views": 400000
+      },
+      {
+        "artist": "Spragga Benz",
+        "title": "Gunz Up",
+        "views": 350000
+      },
+      {
+        "artist": "Mad Cobra",
+        "title": "Grudge",
+        "views": 300000
+      },
+      {
+        "artist": "Bling Dawg",
+        "title": "Say My Name",
+        "views": 200000
+      },
+      {
+        "artist": "Danny English",
+        "title": "One Two",
+        "views": 150000
+      }
+    ],
+    "id": 142
+  },
+  {
+    "name": "C4",
+    "year": 2003,
+    "producer": "Scatta Productions (Cordel Burrell, Teflon, Eva)",
+    "label": "King of Kings / Greensleeves Records",
+    "type": "ragga",
+    "genre": "dancehall",
+    "bpm": 90,
+    "description": "Riddim dancehall ragga massif produit par Scatta Productions en 2003, sorti comme Greensleeves Rhythm Album #38. Compilation imposante de 26 titres avec des artistes majeurs comme Capleton, Sizzla, Vybz Kartel et Lady Saw.",
+    "voicings": [
+      {
+        "artist": "Capleton",
+        "title": "Know Wi",
+        "views": 800000
+      },
+      {
+        "artist": "Sizzla",
+        "title": "Righteousness",
+        "views": 700000
+      },
+      {
+        "artist": "Vybz Kartel",
+        "title": "Friend",
+        "views": 600000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Nuh Come Fast",
+        "views": 500000
+      },
+      {
+        "artist": "Anthony B",
+        "title": "Rastaman Sitten",
+        "views": 400000
+      },
+      {
+        "artist": "Kiprich",
+        "title": "Bruck Pocket",
+        "views": 350000
+      },
+      {
+        "artist": "Lady Saw",
+        "title": "Never Leave You Lonely",
+        "views": 300000
+      },
+      {
+        "artist": "Turbulence",
+        "title": "Most Wanted",
+        "views": 250000
+      },
+      {
+        "artist": "Bling Dawg",
+        "title": "Bomb Dem Up",
+        "views": 200000
+      }
+    ],
+    "id": 143
+  },
+  {
+    "name": "Bushy Bushy",
+    "year": 2001,
+    "producer": "Harvel Hart & Deborah Harding",
+    "label": "Annex / Greensleeves Records",
+    "type": "ragga",
+    "genre": "dancehall",
+    "bpm": 95,
+    "description": "Riddim dancehall ragga produit par Extra Extra pour le label Annex en 2001, sorti comme Greensleeves Rhythm Album #15. Compilation de 20 titres avec des poids lourds comme Bounty Killer, Sizzla, Capleton, Elephant Man et Merciless.",
+    "voicings": [
+      {
+        "artist": "Bounty Killer",
+        "title": "No One Cares (Remix)",
+        "views": 1200000
+      },
+      {
+        "artist": "Sizzla",
+        "title": "Bus Out A Dis",
+        "views": 800000
+      },
+      {
+        "artist": "Capleton",
+        "title": "Galong Galong",
+        "views": 700000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Sex",
+        "views": 600000
+      },
+      {
+        "artist": "Merciless",
+        "title": "Sting History 2000",
+        "views": 500000
+      },
+      {
+        "artist": "Mr. Vegas",
+        "title": "Raining Hard",
+        "views": 400000
+      },
+      {
+        "artist": "Ce'cile",
+        "title": "Spider",
+        "views": 350000
+      },
+      {
+        "artist": "Sizzla",
+        "title": "Bushy Bushy",
+        "views": 300000
+      },
+      {
+        "artist": "Frisco Kid",
+        "title": "Lion Paw",
+        "views": 200000
+      }
+    ],
+    "id": 144
+  },
+  {
+    "name": "Scarface",
+    "year": 2000,
+    "producer": "Patrick Roberts",
+    "label": "Shocking Vibes",
+    "type": "ragga",
+    "genre": "dancehall",
+    "bpm": 98,
+    "description": "Riddim dancehall ragga produit par Shocking Vibes en 2000, avec une compilation massive de 20 titres. Production agressive et dure réunissant les plus grands noms du dancehall dont Sean Paul, Beenie Man, Lady Saw et Elephant Man.",
+    "voicings": [
+      {
+        "artist": "Sean Paul",
+        "title": "My Name",
+        "views": 2000000
+      },
+      {
+        "artist": "Beenie Man",
+        "title": "Be Quiet",
+        "views": 1500000
+      },
+      {
+        "artist": "T.O.K",
+        "title": "Kitty",
+        "views": 1200000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Replacement Killers",
+        "views": 800000
+      },
+      {
+        "artist": "Lady Saw",
+        "title": "New Checkie Book",
+        "views": 600000
+      },
+      {
+        "artist": "Mr. Vegas",
+        "title": "Original Trend",
+        "views": 500000
+      },
+      {
+        "artist": "Ward 21",
+        "title": "Anti Spy",
+        "views": 400000
+      },
+      {
+        "artist": "Kiprich",
+        "title": "Imagine This",
+        "views": 300000
+      },
+      {
+        "artist": "Mad Cobra",
+        "title": "Unexpected",
+        "views": 250000
+      }
+    ],
+    "id": 145
+  },
+  {
+    "name": "Rachik",
+    "year": 2002,
+    "producer": "Sugar Leroy Moore / Wayne Morris",
+    "label": "Fire Ball / Crystal Ball Records",
+    "type": "ragga",
+    "genre": "dancehall",
+    "bpm": 94,
+    "description": "Riddim dancehall ragga produit par Sugar Leroy Moore et Wayne Morris en 2002 pour Fire Ball Records. Compilation de 21 titres avec un lineup impressionnant incluant Bounty Killer, Sizzla, Capleton et Anthony B.",
+    "voicings": [
+      {
+        "artist": "Bounty Killer",
+        "title": "Think Of Next",
+        "views": 800000
+      },
+      {
+        "artist": "Sizzla",
+        "title": "Never Leave",
+        "views": 600000
+      },
+      {
+        "artist": "Capleton",
+        "title": "Crying Out",
+        "views": 500000
+      },
+      {
+        "artist": "Anthony B",
+        "title": "Fan Dangles",
+        "views": 400000
+      },
+      {
+        "artist": "Tanto Metro & Devonte",
+        "title": "Things Keep Happening",
+        "views": 350000
+      },
+      {
+        "artist": "Ward 21",
+        "title": "Hotter Than Dem",
+        "views": 300000
+      },
+      {
+        "artist": "Mr. Vegas & Determine",
+        "title": "True Friend",
+        "views": 250000
+      },
+      {
+        "artist": "Kiprich",
+        "title": "Yuh A Di Owner",
+        "views": 200000
+      },
+      {
+        "artist": "Jah Mason",
+        "title": "Nah Left Mi Woman",
+        "views": 180000
+      }
+    ],
+    "id": 146
+  },
+  {
+    "name": "Bad Kalic",
+    "year": 2002,
+    "producer": "Stone Love",
+    "label": "Stone Love / Greensleeves Records",
+    "type": "ragga",
+    "genre": "dancehall",
+    "bpm": 96,
+    "description": "Riddim dancehall ragga produit par le légendaire sound system Stone Love en 2002, sorti comme Greensleeves Rhythm Album #21. Compilation de 20 titres avec les plus grands artistes de l'époque dont Elephant Man, Buju Banton, Sean Paul et Sizzla.",
+    "voicings": [
+      {
+        "artist": "Elephant Man",
+        "title": "Shizzle Ma Nizzle",
+        "views": 1500000
+      },
+      {
+        "artist": "Sean Paul",
+        "title": "Could A Why",
+        "views": 1200000
+      },
+      {
+        "artist": "Buju Banton",
+        "title": "Tournament",
+        "views": 1000000
+      },
+      {
+        "artist": "Sizzla",
+        "title": "Girls And Roses",
+        "views": 700000
+      },
+      {
+        "artist": "Capleton",
+        "title": "Wi Nuh Tek Dis",
+        "views": 500000
+      },
+      {
+        "artist": "Mr. Vegas",
+        "title": "Gunman",
+        "views": 400000
+      },
+      {
+        "artist": "Merciless",
+        "title": "Ghetto Anthem",
+        "views": 350000
+      },
+      {
+        "artist": "Spragga Benz",
+        "title": "Pure Gal",
+        "views": 300000
+      },
+      {
+        "artist": "Ce'cile",
+        "title": "Know How",
+        "views": 250000
+      }
+    ],
+    "id": 147
+  },
+  {
+    "name": "Zero Tolerance",
+    "year": 2002,
+    "producer": "Harvel Hart",
+    "label": "Annex Productions / Greensleeves Records",
+    "type": "ragga",
+    "genre": "dancehall",
+    "bpm": 92,
+    "description": "Riddim dancehall ragga produit par Harvel Hart pour Annex Productions en 2002, sorti comme Greensleeves Rhythm Album #24. Compilation massive de plus de 20 titres avec des artistes comme Capleton, Sizzla, Bounty Killer et Elephant Man.",
+    "voicings": [
+      {
+        "artist": "Capleton",
+        "title": "Push Wood",
+        "views": 800000
+      },
+      {
+        "artist": "Sizzla",
+        "title": "Empty The Clip",
+        "views": 700000
+      },
+      {
+        "artist": "Bounty Killer",
+        "title": "Look War",
+        "views": 600000
+      },
+      {
+        "artist": "Anthony B",
+        "title": "Forward",
+        "views": 500000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Sexual Healing",
+        "views": 400000
+      },
+      {
+        "artist": "Assassin",
+        "title": "Keys A Fi Yuh Own",
+        "views": 350000
+      },
+      {
+        "artist": "Tony Rebel",
+        "title": "Good Boy",
+        "views": 300000
+      },
+      {
+        "artist": "Mad Cobra",
+        "title": "Different Thing Now",
+        "views": 250000
+      },
+      {
+        "artist": "I Wayne",
+        "title": "Bun Down Saddam",
+        "views": 200000
+      }
+    ],
+    "id": 148
+  },
+  {
+    "name": "Full Moon",
+    "year": 2001,
+    "producer": "Troy McLean & Garfield Hamilton",
+    "label": "First Name / VP Records",
+    "type": "ragga",
+    "genre": "dancehall",
+    "bpm": 96,
+    "description": "Riddim dancehall ragga produit par Troy McLean et Garfield Hamilton en 2001, sorti dans la série Riddim Driven de VP Records. Compilation de 14 titres réunissant des superstars comme Sean Paul, Beenie Man, Bounty Killer et Elephant Man.",
+    "voicings": [
+      {
+        "artist": "Sean Paul",
+        "title": "Clear & Plain",
+        "views": 1500000
+      },
+      {
+        "artist": "Beenie Man",
+        "title": "Peace Rag",
+        "views": 1000000
+      },
+      {
+        "artist": "Bounty Killer",
+        "title": "Elevate",
+        "views": 800000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "E.L.E.P.H.A.N.T.",
+        "views": 700000
+      },
+      {
+        "artist": "Capleton",
+        "title": "Uprising",
+        "views": 500000
+      },
+      {
+        "artist": "Assassin",
+        "title": "To Make Money",
+        "views": 400000
+      },
+      {
+        "artist": "Bling Dawg",
+        "title": "A Floss Like We Do",
+        "views": 300000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Beetle Juice",
+        "views": 250000
+      },
+      {
+        "artist": "Harry Toddler",
+        "title": "This Time",
+        "views": 200000
+      }
+    ],
+    "id": 149
+  },
+  {
+    "name": "Bigga Judgement",
+    "year": 2001,
+    "producer": "Chris 'Goldfinga' Clarke",
+    "label": "Golden Cartel / Greensleeves Records",
+    "type": "ragga",
+    "genre": "dancehall",
+    "bpm": 94,
+    "description": "Riddim dancehall ragga produit par Chris Goldfinga Clarke en 2001, sorti comme Greensleeves Rhythm Album #19. Compilation de 20 titres avec des artistes de premier plan comme Capleton, Sizzla, Bounty Killer et Elephant Man.",
+    "voicings": [
+      {
+        "artist": "Capleton",
+        "title": "Judgement Morning",
+        "views": 800000
+      },
+      {
+        "artist": "Sizzla",
+        "title": "Get Out Di Way",
+        "views": 700000
+      },
+      {
+        "artist": "Bounty Killer",
+        "title": "Tell Dem",
+        "views": 600000
+      },
+      {
+        "artist": "Elephant Man & DJ Face",
+        "title": "Zoom",
+        "views": 500000
+      },
+      {
+        "artist": "Merciless",
+        "title": "Smoke Di Weed",
+        "views": 400000
+      },
+      {
+        "artist": "Frisco Kid",
+        "title": "Mad City",
+        "views": 300000
+      },
+      {
+        "artist": "Sizzla",
+        "title": "Show Off",
+        "views": 250000
+      },
+      {
+        "artist": "Danny English & Zeno",
+        "title": "It No Matter",
+        "views": 200000
+      },
+      {
+        "artist": "Harry Toddler",
+        "title": "Man To Man",
+        "views": 180000
+      }
+    ],
+    "id": 150
+  },
+  {
+    "name": "20 Cent",
+    "year": 2003,
+    "producer": "Teetimus & Baby G (Trevor James Jr)",
+    "label": "Baby G Productions",
+    "type": "ragga",
+    "genre": "dancehall",
+    "bpm": 95,
+    "description": "Riddim dancehall ragga produit par Teetimus et Baby G en 2003 pour Baby G Productions. Compilation de 20 titres mêlant tradition et innovation, avec des artistes comme Beenie Man, Vybz Kartel, Elephant Man, Bounty Killer et Ward 21.",
+    "voicings": [
+      {
+        "artist": "Beenie Man & Silver Cat",
+        "title": "Angillitto",
+        "views": 1200000
+      },
+      {
+        "artist": "Vybz Kartel",
+        "title": "Bag A Gal",
+        "views": 1000000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Burn Fi Burn",
+        "views": 800000
+      },
+      {
+        "artist": "Bounty Killer",
+        "title": "Breeda",
+        "views": 700000
+      },
+      {
+        "artist": "Ward 21",
+        "title": "Gal Technician",
+        "views": 500000
+      },
+      {
+        "artist": "T.O.K",
+        "title": "Goodas",
+        "views": 400000
+      },
+      {
+        "artist": "Mr Vegas",
+        "title": "20 Cent",
+        "views": 350000
+      },
+      {
+        "artist": "Lady Saw",
+        "title": "20 Cent",
+        "views": 300000
+      },
+      {
+        "artist": "Wayne Marshall",
+        "title": "20 Cent",
+        "views": 250000
+      }
+    ],
+    "id": 151
+  },
+  {
+    "name": "Sledge",
+    "year": 2008,
+    "producer": "Notice Records",
+    "label": "Notice Records",
+    "type": "digital",
+    "genre": "reggae",
+    "bpm": 75,
+    "description": "Riddim reggae roots produit par Notice Records en 2008, avec une compilation compacte de 5 titres. Production axée sur le reggae conscient avec des collaborations notables de Morgan Heritage et Lutan Fyah.",
+    "voicings": [
+      {
+        "artist": "Lutan Fyah & Morgan Heritage",
+        "title": "Set Di Trend",
+        "views": 400000
+      },
+      {
+        "artist": "Ras Penco",
+        "title": "Sledge Hammer",
+        "views": 150000
+      },
+      {
+        "artist": "Tammy & Klyve",
+        "title": "Plant Di Seed",
+        "views": 80000
+      },
+      {
+        "artist": "Kello",
+        "title": "Hungry Belly",
+        "views": 50000
+      }
+    ],
+    "id": 152
   }
 ]
