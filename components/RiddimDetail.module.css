@@ -413,23 +413,22 @@
 }
 
 
-/* Lien YouTube texte (original) */
+/* Lien YouTube icône */
 
-.ytLink {
+.actionYoutube {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-1);
-  color: var(--color-brand-gold);
-  text-decoration: none;
-  font-size: var(--font-size-sm);
-  white-space: nowrap;
-  transition: opacity var(--transition-fast);
+  justify-content: center;
+  color: #FF0000;
+  opacity: 0.5;
+  transition: opacity 200ms ease;
 }
 
-.ytLink:hover { opacity: 0.8; }
+.actionYoutube:hover {
+  opacity: 1;
+}
 
-
-/* Lien Spotify icône (nouveau) */
+/* Lien Spotify icône */
 
 .actionSpotify {
   display: inline-flex;
@@ -439,10 +438,6 @@
   opacity: 0.5;
   transition: opacity 200ms ease;
   margin-left: var(--space-3);
-}
-
-.actionSpotify:hover {
-  opacity: 1;
 }
 
 
