@@ -1,20 +1,44 @@
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { put, list } from '@vercel/blob';
 
-const DATA_PATH = path.join(process.cwd(), 'data', 'riddims.json');
+const BLOB_NAME = 'riddims.json';
+const DEPLOY_HOOK_URL = process.env.DEPLOY_HOOK_URL;
 
-function readRiddims() {
-  const raw = fs.readFileSync(DATA_PATH, 'utf-8');
-  return JSON.parse(raw);
+async function readRiddims() {
+  const { blobs } = await list({ prefix: BLOB_NAME });
+
+  if (blobs.length === 0) {
+    // Premier lancement : seed depuis le fichier local embarqué dans le build
+    const localData = await import('@/data/riddims.json');
+    const data = (localData as { default: unknown[] }).default;
+    // Upload initial dans le Blob pour les prochaines lectures
+    await put(BLOB_NAME, JSON.stringify(data, null, 2), {
+      access: 'public',
+      addRandomSuffix: false,
+      contentType: 'application/json',
+    });
+    return data;
+  }
+
+  const response = await fetch(blobs[0].url, { cache: 'no-store' });
+  return response.json();
 }
 
-function writeRiddims(data: unknown[]) {
-  fs.writeFileSync(DATA_PATH, JSON.stringify(data, null, 2), 'utf-8');
+async function writeRiddims(data: unknown[]) {
+  await put(BLOB_NAME, JSON.stringify(data, null, 2), {
+    access: 'public',
+    addRandomSuffix: false,
+    contentType: 'application/json',
+  });
+
+  // Déclencher un redeploy pour mettre à jour les pages statiques
+  if (DEPLOY_HOOK_URL) {
+    fetch(DEPLOY_HOOK_URL, { method: 'POST' }).catch(() => {});
+  }
 }
 
 export async function GET() {
-  const riddims = readRiddims();
+  const riddims = await readRiddims();
   return NextResponse.json(riddims);
 }
 
@@ -22,7 +46,7 @@ export async function POST(req: NextRequest) {
   const body = await req.json();
   const { action } = body;
 
-  const riddims = readRiddims();
+  const riddims = await readRiddims();
 
   switch (action) {
     // ─── Déplacer un voicing d'un riddim à un autre ──────────────────────
@@ -42,7 +66,7 @@ export async function POST(req: NextRequest) {
       toRiddim.voicings.push(voicing);
       toRiddim.voicings.sort((a: { views: number }, b: { views: number }) => b.views - a.views);
 
-      writeRiddims(riddims);
+      await writeRiddims(riddims);
       return NextResponse.json({ success: true, movedVoicing: voicing });
     }
 
@@ -59,7 +83,7 @@ export async function POST(req: NextRequest) {
       }
 
       const [deleted] = riddim.voicings.splice(voicingIndex, 1);
-      writeRiddims(riddims);
+      await writeRiddims(riddims);
       return NextResponse.json({ success: true, deletedVoicing: deleted });
     }
 
@@ -79,7 +103,7 @@ export async function POST(req: NextRequest) {
       riddim.voicings.push(newVoicing);
       riddim.voicings.sort((a: { views: number }, b: { views: number }) => b.views - a.views);
 
-      writeRiddims(riddims);
+      await writeRiddims(riddims);
       return NextResponse.json({ success: true, addedVoicing: newVoicing });
     }
 
@@ -106,7 +130,7 @@ export async function POST(req: NextRequest) {
       };
 
       riddims.push(newRiddim);
-      writeRiddims(riddims);
+      await writeRiddims(riddims);
       return NextResponse.json({ success: true, createdRiddim: newRiddim });
     }
 
