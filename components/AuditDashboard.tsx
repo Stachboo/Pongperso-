@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo, useCallback } from 'react';
+import { useRouter } from 'next/navigation';
 import type { Riddim, Voicing } from '@/types/riddim';
 import styles from './AuditDashboard.module.css';
 
@@ -56,6 +57,7 @@ const EMPTY_RIDDIM = {
 };
 
 export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditDashboardProps) {
+  const router = useRouter();
   const [riddims, setRiddims] = useState<Riddim[]>(initialRiddims);
   const [selectedRiddim, setSelectedRiddim] = useState<number | null>(null);
   const [filterStatus, setFilterStatus] = useState<AuditStatus>('all');
@@ -71,6 +73,16 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
   const [newRiddim, setNewRiddim] = useState(EMPTY_RIDDIM);
   const [newRiddimVoicings, setNewRiddimVoicings] = useState<{ artist: string; title: string; views: number }[]>([]);
   const [loading, setLoading] = useState(false);
+
+  const handleLogout = useCallback(async () => {
+    await fetch('/api/auth', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'logout' }),
+    });
+    router.push(`/${lang}/audit/login`);
+    router.refresh();
+  }, [lang, router]);
 
   const crossDupes = useMemo(() => findCrossRiddimDuplicates(riddims), [riddims]);
 
@@ -181,8 +193,15 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <h1 className={styles.title}>Audit Voicings</h1>
-        <p className={styles.subtitle}>Vérification et gestion de la base de données riddim</p>
+        <div className={styles.headerRow}>
+          <div>
+            <h1 className={styles.title}>Audit Voicings</h1>
+            <p className={styles.subtitle}>Vérification et gestion de la base de données riddim</p>
+          </div>
+          <button className={styles.logoutBtn} onClick={handleLogout}>
+            Déconnexion
+          </button>
+        </div>
       </header>
 
       {/* Stats */}
