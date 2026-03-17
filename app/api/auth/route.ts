@@ -1,24 +1,38 @@
 import { NextRequest, NextResponse } from 'next/server';
-import crypto from 'crypto';
 
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME || 'admin';
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'WMC-riddim-2024!';
 const AUTH_SECRET = process.env.AUTH_SECRET || 'wmc-riddim-secret-key-change-in-production-abc123xyz';
 
-function createToken(username: string): string {
-  const payload = `${username}:${Date.now()}`;
-  const hmac = crypto.createHmac('sha256', AUTH_SECRET).update(payload).digest('hex');
-  return Buffer.from(`${payload}:${hmac}`).toString('base64');
+async function hmacSign(payload: string): Promise<string> {
+  const encoder = new TextEncoder();
+  const key = await crypto.subtle.importKey(
+    'raw',
+    encoder.encode(AUTH_SECRET),
+    { name: 'HMAC', hash: 'SHA-256' },
+    false,
+    ['sign']
+  );
+  const signature = await crypto.subtle.sign('HMAC', key, encoder.encode(payload));
+  return Array.from(new Uint8Array(signature))
+    .map(b => b.toString(16).padStart(2, '0'))
+    .join('');
 }
 
-function verifyToken(token: string): boolean {
+async function createToken(username: string): Promise<string> {
+  const payload = `${username}:${Date.now()}`;
+  const hmac = await hmacSign(payload);
+  return btoa(`${payload}:${hmac}`);
+}
+
+async function verifyToken(token: string): Promise<boolean> {
   try {
-    const decoded = Buffer.from(token, 'base64').toString('utf-8');
+    const decoded = atob(token);
     const parts = decoded.split(':');
     if (parts.length < 3) return false;
     const hmac = parts.pop()!;
     const payload = parts.join(':');
-    const expected = crypto.createHmac('sha256', AUTH_SECRET).update(payload).digest('hex');
+    const expected = await hmacSign(payload);
     return hmac === expected;
   } catch {
     return false;
@@ -33,7 +47,7 @@ export async function POST(req: NextRequest) {
     const { username, password } = body;
 
     if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
-      const token = createToken(username);
+      const token = await createToken(username);
       const response = NextResponse.json({ success: true });
       response.cookies.set('wmc-auth', token, {
         httpOnly: true,
@@ -62,7 +76,7 @@ export async function POST(req: NextRequest) {
 
   if (action === 'check') {
     const token = req.cookies.get('wmc-auth')?.value;
-    if (token && verifyToken(token)) {
+    if (token && await verifyToken(token)) {
       return NextResponse.json({ authenticated: true });
     }
     return NextResponse.json({ authenticated: false }, { status: 401 });

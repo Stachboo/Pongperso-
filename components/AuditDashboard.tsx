@@ -74,6 +74,7 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
   const [newRiddim, setNewRiddim] = useState(EMPTY_RIDDIM);
   const [newRiddimVoicings, setNewRiddimVoicings] = useState<{ artist: string; title: string; views: number }[]>([]);
   const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   const handleLogout = useCallback(async () => {
     await fetch('/api/auth', {
@@ -122,6 +123,7 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
   // ─── API helpers ────────────────────────────────────────────────────────────
   const apiCall = useCallback(async (body: Record<string, unknown>) => {
     setLoading(true);
+    setErrorMsg(null);
     try {
       const res = await fetch('/api/riddims', {
         method: 'POST',
@@ -129,12 +131,19 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
         body: JSON.stringify(body),
       });
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Erreur serveur');
+      if (!res.ok) {
+        const msg = data.error || 'Erreur serveur';
+        setErrorMsg(msg);
+        return null;
+      }
       // Refresh data
       const freshRes = await fetch('/api/riddims');
       const freshData = await freshRes.json();
       setRiddims(freshData);
       return data;
+    } catch (err) {
+      setErrorMsg(err instanceof Error ? err.message : 'Erreur réseau');
+      return null;
     } finally {
       setLoading(false);
     }
@@ -143,42 +152,46 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
   // ─── CRUD handlers ─────────────────────────────────────────────────────────
   const handleMoveVoicing = async () => {
     if (!moveModal || !moveTargetId) return;
-    await apiCall({
+    const result = await apiCall({
       action: 'move-voicing',
       fromRiddimId: moveModal.riddimId,
       toRiddimId: Number(moveTargetId),
       voicingIndex: moveModal.voicingIndex,
     });
-    setMoveModal(null);
-    setMoveTargetId('');
+    if (result) {
+      setMoveModal(null);
+      setMoveTargetId('');
+    }
   };
 
   const handleDeleteVoicing = async () => {
     if (!deleteConfirm) return;
-    await apiCall({
+    const result = await apiCall({
       action: 'delete-voicing',
       riddimId: deleteConfirm.riddimId,
       voicingIndex: deleteConfirm.voicingIndex,
     });
-    setDeleteConfirm(null);
+    if (result) setDeleteConfirm(null);
   };
 
   const handleAddVoicing = async () => {
     if (!currentRiddim || !newVoicing.artist || !newVoicing.title) return;
-    await apiCall({
+    const result = await apiCall({
       action: 'add-voicing',
       riddimId: currentRiddim.id,
       artist: newVoicing.artist,
       title: newVoicing.title,
       views: newVoicing.views,
     });
-    setNewVoicing(EMPTY_VOICING);
-    setShowAddVoicing(false);
+    if (result) {
+      setNewVoicing(EMPTY_VOICING);
+      setShowAddVoicing(false);
+    }
   };
 
   const handleEditVoicing = async () => {
     if (!editModal || !editModal.artist || !editModal.title) return;
-    await apiCall({
+    const result = await apiCall({
       action: 'edit-voicing',
       riddimId: editModal.riddimId,
       voicingIndex: editModal.voicingIndex,
@@ -186,7 +199,7 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
       title: editModal.title,
       views: editModal.views,
     });
-    setEditModal(null);
+    if (result) setEditModal(null);
   };
 
   const handleReorderVoicing = async (riddimId: number, voicingIndex: number, direction: 'up' | 'down') => {
@@ -205,11 +218,13 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
       ...newRiddim,
       voicings: newRiddimVoicings.filter(v => v.artist && v.title),
     });
-    setNewRiddim(EMPTY_RIDDIM);
-    setNewRiddimVoicings([]);
-    setShowCreateRiddim(false);
-    if (result?.createdRiddim) {
-      setSelectedRiddim(result.createdRiddim.id);
+    if (result) {
+      setNewRiddim(EMPTY_RIDDIM);
+      setNewRiddimVoicings([]);
+      setShowCreateRiddim(false);
+      if (result.createdRiddim) {
+        setSelectedRiddim(result.createdRiddim.id);
+      }
     }
   };
 
@@ -226,6 +241,14 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
           </button>
         </div>
       </header>
+
+      {/* Error banner */}
+      {errorMsg && (
+        <div className={styles.errorBanner} onClick={() => setErrorMsg(null)}>
+          <span>Erreur : {errorMsg}</span>
+          <button className={styles.errorClose}>✕</button>
+        </div>
+      )}
 
       {/* Stats */}
       <div className={styles.statsGrid}>

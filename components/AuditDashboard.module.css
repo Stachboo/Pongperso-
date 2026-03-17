@@ -8,6 +8,29 @@
   padding: 2rem 1.5rem;
 }
 
+.errorBanner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #5c1a1a;
+  border: 1px solid #ff4444;
+  color: #ff8888;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.errorClose {
+  background: none;
+  border: none;
+  color: #ff8888;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0;
+}
+
 .header {
   margin-bottom: 2rem;
 }
