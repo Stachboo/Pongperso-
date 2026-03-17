@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import type { Riddim, Voicing } from '@/types/riddim';
 import styles from './AuditDashboard.module.css';
 
@@ -49,17 +49,33 @@ function findCrossRiddimDuplicates(riddims: Riddim[]) {
   return dupes;
 }
 
-export default function AuditDashboard({ riddims, lang }: AuditDashboardProps) {
+const EMPTY_VOICING = { artist: '', title: '', views: 0 };
+const EMPTY_RIDDIM = {
+  name: '', year: 2024, producer: '', label: '', type: 'digital',
+  genre: 'dancehall', bpm: 0, description: '',
+};
+
+export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditDashboardProps) {
+  const [riddims, setRiddims] = useState<Riddim[]>(initialRiddims);
   const [selectedRiddim, setSelectedRiddim] = useState<number | null>(null);
   const [filterStatus, setFilterStatus] = useState<AuditStatus>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
+  // ─── Modal states ───────────────────────────────────────────────────────────
+  const [moveModal, setMoveModal] = useState<{ riddimId: number; voicingIndex: number } | null>(null);
+  const [moveTargetId, setMoveTargetId] = useState<number | ''>('');
+  const [deleteConfirm, setDeleteConfirm] = useState<{ riddimId: number; voicingIndex: number; artist: string; title: string } | null>(null);
+  const [showAddVoicing, setShowAddVoicing] = useState(false);
+  const [newVoicing, setNewVoicing] = useState(EMPTY_VOICING);
+  const [showCreateRiddim, setShowCreateRiddim] = useState(false);
+  const [newRiddim, setNewRiddim] = useState(EMPTY_RIDDIM);
+  const [newRiddimVoicings, setNewRiddimVoicings] = useState<{ artist: string; title: string; views: number }[]>([]);
+  const [loading, setLoading] = useState(false);
+
   const crossDupes = useMemo(() => findCrossRiddimDuplicates(riddims), [riddims]);
 
   const stats = useMemo(() => {
-    let totalVoicings = 0;
-    let estimated = 0;
-    let ok = 0;
+    let totalVoicings = 0, estimated = 0, ok = 0;
     for (const r of riddims) {
       for (const v of r.voicings) {
         totalVoicings++;
@@ -72,7 +88,6 @@ export default function AuditDashboard({ riddims, lang }: AuditDashboardProps) {
 
   const filteredRiddims = useMemo(() => {
     let filtered = riddims;
-
     if (searchQuery) {
       const q = searchQuery.toLowerCase();
       filtered = filtered.filter(r =>
@@ -81,23 +96,93 @@ export default function AuditDashboard({ riddims, lang }: AuditDashboardProps) {
         r.voicings.some(v => v.artist.toLowerCase().includes(q) || v.title.toLowerCase().includes(q))
       );
     }
-
     if (filterStatus === 'estimated') {
       filtered = filtered.filter(r => r.voicings.some(v => isEstimated(v.views)));
     } else if (filterStatus === 'ok') {
       filtered = filtered.filter(r => r.voicings.every(v => !isEstimated(v.views)));
     }
-
     return filtered;
   }, [riddims, searchQuery, filterStatus]);
 
   const currentRiddim = selectedRiddim !== null ? riddims.find(r => r.id === selectedRiddim) : null;
 
+  // ─── API helpers ────────────────────────────────────────────────────────────
+  const apiCall = useCallback(async (body: Record<string, unknown>) => {
+    setLoading(true);
+    try {
+      const res = await fetch('/api/riddims', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Erreur serveur');
+      // Refresh data
+      const freshRes = await fetch('/api/riddims');
+      const freshData = await freshRes.json();
+      setRiddims(freshData);
+      return data;
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  // ─── CRUD handlers ─────────────────────────────────────────────────────────
+  const handleMoveVoicing = async () => {
+    if (!moveModal || !moveTargetId) return;
+    await apiCall({
+      action: 'move-voicing',
+      fromRiddimId: moveModal.riddimId,
+      toRiddimId: Number(moveTargetId),
+      voicingIndex: moveModal.voicingIndex,
+    });
+    setMoveModal(null);
+    setMoveTargetId('');
+  };
+
+  const handleDeleteVoicing = async () => {
+    if (!deleteConfirm) return;
+    await apiCall({
+      action: 'delete-voicing',
+      riddimId: deleteConfirm.riddimId,
+      voicingIndex: deleteConfirm.voicingIndex,
+    });
+    setDeleteConfirm(null);
+  };
+
+  const handleAddVoicing = async () => {
+    if (!currentRiddim || !newVoicing.artist || !newVoicing.title) return;
+    await apiCall({
+      action: 'add-voicing',
+      riddimId: currentRiddim.id,
+      artist: newVoicing.artist,
+      title: newVoicing.title,
+      views: newVoicing.views,
+    });
+    setNewVoicing(EMPTY_VOICING);
+    setShowAddVoicing(false);
+  };
+
+  const handleCreateRiddim = async () => {
+    if (!newRiddim.name || !newRiddim.producer) return;
+    const result = await apiCall({
+      action: 'create-riddim',
+      ...newRiddim,
+      voicings: newRiddimVoicings.filter(v => v.artist && v.title),
+    });
+    setNewRiddim(EMPTY_RIDDIM);
+    setNewRiddimVoicings([]);
+    setShowCreateRiddim(false);
+    if (result?.createdRiddim) {
+      setSelectedRiddim(result.createdRiddim.id);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <header className={styles.header}>
         <h1 className={styles.title}>Audit Voicings</h1>
-        <p className={styles.subtitle}>Vérification de la base de données riddim</p>
+        <p className={styles.subtitle}>Vérification et gestion de la base de données riddim</p>
       </header>
 
       {/* Stats */}
@@ -149,7 +234,7 @@ export default function AuditDashboard({ riddims, lang }: AuditDashboardProps) {
         </section>
       )}
 
-      {/* Filters */}
+      {/* Filters + Create button */}
       <div className={styles.controls}>
         <input
           type="text"
@@ -166,18 +251,24 @@ export default function AuditDashboard({ riddims, lang }: AuditDashboardProps) {
             Tous ({riddims.length})
           </button>
           <button
-            className={`${styles.filterBtn} ${styles.filterEstimated} ${filterStatus === 'estimated' ? styles.filterActive : ''}`}
+            className={`${styles.filterBtn} ${filterStatus === 'estimated' ? styles.filterActive : ''}`}
             onClick={() => setFilterStatus('estimated')}
           >
             Estimés
           </button>
           <button
-            className={`${styles.filterBtn} ${styles.filterOk} ${filterStatus === 'ok' ? styles.filterActive : ''}`}
+            className={`${styles.filterBtn} ${filterStatus === 'ok' ? styles.filterActive : ''}`}
             onClick={() => setFilterStatus('ok')}
           >
             Vérifiés
           </button>
         </div>
+        <button
+          className={styles.createBtn}
+          onClick={() => setShowCreateRiddim(true)}
+        >
+          + Nouveau Riddim
+        </button>
       </div>
 
       {/* Riddim list + detail */}
@@ -221,8 +312,52 @@ export default function AuditDashboard({ riddims, lang }: AuditDashboardProps) {
                   <span>{currentRiddim.year}</span>
                   <span className={styles.genreTag}>{currentRiddim.genre}</span>
                   <span className={styles.typeTag}>{currentRiddim.type}</span>
+                  {currentRiddim.bpm > 0 && <span>{currentRiddim.bpm} BPM</span>}
                 </div>
               </div>
+
+              {/* Add voicing toggle */}
+              <div className={styles.detailActions}>
+                <button
+                  className={styles.addVoicingBtn}
+                  onClick={() => setShowAddVoicing(!showAddVoicing)}
+                >
+                  + Ajouter un voicing
+                </button>
+              </div>
+
+              {/* Add voicing form */}
+              {showAddVoicing && (
+                <div className={styles.inlineForm}>
+                  <input
+                    type="text"
+                    placeholder="Artiste"
+                    value={newVoicing.artist}
+                    onChange={e => setNewVoicing({ ...newVoicing, artist: e.target.value })}
+                    className={styles.formInput}
+                  />
+                  <input
+                    type="text"
+                    placeholder="Titre"
+                    value={newVoicing.title}
+                    onChange={e => setNewVoicing({ ...newVoicing, title: e.target.value })}
+                    className={styles.formInput}
+                  />
+                  <input
+                    type="number"
+                    placeholder="Vues"
+                    value={newVoicing.views || ''}
+                    onChange={e => setNewVoicing({ ...newVoicing, views: Number(e.target.value) || 0 })}
+                    className={styles.formInputSmall}
+                  />
+                  <button onClick={handleAddVoicing} className={styles.confirmBtn} disabled={loading}>
+                    Ajouter
+                  </button>
+                  <button onClick={() => { setShowAddVoicing(false); setNewVoicing(EMPTY_VOICING); }} className={styles.cancelBtn}>
+                    Annuler
+                  </button>
+                </div>
+              )}
 
               <table className={styles.voicingTable}>
                 <thead>
@@ -233,6 +368,7 @@ export default function AuditDashboard({ riddims, lang }: AuditDashboardProps) {
                     <th>Vues</th>
                     <th>Status</th>
                     <th>Vérifier</th>
+                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -273,6 +409,27 @@ export default function AuditDashboard({ riddims, lang }: AuditDashboardProps) {
                             </svg>
                           </a>
                         </td>
+                        <td className={styles.actionsCell}>
+                          <button
+                            className={styles.actionMove}
+                            title="Déplacer vers un autre riddim"
+                            onClick={() => { setMoveModal({ riddimId: currentRiddim.id, voicingIndex: i }); setMoveTargetId(''); }}
+                          >
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                              <path d="M5 9l-3 3 3 3"/><path d="M9 5l3-3 3 3"/><path d="M15 19l3 3 3-3"/><path d="M19 9l3 3-3 3"/>
+                              <line x1="2" y1="12" x2="22" y2="12"/><line x1="12" y1="2" x2="12" y2="22"/>
+                            </svg>
+                          </button>
+                          <button
+                            className={styles.actionDelete}
+                            title="Supprimer ce voicing"
+                            onClick={() => setDeleteConfirm({ riddimId: currentRiddim.id, voicingIndex: i, artist: v.artist, title: v.title })}
+                          >
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                              <polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                            </svg>
+                          </button>
+                        </td>
                       </tr>
                     );
                   })}
@@ -286,6 +443,233 @@ export default function AuditDashboard({ riddims, lang }: AuditDashboardProps) {
           )}
         </div>
       </div>
+
+      {/* ─── Move Voicing Modal ──────────────────────────────────────────────── */}
+      {moveModal && (
+        <div className={styles.modalOverlay} onClick={() => setMoveModal(null)}>
+          <div className={styles.modal} onClick={e => e.stopPropagation()}>
+            <h3 className={styles.modalTitle}>Déplacer le voicing</h3>
+            <p className={styles.modalDesc}>
+              Sélectionne le riddim de destination :
+            </p>
+            <select
+              className={styles.formSelect}
+              value={moveTargetId}
+              onChange={e => setMoveTargetId(Number(e.target.value))}
+            >
+              <option value="">— Choisir un riddim —</option>
+              {riddims
+                .filter(r => r.id !== moveModal.riddimId)
+                .sort((a, b) => a.name.localeCompare(b.name))
+                .map(r => (
+                  <option key={r.id} value={r.id}>
+                    [{r.id}] {r.name}
+                  </option>
+                ))}
+            </select>
+            <div className={styles.modalActions}>
+              <button onClick={handleMoveVoicing} className={styles.confirmBtn} disabled={!moveTargetId || loading}>
+                Déplacer
+              </button>
+              <button onClick={() => setMoveModal(null)} className={styles.cancelBtn}>
+                Annuler
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ─── Delete Confirmation Modal ───────────────────────────────────────── */}
+      {deleteConfirm && (
+        <div className={styles.modalOverlay} onClick={() => setDeleteConfirm(null)}>
+          <div className={styles.modal} onClick={e => e.stopPropagation()}>
+            <h3 className={styles.modalTitle}>Supprimer le voicing</h3>
+            <p className={styles.modalDesc}>
+              Supprimer <strong>{deleteConfirm.artist} — {deleteConfirm.title}</strong> ?
+              <br />Cette action est irréversible.
+            </p>
+            <div className={styles.modalActions}>
+              <button onClick={handleDeleteVoicing} className={styles.deleteBtn} disabled={loading}>
+                Supprimer
+              </button>
+              <button onClick={() => setDeleteConfirm(null)} className={styles.cancelBtn}>
+                Annuler
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ─── Create Riddim Modal ─────────────────────────────────────────────── */}
+      {showCreateRiddim && (
+        <div className={styles.modalOverlay} onClick={() => setShowCreateRiddim(false)}>
+          <div className={styles.modalLarge} onClick={e => e.stopPropagation()}>
+            <h3 className={styles.modalTitle}>Créer un nouveau riddim</h3>
+
+            <div className={styles.formGrid}>
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel}>Nom *</label>
+                <input
+                  type="text"
+                  className={styles.formInput}
+                  placeholder="Ex: Stalag Riddim"
+                  value={newRiddim.name}
+                  onChange={e => setNewRiddim({ ...newRiddim, name: e.target.value })}
+                />
+              </div>
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel}>Producteur *</label>
+                <input
+                  type="text"
+                  className={styles.formInput}
+                  placeholder="Ex: Steely & Clevie"
+                  value={newRiddim.producer}
+                  onChange={e => setNewRiddim({ ...newRiddim, producer: e.target.value })}
+                />
+              </div>
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel}>Année</label>
+                <input
+                  type="number"
+                  className={styles.formInput}
+                  value={newRiddim.year}
+                  onChange={e => setNewRiddim({ ...newRiddim, year: Number(e.target.value) || 2024 })}
+                />
+              </div>
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel}>Label</label>
+                <input
+                  type="text"
+                  className={styles.formInput}
+                  placeholder="Ex: VP Records"
+                  value={newRiddim.label}
+                  onChange={e => setNewRiddim({ ...newRiddim, label: e.target.value })}
+                />
+              </div>
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel}>Genre</label>
+                <select
+                  className={styles.formSelect}
+                  value={newRiddim.genre}
+                  onChange={e => setNewRiddim({ ...newRiddim, genre: e.target.value })}
+                >
+                  <option value="dancehall">Dancehall</option>
+                  <option value="reggae">Reggae</option>
+                  <option value="roots">Roots</option>
+                  <option value="dub">Dub</option>
+                  <option value="ska">Ska</option>
+                  <option value="rocksteady">Rocksteady</option>
+                </select>
+              </div>
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel}>Type</label>
+                <select
+                  className={styles.formSelect}
+                  value={newRiddim.type}
+                  onChange={e => setNewRiddim({ ...newRiddim, type: e.target.value })}
+                >
+                  <option value="digital">Digital</option>
+                  <option value="one-drop">One Drop</option>
+                  <option value="steppers">Steppers</option>
+                  <option value="rockers">Rockers</option>
+                  <option value="nyabinghi">Nyabinghi</option>
+                </select>
+              </div>
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel}>BPM</label>
+                <input
+                  type="number"
+                  className={styles.formInput}
+                  placeholder="0"
+                  value={newRiddim.bpm || ''}
+                  onChange={e => setNewRiddim({ ...newRiddim, bpm: Number(e.target.value) || 0 })}
+                />
+              </div>
+            </div>
+
+            <div className={styles.formGroup}>
+              <label className={styles.formLabel}>Description</label>
+              <textarea
+                className={styles.formTextarea}
+                placeholder="Description du riddim..."
+                value={newRiddim.description}
+                onChange={e => setNewRiddim({ ...newRiddim, description: e.target.value })}
+                rows={3}
+              />
+            </div>
+
+            {/* Initial voicings */}
+            <div className={styles.formGroup}>
+              <label className={styles.formLabel}>Voicings initiaux</label>
+              {newRiddimVoicings.map((v, i) => (
+                <div key={i} className={styles.inlineForm}>
+                  <input
+                    type="text"
+                    placeholder="Artiste"
+                    value={v.artist}
+                    onChange={e => {
+                      const updated = [...newRiddimVoicings];
+                      updated[i] = { ...updated[i], artist: e.target.value };
+                      setNewRiddimVoicings(updated);
+                    }}
+                    className={styles.formInput}
+                  />
+                  <input
+                    type="text"
+                    placeholder="Titre"
+                    value={v.title}
+                    onChange={e => {
+                      const updated = [...newRiddimVoicings];
+                      updated[i] = { ...updated[i], title: e.target.value };
+                      setNewRiddimVoicings(updated);
+                    }}
+                    className={styles.formInput}
+                  />
+                  <input
+                    type="number"
+                    placeholder="Vues"
+                    value={v.views || ''}
+                    onChange={e => {
+                      const updated = [...newRiddimVoicings];
+                      updated[i] = { ...updated[i], views: Number(e.target.value) || 0 };
+                      setNewRiddimVoicings(updated);
+                    }}
+                    className={styles.formInputSmall}
+                  />
+                  <button
+                    className={styles.actionDelete}
+                    onClick={() => setNewRiddimVoicings(newRiddimVoicings.filter((_, j) => j !== i))}
+                  >
+                    ×
+                  </button>
+                </div>
+              ))}
+              <button
+                className={styles.addVoicingBtn}
+                onClick={() => setNewRiddimVoicings([...newRiddimVoicings, { artist: '', title: '', views: 0 }])}
+              >
+                + Ajouter un voicing
+              </button>
+            </div>
+
+            <div className={styles.modalActions}>
+              <button onClick={handleCreateRiddim} className={styles.confirmBtn} disabled={!newRiddim.name || !newRiddim.producer || loading}>
+                Créer le riddim
+              </button>
+              <button onClick={() => { setShowCreateRiddim(false); setNewRiddim(EMPTY_RIDDIM); setNewRiddimVoicings([]); }} className={styles.cancelBtn}>
+                Annuler
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Loading overlay */}
+      {loading && (
+        <div className={styles.loadingOverlay}>
+          <div className={styles.spinner} />
+        </div>
+      )}
     </div>
   );
 }
