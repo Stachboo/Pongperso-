@@ -60,10 +60,12 @@
 }
 
 .title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-display-condensed, 'Bebas Neue', sans-serif);
   font-size: 2rem;
-  font-weight: 900;
+  font-weight: 400;
   color: var(--color-brand-gold, #F2A900);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
   margin: 0;
 }
 
@@ -94,7 +96,7 @@
 }
 
 .statValue {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-display-condensed, 'Bebas Neue', sans-serif);
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--color-text, #E8E8E8);
@@ -119,7 +121,7 @@
 }
 
 .sectionTitle {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-display-condensed, 'Bebas Neue', sans-serif);
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--color-text, #E8E8E8);
@@ -324,7 +326,7 @@
 }
 
 .detailHeader h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-display-condensed, 'Bebas Neue', sans-serif);
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--color-brand-gold, #F2A900);
@@ -398,7 +400,7 @@
 }
 
 .viewsCell {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-body, 'Inter', sans-serif);
   font-weight: 600;
   text-align: right;
 }
@@ -723,7 +725,7 @@
 }
 
 .modalTitle {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-display-condensed, 'Bebas Neue', sans-serif);
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--color-brand-gold, #F2A900);

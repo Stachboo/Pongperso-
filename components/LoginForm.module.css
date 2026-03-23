@@ -21,9 +21,11 @@
 }
 
 .title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-display-condensed, 'Bebas Neue', sans-serif);
   font-size: 1.6rem;
-  font-weight: 900;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--color-brand-gold, #F2A900);
   margin: 0;
 }

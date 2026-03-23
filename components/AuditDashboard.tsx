@@ -704,10 +704,8 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
                 >
                   <option value="dancehall">Dancehall</option>
                   <option value="reggae">Reggae</option>
-                  <option value="roots">Roots</option>
-                  <option value="dub">Dub</option>
-                  <option value="ska">Ska</option>
-                  <option value="rocksteady">Rocksteady</option>
+                  <option value="lovers rock">Lovers Rock</option>
+                  <option value="soca">Soca</option>
                 </select>
               </div>
               <div className={styles.formGroup}>
@@ -718,10 +716,8 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
                   onChange={e => setNewRiddim({ ...newRiddim, type: e.target.value })}
                 >
                   <option value="digital">Digital</option>
-                  <option value="one-drop">One Drop</option>
-                  <option value="steppers">Steppers</option>
-                  <option value="rockers">Rockers</option>
-                  <option value="nyabinghi">Nyabinghi</option>
+                  <option value="classique">Classique</option>
+                  <option value="ragga">Ragga</option>
                 </select>
               </div>
               <div className={styles.formGroup}>
