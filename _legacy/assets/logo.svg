@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#111"/>
+      <stop offset="100%" style="stop-color:#0D0D0D"/>
+    </linearGradient>
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a8e063"/>
+      <stop offset="25%" style="stop-color:#d4e09b"/>
+      <stop offset="50%" style="stop-color:#f0f0f0"/>
+      <stop offset="75%" style="stop-color:#d4e09b"/>
+      <stop offset="100%" style="stop-color:#a8e063"/>
+    </linearGradient>
+    <linearGradient id="metalEdge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#c8d96f"/>
+      <stop offset="50%" style="stop-color:#e8e8e8"/>
+      <stop offset="100%" style="stop-color:#8cb830"/>
+    </linearGradient>
+    <linearGradient id="goldGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F2A900"/>
+      <stop offset="100%" style="stop-color:#009B3A"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="512" height="512" rx="64" fill="url(#bg)"/>
+  <!-- Lightning left -->
+  <polygon points="100,140 140,140 115,240 145,240 90,370 110,260 80,260" fill="url(#metalEdge)" filter="url(#shadow)" opacity="0.9"/>
+  <!-- Lightning right -->
+  <polygon points="412,140 372,140 397,240 367,240 422,370 402,260 432,260" fill="url(#metalEdge)" filter="url(#shadow)" opacity="0.9"/>
+  <!-- WMC Text -->
+  <text x="256" y="295" text-anchor="middle" font-family="'Arial Black','Impact',sans-serif" font-weight="900" font-size="130" letter-spacing="-2" fill="url(#metalGrad)" filter="url(#shadow)" style="paint-order: stroke fill;">WMC</text>
+  <!-- Text stroke for 3D bevel effect -->
+  <text x="256" y="295" text-anchor="middle" font-family="'Arial Black','Impact',sans-serif" font-weight="900" font-size="130" letter-spacing="-2" fill="none" stroke="url(#metalEdge)" stroke-width="2">WMC</text>
+  <!-- Subtitle -->
+  <text x="256" y="345" text-anchor="middle" font-family="'Inter','Helvetica',sans-serif" font-weight="600" font-size="22" letter-spacing="8" fill="url(#goldGreen)">WORLD MUSIC CONTEST</text>
+  <!-- Accent line -->
+  <rect x="156" y="355" width="200" height="2" rx="1" fill="url(#goldGreen)" opacity="0.6"/>
+</svg>

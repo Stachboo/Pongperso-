@@ -1,0 +1,55 @@
+/* ══════════════════════════════════════════════════════════════════════════════
+   WMC — SCROLL TO TOP
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+.button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-brand-gold), var(--color-brand-green));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: calc(var(--z-modal) - 2);
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+  transition: opacity 200ms ease,
+              transform 200ms ease,
+              box-shadow 200ms ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.button:hover {
+  transform: scale(1.08);
+  box-shadow: var(--shadow-gold);
+}
+
+.visible:hover {
+  transform: scale(1.08);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-brand-gold);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+  .button:hover,
+  .visible:hover {
+    transform: none;
+  }
+}
