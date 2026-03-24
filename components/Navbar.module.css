@@ -315,23 +315,57 @@
 
 @media (max-width: 768px) {
   .navbar {
-    height: 56px;
+    height: auto;
+    min-height: 56px;
   }
 
+  .inner {
+    flex-wrap: wrap;
+    padding: var(--space-2) var(--space-4);
+    gap: var(--space-2);
+  }
+
+  /* Navigation links: horizontal scroll row below brand */
   .navLinks {
-    display: none;
-  }
-
-  .langSwitcher {
-    display: none;
-  }
-
-  .ctaBtn {
-    display: none;
-  }
-
-  .burger {
     display: flex;
+    order: 3;
+    width: 100%;
+    gap: var(--space-3);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: var(--space-1);
+  }
+
+  .navLinks::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navLink {
+    font-size: var(--font-size-sm);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Language flags: visible inline */
+  .langSwitcher {
+    display: flex;
+    gap: var(--space-1);
+  }
+
+  .langFlag {
+    font-size: var(--font-size-base);
+  }
+
+  /* CTA button: smaller on mobile */
+  .ctaBtn {
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--font-size-sm);
+  }
+
+  /* Hide burger — everything is visible */
+  .burger {
+    display: none;
   }
 }
 
