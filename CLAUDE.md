@@ -110,13 +110,16 @@ Test local vérifié OK (19/08/2026) : build complet, toutes pages, login admin
 - **[HIGH sécurité]** Secrets/creds par défaut codés en dur. → Propriétaire a dit
   "ne pas toucher pour l'instant" (19/08). À reprendre : retirer les fallbacks +
   faire tourner le mot de passe (présent dans l'historique git).
-- **[HIGH i18n — À FAIRE, choix "traduire pour de vrai"]** Composants publics
-  (ArtistDetail, ProducerDetail, ArtistSearchBar, FormulaireSoumission) + pages
-  éditoriales (about, methodologie, contact, presse, pages légales) 100% français
-  en dur sur les 5 langues, avec hreflang mensonger, + `<html lang="fr">` codé en
-  dur (app/layout.tsx:66). Chantier : extraire tous les textes vers lib/i18n.ts et
-  traduire dans les 5 langues, remonter <html lang> dans app/[lang]/layout.tsx.
-  → prochain gros bloc de travail demandé par le propriétaire.
+- ✅ **[i18n — FAIT]** PR #9 : composants partagés (ArtistDetail, ProducerDetail,
+  RiddimDetail, ArtistSearchBar, FormulaireSoumission) câblés au dictionnaire
+  (+49 clés × 5 langues dans lib/i18n.ts) ; `<html lang>` dynamique (déplacé dans
+  app/[lang]/layout.tsx, root layout = pass-through) ; toutes les pages éditoriales
+  et listes (about, methodologie, contact, presse, ajouter-riddim, conditions,
+  confidentialite, mentions-legales, riddims, producteurs, artistes) traduites via
+  des objets `CONTENT: Record<Locale,...>` par page. hreflang désormais honnête.
+  Note : `components/HeroSection.tsx` est du code mort (non utilisé) — son
+  placeholder FR n'a pas été traduit ; aria-label "Navigation principale" (Navbar)
+  reste en FR (mineur).
 - **[LOW]** x-default(en) vs DEFAULT_LOCALE(fr) ; middleware skip chemin avec point ;
   invariant de tri CRUD ; /explorer vs /riddims duplication ; 5 keyArtists → 404.
 
