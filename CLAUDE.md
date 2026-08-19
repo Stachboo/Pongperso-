@@ -80,6 +80,44 @@ Test local vérifié OK (19/08/2026) : build complet, toutes pages, login admin
 - Sessions sandbox Claude : Chromium ne peut pas atteindre l'extérieur (proxy) —
   tester les URLs prod avec curl ; Playwright fonctionne uniquement sur localhost
 
+## Revue multi-agents (19/08/2026) — état des 21 findings confirmés
+
+✅ CORRIGÉS (commit 83e5ae4, PR #8) :
+- XSS stockée JSON-LD (échappement `jsonLdString`, 5 sites)
+- Token : expiration 24h vérifiée + comparaison temps constant
+- producers.ts riddimIds suffixe `-riddim` (liaison producteur→riddims était morte)
+- Filtre genre "Roots" mort (retiré)
+- Collisions de slugs artistes (fusion par slug dans buildArtistList)
+- Division par zéro maxViews (`??`→`||`)
+- Validation entrées CRUD (views entier≥0, strings non vides, Array.isArray)
+- Dashboard admin resync Blob au montage (useEffect)
+- Sitemap complété (~2300 URLs : artistes/producteurs/pages) + hreflang pages riddim
+
+⏳ DÉCISIONS EN ATTENTE (non corrigés, nécessitent choix propriétaire) :
+- **[HIGH sécurité]** Secrets/creds par défaut codés en dur (auth/route.ts:3-5,
+  middleware.ts:4). Fix = throw si env absent, MAIS risque de casser prod si les
+  env vars Vercel ne sont pas toutes là. + le mot de passe est dans l'historique
+  git → à faire tourner. → à trancher avec le propriétaire.
+- **[HIGH archi données]** Éditions admin (Blob) jamais répercutées sur pages
+  publiques : `next build` relit data/riddims.json du repo, pas le Blob. Fix =
+  script prebuild sync Blob→JSON, OU passer les pages en ISR lisant le Blob. Gros
+  choix d'architecture.
+- **[HIGH archi données]** Race read-modify-write + cache Blob 1 an : éditions
+  concurrentes/rapprochées peuvent se perdre silencieusement. Fix = cacheControl
+  court + cache-busting + version optimiste (409).
+- **[HIGH i18n]** Composants publics (ArtistDetail, ProducerDetail, ArtistSearchBar,
+  FormulaireSoumission) et pages éditoriales (about, methodologie, etc.) 100% en
+  français en dur sur les 5 langues, avec hreflang mensonger. Gros chantier de
+  traduction (contenu à ajouter au dictionnaire) OU retirer les alternates.
+- **[MEDIUM i18n]** `<html lang="fr">` codé en dur (app/layout.tsx:66) pour les 5
+  langues. Fix = remonter <html> dans app/[lang]/layout.tsx.
+- **[LOW]** x-default(en) vs DEFAULT_LOCALE(fr) incohérents ; middleware skip sur
+  chemin avec point ; invariant de tri CRUD ; /explorer vs /riddims duplication ;
+  5 keyArtists → 404. (détails dans le rapport de revue)
+
+Rapport complet archivé (tokens) : la revue a produit 21 findings avec verdict
+adversarial ; si besoin de les revoir, relancer la revue ou demander au propriétaire.
+
 ## Branche de travail Claude
 
 `claude/salam-akhi-uqmwmb` — toujours développer dessus, PR vers `main`.
