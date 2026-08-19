@@ -121,7 +121,7 @@ function ChevronRightIcon() {
 export default function RiddimDetail({ riddim, lang, dict }: RiddimDetailProps) {
   const totalViews = getTotalViews(riddim);
   const sortedVoicings = [...riddim.voicings].sort((a, b) => b.views - a.views);
-  const maxViews = sortedVoicings[0]?.views ?? 1;
+  const maxViews = sortedVoicings[0]?.views || 1;
   const topArtist = sortedVoicings[0]?.artist ?? '—';
   const decade = getDecade(riddim.year);
   const contextText = generateContextText(riddim);

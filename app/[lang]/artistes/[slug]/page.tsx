@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { isValidLocale, LOCALES, type Locale } from '@/lib/i18n';
 import { allRiddims } from '@/lib/data';
-import { generateHreflang, BASE_URL } from '@/utils/seo';
+import { generateHreflang, BASE_URL, jsonLdString } from '@/utils/seo';
 import { buildArtistList, getArtistBySlug, generateArtistJsonLd } from '@/utils/artists';
 import ArtistDetail from '@/components/ArtistDetail';
 
@@ -98,7 +98,7 @@ export default async function ArtistePage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(jsonLd) }}
       />
       <ArtistDetail artist={artist} lang={locale} />
     </>

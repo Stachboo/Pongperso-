@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import type { Riddim, Voicing } from '@/types/riddim';
 import styles from './AuditDashboard.module.css';
@@ -128,6 +128,11 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
       setRiddims(data);
     } catch { /* ignore */ }
   }, []);
+
+  // Au montage, remplacer les données figées du build par l'état réel du Blob
+  useEffect(() => {
+    refreshData();
+  }, [refreshData]);
 
   const apiCall = useCallback(async (body: Record<string, unknown>) => {
     setLoading(true);

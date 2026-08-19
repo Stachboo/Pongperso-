@@ -4,6 +4,20 @@ import { put, list } from '@vercel/blob';
 const BLOB_NAME = 'riddims.json';
 const DEPLOY_HOOK_URL = process.env.DEPLOY_HOOK_URL;
 
+/** Coerce une valeur de vues en entier fini >= 0 (null si invalide). */
+function normalizeViews(value: unknown): number | null {
+  const n = typeof value === 'number' ? value : Number(value);
+  if (!Number.isFinite(n) || n < 0) return null;
+  return Math.floor(n);
+}
+
+/** Nettoie une chaîne : trim, ou null si vide/non-string. */
+function cleanString(value: unknown): string | null {
+  if (typeof value !== 'string') return null;
+  const s = value.trim();
+  return s.length > 0 ? s : null;
+}
+
 async function readRiddims() {
   const { blobs } = await list({ prefix: BLOB_NAME });
 
@@ -103,11 +117,17 @@ export async function POST(req: NextRequest) {
       if (!riddim) {
         return NextResponse.json({ error: 'Riddim introuvable' }, { status: 404 });
       }
-      if (!artist || !title) {
+      const cleanArtist = cleanString(artist);
+      const cleanTitle = cleanString(title);
+      if (!cleanArtist || !cleanTitle) {
         return NextResponse.json({ error: 'Artiste et titre requis' }, { status: 400 });
       }
+      const normViews = views === undefined ? 0 : normalizeViews(views);
+      if (normViews === null) {
+        return NextResponse.json({ error: 'Vues invalides (entier positif attendu)' }, { status: 400 });
+      }
 
-      const newVoicing = { artist, title, views: views || 0 };
+      const newVoicing = { artist: cleanArtist, title: cleanTitle, views: normViews };
       riddim.voicings.push(newVoicing);
       riddim.voicings.sort((a: { views: number }, b: { views: number }) => b.views - a.views);
 
@@ -123,7 +143,9 @@ export async function POST(req: NextRequest) {
       if (!riddim) {
         return NextResponse.json({ error: 'Riddim introuvable' }, { status: 404 });
       }
-      if (!artist || !title) {
+      const editArtist = cleanString(artist);
+      const editTitle = cleanString(title);
+      if (!editArtist || !editTitle) {
         return NextResponse.json({ error: 'Artiste et titre requis' }, { status: 400 });
       }
 
@@ -134,10 +156,16 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ error: `Voicing "${originalArtist} — ${originalTitle}" introuvable` }, { status: 400 });
       }
 
+      // Vues absentes → on conserve l'ancienne valeur
+      const editViews = views === undefined ? riddim.voicings[idx].views : normalizeViews(views);
+      if (editViews === null) {
+        return NextResponse.json({ error: 'Vues invalides (entier positif attendu)' }, { status: 400 });
+      }
+
       riddim.voicings[idx] = {
-        artist,
-        title,
-        views: views ?? riddim.voicings[idx].views,
+        artist: editArtist,
+        title: editTitle,
+        views: editViews,
       };
 
       await writeRiddims(riddims);
@@ -178,22 +206,39 @@ export async function POST(req: NextRequest) {
     case 'create-riddim': {
       const { name, year, producer, label, type, genre, bpm, description, voicings } = body;
 
-      if (!name || !producer) {
+      const cleanName = cleanString(name);
+      const cleanProducer = cleanString(producer);
+      if (!cleanName || !cleanProducer) {
         return NextResponse.json({ error: 'Nom et producteur requis' }, { status: 400 });
       }
 
+      // Valider et normaliser les voicings fournis
+      const rawVoicings = Array.isArray(voicings) ? voicings : [];
+      const cleanVoicings: { artist: string; title: string; views: number }[] = [];
+      for (const v of rawVoicings) {
+        const a = cleanString(v?.artist);
+        const t = cleanString(v?.title);
+        const vw = v?.views === undefined ? 0 : normalizeViews(v?.views);
+        if (!a || !t || vw === null) {
+          return NextResponse.json({ error: 'Voicing invalide (artiste, titre et vues positives requis)' }, { status: 400 });
+        }
+        cleanVoicings.push({ artist: a, title: t, views: vw });
+      }
+
+      const normYear = normalizeViews(year);
+      const normBpm = normalizeViews(bpm);
       const maxId = riddims.reduce((max: number, r: { id: number }) => Math.max(max, r.id), 0);
       const newRiddim = {
         id: maxId + 1,
-        name,
-        year: year || 2024,
-        producer,
-        label: label || '',
-        type: type || 'digital',
-        genre: genre || 'dancehall',
-        bpm: bpm || 0,
-        description: description || '',
-        voicings: (voicings || []).sort((a: { views: number }, b: { views: number }) => b.views - a.views),
+        name: cleanName,
+        year: normYear ?? 2024,
+        producer: cleanProducer,
+        label: cleanString(label) || '',
+        type: cleanString(type) || 'digital',
+        genre: cleanString(genre) || 'dancehall',
+        bpm: normBpm ?? 0,
+        description: typeof description === 'string' ? description : '',
+        voicings: cleanVoicings.sort((a, b) => b.views - a.views),
       };
 
       riddims.push(newRiddim);

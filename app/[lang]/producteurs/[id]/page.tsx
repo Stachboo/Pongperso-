@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { isValidLocale, LOCALES, type Locale } from '@/lib/i18n';
-import { generateHreflang, BASE_URL } from '@/utils/seo';
+import { generateHreflang, BASE_URL, jsonLdString } from '@/utils/seo';
 import { producers } from '@/data/producers';
 import ProducerDetail from '@/components/ProducerDetail';
 
@@ -154,7 +154,7 @@ export default async function ProducteurPage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(jsonLd) }}
       />
       <ProducerDetail producer={producer} lang={locale} />
     </>

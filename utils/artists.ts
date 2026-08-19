@@ -56,7 +56,10 @@ export function buildArtistList(riddims: Riddim[]): Artist[] {
 
     for (let i = 0; i < sorted.length; i++) {
       const v = sorted[i];
-      const key = v.artist.toLowerCase().trim();
+      // Clé = slug d'URL (et non nom brut) pour fusionner les variantes d'un
+      // même artiste qui produisent la même URL (ex: "Mr. Vegas" / "Mr Vegas"
+      // → "mr-vegas"). Évite fiches scindées et pages partiellement vides.
+      const key = toArtistSlug(v.artist);
 
       let entry = artistMap.get(key);
       if (!entry) {

@@ -132,6 +132,18 @@ export function generateRiddimMetadata(
    ═══════════════════════════════════════════════════════════════════════════ */
 
 /**
+ * Sérialise un objet JSON-LD pour injection sûre dans un <script>.
+ * JSON.stringify n'échappe pas `<`, `>`, `&` : une donnée contenant
+ * `</script>` pourrait sinon casser la balise et injecter du HTML/JS (XSS).
+ */
+export function jsonLdString(data: object): string {
+  return JSON.stringify(data)
+    .replace(/</g, '\\u003c')
+    .replace(/>/g, '\\u003e')
+    .replace(/&/g, '\\u0026');
+}
+
+/**
  * Génère le JSON-LD complet pour un riddim :
  * MusicComposition + ItemList (voicings) + BreadcrumbList.
  * @param riddim - Le riddim

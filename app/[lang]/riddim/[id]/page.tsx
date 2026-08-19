@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getDictionary, isValidLocale, LOCALES, type Locale } from '@/lib/i18n';
 import { getRiddimById, allRiddims } from '@/lib/data';
+import { generateHreflang, jsonLdString } from '@/utils/seo';
 import RiddimDetail from '@/components/RiddimDetail';
 
 /* ══════════════════════════════════════════════════════════════════════════════
@@ -57,6 +58,7 @@ export async function generateMetadata({
     description,
     alternates: {
       canonical: canonicalUrl,
+      languages: generateHreflang(`/riddim/${riddim.id}`, locale),
     },
     openGraph: {
       title,
@@ -170,7 +172,7 @@ export default async function RiddimPage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(jsonLd) }}
       />
       <RiddimDetail riddim={riddim} lang={locale} dict={dict} />
     </>

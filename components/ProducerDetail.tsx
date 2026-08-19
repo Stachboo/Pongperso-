@@ -30,7 +30,11 @@ export default function ProducerDetail({ producer, lang }: ProducerDetailProps) 
   /* Trouver les riddims correspondants dans la base de données */
   const matchedRiddims = allRiddims.filter((r) => {
     const slug = toRiddimSlug(r.name);
-    return producer.riddimIds.includes(slug);
+    // Les riddimIds de data/producers.ts portent parfois un suffixe "-riddim"
+    // absent des noms réels (ex: "diwali-riddim" vs riddim "Diwali" → "diwali").
+    return producer.riddimIds.some(
+      (id) => id === slug || id.replace(/-riddim$/, '') === slug
+    );
   });
 
   return (

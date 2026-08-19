@@ -7,8 +7,25 @@
 import type { MetadataRoute } from 'next';
 import { allRiddims } from '@/lib/data';
 import { BASE_URL } from '@/utils/seo';
+import { buildArtistList } from '@/utils/artists';
+import { producers } from '@/data/producers';
 
 const LANGS = ['fr', 'en', 'es', 'pt', 'ja'] as const;
+
+/** Pages éditoriales statiques (hors accueil/explorer). */
+const STATIC_PATHS = [
+  '/riddims',
+  '/artistes',
+  '/producteurs',
+  '/about',
+  '/methodologie',
+  '/contact',
+  '/presse',
+  '/ajouter-riddim',
+  '/conditions',
+  '/confidentialite',
+  '/mentions-legales',
+] as const;
 
 /**
  * Construit l'objet alternates.languages pour une route donnée.
@@ -46,6 +63,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
       alternates: { languages: buildAlternates('/explorer') },
     });
+
+    // Autres pages éditoriales
+    for (const path of STATIC_PATHS) {
+      entries.push({
+        url: `${BASE_URL}/${lang}${path}`,
+        lastModified: now,
+        changeFrequency: 'monthly',
+        priority: 0.6,
+        alternates: { languages: buildAlternates(path) },
+      });
+    }
   }
 
   /* ═══ Pages dynamiques — Riddims ═══ */
@@ -59,6 +87,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: 'monthly',
         priority: 0.8,
         alternates: { languages: buildAlternates(riddimPath) },
+      });
+    }
+  }
+
+  /* ═══ Pages dynamiques — Artistes ═══ */
+  for (const artist of buildArtistList(allRiddims)) {
+    const artistPath = `/artistes/${artist.slug}`;
+    for (const lang of LANGS) {
+      entries.push({
+        url: `${BASE_URL}/${lang}${artistPath}`,
+        lastModified: now,
+        changeFrequency: 'monthly',
+        priority: 0.7,
+        alternates: { languages: buildAlternates(artistPath) },
+      });
+    }
+  }
+
+  /* ═══ Pages dynamiques — Producteurs ═══ */
+  for (const producer of producers) {
+    const producerPath = `/producteurs/${producer.id}`;
+    for (const lang of LANGS) {
+      entries.push({
+        url: `${BASE_URL}/${lang}${producerPath}`,
+        lastModified: now,
+        changeFrequency: 'monthly',
+        priority: 0.6,
+        alternates: { languages: buildAlternates(producerPath) },
       });
     }
   }

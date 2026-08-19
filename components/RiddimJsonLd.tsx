@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Riddim } from '@/types/riddim';
 import type { Artist } from '@/utils/artists';
-import { generateRiddimJsonLd, BASE_URL } from '@/utils/seo';
+import { generateRiddimJsonLd, BASE_URL, jsonLdString } from '@/utils/seo';
 import { generateArtistJsonLd } from '@/utils/artists';
 
 /* ══════════════════════════════════════════════════════════════════════════════
@@ -29,7 +29,7 @@ export function RiddimJsonLd({ riddim, lang }: RiddimJsonLdProps) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      dangerouslySetInnerHTML={{ __html: jsonLdString(jsonLd) }}
     />
   );
 }
@@ -44,7 +44,7 @@ export function ArtistJsonLd({ artist, lang }: ArtistJsonLdProps) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      dangerouslySetInnerHTML={{ __html: jsonLdString(jsonLd) }}
     />
   );
 }

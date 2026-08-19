@@ -53,7 +53,6 @@ export default function FilterBar({ riddims, onFilterChange, dict }: FilterBarPr
     { value: 'dancehall', label: 'Dancehall' },
     { value: 'reggae', label: 'Reggae' },
     { value: 'lovers rock', label: 'Lovers Rock' },
-    { value: 'roots', label: 'Roots' },
     { value: 'soca', label: 'Soca' },
   ], [dict]);
 
