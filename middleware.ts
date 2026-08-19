@@ -61,8 +61,9 @@ export async function middleware(request: NextRequest) {
   try {
     const pathname = request.nextUrl.pathname;
 
-    // Skip static assets
-    if (pathname.includes('.')) {
+    // Skip static assets (extensions connues uniquement — ne pas court-circuiter
+    // l'auth sur un chemin quelconque contenant un point)
+    if (/\.(?:png|jpe?g|gif|svg|webp|avif|ico|css|js|mjs|json|txt|xml|woff2?|ttf|eot|map|webmanifest|pdf|mp4|webm)$/i.test(pathname)) {
       return NextResponse.next();
     }
 
