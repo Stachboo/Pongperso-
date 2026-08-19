@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import type { Producer } from '@/data/producers';
 import { getAllRiddims } from '@/lib/data';
+import { getDictionary, isValidLocale } from '@/lib/i18n';
 import { toArtistSlug, toRiddimSlug } from '@/utils/seo';
 import RiddimCard from '@/components/RiddimCard';
 import styles from './ProducerDetail.module.css';
@@ -27,6 +28,7 @@ function styleBadgeClass(style: string): string {
 }
 
 export default async function ProducerDetail({ producer, lang }: ProducerDetailProps) {
+  const dict = getDictionary(isValidLocale(lang) ? lang : 'fr');
   /* Trouver les riddims correspondants dans la base de données */
   const allRiddims = await getAllRiddims();
   const matchedRiddims = allRiddims.filter((r) => {
@@ -47,11 +49,11 @@ export default async function ProducerDetail({ producer, lang }: ProducerDetailP
         <nav aria-label="Breadcrumb" className={styles.breadcrumb}>
           <ol className={styles.breadcrumbList}>
             <li>
-              <Link href={`/${lang}`} className={styles.breadcrumbLink}>Accueil</Link>
+              <Link href={`/${lang}`} className={styles.breadcrumbLink}>{dict.navHome}</Link>
             </li>
             <li className={styles.breadcrumbSep} aria-hidden="true">·</li>
             <li>
-              <Link href={`/${lang}/producteurs`} className={styles.breadcrumbLink}>Producteurs</Link>
+              <Link href={`/${lang}/producteurs`} className={styles.breadcrumbLink}>{dict.navProducers}</Link>
             </li>
             <li className={styles.breadcrumbSep} aria-hidden="true">·</li>
             <li aria-current="page" className={styles.breadcrumbCurrent}>{producer.name}</li>
@@ -79,10 +81,10 @@ export default async function ProducerDetail({ producer, lang }: ProducerDetailP
       <div className={styles.divider} />
 
       {/* ═══ SECTION B — Description complète ═══ */}
-      <section aria-label="Histoire du producteur">
+      <section aria-label={dict.ariaProducerHistory}>
         <h2 className={styles.sectionTitle}>
-          Histoire
-          <span className={styles.sectionAccent}>&amp; contexte</span>
+          {dict.producerHistory}
+          <span className={styles.sectionAccent}>{dict.producerHistoryAccent}</span>
         </h2>
         <p className={styles.descriptionText}>{producer.description}</p>
       </section>
@@ -90,8 +92,8 @@ export default async function ProducerDetail({ producer, lang }: ProducerDetailP
       <div className={styles.divider} />
 
       {/* ═══ SECTION C — Achievements ═══ */}
-      <section aria-label="Faits marquants">
-        <h2 className={styles.sectionTitle}>Faits marquants</h2>
+      <section aria-label={dict.producerKeyFacts}>
+        <h2 className={styles.sectionTitle}>{dict.producerKeyFacts}</h2>
         <ul className={styles.achievementList} role="list">
           {producer.achievements.map((achievement) => (
             <li key={achievement} className={styles.achievementItem}>
@@ -107,9 +109,9 @@ export default async function ProducerDetail({ producer, lang }: ProducerDetailP
       <div className={styles.divider} />
 
       {/* ═══ SECTION D — Riddims dans WMC ═══ */}
-      <section aria-label="Riddims documentés">
+      <section aria-label={dict.producerDocumentedRiddims}>
         <h2 className={styles.sectionTitleLg}>
-          Riddims documentés
+          {dict.producerDocumentedRiddims}
           <span className={styles.riddimCount}>{matchedRiddims.length}</span>
         </h2>
 
@@ -126,7 +128,7 @@ export default async function ProducerDetail({ producer, lang }: ProducerDetailP
           </div>
         ) : (
           <div className={styles.riddimFallback}>
-            <p className={styles.fallbackTitle}>Riddims notables</p>
+            <p className={styles.fallbackTitle}>{dict.producerNotableRiddims}</p>
             <div className={styles.fallbackPills}>
               {producer.notableRiddims.map((name) => (
                 <span key={name} className={styles.fallbackPill}>{name}</span>
@@ -139,8 +141,8 @@ export default async function ProducerDetail({ producer, lang }: ProducerDetailP
       <div className={styles.divider} />
 
       {/* ═══ SECTION E — Artistes associés ═══ */}
-      <section aria-label="Artistes phares">
-        <h2 className={styles.sectionTitle}>Artistes phares</h2>
+      <section aria-label={dict.producerFeaturedArtists}>
+        <h2 className={styles.sectionTitle}>{dict.producerFeaturedArtists}</h2>
         <div className={styles.artistPills}>
           {producer.keyArtists.map((artistName) => (
             <Link

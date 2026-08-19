@@ -10,6 +10,269 @@ import styles from '@/styles/static-page.module.css';
    Mission, vision et présentation du projet WMC
    ══════════════════════════════════════════════════════════════════════════════ */
 
+type PageContent = {
+  metaTitle: string;
+  metaDescription: string;
+  headerTitle: string;
+  headerSubtitle: string;
+  missionAria: string;
+  missionTitle: string;
+  missionP1: string;
+  missionP2: string;
+  whyAria: string;
+  whyTitle: string;
+  whyP1: string;
+  whyP2: string;
+  methodAria: string;
+  methodTitle: string;
+  methodP1: string;
+  methodLink: string;
+  contributeAria: string;
+  contributeTitle: string;
+  contributeP1: string;
+  contributeLink: string;
+  contactAria: string;
+  contactTitle: string;
+  contactP1: string;
+  contactLink: string;
+  pressAria: string;
+  pressTitle: string;
+  pressP1: string;
+  pressLink: string;
+  teamAria: string;
+  teamTitle: string;
+  teamP1: string;
+  teamP2: string;
+};
+
+const CONTENT: Record<Locale, PageContent> = {
+  fr: {
+    metaTitle: 'À propos — World Music Contest | WMC',
+    metaDescription:
+      'WMC est la base de données mondiale de référence des riddims jamaïcains. Découvrez notre mission, notre méthodologie et notre équipe.',
+    headerTitle: 'À propos',
+    headerSubtitle: 'World Music Contest',
+    missionAria: 'Notre mission',
+    missionTitle: 'Notre mission',
+    missionP1:
+      "WMC est la base de données mondiale de référence des riddims jamaïcains. Fondée en 2026, notre mission est de documenter chaque riddim, chaque voicing, classés par popularité de streaming mondiale.",
+    missionP2:
+      "Le riddim est l'âme de la musique jamaïcaine — une instrumentation partagée par des dizaines d'artistes, fondement du dancehall et du reggae depuis les années 60. Du Bam Bam de Sly & Robbie au Diwali de Lenky Marsden, ces instrumentales ont façonné la musique mondiale.",
+    whyAria: 'Pourquoi WMC existe',
+    whyTitle: 'Pourquoi WMC existe',
+    whyP1:
+      "Il n'existait pas, avant WMC, de référence mondiale centralisant les riddims jamaïcains avec leurs voicings complets, leurs producteurs, leurs labels et leur contexte historique. Les informations étaient dispersées entre forums, blogs spécialisés et bases de données partielles.",
+    whyP2:
+      "WMC comble ce vide en proposant un catalogue structuré, consultable en 5 langues, avec des données de streaming agrégées pour chaque voicing. Notre ambition est de devenir le Discogs du riddim jamaïcain.",
+    methodAria: 'Notre méthodologie',
+    methodTitle: 'Notre méthodologie en bref',
+    methodP1:
+      'Les données de popularité proviennent des principales plateformes de streaming mondiales : Spotify, Apple Music, YouTube Music. Les chiffres sont agrégés et approximatifs — ils reflètent la popularité relative des voicings.',
+    methodLink: 'Consulter notre méthodologie complète →',
+    contributeAria: 'Contribuer',
+    contributeTitle: 'Contribuer',
+    contributeP1:
+      'WMC est construit par et pour les passionnés de musique jamaïcaine. Si vous connaissez un riddim non encore documenté, vous pouvez nous le soumettre.',
+    contributeLink: 'Soumettre un riddim →',
+    contactAria: 'Contact',
+    contactTitle: 'Contact',
+    contactP1:
+      'Pour toute question concernant WMC, les données, les partenariats ou les demandes presse.',
+    contactLink: 'Nous contacter →',
+    pressAria: 'Presse',
+    pressTitle: 'Presse',
+    pressP1:
+      'WMC est disponible pour les interviews, collaborations éditoriales et demandes de partenariat liées à la culture jamaïcaine et au dancehall mondial.',
+    pressLink: 'Espace presse →',
+    teamAria: "L'équipe",
+    teamTitle: "L'équipe",
+    teamP1:
+      "WMC est un projet indépendant développé par une équipe passionnée de culture jamaïcaine et de musique mondiale. Nous ne sommes affiliés à aucun label, aucun artiste ni aucune plateforme de streaming.",
+    teamP2:
+      "Notre objectif est simple : préserver et valoriser le patrimoine musical jamaïcain en le rendant accessible au plus grand nombre, dans toutes les langues.",
+  },
+  en: {
+    metaTitle: 'About — World Music Contest | WMC',
+    metaDescription:
+      'WMC is the world reference database for Jamaican riddims. Discover our mission, our methodology and our team.',
+    headerTitle: 'About',
+    headerSubtitle: 'World Music Contest',
+    missionAria: 'Our mission',
+    missionTitle: 'Our mission',
+    missionP1:
+      'WMC is the world reference database for Jamaican riddims. Founded in 2026, our mission is to document every riddim, every voicing, ranked by global streaming popularity.',
+    missionP2:
+      'The riddim is the soul of Jamaican music — an instrumental shared by dozens of artists, the foundation of dancehall and reggae since the 1960s. From Sly & Robbie\'s Bam Bam to Lenky Marsden\'s Diwali, these instrumentals have shaped music worldwide.',
+    whyAria: 'Why WMC exists',
+    whyTitle: 'Why WMC exists',
+    whyP1:
+      'Before WMC, there was no global reference centralizing Jamaican riddims with their complete voicings, their producers, their labels and their historical context. Information was scattered across forums, specialized blogs and partial databases.',
+    whyP2:
+      'WMC fills that gap with a structured catalog, available in 5 languages, with aggregated streaming data for each voicing. Our ambition is to become the Discogs of the Jamaican riddim.',
+    methodAria: 'Our methodology',
+    methodTitle: 'Our methodology in brief',
+    methodP1:
+      'Popularity data comes from the leading global streaming platforms: Spotify, Apple Music, YouTube Music. The figures are aggregated and approximate — they reflect the relative popularity of the voicings.',
+    methodLink: 'Read our full methodology →',
+    contributeAria: 'Contribute',
+    contributeTitle: 'Contribute',
+    contributeP1:
+      'WMC is built by and for lovers of Jamaican music. If you know a riddim that is not yet documented, you can submit it to us.',
+    contributeLink: 'Submit a riddim →',
+    contactAria: 'Contact',
+    contactTitle: 'Contact',
+    contactP1:
+      'For any question regarding WMC, the data, partnerships or press inquiries.',
+    contactLink: 'Contact us →',
+    pressAria: 'Press',
+    pressTitle: 'Press',
+    pressP1:
+      'WMC is available for interviews, editorial collaborations and partnership requests related to Jamaican culture and global dancehall.',
+    pressLink: 'Press room →',
+    teamAria: 'The team',
+    teamTitle: 'The team',
+    teamP1:
+      'WMC is an independent project developed by a team passionate about Jamaican culture and world music. We are not affiliated with any label, any artist or any streaming platform.',
+    teamP2:
+      'Our goal is simple: to preserve and showcase Jamaican musical heritage by making it accessible to as many people as possible, in every language.',
+  },
+  es: {
+    metaTitle: 'Acerca de — World Music Contest | WMC',
+    metaDescription:
+      'WMC es la base de datos mundial de referencia de los riddims jamaicanos. Descubre nuestra misión, nuestra metodología y nuestro equipo.',
+    headerTitle: 'Acerca de',
+    headerSubtitle: 'World Music Contest',
+    missionAria: 'Nuestra misión',
+    missionTitle: 'Nuestra misión',
+    missionP1:
+      'WMC es la base de datos mundial de referencia de los riddims jamaicanos. Fundada en 2026, nuestra misión es documentar cada riddim, cada voicing, clasificados por popularidad de streaming mundial.',
+    missionP2:
+      'El riddim es el alma de la música jamaicana — una instrumentación compartida por decenas de artistas, base del dancehall y del reggae desde los años 60. Del Bam Bam de Sly & Robbie al Diwali de Lenky Marsden, estas instrumentales han dado forma a la música mundial.',
+    whyAria: 'Por qué existe WMC',
+    whyTitle: 'Por qué existe WMC',
+    whyP1:
+      'Antes de WMC no existía una referencia mundial que centralizara los riddims jamaicanos con sus voicings completos, sus productores, sus sellos y su contexto histórico. La información estaba dispersa entre foros, blogs especializados y bases de datos parciales.',
+    whyP2:
+      'WMC llena ese vacío ofreciendo un catálogo estructurado, consultable en 5 idiomas, con datos de streaming agregados para cada voicing. Nuestra ambición es convertirnos en el Discogs del riddim jamaicano.',
+    methodAria: 'Nuestra metodología',
+    methodTitle: 'Nuestra metodología en resumen',
+    methodP1:
+      'Los datos de popularidad provienen de las principales plataformas de streaming mundiales: Spotify, Apple Music, YouTube Music. Las cifras son agregadas y aproximadas — reflejan la popularidad relativa de los voicings.',
+    methodLink: 'Consultar nuestra metodología completa →',
+    contributeAria: 'Contribuir',
+    contributeTitle: 'Contribuir',
+    contributeP1:
+      'WMC está construido por y para los apasionados de la música jamaicana. Si conoces un riddim aún no documentado, puedes enviárnoslo.',
+    contributeLink: 'Enviar un riddim →',
+    contactAria: 'Contacto',
+    contactTitle: 'Contacto',
+    contactP1:
+      'Para cualquier pregunta sobre WMC, los datos, las colaboraciones o las solicitudes de prensa.',
+    contactLink: 'Contáctanos →',
+    pressAria: 'Prensa',
+    pressTitle: 'Prensa',
+    pressP1:
+      'WMC está disponible para entrevistas, colaboraciones editoriales y solicitudes de asociación relacionadas con la cultura jamaicana y el dancehall mundial.',
+    pressLink: 'Sala de prensa →',
+    teamAria: 'El equipo',
+    teamTitle: 'El equipo',
+    teamP1:
+      'WMC es un proyecto independiente desarrollado por un equipo apasionado por la cultura jamaicana y la música mundial. No estamos afiliados a ningún sello, ningún artista ni ninguna plataforma de streaming.',
+    teamP2:
+      'Nuestro objetivo es simple: preservar y poner en valor el patrimonio musical jamaicano haciéndolo accesible al mayor número de personas, en todos los idiomas.',
+  },
+  pt: {
+    metaTitle: 'Sobre — World Music Contest | WMC',
+    metaDescription:
+      'A WMC é a base de dados mundial de referência dos riddims jamaicanos. Conheça a nossa missão, a nossa metodologia e a nossa equipe.',
+    headerTitle: 'Sobre',
+    headerSubtitle: 'World Music Contest',
+    missionAria: 'Nossa missão',
+    missionTitle: 'Nossa missão',
+    missionP1:
+      'A WMC é a base de dados mundial de referência dos riddims jamaicanos. Fundada em 2026, nossa missão é documentar cada riddim, cada voicing, classificados por popularidade de streaming mundial.',
+    missionP2:
+      'O riddim é a alma da música jamaicana — uma instrumentação compartilhada por dezenas de artistas, base do dancehall e do reggae desde os anos 60. Do Bam Bam de Sly & Robbie ao Diwali de Lenky Marsden, essas instrumentais moldaram a música mundial.',
+    whyAria: 'Por que a WMC existe',
+    whyTitle: 'Por que a WMC existe',
+    whyP1:
+      'Antes da WMC não existia uma referência mundial que centralizasse os riddims jamaicanos com seus voicings completos, seus produtores, seus selos e seu contexto histórico. As informações estavam dispersas entre fóruns, blogs especializados e bases de dados parciais.',
+    whyP2:
+      'A WMC preenche essa lacuna oferecendo um catálogo estruturado, consultável em 5 idiomas, com dados de streaming agregados para cada voicing. Nossa ambição é nos tornarmos o Discogs do riddim jamaicano.',
+    methodAria: 'Nossa metodologia',
+    methodTitle: 'Nossa metodologia em resumo',
+    methodP1:
+      'Os dados de popularidade vêm das principais plataformas de streaming mundiais: Spotify, Apple Music, YouTube Music. Os números são agregados e aproximados — refletem a popularidade relativa dos voicings.',
+    methodLink: 'Consultar nossa metodologia completa →',
+    contributeAria: 'Contribuir',
+    contributeTitle: 'Contribuir',
+    contributeP1:
+      'A WMC é construída por e para os apaixonados pela música jamaicana. Se você conhece um riddim ainda não documentado, pode nos enviá-lo.',
+    contributeLink: 'Enviar um riddim →',
+    contactAria: 'Contato',
+    contactTitle: 'Contato',
+    contactP1:
+      'Para qualquer dúvida sobre a WMC, os dados, as parcerias ou os pedidos de imprensa.',
+    contactLink: 'Fale conosco →',
+    pressAria: 'Imprensa',
+    pressTitle: 'Imprensa',
+    pressP1:
+      'A WMC está disponível para entrevistas, colaborações editoriais e pedidos de parceria relacionados à cultura jamaicana e ao dancehall mundial.',
+    pressLink: 'Sala de imprensa →',
+    teamAria: 'A equipe',
+    teamTitle: 'A equipe',
+    teamP1:
+      'A WMC é um projeto independente desenvolvido por uma equipe apaixonada pela cultura jamaicana e pela música mundial. Não somos afiliados a nenhum selo, nenhum artista nem nenhuma plataforma de streaming.',
+    teamP2:
+      'Nosso objetivo é simples: preservar e valorizar o patrimônio musical jamaicano, tornando-o acessível ao maior número de pessoas, em todos os idiomas.',
+  },
+  ja: {
+    metaTitle: 'WMCについて — World Music Contest | WMC',
+    metaDescription:
+      'WMCはジャマイカのriddimに関する世界的なリファレンスデータベースです。私たちのミッション、方法論、チームをご紹介します。',
+    headerTitle: 'WMCについて',
+    headerSubtitle: 'World Music Contest',
+    missionAria: '私たちのミッション',
+    missionTitle: '私たちのミッション',
+    missionP1:
+      'WMCはジャマイカのriddimに関する世界的なリファレンスデータベースです。2026年に設立され、私たちのミッションはすべてのriddim、すべてのvoicingを、世界のストリーミング人気順に分類して記録することです。',
+    missionP2:
+      'riddimはジャマイカ音楽の魂です — 数十組のアーティストに共有されるインストゥルメンタルであり、60年代以来のdancehallとreggaeの基盤です。Sly & RobbieのBam BamからLenky MarsdenのDiwaliまで、これらのインストゥルメンタルは世界の音楽を形づくってきました。',
+    whyAria: 'WMCが存在する理由',
+    whyTitle: 'WMCが存在する理由',
+    whyP1:
+      'WMC以前には、ジャマイカのriddimを、その完全なvoicing、プロデューサー、レーベル、歴史的背景とともに一元化した世界的なリファレンスは存在しませんでした。情報はフォーラム、専門ブログ、断片的なデータベースに散在していました。',
+    whyP2:
+      'WMCは、5言語で閲覧でき、各voicingの集計されたストリーミングデータを備えた構造化されたカタログを提供することで、この空白を埋めます。私たちの目標は、ジャマイカのriddimのDiscogsになることです。',
+    methodAria: '私たちの方法論',
+    methodTitle: '方法論の概要',
+    methodP1:
+      '人気データは、Spotify、Apple Music、YouTube Musicといった主要な世界的ストリーミングプラットフォームから得られています。数値は集計された概算値であり、voicingの相対的な人気を反映しています。',
+    methodLink: '完全な方法論を見る →',
+    contributeAria: '貢献する',
+    contributeTitle: '貢献する',
+    contributeP1:
+      'WMCはジャマイカ音楽を愛する人々によって、そしてその人々のために作られています。まだ記録されていないriddimをご存知の場合は、私たちに投稿していただけます。',
+    contributeLink: 'riddimを投稿する →',
+    contactAria: 'お問い合わせ',
+    contactTitle: 'お問い合わせ',
+    contactP1:
+      'WMC、データ、パートナーシップ、またはプレスに関するあらゆるご質問について。',
+    contactLink: 'お問い合わせはこちら →',
+    pressAria: 'プレス',
+    pressTitle: 'プレス',
+    pressP1:
+      'WMCは、ジャマイカ文化と世界のdancehallに関連するインタビュー、編集協力、パートナーシップのご依頼に対応しています。',
+    pressLink: 'プレスルーム →',
+    teamAria: 'チーム',
+    teamTitle: 'チーム',
+    teamP1:
+      'WMCは、ジャマイカ文化と世界の音楽を愛するチームによって開発された独立したプロジェクトです。私たちはいかなるレーベル、アーティスト、ストリーミングプラットフォームとも提携していません。',
+    teamP2:
+      '私たちの目標はシンプルです。ジャマイカの音楽遺産を保存し価値を高め、あらゆる言語で、できるだけ多くの人々がアクセスできるようにすることです。',
+  },
+};
+
 export async function generateStaticParams() {
   return LOCALES.map((lang) => ({ lang }));
 }
@@ -24,9 +287,8 @@ export async function generateMetadata({
   const hreflang = generateHreflang('/about', locale);
 
   return {
-    title: 'À propos — World Music Contest | WMC',
-    description:
-      'WMC est la base de données mondiale de référence des riddims jamaïcains. Découvrez notre mission, notre méthodologie et notre équipe.',
+    title: CONTENT[locale].metaTitle,
+    description: CONTENT[locale].metaDescription,
     alternates: {
       canonical: `https://wmc-iota.vercel.app/${locale}/about`,
       languages: hreflang,
@@ -41,118 +303,81 @@ export default async function AboutPage({
 }) {
   const { lang } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
+  const c = CONTENT[locale];
 
   return (
     <main className={styles.container}>
       <header className={styles.header}>
-        <h1 className={styles.title}>À propos</h1>
-        <span className={styles.subtitle}>World Music Contest</span>
+        <h1 className={styles.title}>{c.headerTitle}</h1>
+        <span className={styles.subtitle}>{c.headerSubtitle}</span>
       </header>
 
       <div className={styles.separator} />
 
       <div className={styles.content}>
         {/* ═══ MISSION ═══ */}
-        <section id="mission" className={styles.section} aria-label="Notre mission">
-          <h2 className={styles.sectionTitle}>Notre mission</h2>
-          <p className={styles.paragraph}>
-            WMC est la base de données mondiale de référence des riddims jamaïcains.
-            Fondée en 2026, notre mission est de documenter chaque riddim, chaque voicing,
-            classés par popularité de streaming mondiale.
-          </p>
-          <p className={styles.paragraph}>
-            Le riddim est l&apos;âme de la musique jamaïcaine — une instrumentation partagée
-            par des dizaines d&apos;artistes, fondement du dancehall et du reggae depuis les
-            années 60. Du Bam Bam de Sly &amp; Robbie au Diwali de Lenky Marsden, ces
-            instrumentales ont façonné la musique mondiale.
-          </p>
+        <section id="mission" className={styles.section} aria-label={c.missionAria}>
+          <h2 className={styles.sectionTitle}>{c.missionTitle}</h2>
+          <p className={styles.paragraph}>{c.missionP1}</p>
+          <p className={styles.paragraph}>{c.missionP2}</p>
         </section>
 
         {/* ═══ POURQUOI ═══ */}
-        <section className={styles.section} aria-label="Pourquoi WMC existe">
-          <h2 className={styles.sectionTitle}>Pourquoi WMC existe</h2>
-          <p className={styles.paragraph}>
-            Il n&apos;existait pas, avant WMC, de référence mondiale centralisant les riddims
-            jamaïcains avec leurs voicings complets, leurs producteurs, leurs labels et leur
-            contexte historique. Les informations étaient dispersées entre forums, blogs
-            spécialisés et bases de données partielles.
-          </p>
-          <p className={styles.paragraph}>
-            WMC comble ce vide en proposant un catalogue structuré, consultable en 5 langues,
-            avec des données de streaming agrégées pour chaque voicing. Notre ambition est de
-            devenir le Discogs du riddim jamaïcain.
-          </p>
+        <section className={styles.section} aria-label={c.whyAria}>
+          <h2 className={styles.sectionTitle}>{c.whyTitle}</h2>
+          <p className={styles.paragraph}>{c.whyP1}</p>
+          <p className={styles.paragraph}>{c.whyP2}</p>
         </section>
 
         {/* ═══ MÉTHODOLOGIE ═══ */}
-        <section id="methodologie" className={styles.section} aria-label="Notre méthodologie">
-          <h2 className={styles.sectionTitle}>Notre méthodologie en bref</h2>
-          <p className={styles.paragraph}>
-            Les données de popularité proviennent des principales plateformes de streaming
-            mondiales : Spotify, Apple Music, YouTube Music. Les chiffres sont agrégés et
-            approximatifs — ils reflètent la popularité relative des voicings.
-          </p>
+        <section id="methodologie" className={styles.section} aria-label={c.methodAria}>
+          <h2 className={styles.sectionTitle}>{c.methodTitle}</h2>
+          <p className={styles.paragraph}>{c.methodP1}</p>
           <p className={styles.paragraph}>
             <Link href={`/${locale}/methodologie`} className={styles.link}>
-              Consulter notre méthodologie complète →
+              {c.methodLink}
             </Link>
           </p>
         </section>
 
         {/* ═══ CONTRIBUER ═══ */}
-        <section id="contribuer" className={styles.section} aria-label="Contribuer">
-          <h2 className={styles.sectionTitle}>Contribuer</h2>
-          <p className={styles.paragraph}>
-            WMC est construit par et pour les passionnés de musique jamaïcaine. Si vous
-            connaissez un riddim non encore documenté, vous pouvez nous le soumettre.
-          </p>
+        <section id="contribuer" className={styles.section} aria-label={c.contributeAria}>
+          <h2 className={styles.sectionTitle}>{c.contributeTitle}</h2>
+          <p className={styles.paragraph}>{c.contributeP1}</p>
           <p className={styles.paragraph}>
             <Link href={`/${locale}/ajouter-riddim`} className={styles.link}>
-              Soumettre un riddim →
+              {c.contributeLink}
             </Link>
           </p>
         </section>
 
         {/* ═══ CONTACT ═══ */}
-        <section id="contact" className={styles.section} aria-label="Contact">
-          <h2 className={styles.sectionTitle}>Contact</h2>
-          <p className={styles.paragraph}>
-            Pour toute question concernant WMC, les données, les partenariats ou les
-            demandes presse.
-          </p>
+        <section id="contact" className={styles.section} aria-label={c.contactAria}>
+          <h2 className={styles.sectionTitle}>{c.contactTitle}</h2>
+          <p className={styles.paragraph}>{c.contactP1}</p>
           <p className={styles.paragraph}>
             <Link href={`/${locale}/contact`} className={styles.link}>
-              Nous contacter →
+              {c.contactLink}
             </Link>
           </p>
         </section>
 
         {/* ═══ PRESSE ═══ */}
-        <section id="presse" className={styles.section} aria-label="Presse">
-          <h2 className={styles.sectionTitle}>Presse</h2>
-          <p className={styles.paragraph}>
-            WMC est disponible pour les interviews, collaborations éditoriales et demandes
-            de partenariat liées à la culture jamaïcaine et au dancehall mondial.
-          </p>
+        <section id="presse" className={styles.section} aria-label={c.pressAria}>
+          <h2 className={styles.sectionTitle}>{c.pressTitle}</h2>
+          <p className={styles.paragraph}>{c.pressP1}</p>
           <p className={styles.paragraph}>
             <Link href={`/${locale}/presse`} className={styles.link}>
-              Espace presse →
+              {c.pressLink}
             </Link>
           </p>
         </section>
 
         {/* ═══ ÉQUIPE ═══ */}
-        <section className={styles.section} aria-label="L'équipe">
-          <h2 className={styles.sectionTitle}>L&apos;équipe</h2>
-          <p className={styles.paragraph}>
-            WMC est un projet indépendant développé par une équipe passionnée de culture
-            jamaïcaine et de musique mondiale. Nous ne sommes affiliés à aucun label,
-            aucun artiste ni aucune plateforme de streaming.
-          </p>
-          <p className={styles.paragraph}>
-            Notre objectif est simple : préserver et valoriser le patrimoine musical jamaïcain
-            en le rendant accessible au plus grand nombre, dans toutes les langues.
-          </p>
+        <section className={styles.section} aria-label={c.teamAria}>
+          <h2 className={styles.sectionTitle}>{c.teamTitle}</h2>
+          <p className={styles.paragraph}>{c.teamP1}</p>
+          <p className={styles.paragraph}>{c.teamP2}</p>
         </section>
       </div>
     </main>

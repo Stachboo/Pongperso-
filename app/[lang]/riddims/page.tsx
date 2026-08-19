@@ -11,6 +11,73 @@ import styles from './page.module.css';
    Page dédiée à l'exploration de tous les riddims avec filtres
    ══════════════════════════════════════════════════════════════════════════════ */
 
+type PageContent = {
+  metaTitle: string;
+  metaDescription: (totalRiddims: number) => string;
+  title: string;
+  subtitle: string;
+  documentedSuffix: string;
+  ariaExplore: string;
+};
+
+const CONTENT: Record<Locale, PageContent> = {
+  fr: {
+    metaTitle: 'Explorer les Riddims Jamaïcains — Base de données | WMC',
+    metaDescription: (totalRiddims) =>
+      `Parcourez les ${totalRiddims} riddims jamaïcains documentés sur WMC. ` +
+      `Filtrez par genre (Dancehall, Reggae, Lovers Rock), décennie et producteur. ` +
+      `Classés par popularité de streaming.`,
+    title: 'Explorer les Riddims',
+    subtitle: 'La base de données ultime',
+    documentedSuffix: 'riddims documentés',
+    ariaExplore: 'Explorer les riddims',
+  },
+  en: {
+    metaTitle: 'Explore Jamaican Riddims — Database | WMC',
+    metaDescription: (totalRiddims) =>
+      `Browse the ${totalRiddims} Jamaican riddims documented on WMC. ` +
+      `Filter by genre (Dancehall, Reggae, Lovers Rock), decade and producer. ` +
+      `Ranked by streaming popularity.`,
+    title: 'Explore Riddims',
+    subtitle: 'The ultimate database',
+    documentedSuffix: 'documented riddims',
+    ariaExplore: 'Explore riddims',
+  },
+  es: {
+    metaTitle: 'Explora los Riddims Jamaicanos — Base de datos | WMC',
+    metaDescription: (totalRiddims) =>
+      `Explora los ${totalRiddims} riddims jamaicanos documentados en WMC. ` +
+      `Filtra por género (Dancehall, Reggae, Lovers Rock), década y productor. ` +
+      `Clasificados por popularidad de streaming.`,
+    title: 'Explora los Riddims',
+    subtitle: 'La base de datos definitiva',
+    documentedSuffix: 'riddims documentados',
+    ariaExplore: 'Explorar los riddims',
+  },
+  pt: {
+    metaTitle: 'Explore os Riddims Jamaicanos — Banco de dados | WMC',
+    metaDescription: (totalRiddims) =>
+      `Explore os ${totalRiddims} riddims jamaicanos documentados na WMC. ` +
+      `Filtre por gênero (Dancehall, Reggae, Lovers Rock), década e produtor. ` +
+      `Classificados por popularidade de streaming.`,
+    title: 'Explore os Riddims',
+    subtitle: 'O banco de dados definitivo',
+    documentedSuffix: 'riddims documentados',
+    ariaExplore: 'Explorar os riddims',
+  },
+  ja: {
+    metaTitle: 'ジャマイカのリディムを探索 — データベース | WMC',
+    metaDescription: (totalRiddims) =>
+      `WMCに収録された${totalRiddims}件のジャマイカのリディムを閲覧できます。` +
+      `ジャンル（Dancehall、Reggae、Lovers Rock）、年代、プロデューサーで絞り込み。` +
+      `ストリーミングの人気順に分類。`,
+    title: 'リディムを探索',
+    subtitle: '究極のデータベース',
+    documentedSuffix: '件のリディムを収録',
+    ariaExplore: 'リディムを探索',
+  },
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -20,13 +87,11 @@ export async function generateMetadata({
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const canonicalUrl = `${BASE_URL}/${locale}/riddims`;
   const hreflang = generateHreflang('/riddims', locale);
+  const c = CONTENT[locale];
 
   const totalRiddims = (await getAllRiddims()).length;
-  const title = 'Explorer les Riddims Jamaïcains — Base de données | WMC';
-  const description =
-    `Parcourez les ${totalRiddims} riddims jamaïcains documentés sur WMC. ` +
-    `Filtrez par genre (Dancehall, Reggae, Lovers Rock), décennie et producteur. ` +
-    `Classés par popularité de streaming.`;
+  const title = c.metaTitle;
+  const description = c.metaDescription(totalRiddims);
 
   return {
     title,
@@ -57,6 +122,7 @@ export default async function RiddimsPage({
   const { lang } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const dict = getDictionary(locale);
+  const c = CONTENT[locale];
   const riddims = await getRiddimsByPopularity();
   const totalRiddims = riddims.length;
 
@@ -64,9 +130,9 @@ export default async function RiddimsPage({
     <>
       {/* ── En-tête de page ── */}
       <header className={styles.header}>
-        <h1 className={styles.title}>Explorer les Riddims</h1>
-        <p className={styles.subtitle}>La base de données ultime</p>
-        <span className={styles.count}>{totalRiddims} riddims documentés</span>
+        <h1 className={styles.title}>{c.title}</h1>
+        <p className={styles.subtitle}>{c.subtitle}</p>
+        <span className={styles.count}>{totalRiddims} {c.documentedSuffix}</span>
 
         {/* Brush stroke décoratif */}
         <svg
@@ -88,7 +154,7 @@ export default async function RiddimsPage({
       </header>
 
       {/* ── Explorer les riddims ── */}
-      <section aria-label="Explorer les riddims">
+      <section aria-label={c.ariaExplore}>
         <RiddimExplorer riddims={riddims} lang={locale} dict={dict} />
       </section>
     </>
