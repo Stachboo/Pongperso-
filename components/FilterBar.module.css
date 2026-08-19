@@ -1,0 +1,226 @@
+/* ══════════════════════════════════════════════════════════════════════════════
+   WMC — FILTER BAR
+   World Music Contest — Jamaican Riddim Database
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BARRE STICKY
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-3) var(--space-6);
+  transition: box-shadow var(--transition-base);
+}
+
+.barScrolled {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CONTENU — Flex row
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   GROUPE FILTRES — flex wrap sur mobile
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex: 1;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.filters::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SELECT STYLISÉ
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.selectWrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 38px;
+  padding: 0 var(--space-8) 0 var(--space-3);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  cursor: pointer;
+  outline: none;
+  white-space: nowrap;
+  transition: border-color var(--transition-fast),
+              background var(--transition-fast);
+}
+
+.select:focus {
+  border-color: var(--color-brand-gold);
+}
+
+/* État actif : filtre appliqué (pas la valeur par défaut) */
+.selectActive {
+  border-color: rgba(245, 166, 35, 0.6);
+  background: rgba(245, 166, 35, 0.08);
+}
+
+/* Chevron SVG or à droite */
+.chevron {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 14px;
+  height: 14px;
+  color: var(--color-brand-gold);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   INPUT RECHERCHE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.searchWrap {
+  position: relative;
+  flex-shrink: 0;
+  min-width: 180px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  color: var(--color-brand-gold);
+}
+
+.searchInput {
+  width: 100%;
+  height: 38px;
+  padding: 0 var(--space-3) 0 var(--space-8);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.searchInput::placeholder {
+  color: var(--color-text-muted);
+}
+
+.searchInput:focus {
+  border-color: var(--color-brand-gold);
+}
+
+.searchActive {
+  border-color: rgba(245, 166, 35, 0.6);
+  background: rgba(245, 166, 35, 0.08);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SPACER — Sépare filtres et tri
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.spacer {
+  flex: 1;
+  min-width: var(--space-2);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LABEL SR-ONLY — Accessibilité
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE — Tablet (< 1024px)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  .spacer {
+    display: none;
+  }
+
+  .inner {
+    flex-wrap: wrap;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE — Mobile (< 768px)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .bar {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .searchWrap {
+    min-width: 140px;
+    flex: 1;
+  }
+
+  .select {
+    font-size: var(--font-size-sm);
+    height: 34px;
+    padding: 0 var(--space-6) 0 var(--space-2);
+  }
+
+  .searchInput {
+    height: 34px;
+    font-size: var(--font-size-sm);
+  }
+}

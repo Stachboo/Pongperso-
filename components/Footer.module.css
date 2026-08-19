@@ -1,0 +1,228 @@
+/* ══════════════════════════════════════════════════════════════════════════════
+   WMC — FOOTER ENRICHI
+   Footer complet avec colonnes de liens, stats, disclaimer
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CONTENEUR GLOBAL
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.footer {
+  position: relative;
+  background: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-16) var(--space-6) var(--space-8);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TRIANGLE DÉCORATIF
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.decoTriangle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  height: 400px;
+  fill: var(--color-brand-gold);
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BLOC 1 — En-tête du footer
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-10);
+}
+
+
+/* Brand — Logo + description */
+
+.brandBlock {
+  flex-shrink: 0;
+  max-width: 280px;
+}
+
+.brandDesc {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-top: var(--space-4);
+}
+
+
+/* Colonnes de liens */
+
+.columns {
+  display: flex;
+  gap: var(--space-12);
+  flex-wrap: wrap;
+}
+
+.column {
+  min-width: 150px;
+}
+
+.columnTitle {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.columnList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.columnLink {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.columnLink:hover {
+  color: var(--color-brand-gold);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SÉPARATEUR
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background: var(--color-border);
+  margin: var(--space-10) 0;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BLOC 2 — Barre de bas de footer
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.copyright {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: var(--line-height-caption);
+}
+
+
+/* Stats live mini */
+
+.miniStats {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.miniStat {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-1);
+}
+
+.miniStatValue {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+}
+
+.miniStatLabel {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BLOC 3 — Disclaimer
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.disclaimer {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-top: var(--space-6);
+  opacity: 0.6;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE — Mobile
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .footer {
+    padding: var(--space-10) var(--space-4) var(--space-6);
+  }
+
+  .top {
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
+  .brandBlock {
+    max-width: 100%;
+  }
+
+  .columns {
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .bottom {
+    flex-direction: column;
+    gap: var(--space-4);
+    text-align: center;
+  }
+
+  .miniStats {
+    justify-content: center;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ACCESSIBILITÉ — prefers-reduced-motion
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .columnLink {
+    transition: none;
+  }
+}

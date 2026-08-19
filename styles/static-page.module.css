@@ -1,0 +1,294 @@
+/* ══════════════════════════════════════════════════════════════════════════════
+   WMC — STATIC PAGES SHARED STYLES
+   Template CSS Module pour les pages statiques (about, contact, légal, etc.)
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6) var(--space-16);
+}
+
+/* ═══ EN-TÊTE ═══ */
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-10);
+}
+
+.title {
+  font-family: var(--font-display-condensed);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: var(--line-height-display);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: var(--font-size-4xl);
+  }
+}
+
+.subtitle {
+  font-family: var(--font-display-script);
+  font-size: var(--font-size-xl);
+  color: var(--color-brand-gold);
+  margin-top: var(--space-2);
+  display: block;
+}
+
+.separator {
+  width: 80px;
+  height: 2px;
+  background: var(--color-brand-gold);
+  margin: var(--space-8) auto;
+  opacity: 0.6;
+}
+
+/* ═══ CONTENU ═══ */
+
+.content {
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-body-relaxed);
+}
+
+.section {
+  margin-bottom: var(--space-10);
+}
+
+.sectionTitle {
+  font-family: var(--font-display-condensed);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 0 0 var(--space-4);
+}
+
+.paragraph {
+  margin: 0 0 var(--space-4);
+}
+
+.link {
+  color: var(--color-brand-gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: var(--color-brand-gold-light);
+}
+
+/* ═══ LISTES ═══ */
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-4) 0;
+}
+
+.listItem {
+  padding: var(--space-2) 0;
+  padding-left: var(--space-6);
+  position: relative;
+  color: var(--color-text-secondary);
+}
+
+.listItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: var(--color-brand-gold);
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+/* ═══ ORDERED LIST ═══ */
+
+.orderedList {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-4) 0;
+  counter-reset: step;
+}
+
+.orderedItem {
+  padding: var(--space-2) 0;
+  padding-left: var(--space-8);
+  position: relative;
+  color: var(--color-text-secondary);
+  counter-increment: step;
+}
+
+.orderedItem::before {
+  content: counter(step) '.';
+  position: absolute;
+  left: 0;
+  font-family: var(--font-display-condensed);
+  font-size: var(--font-size-lg);
+  color: var(--color-brand-gold);
+  font-weight: var(--font-weight-bold);
+}
+
+/* ═══ BLOC INFO (email, chiffres clés) ═══ */
+
+.infoBlock {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: var(--space-6);
+  margin: var(--space-6) 0;
+}
+
+.infoLabel {
+  font-family: var(--font-display-condensed);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 var(--space-1);
+}
+
+.infoValue {
+  font-family: var(--font-body);
+  font-size: var(--font-size-lg);
+  color: var(--color-brand-gold);
+  font-weight: var(--font-weight-semibold);
+  margin: 0;
+}
+
+/* ═══ STATS GRID ═══ */
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  margin: var(--space-6) 0;
+}
+
+@media (min-width: 640px) {
+  .statsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.statCard {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.statValue {
+  font-family: var(--font-display-condensed);
+  font-size: var(--font-size-2xl);
+  color: var(--color-brand-gold);
+  display: block;
+  line-height: 1;
+  margin-bottom: var(--space-1);
+}
+
+.statLabel {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ═══ FORMULAIRE ═══ */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.fieldLabel {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.fieldInput,
+.fieldSelect,
+.fieldTextarea {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  transition: border-color 0.2s;
+}
+
+.fieldInput:focus,
+.fieldSelect:focus,
+.fieldTextarea:focus {
+  outline: none;
+  border-color: var(--color-brand-gold);
+}
+
+.fieldTextarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.submitBtn {
+  background: var(--color-brand-gold);
+  color: var(--color-bg-primary);
+  font-family: var(--font-display-condensed);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: none;
+  border-radius: 6px;
+  padding: var(--space-3) var(--space-6);
+  cursor: pointer;
+  transition: background 0.2s;
+  align-self: flex-start;
+}
+
+.submitBtn:hover {
+  background: var(--color-brand-gold-dark);
+}
+
+.formNote {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-top: var(--space-2);
+}
+
+/* ═══ PROSE LÉGALE ═══ */
+
+.legalDate {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-6);
+  text-align: center;
+}

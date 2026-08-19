@@ -1,0 +1,35 @@
+/* ══════════════════════════════════════════════════════════════════════════════
+   WMC — PAGE WRAPPER
+   Animation d'entrée + padding-top pour la Navbar fixe
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+.wrapper {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 300ms ease, transform 300ms ease;
+  padding-top: 64px;
+  min-height: 100vh;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.main {
+  /* pas de style supplémentaire */
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding-top: 100px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wrapper {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
