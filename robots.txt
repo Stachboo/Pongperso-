@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://stachboo.github.io/Pongperso-/sitemap.xml
+Sitemap: https://wmc-iota.vercel.app/sitemap.xml
