@@ -57,16 +57,20 @@ du repo n'est plus que le **seed** (repli au build / si Blob indisponible).
 - `/{lang}/audit` → AuditDashboard : CRUD voicings (add/edit/delete/move/reorder),
   création de riddims, détection de doublons cross-riddim
 - Protégé par `middleware.ts` (pages + POST /api/riddims)
-- Env vars attendues (Vercel, 3 configurées + Blob auto) : `ADMIN_USERNAME`,
-  `ADMIN_PASSWORD`, `AUTH_SECRET`, `DEPLOY_HOOK_URL`, `BLOB_READ_WRITE_TOKEN` (auto via Blob store).
+- Env vars attendues (Vercel) : `ADMIN_USERNAME`, `ADMIN_PASSWORD`, `AUTH_SECRET`,
+  `BLOB_READ_WRITE_TOKEN` (auto si un Blob store est lié au projet).
+  ⚠️ `DEPLOY_HOOK_URL` n'est PLUS utilisé (supprimé par la refonte ISR — les pages
+  se régénèrent via `revalidateTag`, pas via redeploy).
   Le code a des valeurs par défaut de dev — en prod les env vars doivent les écraser.
+  Vérifier `BLOB_READ_WRITE_TOKEN` sur Vercel : sans lui, l'admin ne persiste pas et
+  le site retombe sur le seed du repo (152 riddims), mais rien ne casse.
 
 ## Commandes
 
 ```bash
 npm install
 npm run dev          # dev local
-npm run build        # build prod (≈1 385 pages SSG)
+npm run build        # build prod (~3097 pages SSG : riddims+artistes+producteurs×5 langues)
 npm start            # serveur prod local
 npm run audit        # scripts/audit-voicings.js → data/audit-report.json
 ```
@@ -129,3 +133,45 @@ adversarial ; si besoin de les revoir, relancer la revue ou demander au proprié
 ## Branche de travail Claude
 
 `claude/salam-akhi-uqmwmb` — toujours développer dessus, PR vers `main`.
+En fin de session, réaligner sur main : `git fetch origin main && git checkout -B claude/salam-akhi-uqmwmb origin/main`.
+
+## ÉTAT À LA FIN DE LA SESSION DU 19/08/2026 (handoff)
+
+Tout est mergé dans `main` et déployé sur https://wmc-iota.vercel.app (builds Vercel verts) :
+- **PR #7 (mergée)** : audit/corrections appliqués par erreur sur l'ancienne version statique
+  (épisode « site cassé »). Historique seulement.
+- **PR #8 (mergée)** : RESTAURATION du vrai site Next.js (152 riddims + admin) + corrections
+  sécurité/bugs de la revue + refonte données ISR live (revalidateTag). Suppression du vercel.json.
+- **PR #9 (mergée)** : i18n complète (composants + 11 pages traduites fr/en/es/pt/ja, `<html lang>`
+  dynamique, hreflang honnête).
+- **PR #6** : ANCIENNE branche Next.js d'origine (mars), toujours ouverte mais OBSOLÈTE (son
+  contenu est intégré via #8/#9). À FERMER avec un commentaire, ne pas merger.
+
+Branche `claude/salam-akhi-uqmwmb` = alignée sur main (commit `8f24da4`). Rien en attente.
+
+### TODO prochaine session (par priorité)
+
+1. **[HIGH sécurité — le propriétaire décidera]** Secrets/creds admin par défaut codés en dur
+   (`app/api/auth/route.ts:3-5`, `middleware.ts:4`). Le mot de passe `WMC-riddim-2024!` est
+   DÉJÀ dans l'historique git → compromis. Action : (a) retirer les fallbacks (throw si env
+   absente), (b) régénérer ADMIN_PASSWORD + AUTH_SECRET sur Vercel, (c) idéalement hasher le mdp.
+   Vérifier d'abord que les 3 env vars sont bien sur Vercel avant de throw (sinon build/prod casse).
+   → Le propriétaire avait dit « ne pas toucher pour l'instant » (19/08).
+2. **[LOW finitions]** (findings revue restants) : `HeroSection.tsx` = code mort (supprimer ou
+   brancher) ; aria-label « Navigation principale » (Navbar) en FR ; x-default(en) vs
+   DEFAULT_LOCALE(fr) incohérents (`utils/seo.ts` DEFAULT_LANG='en' vs `lib/i18n.ts`
+   DEFAULT_LOCALE='fr') ; middleware skip sur chemin contenant un point ; invariant de tri CRUD
+   (reorder vs re-tri auto) ; /explorer vs /riddims contenu dupliqué (canonical à trancher) ;
+   5 keyArtists de producers.ts → pages artistes 404 (Fiji, Farruko, Drake, Ne-Yo, Nelly Furtado).
+3. **[optionnel]** `public/Logo.png` (6,2 Mo) inutilisé → supprimer/compresser.
+4. **[optionnel]** Traduire le CONTENU des données (producers.ts descriptions FR, riddims
+   descriptions FR) — gros chantier, non demandé pour l'instant. L'UI est traduite, pas les données.
+
+### Rappels environnement sandbox
+- Chromium ne sort pas (proxy) → tester la PROD avec `curl`, et Playwright uniquement sur
+  `localhost` (lancer `npx next start -p <port>` puis pointer le navigateur dessus).
+- GitHub via outils MCP `mcp__github__*` (pas de `gh` CLI). Vercel : logs souvent inaccessibles
+  (scope `abdus-projects-57f170e1` non autorisé) → lire le statut via `mcp__github__pull_request_read`
+  method get_status, ou demander au propriétaire de copier les logs.
+- `git checkout <fichier>` est DESTRUCTIF (m'a fait perdre du travail non commité une fois) —
+  committer avant toute manip git risquée.
