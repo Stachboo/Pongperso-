@@ -1,0 +1,76 @@
+/* WMC — Share FAB */
+
+.fab {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  z-index: var(--z-overlay);
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.btn {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-brand-gold) 0%, var(--color-brand-green) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  color: var(--color-bg-primary);
+  box-shadow: var(--shadow-gold);
+  transition: transform var(--transition-fast);
+}
+
+.btn:hover { transform: scale(1.05); }
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  opacity: 0;
+  transform: translateY(8px) scale(0.95);
+  pointer-events: none;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.menuOpen {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.option {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--color-text-primary);
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.option:hover { transform: scale(1.1); }
+
+.whatsapp { background: #25D366; }
+.x        { background: #000; border: 1px solid rgba(255,255,255,0.15); }
+.facebook { background: #1877F2; }
+.copy     { background: var(--color-bg-elevated); border: 1px solid var(--color-border); }
+
+.copied {
+  background: var(--color-brand-green) !important;
+}
+
+@media (max-width: 480px) {
+  .fab { bottom: var(--space-4); right: var(--space-4); }
+  .btn { width: 46px; height: 46px; }
+  .option { width: 40px; height: 40px; }
+}

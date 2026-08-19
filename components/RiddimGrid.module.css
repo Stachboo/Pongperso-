@@ -1,0 +1,220 @@
+/* ══════════════════════════════════════════════════════════════════════════════
+   WMC — RIDDIM GRID (Bento)
+   World Music Contest — Jamaican Riddim Database
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   EN-TÊTE DE SECTION
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.sectionHeader {
+  margin-bottom: var(--space-8);
+}
+
+.titleRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.title {
+  font-family: var(--font-display-condensed);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-2xl);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  line-height: var(--line-height-heading);
+}
+
+.subtitle {
+  font-family: var(--font-display-script);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  color: var(--color-brand-gold);
+}
+
+.count {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  line-height: var(--line-height-caption);
+}
+
+/* Brush stroke sous le sous-titre */
+.brushWrap {
+  display: block;
+  margin-top: var(--space-1);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BENTO GRID — Desktop (12 colonnes)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.grid {
+  display: grid;
+  gap: var(--space-4);
+  list-style: none;
+}
+
+/* Desktop >= 1024px */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  /* Carte 1 — featured principale */
+  .grid > :nth-child(1) { grid-column: span 5; grid-row: span 2; }
+  /* Carte 2 — featured secondaire */
+  .grid > :nth-child(2) { grid-column: span 4; grid-row: span 2; }
+  /* Carte 3 */
+  .grid > :nth-child(3) { grid-column: span 3; }
+  /* Carte 4 */
+  .grid > :nth-child(4) { grid-column: span 3; }
+  /* Carte 5 */
+  .grid > :nth-child(5) { grid-column: span 4; }
+  /* Carte 6 */
+  .grid > :nth-child(6) { grid-column: span 4; }
+
+  /* À partir de la carte 7 : grille uniforme 4 colonnes */
+  .grid > :nth-child(n+7) { grid-column: span 3; }
+}
+
+/* Tablet 768–1024px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile < 768px */
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ÉTAT VIDE — Aucun résultat
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  padding: var(--space-16) var(--space-6);
+  text-align: center;
+}
+
+.emptyIcon {
+  font-size: 3.5rem;
+  color: var(--color-brand-gold);
+  opacity: 0.6;
+}
+
+.emptyTitle {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
+  color: var(--color-text-primary);
+  line-height: 1.4;
+}
+
+.emptySub {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-caption);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SKELETON — Cartes de chargement
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: 100%;
+}
+
+.skeletonBar {
+  height: 4px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.skeletonBody {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.skeletonBlock {
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.06);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.skeletonBadge {
+  composes: skeletonBlock;
+  width: 80px;
+  height: 20px;
+}
+
+.skeletonTitle {
+  composes: skeletonBlock;
+  width: 70%;
+  height: 28px;
+}
+
+.skeletonMeta {
+  composes: skeletonBlock;
+  width: 50%;
+  height: 14px;
+}
+
+.skeletonLine {
+  composes: skeletonBlock;
+  width: 90%;
+  height: 14px;
+}
+
+.skeletonLineShort {
+  composes: skeletonBlock;
+  width: 60%;
+  height: 14px;
+}
+
+@keyframes shimmer {
+  0%   { opacity: 0.5; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ACCESSIBILITÉ — prefers-reduced-motion
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .skeletonBlock {
+    animation: none;
+    opacity: 0.7;
+  }
+}

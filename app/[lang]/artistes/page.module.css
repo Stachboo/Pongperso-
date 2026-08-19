@@ -1,0 +1,47 @@
+/* ══════════════════════════════════════════════════════════════════════════════
+   WMC — PAGE ARTISTES (LISTE)
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6);
+}
+
+.header {
+  margin-bottom: var(--space-10);
+}
+
+.title {
+  font-family: var(--font-display-condensed);
+  font-weight: var(--font-weight-regular);
+  font-size: clamp(2.5rem, 6vw, 3rem);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  line-height: 1;
+  display: inline;
+}
+
+.titleScript {
+  font-family: var(--font-display-script);
+  font-size: var(--font-size-xl);
+  color: var(--color-brand-gold);
+  margin-left: var(--space-3);
+}
+
+.brushStroke {
+  display: block;
+  width: 200px;
+  height: 12px;
+  margin-top: var(--space-2);
+}
+
+.counter {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+  margin-top: var(--space-3);
+}

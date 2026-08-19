@@ -1,15 +1,22 @@
+# Next.js
+.next/
+out/
+
+# Dependencies
+node_modules/
+
+# Build
+*.tsbuildinfo
+next-env.d.ts
+
+# Env
+.env
+.env.local
+.env.*.local
+
 # OS
 .DS_Store
 Thumbs.db
 
-# Editors
-.vscode/
-.idea/
-*.swp
-
-# Node (if tooling is ever added)
-node_modules/
-
-# Logs & temp
-*.log
-*.tmp
+# Vercel
+.vercel

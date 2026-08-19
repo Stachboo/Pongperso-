@@ -1,0 +1,589 @@
+/* ══════════════════════════════════════════════════════════════════════════════
+   WMC — RIDDIM DETAIL
+   Page de détail complète d'un riddim — SEO, voicings, riddims similaires
+   Fusionne l'ancien design (backLink, tags, viewsBar, ytLink)
+   avec les nouvelles sections (breadcrumb, contexte, similaires)
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ARTICLE — Conteneur global
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.article {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BACK LINK — Lien retour catalogue (original)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  margin-bottom: var(--space-8);
+  transition: color var(--transition-fast);
+}
+.backLink:hover { color: var(--color-brand-gold); }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DIVIDER — Séparateur entre sections
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--color-border);
+  margin: var(--space-12) 0;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION A — Header
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.header {
+  position: relative;
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-10) var(--space-8);
+  overflow: hidden;
+  margin-bottom: var(--space-8);
+}
+
+.headerContent {
+  position: relative;
+  z-index: var(--z-above);
+}
+
+
+/* Triangles décoratifs */
+
+.decoTriangleLeft,
+.decoTriangleRight {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  opacity: 0.08;
+}
+
+.decoTriangleLeft {
+  top: 0;
+  left: 0;
+  fill: var(--color-brand-gold);
+}
+
+.decoTriangleRight {
+  bottom: 0;
+  right: 0;
+  fill: var(--color-brand-green);
+}
+
+
+/* Breadcrumb */
+
+.breadcrumb {
+  margin-bottom: var(--space-6);
+}
+
+.breadcrumbList {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.breadcrumbLink {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.breadcrumbLink:hover {
+  color: var(--color-brand-gold);
+}
+
+.breadcrumbSep {
+  margin: 0 var(--space-2);
+  color: var(--color-brand-gold);
+  font-size: 13px;
+}
+
+.breadcrumbCurrent {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+
+/* Nom du riddim */
+
+.riddimName {
+  font-family: var(--font-display-condensed);
+  font-weight: var(--font-weight-regular);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  line-height: 0.95;
+  position: relative;
+  display: inline-block;
+}
+
+.brushStroke {
+  display: block;
+  width: 100%;
+  height: 12px;
+  margin-top: var(--space-2);
+}
+
+.brushStroke svg {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Producteur · Label (original) */
+
+.producerLabel {
+  font-family: var(--font-body);
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-2);
+}
+
+
+/* Tags (original) */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.tagGold   { background: rgba(245, 166, 35, 0.15); color: var(--color-brand-gold); }
+.tagGreen  { background: rgba(29, 185, 84, 0.15); color: var(--color-brand-green); }
+.tagRed    { background: rgba(230, 57, 70, 0.15); color: var(--color-brand-red); }
+.tagMuted  { background: rgba(255, 255, 255, 0.06); color: var(--color-text-secondary); }
+
+
+/* Méta-informations avec icônes */
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  margin-top: var(--space-6);
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+}
+
+.metaItem svg {
+  color: var(--color-brand-gold);
+  flex-shrink: 0;
+}
+
+
+/* Stats row (original + nouvelles) */
+
+.stats {
+  display: flex;
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.statValue {
+  font-family: var(--font-display-condensed);
+  font-size: var(--font-size-2xl);
+  color: var(--color-brand-gold);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.statLabel {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+}
+
+
+/* Description (original) */
+
+.desc {
+  margin-top: var(--space-8);
+  font-family: var(--font-body);
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-body-relaxed);
+  max-width: 640px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION B — Contexte historique
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.contextSection {
+  /* pas de padding supplémentaire */
+}
+
+.sectionTitle {
+  font-family: var(--font-display-condensed);
+  font-size: var(--font-size-xl);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-6);
+  line-height: var(--line-height-heading);
+}
+
+.sectionTitleScript {
+  font-family: var(--font-display-script);
+  font-size: var(--font-size-xl);
+  color: var(--color-brand-gold);
+  text-transform: none;
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.contextText {
+  font-family: var(--font-body);
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+  max-width: 640px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION C — Tableau des voicings
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.voicingsSection {
+  margin-top: var(--space-10);
+}
+
+.voicingsHeading {
+  font-family: var(--font-display-condensed);
+  font-size: var(--font-size-2xl);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-6);
+}
+
+.voicingsCount {
+  color: var(--color-brand-gold);
+  font-size: var(--font-size-xl);
+  margin-left: var(--space-2);
+}
+
+
+/* Tableau */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHead th {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.thActions {
+  text-align: right !important;
+}
+
+
+/* Lignes du tableau */
+
+.tableRow {
+  transition: background var(--transition-fast);
+}
+
+.tableRow:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.tableRow td {
+  padding: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  vertical-align: middle;
+}
+
+
+/* Colonne rang (original) */
+
+.rankCell {
+  width: 40px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-muted);
+}
+
+.rankTop1 { color: var(--color-brand-gold); }
+.rankTop2 { color: var(--color-brand-green); }
+.rankTop3 { color: var(--color-brand-red); }
+
+
+/* Colonnes artiste et titre (original) */
+
+.artistCell { font-weight: var(--font-weight-semibold); }
+.titleCell  { color: var(--color-text-secondary); }
+
+
+/* Colonne vues avec barre gradient (original) */
+
+.viewsCell {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.viewsBar {
+  display: inline-block;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(90deg, var(--color-brand-gold), var(--color-brand-green));
+  margin-right: var(--space-2);
+  vertical-align: middle;
+  min-width: 4px;
+}
+
+
+/* Colonne actions */
+
+.actionsCell {
+  text-align: right;
+  white-space: nowrap;
+}
+
+
+/* Lien YouTube icône */
+
+.actionYoutube {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #FF0000;
+  opacity: 0.5;
+  transition: opacity 200ms ease;
+}
+
+.actionYoutube:hover {
+  opacity: 1;
+}
+
+/* Lien Spotify icône */
+
+.actionSpotify {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-brand-green);
+  opacity: 0.5;
+  transition: opacity 200ms ease;
+  margin-left: var(--space-3);
+}
+
+
+/* Not found (original) */
+
+.notFound {
+  text-align: center;
+  padding: var(--space-16) var(--space-6);
+}
+
+.notFoundTitle {
+  font-family: var(--font-display-condensed);
+  font-size: var(--font-size-3xl);
+  color: var(--color-text-primary);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION D — Riddims similaires
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.similarSection {
+  /* pas de padding supplémentaire */
+}
+
+.similarWrapper {
+  position: relative;
+}
+
+.similarGrid {
+  display: flex;
+  gap: var(--space-4);
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: var(--space-2) 0;
+}
+
+.similarGrid::-webkit-scrollbar {
+  display: none;
+}
+
+.similarCard {
+  flex-shrink: 0;
+  width: 220px;
+}
+
+
+/* Flèches de navigation */
+
+.scrollBtn {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-above);
+  transition: background var(--transition-fast),
+              border-color var(--transition-fast);
+}
+
+.scrollBtn:hover {
+  background: var(--color-bg-card);
+  border-color: var(--color-border-accent);
+}
+
+.scrollBtnLeft {
+  left: -18px;
+}
+
+.scrollBtnRight {
+  right: -18px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE — Desktop
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (min-width: 769px) {
+  .scrollBtn {
+    display: inline-flex;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE — Mobile (original + nouveau)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .riddimName { font-size: var(--font-size-3xl); }
+  .stats { gap: var(--space-4); }
+  .tableHead { display: none; }
+  .tableRow { display: flex; flex-wrap: wrap; gap: var(--space-1); padding: var(--space-3) 0; }
+  .tableRow td { border-bottom: none; padding: var(--space-1) var(--space-2); }
+  .table { border-top: 1px solid var(--color-border); }
+
+  .header {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .metaRow {
+    gap: var(--space-3);
+  }
+
+  .divider {
+    margin: var(--space-8) 0;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ACCESSIBILITÉ — prefers-reduced-motion
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .tableRow {
+    transition: none;
+  }
+
+  .ytLink,
+  .actionSpotify {
+    transition: none;
+  }
+
+  .scrollBtn {
+    transition: none;
+  }
+
+  .similarGrid {
+    scroll-behavior: auto;
+  }
+
+  .brushStroke svg path {
+    animation: none;
+  }
+}
