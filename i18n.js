@@ -44,8 +44,6 @@ const TRANSLATIONS = {
         genreDancehallDesc: "\u00c9volution digitale du reggae apparue dans les ann\u00e9es 80. Le dancehall se distingue par ses rythmes plus rapides, ses synth\u00e9tiseurs et sa culture des sound systems. C'est le genre le plus prolifique en riddims.",
         genreLovers: "Lovers Rock",
         genreLoversDesc: "Le c\u00f4t\u00e9 romantique de la musique jama\u00efcaine. N\u00e9 dans la diaspora jama\u00efcaine \u00e0 Londres, le lovers rock privil\u00e9gie les m\u00e9lodies douces et les th\u00e8mes sentimentaux sur des riddims chaleureux.",
-        genreSoca: "Soca",
-        genreSocaDesc: "Fusion de soul et calypso originaire de Trinidad et Tobago. Le soca partage des riddims avec le dancehall et apporte une \u00e9nergie festive et carnival unique \u00e0 la culture carib\u00e9enne.",
         // How to
         howTitle: "Comment utiliser la base de donn\u00e9es",
         howStep1Title: "Explorez",
@@ -138,8 +136,6 @@ const TRANSLATIONS = {
         genreDancehallDesc: "The digital evolution of reggae that emerged in the 1980s. Dancehall stands out with its faster rhythms, synthesizers and sound system culture. It is the most prolific genre for riddims.",
         genreLovers: "Lovers Rock",
         genreLoversDesc: "The romantic side of Jamaican music. Born in the Jamaican diaspora in London, lovers rock favors soft melodies and sentimental themes over warm riddims.",
-        genreSoca: "Soca",
-        genreSocaDesc: "A fusion of soul and calypso originating from Trinidad and Tobago. Soca shares riddims with dancehall and brings a unique festive carnival energy to Caribbean culture.",
         howTitle: "How to use the database",
         howStep1Title: "Explore",
         howStep1Desc: "Browse our riddim catalog. Filter by genre, type, decade or search for a specific artist.",
@@ -221,8 +217,6 @@ const TRANSLATIONS = {
         genreDancehallDesc: "Evoluci\u00f3n digital del reggae surgida en los a\u00f1os 80. El dancehall se distingue por sus ritmos m\u00e1s r\u00e1pidos, sintetizadores y cultura de sound systems. Es el g\u00e9nero m\u00e1s prol\u00edfico en riddims.",
         genreLovers: "Lovers Rock",
         genreLoversDesc: "El lado rom\u00e1ntico de la m\u00fasica jamaicana. Nacido en la di\u00e1spora jamaicana en Londres, el lovers rock privilegia melod\u00edas suaves y temas sentimentales sobre riddims c\u00e1lidos.",
-        genreSoca: "Soca",
-        genreSocaDesc: "Fusi\u00f3n de soul y calypso originaria de Trinidad y Tobago. El soca comparte riddims con el dancehall y aporta una energ\u00eda festiva y carnavalesca \u00fanica a la cultura caribe\u00f1a.",
         howTitle: "C\u00f3mo usar la base de datos",
         howStep1Title: "Explora",
         howStep1Desc: "Recorre nuestro cat\u00e1logo de riddims. Filtra por g\u00e9nero, tipo, d\u00e9cada o busca un artista espec\u00edfico.",
@@ -304,8 +298,6 @@ const TRANSLATIONS = {
         genreDancehallDesc: "Evolu\u00e7\u00e3o digital do reggae surgida nos anos 80. O dancehall se destaca por seus ritmos mais r\u00e1pidos, sintetizadores e cultura de sound systems. \u00c9 o g\u00eanero mais prol\u00edfico em riddims.",
         genreLovers: "Lovers Rock",
         genreLoversDesc: "O lado rom\u00e2ntico da m\u00fasica jamaicana. Nascido na di\u00e1spora jamaicana em Londres, o lovers rock privilegia melodias suaves e temas sentimentais sobre riddims calorosos.",
-        genreSoca: "Soca",
-        genreSocaDesc: "Fus\u00e3o de soul e calypso origin\u00e1ria de Trinidad e Tobago. O soca compartilha riddims com o dancehall e traz uma energia festiva e carnavalesca \u00fanica \u00e0 cultura caribenha.",
         howTitle: "Como usar o banco de dados",
         howStep1Title: "Explore",
         howStep1Desc: "Navegue pelo nosso cat\u00e1logo de riddims. Filtre por g\u00eanero, tipo, d\u00e9cada ou pesquise um artista espec\u00edfico.",
@@ -387,8 +379,6 @@ const TRANSLATIONS = {
         genreDancehallDesc: "1980\u5e74\u4ee3\u306b\u767b\u5834\u3057\u305f\u30ec\u30b2\u30a8\u306e\u30c7\u30b8\u30bf\u30eb\u9032\u5316\u5f62\u3002\u3088\u308a\u901f\u3044\u30ea\u30ba\u30e0\u3001\u30b7\u30f3\u30bb\u30b5\u30a4\u30b6\u30fc\u3001\u30b5\u30a6\u30f3\u30c9\u30b7\u30b9\u30c6\u30e0\u6587\u5316\u304c\u7279\u5fb4\u3002\u30ea\u30c7\u30a3\u30e0\u306e\u6570\u304c\u6700\u3082\u591a\u3044\u30b8\u30e3\u30f3\u30eb\u3067\u3059\u3002",
         genreLovers: "\u30e9\u30d0\u30fc\u30ba\u30ed\u30c3\u30af",
         genreLoversDesc: "\u30b8\u30e3\u30de\u30a4\u30ab\u97f3\u697d\u306e\u30ed\u30de\u30f3\u30c6\u30a3\u30c3\u30af\u306a\u4e00\u9762\u3002\u30ed\u30f3\u30c9\u30f3\u306e\u30b8\u30e3\u30de\u30a4\u30ab\u30f3\u30c7\u30a3\u30a2\u30b9\u30dd\u30e9\u3067\u751f\u307e\u308c\u3001\u6e29\u304b\u3044\u30ea\u30c7\u30a3\u30e0\u306e\u4e0a\u306b\u512a\u3057\u3044\u30e1\u30ed\u30c7\u30a3\u30fc\u3068\u611f\u50b7\u7684\u306a\u30c6\u30fc\u30de\u3092\u8f09\u305b\u307e\u3059\u3002",
-        genreSoca: "\u30bd\u30ab",
-        genreSocaDesc: "\u30c8\u30ea\u30cb\u30c0\u30fc\u30c9\u30fb\u30c8\u30d0\u30b4\u767a\u7965\u306e\u30bd\u30a6\u30eb\u3068\u30ab\u30ea\u30d7\u30bd\u306e\u878d\u5408\u3002\u30c0\u30f3\u30b9\u30db\u30fc\u30eb\u3068\u30ea\u30c7\u30a3\u30e0\u3092\u5171\u6709\u3057\u3001\u30ab\u30ea\u30d6\u6587\u5316\u306b\u72ec\u81ea\u306e\u30d5\u30a7\u30b9\u30c6\u30a3\u30d0\u30eb\u30a8\u30ca\u30b8\u30fc\u3092\u3082\u305f\u3089\u3057\u307e\u3059\u3002",
         howTitle: "\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306e\u4f7f\u3044\u65b9",
         howStep1Title: "\u63a2\u7d22",
         howStep1Desc: "\u30ea\u30c7\u30a3\u30e0\u30ab\u30bf\u30ed\u30b0\u3092\u95b2\u89a7\u3002\u30b8\u30e3\u30f3\u30eb\u3001\u30bf\u30a4\u30d7\u3001\u5e74\u4ee3\u3067\u30d5\u30a3\u30eb\u30bf\u30fc\u3001\u307e\u305f\u306f\u7279\u5b9a\u306e\u30a2\u30fc\u30c6\u30a3\u30b9\u30c8\u3092\u691c\u7d22\u3002",
@@ -446,15 +436,6 @@ function detectLang() {
 
 function getT() {
     return TRANSLATIONS[detectLang()];
-}
-
-// Get base path for links (e.g., "/en/" or "/fr/")
-function getLangBase() {
-    const lang = detectLang();
-    const path = window.location.pathname;
-    const match = path.match(/^(.*\/(fr|en|es|pt|ja)\/)/);
-    if (match) return match[1];
-    return `/${lang}/`;
 }
 
 // Build floating share button

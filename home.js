@@ -74,15 +74,6 @@
                 <h3>${t.genreLovers}</h3>
                 <p>${t.genreLoversDesc}</p>
             </div>
-            <div class="genre-card">
-                <div class="genre-icon genre-icon-soca">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
-                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                    </svg>
-                </div>
-                <h3>${t.genreSoca}</h3>
-                <p>${t.genreSocaDesc}</p>
-            </div>
         </div>
     `;
 
@@ -137,16 +128,9 @@
         const riddims = await response.json();
         const totalRiddims = riddims.length;
         const totalVoicings = riddims.reduce((s, r) => s + r.voicings.length, 0);
-        const totalViews = riddims.reduce((s, r) => s + r.voicings.reduce((vs, v) => vs + v.views, 0), 0);
+        const totalViews = riddims.reduce((s, r) => s + getTotalViews(r), 0);
         const genres = new Set(riddims.map(r => r.genre));
         const decades = new Set(riddims.map(r => Math.floor(r.year / 10) * 10 + 's'));
-
-        function formatViews(n) {
-            if (n >= 1e9) return (n / 1e9).toFixed(1) + 'B';
-            if (n >= 1e6) return (n / 1e6).toFixed(1) + 'M';
-            if (n >= 1e3) return (n / 1e3).toFixed(1) + 'K';
-            return n.toString();
-        }
 
         document.getElementById('homeStats').innerHTML = `
             <div class="home-stat">

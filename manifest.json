@@ -1,8 +1,8 @@
 {
     "name": "World Music Contest",
     "short_name": "WMC",
-    "description": "The largest Jamaican riddim database. Dancehall, Reggae, Lovers Rock, Soca.",
-    "start_url": "/fr/index.html",
+    "description": "The largest Jamaican riddim database. Dancehall, Reggae, Lovers Rock.",
+    "start_url": "./fr/index.html",
     "display": "standalone",
     "background_color": "#0D0D0D",
     "theme_color": "#F2A900",

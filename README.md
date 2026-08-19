@@ -1,35 +1,50 @@
-# Pong Game
+# World Music Contest — Riddim Database
 
-Ce projet est une implémentation simple du jeu Pong utilisant HTML, CSS, et JavaScript. Le jeu peut être joué dans un navigateur web.
+La référence des riddims jamaïcains : une base de données interactive recensant les riddims les plus emblématiques du dancehall, du reggae et du lovers rock, avec leurs voicings et leurs statistiques de streaming.
 
-## Description
+**44 riddims · 441 voicings · ~4,9 milliards de vues cumulées · de 1967 à 2016**
 
-Le jeu Pong est un jeu de tennis de table où le joueur contrôle une palette (ou paddle) pour renvoyer une balle vers l'adversaire. L'objectif est de marquer des points en faisant en sorte que l'adversaire ne puisse pas renvoyer la balle.
+## Fonctionnalités
 
-## Instructions
+- **Catalogue explorable** : recherche plein texte (riddim, producteur, label, artiste, titre) avec surlignage des résultats
+- **Filtres** : par genre (reggae, dancehall, lovers rock), type (classique, ragga, digital) et décennie (1960s–2010s)
+- **Tri** : par vues totales, nom, année ou nombre de voicings
+- **Fiches riddim** : description, producteur, label, BPM, et classement des voicings par popularité avec lien d'écoute YouTube
+- **Multilingue** : français, anglais, espagnol, portugais, japonais (détection automatique de la langue du navigateur)
+- **PWA** : installable sur mobile (manifest + icônes)
+- **Partage** : bouton flottant WhatsApp, X, Facebook et copie de lien
 
-- Utilisez la souris pour déplacer votre paddle vers le haut et vers le bas.
-- Le premier joueur à atteindre 10 points gagne la partie.
+## Structure du projet
 
-## Comment jouer
+```
+├── index.html          # Redirection vers la langue du navigateur
+├── fr/ en/ es/ pt/ ja/ # Pages par langue : index, explorer, riddim
+├── data/riddims.json   # La base de données des riddims
+├── i18n.js             # Traductions + détection de langue + partage
+├── utils.js            # Fonctions partagées (formatage, traduction des tags…)
+├── home.js             # Logique de la page d'accueil
+├── script.js           # Logique du catalogue (recherche, filtres, tri)
+├── riddim.js           # Logique des fiches riddim
+├── style.css           # Thème sombre or/noir, responsive
+├── sitemap.xml         # Plan du site (toutes langues + fiches riddim)
+└── assets/             # Logo, favicons, image Open Graph
+```
 
-1. Ouvrez le jeu dans votre navigateur web.
-2. Utilisez la souris pour contrôler votre paddle et essayez de marquer des points contre l'ordinateur.
+Site 100 % statique, sans framework ni build : HTML, CSS et JavaScript vanilla.
 
-## Accéder au jeu
+## Lancer en local
 
-Vous pouvez jouer au jeu Pong en visitant l'URL suivante : [https://votre-nom-utilisateur.github.io/votre-depot](https://votre-nom-utilisateur.github.io/votre-depot)
+```bash
+python3 -m http.server 8000
+# puis ouvrir http://localhost:8000
+```
 
-## Fichiers du projet
+(Un serveur local est nécessaire car les données sont chargées via `fetch`.)
 
-- `index.html` : La structure HTML de la page.
-- `style.css` : Les styles CSS pour le jeu.
-- `script.js` : La logique du jeu en JavaScript.
+## Données
 
-## Capture d'écran
+Chaque riddim dans `data/riddims.json` contient : `id`, `name`, `year`, `producer`, `label`, `type`, `genre`, `bpm`, `description` et la liste des `voicings` (`artist`, `title`, `views`). Les vues sont approximatives et proviennent des principales plateformes de streaming.
 
-![Pong Game Screenshot](screenshot.png)
+## Licence
 
-## Auteur
-
-Votre Nom
+Ce projet est publié sous licence MIT — voir le fichier [LICENSE](LICENSE).
