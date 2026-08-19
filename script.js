@@ -34,7 +34,6 @@ document.getElementById('controls').innerHTML = `
                 <option value="reggae">${t.genreReggae}</option>
                 <option value="dancehall">${t.genreDancehall}</option>
                 <option value="lovers rock">${t.genreLovers}</option>
-                <option value="soca">${t.genreSoca}</option>
             </select>
         </div>
         <div class="filter-group">
@@ -74,38 +73,6 @@ async function loadRiddims() {
     const response = await fetch('../data/riddims.json');
     riddims = await response.json();
     applyFilters();
-}
-
-function formatViews(n) {
-    if (n >= 1_000_000_000) return (n / 1_000_000_000).toFixed(1) + 'B';
-    if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + 'M';
-    if (n >= 1_000) return (n / 1_000).toFixed(1) + 'K';
-    return n.toString();
-}
-
-function getTotalViews(riddim) {
-    return riddim.voicings.reduce((sum, v) => sum + v.views, 0);
-}
-
-function escapeRegex(str) {
-    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
-function highlightText(text, query) {
-    if (!query) return text;
-    const escaped = escapeRegex(query);
-    const regex = new RegExp(`(${escaped})`, 'gi');
-    return text.replace(regex, '<mark>$1</mark>');
-}
-
-function translateType(type) {
-    const map = { classique: t.typeClassique, ragga: t.typeRagga, digital: t.typeDigital };
-    return map[type] || type;
-}
-
-function translateGenre(genre) {
-    const map = { reggae: t.genreReggae, dancehall: t.genreDancehall, 'lovers rock': t.genreLovers, soca: t.genreSoca };
-    return map[genre] || genre;
 }
 
 function applyFilters() {
@@ -177,6 +144,7 @@ function renderStats() {
 
 function renderGrid() {
     const container = document.getElementById('riddimGrid');
+    const query = document.getElementById('searchInput').value.trim();
 
     if (filteredRiddims.length === 0) {
         container.innerHTML = `
@@ -198,17 +166,17 @@ function renderGrid() {
         return `
             <a href="riddim.html?id=${riddim.id}" class="riddim-tile">
                 <div class="tile-header">
-                    <h2 class="tile-name">${riddim.name}</h2>
+                    <h2 class="tile-name">${highlightText(riddim.name, query)}</h2>
                     <span class="tile-year">${riddim.year}</span>
                 </div>
-                <div class="tile-producer">${riddim.producer}</div>
+                <div class="tile-producer">${highlightText(riddim.producer, query)}</div>
                 <div class="tile-tags">
                     <span class="tag tag-genre">${translateGenre(riddim.genre)}</span>
                     <span class="tag tag-type">${translateType(riddim.type)}</span>
                     ${riddim.bpm ? `<span class="tag tag-bpm">${riddim.bpm} BPM</span>` : ''}
                 </div>
                 <div class="tile-artists">
-                    ${topArtists.map(a => `<span class="tile-artist">${a}</span>`).join('')}
+                    ${topArtists.map(a => `<span class="tile-artist">${highlightText(a, query)}</span>`).join('')}
                 </div>
                 <div class="tile-footer">
                     <span class="tile-views">${formatViews(totalViews)} ${t.views}</span>
