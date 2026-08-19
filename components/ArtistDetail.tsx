@@ -68,6 +68,10 @@ function getYoutubeSearchUrl(q: string): string {
   return `https://www.youtube.com/results?search_query=${encodeURIComponent(q)}`;
 }
 
+function getDeezerSearchUrl(q: string): string {
+  return `https://www.deezer.com/search/${encodeURIComponent(q)}`;
+}
+
 
 /* ═══════════════════════════════════════════════════════════════════════════
    Icônes SVG
@@ -85,6 +89,14 @@ function YoutubeIcon() {
   return (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+    </svg>
+  );
+}
+
+function DeezerIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M18.5 7.5H24V10H18.5V7.5ZM18.5 11.25H24V13.75H18.5V11.25ZM12.33 11.25H17.83V13.75H12.33V11.25ZM18.5 15H24V17.5H18.5V15ZM12.33 15H17.83V17.5H12.33V15ZM6.17 15H11.67V17.5H6.17V15ZM0 15H5.5V17.5H0V15Z" />
     </svg>
   );
 }
@@ -190,6 +202,16 @@ export default async function ArtistDetail({ artist, lang }: ArtistDetailProps) 
               <YoutubeIcon />
               {dict.searchOnYoutube}
             </a>
+            <a
+              href={getDeezerSearchUrl(artist.name)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.deezerBtn}
+              aria-label={dict.ariaSearchDeezer.replace('{x}', artist.name)}
+            >
+              <DeezerIcon />
+              {dict.listenOnDeezer}
+            </a>
           </div>
         </div>
       </header>
@@ -265,6 +287,15 @@ export default async function ArtistDetail({ artist, lang }: ArtistDetailProps) 
                       aria-label={dict.ariaListenYoutube.replace('{x}', r.title)}
                     >
                       <YoutubeIcon />
+                    </a>
+                    <a
+                      href={getDeezerSearchUrl(`${artist.name} ${r.title}`)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.actionDeezer}
+                      aria-label={dict.ariaSearchDeezer.replace('{x}', r.title)}
+                    >
+                      <DeezerIcon />
                     </a>
                   </td>
                 </tr>

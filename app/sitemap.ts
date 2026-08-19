@@ -14,7 +14,6 @@ const LANGS = ['fr', 'en', 'es', 'pt', 'ja'] as const;
 
 /** Pages éditoriales statiques (hors accueil/explorer). */
 const STATIC_PATHS = [
-  '/riddims',
   '/artistes',
   '/producteurs',
   '/about',
@@ -29,14 +28,14 @@ const STATIC_PATHS = [
 
 /**
  * Construit l'objet alternates.languages pour une route donnée.
- * Inclut x-default pointant vers la version anglaise.
+ * Inclut x-default pointant vers la version par défaut (fr, cohérent middleware).
  */
 function buildAlternates(path: string): Record<string, string> {
   const languages: Record<string, string> = {};
   for (const lang of LANGS) {
     languages[lang] = `${BASE_URL}/${lang}${path}`;
   }
-  languages['x-default'] = `${BASE_URL}/en${path}`;
+  languages['x-default'] = `${BASE_URL}/fr${path}`;
   return languages;
 }
 

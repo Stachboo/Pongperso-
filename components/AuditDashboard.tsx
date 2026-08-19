@@ -20,6 +20,10 @@ function getSpotifySearchUrl(artist: string, title: string) {
   return `https://open.spotify.com/search/${encodeURIComponent(`${artist} ${title}`)}`;
 }
 
+function getDeezerSearchUrl(artist: string, title: string) {
+  return `https://www.deezer.com/search/${encodeURIComponent(`${artist} ${title}`)}`;
+}
+
 function formatViews(n: number): string {
   if (n >= 1_000_000_000) return `${(n / 1_000_000_000).toFixed(1)}B`;
   if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
@@ -486,6 +490,17 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
                           >
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                               <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.5 17.3c-.2.3-.6.4-.9.2-2.5-1.5-5.7-1.9-9.4-1-.4.1-.7-.1-.8-.5-.1-.4.1-.7.5-.8 4.1-.9 7.6-.5 10.4 1.2.3.2.4.6.2.9zm1.5-3.3c-.3.4-.8.5-1.2.3-2.9-1.8-7.2-2.3-10.6-1.3-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1 3.9-1.2 8.8-.6 12.1 1.5.3.2.5.7.2 1.2zm.1-3.4c-3.4-2-9.1-2.2-12.4-1.2-.5.2-1.1-.1-1.3-.6-.2-.5.1-1.1.6-1.3 3.7-1.1 9.9-.9 13.8 1.4.5.3.6.9.4 1.4-.3.4-.9.6-1.1.3z"/>
+                            </svg>
+                          </a>
+                          <a
+                            href={getDeezerSearchUrl(v.artist, v.title)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.deezerBtn}
+                            title="Vérifier sur Deezer"
+                          >
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M18.5 7.5H24V10H18.5V7.5ZM18.5 11.25H24V13.75H18.5V11.25ZM12.33 11.25H17.83V13.75H12.33V11.25ZM18.5 15H24V17.5H18.5V15ZM12.33 15H17.83V17.5H12.33V15ZM6.17 15H11.67V17.5H6.17V15ZM0 15H5.5V17.5H0V15Z"/>
                             </svg>
                           </a>
                         </td>

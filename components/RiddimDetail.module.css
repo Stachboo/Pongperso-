@@ -440,6 +440,22 @@
   margin-left: var(--space-3);
 }
 
+/* Lien Deezer icône */
+
+.actionDeezer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #A238FF;
+  opacity: 0.5;
+  transition: opacity 200ms ease;
+  margin-left: var(--space-3);
+}
+
+.actionDeezer:hover {
+  opacity: 1;
+}
+
 
 /* Not found (original) */
 

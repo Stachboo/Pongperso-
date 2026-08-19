@@ -4,6 +4,7 @@ import type { Producer } from '@/data/producers';
 import { getAllRiddims } from '@/lib/data';
 import { getDictionary, isValidLocale } from '@/lib/i18n';
 import { toArtistSlug, toRiddimSlug } from '@/utils/seo';
+import { buildArtistList } from '@/utils/artists';
 import RiddimCard from '@/components/RiddimCard';
 import styles from './ProducerDetail.module.css';
 
@@ -31,6 +32,9 @@ export default async function ProducerDetail({ producer, lang }: ProducerDetailP
   const dict = getDictionary(isValidLocale(lang) ? lang : 'fr');
   /* Trouver les riddims correspondants dans la base de données */
   const allRiddims = await getAllRiddims();
+  // Slugs d'artistes qui ont réellement une page (présents dans un voicing) —
+  // les keyArtists absents (ex: Drake, Ne-Yo) sont rendus non-cliquables (évite les 404).
+  const existingArtistSlugs = new Set(buildArtistList(allRiddims).map((a) => a.slug));
   const matchedRiddims = allRiddims.filter((r) => {
     const slug = toRiddimSlug(r.name);
     // Les riddimIds de data/producers.ts portent parfois un suffixe "-riddim"
@@ -144,15 +148,22 @@ export default async function ProducerDetail({ producer, lang }: ProducerDetailP
       <section aria-label={dict.producerFeaturedArtists}>
         <h2 className={styles.sectionTitle}>{dict.producerFeaturedArtists}</h2>
         <div className={styles.artistPills}>
-          {producer.keyArtists.map((artistName) => (
-            <Link
-              key={artistName}
-              href={`/${lang}/artistes/${toArtistSlug(artistName)}`}
-              className={styles.artistPill}
-            >
-              {artistName}
-            </Link>
-          ))}
+          {producer.keyArtists.map((artistName) => {
+            const slug = toArtistSlug(artistName);
+            return existingArtistSlugs.has(slug) ? (
+              <Link
+                key={artistName}
+                href={`/${lang}/artistes/${slug}`}
+                className={styles.artistPill}
+              >
+                {artistName}
+              </Link>
+            ) : (
+              <span key={artistName} className={styles.artistPill}>
+                {artistName}
+              </span>
+            );
+          })}
         </div>
       </section>
     </article>

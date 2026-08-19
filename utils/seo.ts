@@ -12,8 +12,8 @@ export const BASE_URL = 'https://wmc-iota.vercel.app';
 /** Langues supportées */
 const LANGS = ['fr', 'en', 'es', 'pt', 'ja'] as const;
 
-/** Langue par défaut pour x-default */
-const DEFAULT_LANG = 'en';
+/** Langue par défaut pour x-default (cohérent avec le fallback du middleware = fr) */
+const DEFAULT_LANG = 'fr';
 
 
 /* ═══════════════════════════════════════════════════════════════════════════

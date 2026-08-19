@@ -430,7 +430,7 @@
   gap: 0.4rem;
 }
 
-.ytBtn, .spotifyBtn {
+.ytBtn, .spotifyBtn, .deezerBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -441,7 +441,7 @@
   opacity: 0.5;
 }
 
-.ytBtn:hover, .spotifyBtn:hover {
+.ytBtn:hover, .spotifyBtn:hover, .deezerBtn:hover {
   opacity: 1;
   transform: scale(1.15);
 }
@@ -454,6 +454,11 @@
 .spotifyBtn {
   color: #1DB954;
   background: rgba(30, 215, 96, 0.1);
+}
+
+.deezerBtn {
+  color: #A238FF;
+  background: rgba(162, 56, 255, 0.1);
 }
 
 /* ─── Detail Actions ───────────────────────────────────────────────────── */

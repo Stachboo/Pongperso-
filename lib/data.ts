@@ -88,3 +88,9 @@ export function getYoutubeSearchUrl(artist: string, title: string): string {
   const q = encodeURIComponent(`${artist} ${title}`);
   return `https://www.youtube.com/results?search_query=${q}`;
 }
+
+/** URL de recherche Deezer (pur). */
+export function getDeezerSearchUrl(artist: string, title: string): string {
+  const q = encodeURIComponent(`${artist} ${title}`);
+  return `https://www.deezer.com/search/${q}`;
+}

@@ -104,7 +104,7 @@ export default function Navbar({ lang, dict }: NavbarProps) {
     <>
       <nav
         role="navigation"
-        aria-label="Navigation principale"
+        aria-label={dict.ariaMainNav}
         className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}
       >
         <div className={styles.inner}>

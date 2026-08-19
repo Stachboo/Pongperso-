@@ -197,6 +197,9 @@ export interface Dictionary {
   formSourcesPlaceholder: string;
   formSubmit: string;
   formNote: string;
+  ariaMainNav: string;
+  listenOnDeezer: string;
+  ariaSearchDeezer: string;
 }
 
 const dictionaries: Record<Locale, Dictionary> = {
@@ -359,6 +362,9 @@ const dictionaries: Record<Locale, Dictionary> = {
     scrollRight: 'Défiler à droite',
     riddimAboutTitle: 'À propos de ce riddim',
     riddimAboutAccent: ' son histoire',
+    ariaMainNav: 'Navigation principale',
+    listenOnDeezer: 'Écouter sur Deezer',
+    ariaSearchDeezer: 'Rechercher {x} sur Deezer',
     ariaProducerHistory: 'Histoire du producteur',
     ariaHistoricalContext: 'Contexte historique',
     ariaVoicingsList: 'Liste des voicings',
@@ -539,6 +545,9 @@ const dictionaries: Record<Locale, Dictionary> = {
     scrollRight: 'Scroll right',
     riddimAboutTitle: 'About this riddim',
     riddimAboutAccent: ' its story',
+    ariaMainNav: 'Main navigation',
+    listenOnDeezer: 'Listen on Deezer',
+    ariaSearchDeezer: 'Search for {x} on Deezer',
     ariaProducerHistory: 'Producer history',
     ariaHistoricalContext: 'Historical context',
     ariaVoicingsList: 'Voicings list',
@@ -719,6 +728,9 @@ const dictionaries: Record<Locale, Dictionary> = {
     scrollRight: 'Desplazar a la derecha',
     riddimAboutTitle: 'Acerca de este riddim',
     riddimAboutAccent: ' su historia',
+    ariaMainNav: 'Navegación principal',
+    listenOnDeezer: 'Escuchar en Deezer',
+    ariaSearchDeezer: 'Buscar {x} en Deezer',
     ariaProducerHistory: 'Historia del productor',
     ariaHistoricalContext: 'Contexto histórico',
     ariaVoicingsList: 'Lista de voicings',
@@ -899,6 +911,9 @@ const dictionaries: Record<Locale, Dictionary> = {
     scrollRight: 'Rolar para a direita',
     riddimAboutTitle: 'Sobre este riddim',
     riddimAboutAccent: ' sua história',
+    ariaMainNav: 'Navegação principal',
+    listenOnDeezer: 'Ouvir no Deezer',
+    ariaSearchDeezer: 'Pesquisar {x} no Deezer',
     ariaProducerHistory: 'História do produtor',
     ariaHistoricalContext: 'Contexto histórico',
     ariaVoicingsList: 'Lista de voicings',
@@ -1079,6 +1094,9 @@ const dictionaries: Record<Locale, Dictionary> = {
     scrollRight: '右へスクロール',
     riddimAboutTitle: 'このリディムについて',
     riddimAboutAccent: 'その歴史',
+    ariaMainNav: 'メインナビゲーション',
+    listenOnDeezer: 'Deezerで聴く',
+    ariaSearchDeezer: '{x}をDeezerで検索',
     ariaProducerHistory: 'プロデューサーの歴史',
     ariaHistoricalContext: '歴史的背景',
     ariaVoicingsList: 'ボイシング一覧',

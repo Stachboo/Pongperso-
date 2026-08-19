@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { getDictionary, isValidLocale, type Locale } from '@/lib/i18n';
 import { getRiddimsByPopularity, getAllRiddims } from '@/lib/data';
-import { generateHreflang, BASE_URL } from '@/utils/seo';
+import { BASE_URL } from '@/utils/seo';
 import RiddimExplorer from '@/components/RiddimExplorer';
 import styles from './page.module.css';
 
@@ -85,8 +85,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
-  const canonicalUrl = `${BASE_URL}/${locale}/riddims`;
-  const hreflang = generateHreflang('/riddims', locale);
+  // /riddims duplique /explorer (même catalogue) ; /explorer est la page liée
+  // partout (nav, footer) → on la déclare canonique pour éviter le contenu dupliqué.
+  const canonicalUrl = `${BASE_URL}/${locale}/explorer`;
   const c = CONTENT[locale];
 
   const totalRiddims = (await getAllRiddims()).length;
@@ -109,7 +110,6 @@ export async function generateMetadata({
     },
     alternates: {
       canonical: canonicalUrl,
-      languages: hreflang,
     },
   };
 }
