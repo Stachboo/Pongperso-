@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { getDictionary, isValidLocale, type Locale } from '@/lib/i18n';
-import { allRiddims, getCatalogStats, formatViews } from '@/lib/data';
+import { getCatalogStats, formatViews } from '@/lib/data';
 import { generateHreflang, BASE_URL } from '@/utils/seo';
 import Link from 'next/link';
 import Logo from '@/components/Logo';
@@ -52,7 +52,7 @@ export default async function HomePage({
   const { lang } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const dict = getDictionary(locale);
-  const stats = getCatalogStats();
+  const stats = await getCatalogStats();
 
   return (
     <>

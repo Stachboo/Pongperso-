@@ -31,18 +31,25 @@ Le nom du repo (« Pongperso- ») est un vestige historique — aucun rapport av
 
 ⚠️ **Ne JAMAIS remettre un `vercel.json` avec `framework: null`** — ça casse le build Next.js.
 
-## Architecture données (spécificité importante)
+## Architecture données (ISR à la demande — refonte 19/08/2026)
 
-Deux sources de données qui peuvent DIVERGER :
-- **Pages publiques** (statiques, SSG) : construites au build depuis `data/riddims.json` (repo)
-- **Admin + API** (`/api/riddims`) : lit/écrit `riddims.json` dans **Vercel Blob**
-  (seed depuis le fichier repo au premier appel si Blob vide)
+Source de vérité runtime = **Vercel Blob** (`riddims.json`). `data/riddims.json`
+du repo n'est plus que le **seed** (repli au build / si Blob indisponible).
 
-Quand l'admin modifie des données : écriture dans le Blob + déclenchement d'un
-redeploy via `DEPLOY_HOOK_URL`… mais le build relit le fichier du REPO, pas le Blob.
-→ Après des éditions admin, `data/riddims.json` du repo doit être resynchronisé depuis
-le Blob (GET https://wmc-iota.vercel.app/api/riddims) sinon les pages publiques restent
-en retard. Vérifier cette dérive à chaque session qui touche aux données.
+- `lib/data.ts` : `getAllRiddims()` = `unstable_cache(readBlob, ['all-riddims'],
+  { tags: ['riddims'] })`. Lit le Blob avec cache-busting `?v=uploadedAt`.
+- Toutes les pages publiques + composants détail (RiddimDetail/ArtistDetail/
+  ProducerDetail) sont des **async server components** qui `await getAllRiddims()`.
+  Elles restent **SSG** (servies depuis le cache = rapides).
+- `/api/riddims` POST : après écriture Blob → `revalidateTag('riddims')` →
+  régénération **live des pages, sans redéploiement**. `cacheControlMaxAge: 0`
+  sur `put` pour éviter le CDN périmé. Plus de `DEPLOY_HOOK_URL`.
+- Helpers async : `getAllRiddims`, `getRiddimById`, `getRiddimsByPopularity`,
+  `getCatalogStats`. Helpers purs sync : `getTotalViews`, `formatViews`,
+  `getYoutubeSearchUrl`.
+
+⚠️ Ne PAS revenir à `import riddimsData from 'data/riddims.json'` dans les pages :
+ça re-fige les données au build (le bug qu'on a corrigé). Le seed ne sert qu'au repli.
 
 ## Admin (« page gestion »)
 
@@ -93,27 +100,25 @@ Test local vérifié OK (19/08/2026) : build complet, toutes pages, login admin
 - Dashboard admin resync Blob au montage (useEffect)
 - Sitemap complété (~2300 URLs : artistes/producteurs/pages) + hreflang pages riddim
 
-⏳ DÉCISIONS EN ATTENTE (non corrigés, nécessitent choix propriétaire) :
-- **[HIGH sécurité]** Secrets/creds par défaut codés en dur (auth/route.ts:3-5,
-  middleware.ts:4). Fix = throw si env absent, MAIS risque de casser prod si les
-  env vars Vercel ne sont pas toutes là. + le mot de passe est dans l'historique
-  git → à faire tourner. → à trancher avec le propriétaire.
-- **[HIGH archi données]** Éditions admin (Blob) jamais répercutées sur pages
-  publiques : `next build` relit data/riddims.json du repo, pas le Blob. Fix =
-  script prebuild sync Blob→JSON, OU passer les pages en ISR lisant le Blob. Gros
-  choix d'architecture.
-- **[HIGH archi données]** Race read-modify-write + cache Blob 1 an : éditions
-  concurrentes/rapprochées peuvent se perdre silencieusement. Fix = cacheControl
-  court + cache-busting + version optimiste (409).
-- **[HIGH i18n]** Composants publics (ArtistDetail, ProducerDetail, ArtistSearchBar,
-  FormulaireSoumission) et pages éditoriales (about, methodologie, etc.) 100% en
-  français en dur sur les 5 langues, avec hreflang mensonger. Gros chantier de
-  traduction (contenu à ajouter au dictionnaire) OU retirer les alternates.
-- **[MEDIUM i18n]** `<html lang="fr">` codé en dur (app/layout.tsx:66) pour les 5
-  langues. Fix = remonter <html> dans app/[lang]/layout.tsx.
-- **[LOW]** x-default(en) vs DEFAULT_LOCALE(fr) incohérents ; middleware skip sur
-  chemin avec point ; invariant de tri CRUD ; /explorer vs /riddims duplication ;
-  5 keyArtists → 404. (détails dans le rapport de revue)
+✅ RÉGLÉ par la refonte ISR (commit suivant) :
+- Éditions admin live sur pages publiques (revalidateTag, plus de redeploy)
+- Race/cache Blob 1 an atténué (cache-busting uploadedAt + cacheControlMaxAge 0).
+  Reste possible : version optimiste (409) sur écritures concurrentes — faible
+  priorité (admin unique).
+
+⏳ DÉCISIONS EN ATTENTE :
+- **[HIGH sécurité]** Secrets/creds par défaut codés en dur. → Propriétaire a dit
+  "ne pas toucher pour l'instant" (19/08). À reprendre : retirer les fallbacks +
+  faire tourner le mot de passe (présent dans l'historique git).
+- **[HIGH i18n — À FAIRE, choix "traduire pour de vrai"]** Composants publics
+  (ArtistDetail, ProducerDetail, ArtistSearchBar, FormulaireSoumission) + pages
+  éditoriales (about, methodologie, contact, presse, pages légales) 100% français
+  en dur sur les 5 langues, avec hreflang mensonger, + `<html lang="fr">` codé en
+  dur (app/layout.tsx:66). Chantier : extraire tous les textes vers lib/i18n.ts et
+  traduire dans les 5 langues, remonter <html lang> dans app/[lang]/layout.tsx.
+  → prochain gros bloc de travail demandé par le propriétaire.
+- **[LOW]** x-default(en) vs DEFAULT_LOCALE(fr) ; middleware skip chemin avec point ;
+  invariant de tri CRUD ; /explorer vs /riddims duplication ; 5 keyArtists → 404.
 
 Rapport complet archivé (tokens) : la revue a produit 21 findings avec verdict
 adversarial ; si besoin de les revoir, relancer la revue ou demander au propriétaire.

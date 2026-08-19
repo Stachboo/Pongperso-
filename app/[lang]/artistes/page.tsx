@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { isValidLocale, type Locale } from '@/lib/i18n';
-import { allRiddims } from '@/lib/data';
+import { getAllRiddims } from '@/lib/data';
 import { generateHreflang } from '@/utils/seo';
 import { buildArtistList } from '@/utils/artists';
 import ArtistSearchBar from '@/components/ArtistSearchBar';
@@ -12,8 +12,6 @@ import styles from './page.module.css';
    Répertoire complet des artistes avec recherche côté client
    ══════════════════════════════════════════════════════════════════════════════ */
 
-const allArtists = buildArtistList(allRiddims);
-
 export async function generateMetadata({
   params,
 }: {
@@ -22,6 +20,7 @@ export async function generateMetadata({
   const { lang } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const hreflang = generateHreflang('/artistes', locale);
+  const allArtists = buildArtistList(await getAllRiddims());
 
   const title = 'Artistes — Tous les voicings de riddims jamaïcains | WMC';
   const description =
@@ -46,6 +45,7 @@ export default async function ArtistesPage({
 }) {
   const { lang } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
+  const allArtists = buildArtistList(await getAllRiddims());
 
   return (
     <div className={styles.container}>

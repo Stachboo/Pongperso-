@@ -5,7 +5,7 @@
    ══════════════════════════════════════════════════════════════════════════════ */
 
 import type { MetadataRoute } from 'next';
-import { allRiddims } from '@/lib/data';
+import { getAllRiddims } from '@/lib/data';
 import { BASE_URL } from '@/utils/seo';
 import { buildArtistList } from '@/utils/artists';
 import { producers } from '@/data/producers';
@@ -40,9 +40,10 @@ function buildAlternates(path: string): Record<string, string> {
   return languages;
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const entries: MetadataRoute.Sitemap = [];
   const now = new Date();
+  const allRiddims = await getAllRiddims();
 
   /* ═══ Pages statiques ═══ */
   for (const lang of LANGS) {

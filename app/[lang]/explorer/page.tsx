@@ -31,7 +31,7 @@ export default async function ExplorerPage({
   const { lang } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const dict = getDictionary(locale);
-  const riddims = getRiddimsByPopularity();
+  const riddims = await getRiddimsByPopularity();
 
   return <ExplorerClient riddims={riddims} lang={locale} dict={dict} />;
 }

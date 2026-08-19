@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import type { Artist } from '@/utils/artists';
 import { generateArtistContextText, getRelatedArtists, buildArtistList } from '@/utils/artists';
-import { allRiddims, formatViews } from '@/lib/data';
+import { getAllRiddims, formatViews } from '@/lib/data';
 import ArtistCard from '@/components/ArtistCard';
 import styles from './ArtistDetail.module.css';
 
@@ -93,9 +93,9 @@ function YoutubeIcon() {
    COMPOSANT PRINCIPAL
    ═══════════════════════════════════════════════════════════════════════════ */
 
-export default function ArtistDetail({ artist, lang }: ArtistDetailProps) {
+export default async function ArtistDetail({ artist, lang }: ArtistDetailProps) {
   const contextText = generateArtistContextText(artist);
-  const allArtists = buildArtistList(allRiddims);
+  const allArtists = buildArtistList(await getAllRiddims());
   const relatedArtists = getRelatedArtists(artist, allArtists);
 
   return (

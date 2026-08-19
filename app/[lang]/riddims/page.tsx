@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { getDictionary, isValidLocale, type Locale } from '@/lib/i18n';
-import { getRiddimsByPopularity, allRiddims } from '@/lib/data';
+import { getRiddimsByPopularity, getAllRiddims } from '@/lib/data';
 import { generateHreflang, BASE_URL } from '@/utils/seo';
 import RiddimExplorer from '@/components/RiddimExplorer';
 import styles from './page.module.css';
@@ -21,7 +21,7 @@ export async function generateMetadata({
   const canonicalUrl = `${BASE_URL}/${locale}/riddims`;
   const hreflang = generateHreflang('/riddims', locale);
 
-  const totalRiddims = allRiddims.length;
+  const totalRiddims = (await getAllRiddims()).length;
   const title = 'Explorer les Riddims Jamaïcains — Base de données | WMC';
   const description =
     `Parcourez les ${totalRiddims} riddims jamaïcains documentés sur WMC. ` +
@@ -57,8 +57,8 @@ export default async function RiddimsPage({
   const { lang } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const dict = getDictionary(locale);
-  const riddims = getRiddimsByPopularity();
-  const totalRiddims = allRiddims.length;
+  const riddims = await getRiddimsByPopularity();
+  const totalRiddims = riddims.length;
 
   return (
     <>

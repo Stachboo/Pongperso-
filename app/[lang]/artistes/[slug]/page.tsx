@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { isValidLocale, LOCALES, type Locale } from '@/lib/i18n';
-import { allRiddims } from '@/lib/data';
+import { getAllRiddims } from '@/lib/data';
 import { generateHreflang, BASE_URL, jsonLdString } from '@/utils/seo';
 import { buildArtistList, getArtistBySlug, generateArtistJsonLd } from '@/utils/artists';
 import ArtistDetail from '@/components/ArtistDetail';
@@ -12,13 +12,12 @@ import ArtistDetail from '@/components/ArtistDetail';
    Page de détail d'un artiste avec métadonnées SEO et JSON-LD
    ══════════════════════════════════════════════════════════════════════════════ */
 
-const allArtists = buildArtistList(allRiddims);
-
 /* ═══════════════════════════════════════════════════════════════════════════
    generateStaticParams — Routes statiques pour tous les artistes × langues
    ═══════════════════════════════════════════════════════════════════════════ */
 
 export async function generateStaticParams() {
+  const allArtists = buildArtistList(await getAllRiddims());
   const params: { lang: string; slug: string }[] = [];
   for (const lang of LOCALES) {
     for (const artist of allArtists) {
@@ -39,7 +38,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang, slug } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
-  const artist = getArtistBySlug(slug, allRiddims);
+  const artist = getArtistBySlug(slug, await getAllRiddims());
 
   if (!artist) {
     return { title: 'Artiste introuvable' };
@@ -86,7 +85,7 @@ export default async function ArtistePage({
 }) {
   const { lang, slug } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
-  const artist = getArtistBySlug(slug, allRiddims);
+  const artist = getArtistBySlug(slug, await getAllRiddims());
 
   if (!artist) {
     notFound();

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { LOCALES, isValidLocale, type Locale, getDictionary } from '@/lib/i18n';
-import { allRiddims } from '@/lib/data';
+import { getAllRiddims } from '@/lib/data';
 import AuditDashboard from '@/components/AuditDashboard';
 
 export async function generateStaticParams() {
@@ -27,5 +27,6 @@ export default async function AuditPage({
   const { lang } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
 
-  return <AuditDashboard riddims={allRiddims} lang={locale} />;
+  const riddims = await getAllRiddims();
+  return <AuditDashboard riddims={riddims} lang={locale} />;
 }

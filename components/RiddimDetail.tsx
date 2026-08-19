@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import type { Riddim } from '@/types/riddim';
 import type { Dictionary } from '@/lib/i18n';
-import { getTotalViews, formatViews, getYoutubeSearchUrl, allRiddims } from '@/lib/data';
+import { getTotalViews, formatViews, getYoutubeSearchUrl, getAllRiddims } from '@/lib/data';
 import { generateContextText } from '@/utils/generateContextText';
 import RiddimCard from '@/components/RiddimCard';
 import styles from './RiddimDetail.module.css';
@@ -39,7 +39,7 @@ function getSpotifySearchUrl(artist: string, title: string): string {
   return `https://open.spotify.com/search/${q}`;
 }
 
-function getSimilarRiddims(riddim: Riddim, limit: number): Riddim[] {
+function getSimilarRiddims(riddim: Riddim, limit: number, allRiddims: Riddim[]): Riddim[] {
   return allRiddims
     .filter((r) => r.id !== riddim.id && r.genre.toLowerCase() === riddim.genre.toLowerCase())
     .slice(0, limit);
@@ -118,14 +118,14 @@ function ChevronRightIcon() {
    COMPOSANT PRINCIPAL
    ═══════════════════════════════════════════════════════════════════════════ */
 
-export default function RiddimDetail({ riddim, lang, dict }: RiddimDetailProps) {
+export default async function RiddimDetail({ riddim, lang, dict }: RiddimDetailProps) {
   const totalViews = getTotalViews(riddim);
   const sortedVoicings = [...riddim.voicings].sort((a, b) => b.views - a.views);
   const maxViews = sortedVoicings[0]?.views || 1;
   const topArtist = sortedVoicings[0]?.artist ?? '—';
   const decade = getDecade(riddim.year);
   const contextText = generateContextText(riddim);
-  const similarRiddims = getSimilarRiddims(riddim, 4);
+  const similarRiddims = getSimilarRiddims(riddim, 4, await getAllRiddims());
 
   return (
     <article className={styles.article}>

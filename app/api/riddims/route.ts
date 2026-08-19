@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { revalidateTag } from 'next/cache';
 import { put, list } from '@vercel/blob';
+import { RIDDIMS_TAG } from '@/lib/data';
 
 const BLOB_NAME = 'riddims.json';
-const DEPLOY_HOOK_URL = process.env.DEPLOY_HOOK_URL;
 
 /** Coerce une valeur de vues en entier fini >= 0 (null si invalide). */
 function normalizeViews(value: unknown): number | null {
@@ -30,11 +31,14 @@ async function readRiddims() {
       access: 'public',
       addRandomSuffix: false,
       contentType: 'application/json',
+      cacheControlMaxAge: 0,
     });
     return data;
   }
 
-  const response = await fetch(blobs[0].url, { cache: 'no-store' });
+  // Cache-busting par uploadedAt : jamais de version CDN périmée
+  const url = `${blobs[0].url}?v=${blobs[0].uploadedAt.getTime()}`;
+  const response = await fetch(url, { cache: 'no-store' });
   return response.json();
 }
 
@@ -43,12 +47,12 @@ async function writeRiddims(data: unknown[]) {
     access: 'public',
     addRandomSuffix: false,
     contentType: 'application/json',
+    cacheControlMaxAge: 0,
   });
 
-  // Déclencher un redeploy pour mettre à jour les pages statiques
-  if (DEPLOY_HOOK_URL) {
-    fetch(DEPLOY_HOOK_URL, { method: 'POST' }).catch(() => {});
-  }
+  // Régénérer en live les pages publiques qui lisent les riddims (ISR à la
+  // demande) — pas de redéploiement, mise à jour quasi-instantanée.
+  revalidateTag(RIDDIMS_TAG);
 }
 
 export async function GET() {

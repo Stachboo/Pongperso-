@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import type { Producer } from '@/data/producers';
-import { allRiddims } from '@/lib/data';
+import { getAllRiddims } from '@/lib/data';
 import { toArtistSlug, toRiddimSlug } from '@/utils/seo';
 import RiddimCard from '@/components/RiddimCard';
 import styles from './ProducerDetail.module.css';
@@ -26,8 +26,9 @@ function styleBadgeClass(style: string): string {
   return styles.badgeMuted;
 }
 
-export default function ProducerDetail({ producer, lang }: ProducerDetailProps) {
+export default async function ProducerDetail({ producer, lang }: ProducerDetailProps) {
   /* Trouver les riddims correspondants dans la base de données */
+  const allRiddims = await getAllRiddims();
   const matchedRiddims = allRiddims.filter((r) => {
     const slug = toRiddimSlug(r.name);
     // Les riddimIds de data/producers.ts portent parfois un suffixe "-riddim"

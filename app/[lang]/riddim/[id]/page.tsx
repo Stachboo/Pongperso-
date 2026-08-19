@@ -2,7 +2,8 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getDictionary, isValidLocale, LOCALES, type Locale } from '@/lib/i18n';
-import { getRiddimById, allRiddims } from '@/lib/data';
+import type { Riddim } from '@/types/riddim';
+import { getRiddimById, getAllRiddims } from '@/lib/data';
 import { generateHreflang, jsonLdString } from '@/utils/seo';
 import RiddimDetail from '@/components/RiddimDetail';
 
@@ -20,7 +21,7 @@ const BASE_URL = 'https://wmc-iota.vercel.app';
 export async function generateStaticParams() {
   const params: { lang: string; id: string }[] = [];
   for (const lang of LOCALES) {
-    for (const riddim of allRiddims) {
+    for (const riddim of await getAllRiddims()) {
       params.push({ lang, id: String(riddim.id) });
     }
   }
@@ -39,7 +40,7 @@ export async function generateMetadata({
   const { lang, id } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const dict = getDictionary(locale);
-  const riddim = getRiddimById(Number(id));
+  const riddim = await getRiddimById(Number(id));
 
   if (!riddim) {
     return { title: dict.riddimNotFound };
@@ -78,7 +79,7 @@ export async function generateMetadata({
    JSON-LD Schema.org — MusicComposition + ItemList + BreadcrumbList
    ═══════════════════════════════════════════════════════════════════════════ */
 
-function generateJsonLd(riddim: typeof allRiddims[number], locale: Locale) {
+function generateJsonLd(riddim: Riddim, locale: Locale) {
   const canonicalUrl = `${BASE_URL}/${locale}/riddim/${riddim.id}`;
   const sortedVoicings = [...riddim.voicings].sort((a, b) => b.views - a.views);
 
@@ -160,7 +161,7 @@ export default async function RiddimPage({
   const { lang, id } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const dict = getDictionary(locale);
-  const riddim = getRiddimById(Number(id));
+  const riddim = await getRiddimById(Number(id));
 
   if (!riddim) {
     notFound();
