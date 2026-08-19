@@ -210,7 +210,8 @@
 }
 
 .spotifyBtn,
-.youtubeBtn {
+.youtubeBtn,
+.deezerBtn {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
@@ -223,8 +224,15 @@
 }
 
 .spotifyBtn:hover,
-.youtubeBtn:hover {
+.youtubeBtn:hover,
+.deezerBtn:hover {
   opacity: 0.8;
+}
+
+.deezerBtn {
+  background: rgba(162, 56, 255, 0.1);
+  border: 1px solid rgba(162, 56, 255, 0.3);
+  color: #A238FF;
 }
 
 .spotifyBtn {
@@ -411,7 +419,8 @@
 }
 
 .actionSpotify,
-.actionYoutube {
+.actionYoutube,
+.actionDeezer {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -422,7 +431,8 @@
 }
 
 .actionSpotify:hover,
-.actionYoutube:hover {
+.actionYoutube:hover,
+.actionDeezer:hover {
   opacity: 1;
 }
 
@@ -432,6 +442,10 @@
 
 .actionYoutube {
   color: var(--color-brand-red);
+}
+
+.actionDeezer {
+  color: #A238FF;
 }
 
 
