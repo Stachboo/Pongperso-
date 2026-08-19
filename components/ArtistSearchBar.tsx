@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import type { Artist } from '@/utils/artists';
+import type { Dictionary } from '@/lib/i18n';
 import ArtistCard from '@/components/ArtistCard';
 import styles from './ArtistSearchBar.module.css';
 
@@ -13,9 +14,10 @@ import styles from './ArtistSearchBar.module.css';
 interface ArtistSearchBarProps {
   artists: Artist[];
   lang: string;
+  dict: Dictionary;
 }
 
-export default function ArtistSearchBar({ artists, lang }: ArtistSearchBarProps) {
+export default function ArtistSearchBar({ artists, lang, dict }: ArtistSearchBarProps) {
   const [query, setQuery] = useState('');
 
   const filtered = useMemo(() => {
@@ -31,14 +33,14 @@ export default function ArtistSearchBar({ artists, lang }: ArtistSearchBarProps)
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Rechercher un artiste..."
+          placeholder={dict.searchArtistPlaceholder}
           className={styles.searchInput}
-          aria-label="Rechercher un artiste"
+          aria-label={dict.searchArtistPlaceholder}
         />
       </div>
 
       {filtered.length === 0 ? (
-        <p className={styles.noResults}>Aucun artiste trouvé pour « {query} »</p>
+        <p className={styles.noResults}>{dict.noArtistFoundFor.replace('{x}', query)}</p>
       ) : (
         <div className={styles.grid}>
           {filtered.map((a) => (

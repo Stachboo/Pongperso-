@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { LOCALES, isValidLocale, type Locale } from '@/lib/i18n';
+import { LOCALES, isValidLocale, getDictionary, type Locale } from '@/lib/i18n';
 import { generateHreflang } from '@/utils/seo';
 import FormulaireSoumission from '@/components/FormulaireSoumission';
 import styles from '@/styles/static-page.module.css';
@@ -40,7 +40,8 @@ export default async function AjouterRiddimPage({
   params: { lang: string };
 }) {
   const { lang } = params;
-  isValidLocale(lang);
+  const locale: Locale = isValidLocale(lang) ? lang : 'fr';
+  const dict = getDictionary(locale);
 
   return (
     <main className={styles.container}>
@@ -68,7 +69,7 @@ export default async function AjouterRiddimPage({
 
         <section className={styles.section} aria-label="Formulaire de soumission">
           <h2 className={styles.sectionTitle}>Soumettre un riddim</h2>
-          <FormulaireSoumission />
+          <FormulaireSoumission dict={dict} />
         </section>
       </div>
     </main>

@@ -142,6 +142,61 @@ export interface Dictionary {
   footerBrandDesc: string;
   footerLanguages: string;
   footerDisclaimer: string;
+  /* Composant — Détail artiste */
+  artistCareer: string;
+  artistBestRank: string;
+  artistDecades: string;
+  artistRiddimsTitle: string;
+  tableRank: string;
+  tableRiddim: string;
+  tableTitle: string;
+  tableYear: string;
+  tableStyle: string;
+  listenOnSpotify: string;
+  searchOnYoutube: string;
+  relatedArtistsTitle: string;
+  relatedArtistsSubtitle: string;
+  ariaArtistAvatar: string;
+  ariaListenSpotify: string;
+  ariaSearchYoutube: string;
+  ariaListenYoutube: string;
+  /* Composant — Détail producteur */
+  producerKeyFacts: string;
+  producerNotableRiddims: string;
+  producerFeaturedArtists: string;
+  producerDocumentedRiddims: string;
+  producerHistory: string;
+  producerHistoryAccent: string;
+  /* Composant — Recherche artistes */
+  searchArtistPlaceholder: string;
+  noArtistFoundFor: string;
+  /* Composant — Détail riddim (restes) */
+  sameStyleRiddims: string;
+  scrollLeft: string;
+  scrollRight: string;
+  riddimAboutTitle: string;
+  riddimAboutAccent: string;
+  /* Aria de sections */
+  ariaProducerHistory: string;
+  ariaHistoricalContext: string;
+  ariaVoicingsList: string;
+  /* Formulaire de soumission */
+  formThankYou: string;
+  formThankYouDesc: string;
+  formRiddimName: string;
+  formRiddimNamePlaceholder: string;
+  formYearLabel: string;
+  formYearPlaceholder: string;
+  formProducerLabel: string;
+  formProducerPlaceholder: string;
+  formGenreSelect: string;
+  formGenreOther: string;
+  formVoicingsLabel: string;
+  formVoicingsPlaceholder: string;
+  formSourcesLabel: string;
+  formSourcesPlaceholder: string;
+  formSubmit: string;
+  formNote: string;
 }
 
 const dictionaries: Record<Locale, Dictionary> = {
@@ -274,6 +329,55 @@ const dictionaries: Record<Locale, Dictionary> = {
     footerBrandDesc: 'WMC est la base de données de référence des riddims jamaïcains. Nous documentons chaque riddim, chaque voicing, classés par popularité de streaming mondiale.',
     footerLanguages: 'Langues',
     footerDisclaimer: "WMC n'est affilié à aucun label.",
+    artistCareer: 'Carrière',
+    artistBestRank: 'Meilleur rang',
+    artistDecades: 'Décennies',
+    artistRiddimsTitle: 'Riddims',
+    tableRank: 'Rang',
+    tableRiddim: 'Riddim',
+    tableTitle: 'Titre',
+    tableYear: 'Année',
+    tableStyle: 'Style',
+    listenOnSpotify: 'Écouter sur Spotify',
+    searchOnYoutube: 'Rechercher sur YouTube',
+    relatedArtistsTitle: 'Artistes fréquemment associés',
+    relatedArtistsSubtitle: 'Ces artistes apparaissent sur les mêmes riddims',
+    ariaArtistAvatar: '{x}, artiste',
+    ariaListenSpotify: 'Écouter {x} sur Spotify',
+    ariaSearchYoutube: 'Rechercher {x} sur YouTube',
+    ariaListenYoutube: 'Écouter {x} sur YouTube',
+    producerKeyFacts: 'Faits marquants',
+    producerNotableRiddims: 'Riddims notables',
+    producerFeaturedArtists: 'Artistes phares',
+    producerDocumentedRiddims: 'Riddims documentés',
+    producerHistory: 'Histoire',
+    producerHistoryAccent: '& contexte',
+    searchArtistPlaceholder: 'Rechercher un artiste...',
+    noArtistFoundFor: 'Aucun artiste trouvé pour « {x} »',
+    sameStyleRiddims: 'Riddims du même style',
+    scrollLeft: 'Défiler à gauche',
+    scrollRight: 'Défiler à droite',
+    riddimAboutTitle: 'À propos de ce riddim',
+    riddimAboutAccent: ' son histoire',
+    ariaProducerHistory: 'Histoire du producteur',
+    ariaHistoricalContext: 'Contexte historique',
+    ariaVoicingsList: 'Liste des voicings',
+    formThankYou: 'Merci pour votre suggestion !',
+    formThankYouDesc: "Votre client email devrait s'ouvrir avec les informations pré-remplies. L'équipe WMC examinera votre soumission.",
+    formRiddimName: 'Nom du riddim',
+    formRiddimNamePlaceholder: 'Ex : Bam Bam Riddim',
+    formYearLabel: 'Année de sortie',
+    formYearPlaceholder: 'Ex : 1982',
+    formProducerLabel: 'Producteur / Label',
+    formProducerPlaceholder: 'Ex : Sly & Robbie / Taxi Records',
+    formGenreSelect: '— Sélectionner —',
+    formGenreOther: 'Autre',
+    formVoicingsLabel: 'Voicings connus (artiste + titre, un par ligne)',
+    formVoicingsPlaceholder: 'Sean Paul \u2014 Get Busy\nBounty Killer \u2014 Sufferer\nWayne Wonder \u2014 No Letting Go',
+    formSourcesLabel: 'Sources / liens',
+    formSourcesPlaceholder: 'Liens YouTube, Spotify, Wikipedia, Discogs...',
+    formSubmit: 'Envoyer la suggestion',
+    formNote: "Les soumissions sont examinées par l'équipe WMC avant intégration. Nous ne garantissons pas l'ajout de chaque suggestion.",
   },
 
   en: {
@@ -405,6 +509,55 @@ const dictionaries: Record<Locale, Dictionary> = {
     footerBrandDesc: 'WMC is the reference database for Jamaican riddims. We document every riddim, every voicing, ranked by global streaming popularity.',
     footerLanguages: 'Languages',
     footerDisclaimer: 'WMC is not affiliated with any label.',
+    artistCareer: 'Career',
+    artistBestRank: 'Best rank',
+    artistDecades: 'Decades',
+    artistRiddimsTitle: 'Riddims',
+    tableRank: 'Rank',
+    tableRiddim: 'Riddim',
+    tableTitle: 'Title',
+    tableYear: 'Year',
+    tableStyle: 'Style',
+    listenOnSpotify: 'Listen on Spotify',
+    searchOnYoutube: 'Search on YouTube',
+    relatedArtistsTitle: 'Frequently associated artists',
+    relatedArtistsSubtitle: 'These artists appear on the same riddims',
+    ariaArtistAvatar: '{x}, artist',
+    ariaListenSpotify: 'Listen to {x} on Spotify',
+    ariaSearchYoutube: 'Search for {x} on YouTube',
+    ariaListenYoutube: 'Listen to {x} on YouTube',
+    producerKeyFacts: 'Key facts',
+    producerNotableRiddims: 'Notable riddims',
+    producerFeaturedArtists: 'Featured artists',
+    producerDocumentedRiddims: 'Documented riddims',
+    producerHistory: 'History',
+    producerHistoryAccent: '& context',
+    searchArtistPlaceholder: 'Search for an artist...',
+    noArtistFoundFor: 'No artist found for « {x} »',
+    sameStyleRiddims: 'Riddims in the same style',
+    scrollLeft: 'Scroll left',
+    scrollRight: 'Scroll right',
+    riddimAboutTitle: 'About this riddim',
+    riddimAboutAccent: ' its story',
+    ariaProducerHistory: 'Producer history',
+    ariaHistoricalContext: 'Historical context',
+    ariaVoicingsList: 'Voicings list',
+    formThankYou: 'Thank you for your suggestion!',
+    formThankYouDesc: 'Your email client should open with the information pre-filled. The WMC team will review your submission.',
+    formRiddimName: 'Riddim name',
+    formRiddimNamePlaceholder: 'e.g. Bam Bam Riddim',
+    formYearLabel: 'Release year',
+    formYearPlaceholder: 'e.g. 1982',
+    formProducerLabel: 'Producer / Label',
+    formProducerPlaceholder: 'e.g. Sly & Robbie / Taxi Records',
+    formGenreSelect: '— Select —',
+    formGenreOther: 'Other',
+    formVoicingsLabel: 'Known voicings (artist + title, one per line)',
+    formVoicingsPlaceholder: 'Sean Paul \u2014 Get Busy\nBounty Killer \u2014 Sufferer\nWayne Wonder \u2014 No Letting Go',
+    formSourcesLabel: 'Sources / links',
+    formSourcesPlaceholder: 'YouTube, Spotify, Wikipedia, Discogs links...',
+    formSubmit: 'Send suggestion',
+    formNote: 'Submissions are reviewed by the WMC team before being added. We do not guarantee that every suggestion will be included.',
   },
 
   es: {
@@ -536,6 +689,55 @@ const dictionaries: Record<Locale, Dictionary> = {
     footerBrandDesc: 'WMC es la base de datos de referencia de los riddims jamaicanos. Documentamos cada riddim, cada voicing, clasificados por popularidad de streaming mundial.',
     footerLanguages: 'Idiomas',
     footerDisclaimer: 'WMC no está afiliado a ningún sello discográfico.',
+    artistCareer: 'Trayectoria',
+    artistBestRank: 'Mejor posición',
+    artistDecades: 'Décadas',
+    artistRiddimsTitle: 'Riddims',
+    tableRank: 'Posición',
+    tableRiddim: 'Riddim',
+    tableTitle: 'Título',
+    tableYear: 'Año',
+    tableStyle: 'Estilo',
+    listenOnSpotify: 'Escuchar en Spotify',
+    searchOnYoutube: 'Buscar en YouTube',
+    relatedArtistsTitle: 'Artistas asociados con frecuencia',
+    relatedArtistsSubtitle: 'Estos artistas aparecen en los mismos riddims',
+    ariaArtistAvatar: '{x}, artista',
+    ariaListenSpotify: 'Escuchar a {x} en Spotify',
+    ariaSearchYoutube: 'Buscar a {x} en YouTube',
+    ariaListenYoutube: 'Escuchar a {x} en YouTube',
+    producerKeyFacts: 'Datos destacados',
+    producerNotableRiddims: 'Riddims destacados',
+    producerFeaturedArtists: 'Artistas destacados',
+    producerDocumentedRiddims: 'Riddims documentados',
+    producerHistory: 'Historia',
+    producerHistoryAccent: 'y contexto',
+    searchArtistPlaceholder: 'Buscar un artista...',
+    noArtistFoundFor: 'No se encontró ningún artista para « {x} »',
+    sameStyleRiddims: 'Riddims del mismo estilo',
+    scrollLeft: 'Desplazar a la izquierda',
+    scrollRight: 'Desplazar a la derecha',
+    riddimAboutTitle: 'Acerca de este riddim',
+    riddimAboutAccent: ' su historia',
+    ariaProducerHistory: 'Historia del productor',
+    ariaHistoricalContext: 'Contexto histórico',
+    ariaVoicingsList: 'Lista de voicings',
+    formThankYou: '¡Gracias por tu sugerencia!',
+    formThankYouDesc: 'Tu cliente de correo debería abrirse con la información precompletada. El equipo de WMC revisará tu propuesta.',
+    formRiddimName: 'Nombre del riddim',
+    formRiddimNamePlaceholder: 'Ej.: Bam Bam Riddim',
+    formYearLabel: 'Año de lanzamiento',
+    formYearPlaceholder: 'Ej.: 1982',
+    formProducerLabel: 'Productor / Sello',
+    formProducerPlaceholder: 'Ej.: Sly & Robbie / Taxi Records',
+    formGenreSelect: '— Seleccionar —',
+    formGenreOther: 'Otro',
+    formVoicingsLabel: 'Voicings conocidos (artista + título, uno por línea)',
+    formVoicingsPlaceholder: 'Sean Paul \u2014 Get Busy\nBounty Killer \u2014 Sufferer\nWayne Wonder \u2014 No Letting Go',
+    formSourcesLabel: 'Fuentes / enlaces',
+    formSourcesPlaceholder: 'Enlaces de YouTube, Spotify, Wikipedia, Discogs...',
+    formSubmit: 'Enviar sugerencia',
+    formNote: 'Las propuestas son revisadas por el equipo de WMC antes de su integración. No garantizamos la inclusión de cada sugerencia.',
   },
 
   pt: {
@@ -667,6 +869,55 @@ const dictionaries: Record<Locale, Dictionary> = {
     footerBrandDesc: 'WMC é o banco de dados de referência dos riddims jamaicanos. Documentamos cada riddim, cada voicing, classificados por popularidade de streaming mundial.',
     footerLanguages: 'Idiomas',
     footerDisclaimer: 'WMC não é afiliado a nenhuma gravadora.',
+    artistCareer: 'Carreira',
+    artistBestRank: 'Melhor posição',
+    artistDecades: 'Décadas',
+    artistRiddimsTitle: 'Riddims',
+    tableRank: 'Posição',
+    tableRiddim: 'Riddim',
+    tableTitle: 'Título',
+    tableYear: 'Ano',
+    tableStyle: 'Estilo',
+    listenOnSpotify: 'Ouvir no Spotify',
+    searchOnYoutube: 'Pesquisar no YouTube',
+    relatedArtistsTitle: 'Artistas frequentemente associados',
+    relatedArtistsSubtitle: 'Estes artistas aparecem nos mesmos riddims',
+    ariaArtistAvatar: '{x}, artista',
+    ariaListenSpotify: 'Ouvir {x} no Spotify',
+    ariaSearchYoutube: 'Pesquisar {x} no YouTube',
+    ariaListenYoutube: 'Ouvir {x} no YouTube',
+    producerKeyFacts: 'Fatos marcantes',
+    producerNotableRiddims: 'Riddims notáveis',
+    producerFeaturedArtists: 'Artistas em destaque',
+    producerDocumentedRiddims: 'Riddims documentados',
+    producerHistory: 'História',
+    producerHistoryAccent: 'e contexto',
+    searchArtistPlaceholder: 'Pesquisar um artista...',
+    noArtistFoundFor: 'Nenhum artista encontrado para « {x} »',
+    sameStyleRiddims: 'Riddims do mesmo estilo',
+    scrollLeft: 'Rolar para a esquerda',
+    scrollRight: 'Rolar para a direita',
+    riddimAboutTitle: 'Sobre este riddim',
+    riddimAboutAccent: ' sua história',
+    ariaProducerHistory: 'História do produtor',
+    ariaHistoricalContext: 'Contexto histórico',
+    ariaVoicingsList: 'Lista de voicings',
+    formThankYou: 'Obrigado pela sua sugestão!',
+    formThankYouDesc: 'O seu cliente de e-mail deve abrir com as informações preenchidas. A equipe do WMC analisará o seu envio.',
+    formRiddimName: 'Nome do riddim',
+    formRiddimNamePlaceholder: 'Ex.: Bam Bam Riddim',
+    formYearLabel: 'Ano de lançamento',
+    formYearPlaceholder: 'Ex.: 1982',
+    formProducerLabel: 'Produtor / Gravadora',
+    formProducerPlaceholder: 'Ex.: Sly & Robbie / Taxi Records',
+    formGenreSelect: '— Selecionar —',
+    formGenreOther: 'Outro',
+    formVoicingsLabel: 'Voicings conhecidos (artista + título, um por linha)',
+    formVoicingsPlaceholder: 'Sean Paul \u2014 Get Busy\nBounty Killer \u2014 Sufferer\nWayne Wonder \u2014 No Letting Go',
+    formSourcesLabel: 'Fontes / links',
+    formSourcesPlaceholder: 'Links do YouTube, Spotify, Wikipedia, Discogs...',
+    formSubmit: 'Enviar sugestão',
+    formNote: 'Os envios são analisados pela equipe do WMC antes da integração. Não garantimos a inclusão de todas as sugestões.',
   },
 
   ja: {
@@ -798,6 +1049,55 @@ const dictionaries: Record<Locale, Dictionary> = {
     footerBrandDesc: 'WMCはジャマイカンリディムのリファレンスデータベースです。すべてのリディム、すべてのボイシングを、世界のストリーミング人気順に記録しています。',
     footerLanguages: '言語',
     footerDisclaimer: 'WMCはいかなるレーベルにも所属していません。',
+    artistCareer: 'キャリア',
+    artistBestRank: '最高順位',
+    artistDecades: '年代',
+    artistRiddimsTitle: 'リディム',
+    tableRank: '順位',
+    tableRiddim: 'リディム',
+    tableTitle: 'タイトル',
+    tableYear: '年',
+    tableStyle: 'スタイル',
+    listenOnSpotify: 'Spotifyで聴く',
+    searchOnYoutube: 'YouTubeで検索',
+    relatedArtistsTitle: 'よく関連するアーティスト',
+    relatedArtistsSubtitle: 'これらのアーティストは同じリディムに参加しています',
+    ariaArtistAvatar: '{x}、アーティスト',
+    ariaListenSpotify: '{x}をSpotifyで聴く',
+    ariaSearchYoutube: '{x}をYouTubeで検索',
+    ariaListenYoutube: '{x}をYouTubeで聴く',
+    producerKeyFacts: '主な実績',
+    producerNotableRiddims: '代表的なリディム',
+    producerFeaturedArtists: '主なアーティスト',
+    producerDocumentedRiddims: '収録リディム',
+    producerHistory: '歴史',
+    producerHistoryAccent: 'と背景',
+    searchArtistPlaceholder: 'アーティストを検索...',
+    noArtistFoundFor: '「{x}」に一致するアーティストが見つかりません',
+    sameStyleRiddims: '同じスタイルのリディム',
+    scrollLeft: '左へスクロール',
+    scrollRight: '右へスクロール',
+    riddimAboutTitle: 'このリディムについて',
+    riddimAboutAccent: 'その歴史',
+    ariaProducerHistory: 'プロデューサーの歴史',
+    ariaHistoricalContext: '歴史的背景',
+    ariaVoicingsList: 'ボイシング一覧',
+    formThankYou: 'ご提案ありがとうございます！',
+    formThankYouDesc: '情報が入力された状態でメールクライアントが開きます。WMCチームが送信内容を確認します。',
+    formRiddimName: 'リディム名',
+    formRiddimNamePlaceholder: '例：Bam Bam Riddim',
+    formYearLabel: 'リリース年',
+    formYearPlaceholder: '例：1982',
+    formProducerLabel: 'プロデューサー / レーベル',
+    formProducerPlaceholder: '例：Sly & Robbie / Taxi Records',
+    formGenreSelect: '— 選択 —',
+    formGenreOther: 'その他',
+    formVoicingsLabel: '既知のボイシング（アーティスト＋タイトル、1行に1つ）',
+    formVoicingsPlaceholder: 'Sean Paul \u2014 Get Busy\nBounty Killer \u2014 Sufferer\nWayne Wonder \u2014 No Letting Go',
+    formSourcesLabel: '出典 / リンク',
+    formSourcesPlaceholder: 'YouTube、Spotify、Wikipedia、Discogsのリンク...',
+    formSubmit: '提案を送信',
+    formNote: '送信内容はWMCチームが確認したうえで反映されます。すべての提案の追加を保証するものではありません。',
   },
 };
 

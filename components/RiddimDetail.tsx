@@ -244,10 +244,10 @@ export default async function RiddimDetail({ riddim, lang, dict }: RiddimDetailP
       <div className={styles.divider} />
 
       {/* ═══ SECTION B — Contexte historique ═══ */}
-      <section aria-label="Contexte historique" className={styles.contextSection}>
+      <section aria-label={dict.ariaHistoricalContext} className={styles.contextSection}>
         <h2 className={styles.sectionTitle}>
-          À propos de ce riddim
-          <span className={styles.sectionTitleScript}> son histoire</span>
+          {dict.riddimAboutTitle}
+          <span className={styles.sectionTitleScript}>{dict.riddimAboutAccent}</span>
         </h2>
         <p className={styles.contextText}>{contextText}</p>
       </section>
@@ -255,7 +255,7 @@ export default async function RiddimDetail({ riddim, lang, dict }: RiddimDetailP
       <div className={styles.divider} />
 
       {/* ═══ SECTION C — Tableau des voicings ═══ */}
-      <section aria-label="Liste des voicings" className={styles.voicingsSection}>
+      <section aria-label={dict.ariaVoicingsList} className={styles.voicingsSection}>
         <h2 className={styles.voicingsHeading}>
           {dict.voicingsTitle}
           <span className={styles.voicingsCount}>({riddim.voicings.length})</span>
@@ -322,9 +322,9 @@ export default async function RiddimDetail({ riddim, lang, dict }: RiddimDetailP
         <>
           <div className={styles.divider} />
           <aside className={styles.similarSection}>
-            <h2 className={styles.sectionTitle}>Riddims du même style</h2>
+            <h2 className={styles.sectionTitle}>{dict.sameStyleRiddims}</h2>
             <div className={styles.similarWrapper}>
-              <button className={`${styles.scrollBtn} ${styles.scrollBtnLeft}`} aria-label="Défiler à gauche" type="button">
+              <button className={`${styles.scrollBtn} ${styles.scrollBtnLeft}`} aria-label={dict.scrollLeft} type="button">
                 <ChevronLeftIcon />
               </button>
               <div className={styles.similarGrid}>
@@ -334,7 +334,7 @@ export default async function RiddimDetail({ riddim, lang, dict }: RiddimDetailP
                   </div>
                 ))}
               </div>
-              <button className={`${styles.scrollBtn} ${styles.scrollBtnRight}`} aria-label="Défiler à droite" type="button">
+              <button className={`${styles.scrollBtn} ${styles.scrollBtnRight}`} aria-label={dict.scrollRight} type="button">
                 <ChevronRightIcon />
               </button>
             </div>

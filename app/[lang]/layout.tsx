@@ -1,4 +1,6 @@
 import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { LOCALES, type Locale, getDictionary, isValidLocale } from '@/lib/i18n';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -28,14 +30,26 @@ export default async function LangLayout({
   const dict = getDictionary(locale);
 
   return (
-    <>
-      <Navbar lang={locale} dict={dict} />
-      <PageWrapper>
-        {children}
-      </PageWrapper>
-      <Footer lang={locale} dict={dict} />
-      <ScrollToTop />
-      <ShareButton dict={dict} />
-    </>
+    <html lang={locale} suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>
+        <Navbar lang={locale} dict={dict} />
+        <PageWrapper>
+          {children}
+        </PageWrapper>
+        <Footer lang={locale} dict={dict} />
+        <ScrollToTop />
+        <ShareButton dict={dict} />
+        <Analytics />
+        <SpeedInsights />
+      </body>
+    </html>
   );
 }

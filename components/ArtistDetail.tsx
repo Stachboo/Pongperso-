@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Artist } from '@/utils/artists';
 import { generateArtistContextText, getRelatedArtists, buildArtistList } from '@/utils/artists';
 import { getAllRiddims, formatViews } from '@/lib/data';
+import { getDictionary, isValidLocale } from '@/lib/i18n';
 import ArtistCard from '@/components/ArtistCard';
 import styles from './ArtistDetail.module.css';
 
@@ -94,6 +95,7 @@ function YoutubeIcon() {
    ═══════════════════════════════════════════════════════════════════════════ */
 
 export default async function ArtistDetail({ artist, lang }: ArtistDetailProps) {
+  const dict = getDictionary(isValidLocale(lang) ? lang : 'fr');
   const contextText = generateArtistContextText(artist);
   const allArtists = buildArtistList(await getAllRiddims());
   const relatedArtists = getRelatedArtists(artist, allArtists);
@@ -116,11 +118,11 @@ export default async function ArtistDetail({ artist, lang }: ArtistDetailProps) 
           <nav aria-label="Breadcrumb" className={styles.breadcrumb}>
             <ol className={styles.breadcrumbList}>
               <li>
-                <Link href={`/${lang}`} className={styles.breadcrumbLink}>Accueil</Link>
+                <Link href={`/${lang}`} className={styles.breadcrumbLink}>{dict.navHome}</Link>
               </li>
               <li className={styles.breadcrumbSep} aria-hidden="true">·</li>
               <li>
-                <Link href={`/${lang}/artistes`} className={styles.breadcrumbLink}>Artistes</Link>
+                <Link href={`/${lang}/artistes`} className={styles.breadcrumbLink}>{dict.navArtists}</Link>
               </li>
               <li className={styles.breadcrumbSep} aria-hidden="true">·</li>
               <li aria-current="page" className={styles.breadcrumbCurrent}>{artist.name}</li>
@@ -131,7 +133,7 @@ export default async function ArtistDetail({ artist, lang }: ArtistDetailProps) 
           <div
             className={styles.avatarLarge}
             style={{ background: getGradient(artist.name) }}
-            aria-label={`${artist.name}, artiste`}
+            aria-label={dict.ariaArtistAvatar.replace('{x}', artist.name)}
           >
             <span className={styles.initialsLarge}>{getInitials(artist.name)}</span>
           </div>
@@ -150,19 +152,19 @@ export default async function ArtistDetail({ artist, lang }: ArtistDetailProps) 
           <div className={styles.statsRow}>
             <div className={styles.stat}>
               <span className={styles.statValue}>{artist.riddimCount}</span>
-              <span className={styles.statLabel}>Riddims</span>
+              <span className={styles.statLabel}>{dict.statsRiddimsShort}</span>
             </div>
             <div className={styles.stat}>
               <span className={styles.statValue}>{artist.totalVoicings}</span>
-              <span className={styles.statLabel}>Voicings</span>
+              <span className={styles.statLabel}>{dict.statsVoicingsShort}</span>
             </div>
             <div className={styles.stat}>
               <span className={styles.statValue}>#{artist.topRank}</span>
-              <span className={styles.statLabel}>Meilleur rang</span>
+              <span className={styles.statLabel}>{dict.artistBestRank}</span>
             </div>
             <div className={styles.stat}>
               <span className={styles.statValue}>{artist.decades.join(' · ')}</span>
-              <span className={styles.statLabel}>Décennies</span>
+              <span className={styles.statLabel}>{dict.artistDecades}</span>
             </div>
           </div>
 
@@ -173,20 +175,20 @@ export default async function ArtistDetail({ artist, lang }: ArtistDetailProps) 
               target="_blank"
               rel="noopener noreferrer"
               className={styles.spotifyBtn}
-              aria-label={`Écouter ${artist.name} sur Spotify`}
+              aria-label={dict.ariaListenSpotify.replace('{x}', artist.name)}
             >
               <SpotifyIcon />
-              Écouter sur Spotify
+              {dict.listenOnSpotify}
             </a>
             <a
               href={getYoutubeSearchUrl(artist.name)}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.youtubeBtn}
-              aria-label={`Rechercher ${artist.name} sur YouTube`}
+              aria-label={dict.ariaSearchYoutube.replace('{x}', artist.name)}
             >
               <YoutubeIcon />
-              Rechercher sur YouTube
+              {dict.searchOnYoutube}
             </a>
           </div>
         </div>
@@ -195,8 +197,8 @@ export default async function ArtistDetail({ artist, lang }: ArtistDetailProps) 
       <div className={styles.divider} />
 
       {/* ═══ SECTION B — Contexte généré ═══ */}
-      <section aria-label="Carrière de l'artiste" className={styles.contextSection}>
-        <h2 className={styles.sectionTitle}>Carrière</h2>
+      <section aria-label={dict.artistCareer} className={styles.contextSection}>
+        <h2 className={styles.sectionTitle}>{dict.artistCareer}</h2>
         <p className={styles.contextText}>{contextText}</p>
       </section>
 
@@ -205,18 +207,18 @@ export default async function ArtistDetail({ artist, lang }: ArtistDetailProps) 
       {/* ═══ SECTION C — Tableau des riddims ═══ */}
       <section aria-label="Riddims de l'artiste" className={styles.riddimSection}>
         <h2 className={styles.sectionTitle}>
-          Riddims
+          {dict.artistRiddimsTitle}
           <span className={styles.riddimCount}>({artist.riddims.length})</span>
         </h2>
 
         <table className={styles.table} aria-label={`Riddims de ${artist.name}`}>
           <thead className={styles.tableHead}>
             <tr>
-              <th scope="col">Rang</th>
-              <th scope="col">Riddim</th>
-              <th scope="col">Titre</th>
-              <th scope="col">Année</th>
-              <th scope="col">Style</th>
+              <th scope="col">{dict.tableRank}</th>
+              <th scope="col">{dict.tableRiddim}</th>
+              <th scope="col">{dict.tableTitle}</th>
+              <th scope="col">{dict.tableYear}</th>
+              <th scope="col">{dict.tableStyle}</th>
               <th scope="col" className={styles.thActions}>Écouter</th>
             </tr>
           </thead>
@@ -251,7 +253,7 @@ export default async function ArtistDetail({ artist, lang }: ArtistDetailProps) 
                       target="_blank"
                       rel="noopener noreferrer"
                       className={styles.actionSpotify}
-                      aria-label={`Écouter ${r.title} sur Spotify`}
+                      aria-label={dict.ariaListenSpotify.replace('{x}', r.title)}
                     >
                       <SpotifyIcon />
                     </a>
@@ -260,7 +262,7 @@ export default async function ArtistDetail({ artist, lang }: ArtistDetailProps) 
                       target="_blank"
                       rel="noopener noreferrer"
                       className={styles.actionYoutube}
-                      aria-label={`Écouter ${r.title} sur YouTube`}
+                      aria-label={dict.ariaListenYoutube.replace('{x}', r.title)}
                     >
                       <YoutubeIcon />
                     </a>
@@ -277,9 +279,9 @@ export default async function ArtistDetail({ artist, lang }: ArtistDetailProps) 
         <>
           <div className={styles.divider} />
           <aside className={styles.relatedSection}>
-            <h2 className={styles.sectionTitle}>Artistes fréquemment associés</h2>
+            <h2 className={styles.sectionTitle}>{dict.relatedArtistsTitle}</h2>
             <p className={styles.relatedSubtitle}>
-              Ces artistes apparaissent sur les mêmes riddims
+              {dict.relatedArtistsSubtitle}
             </p>
             <div className={styles.relatedGrid}>
               {relatedArtists.map((a) => (

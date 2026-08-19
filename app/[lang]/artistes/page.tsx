@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { isValidLocale, type Locale } from '@/lib/i18n';
+import { isValidLocale, getDictionary, type Locale } from '@/lib/i18n';
 import { getAllRiddims } from '@/lib/data';
 import { generateHreflang } from '@/utils/seo';
 import { buildArtistList } from '@/utils/artists';
@@ -46,6 +46,7 @@ export default async function ArtistesPage({
   const { lang } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const allArtists = buildArtistList(await getAllRiddims());
+  const dict = getDictionary(locale);
 
   return (
     <div className={styles.container}>
@@ -60,7 +61,7 @@ export default async function ArtistesPage({
       </header>
 
       {/* Recherche + Grille (composant client) */}
-      <ArtistSearchBar artists={allArtists} lang={locale} />
+      <ArtistSearchBar artists={allArtists} lang={locale} dict={dict} />
     </div>
   );
 }
