@@ -30,7 +30,7 @@ type PageContent = {
 
 const CONTENT: Record<Locale, PageContent> = {
   fr: {
-    metaTitle: 'Presse — Espace média et kit presse | WMC',
+    metaTitle: 'Presse — Espace média et kit presse',
     metaDescription:
       'Espace presse de WMC. Retrouvez les chiffres clés, le kit presse et les coordonnées média de la base de données des riddims jamaïcains.',
     title: 'Presse',
@@ -52,7 +52,7 @@ const CONTENT: Record<Locale, PageContent> = {
       'World Music Contest (WMC) est la première base de données mondiale de référence dédiée aux riddims jamaïcains. Fondée en 2026, WMC documente chaque riddim, chaque voicing et chaque producteur, classés par popularité de streaming mondiale. Le projet couvre plus de 60 ans d’histoire musicale jamaïcaine, du ska au dancehall contemporain.',
   },
   en: {
-    metaTitle: 'Press — Media center and press kit | WMC',
+    metaTitle: 'Press — Media center and press kit',
     metaDescription:
       'WMC press center. Find the key figures, press kit and media contact details for the database of Jamaican riddims.',
     title: 'Press',
@@ -74,7 +74,7 @@ const CONTENT: Record<Locale, PageContent> = {
       'World Music Contest (WMC) is the world’s leading reference database dedicated to Jamaican riddims. Founded in 2026, WMC documents every riddim, every voicing and every producer, ranked by global streaming popularity. The project spans more than 60 years of Jamaican music history, from ska to contemporary dancehall.',
   },
   es: {
-    metaTitle: 'Prensa — Espacio de medios y kit de prensa | WMC',
+    metaTitle: 'Prensa — Espacio de medios y kit de prensa',
     metaDescription:
       'Espacio de prensa de WMC. Consulta las cifras clave, el kit de prensa y los datos de contacto para medios de la base de datos de los riddims jamaicanos.',
     title: 'Prensa',
@@ -96,7 +96,7 @@ const CONTENT: Record<Locale, PageContent> = {
       'World Music Contest (WMC) es la primera base de datos mundial de referencia dedicada a los riddims jamaicanos. Fundada en 2026, WMC documenta cada riddim, cada voicing y cada productor, clasificados por popularidad de streaming mundial. El proyecto abarca más de 60 años de historia musical jamaicana, del ska al dancehall contemporáneo.',
   },
   pt: {
-    metaTitle: 'Imprensa — Espaço de mídia e kit de imprensa | WMC',
+    metaTitle: 'Imprensa — Espaço de mídia e kit de imprensa',
     metaDescription:
       'Espaço de imprensa da WMC. Confira os números-chave, o kit de imprensa e os contatos de mídia do banco de dados dos riddims jamaicanos.',
     title: 'Imprensa',
@@ -118,7 +118,7 @@ const CONTENT: Record<Locale, PageContent> = {
       'O World Music Contest (WMC) é o primeiro banco de dados mundial de referência dedicado aos riddims jamaicanos. Fundada em 2026, a WMC documenta cada riddim, cada voicing e cada produtor, classificados por popularidade de streaming mundial. O projeto abrange mais de 60 anos de história musical jamaicana, do ska ao dancehall contemporâneo.',
   },
   ja: {
-    metaTitle: 'プレス — メディア窓口とプレスキット | WMC',
+    metaTitle: 'プレス — メディア窓口とプレスキット',
     metaDescription:
       'WMCのプレス窓口。ジャマイカのriddimデータベースに関する主要データ、プレスキット、メディア連絡先をご覧いただけます。',
     title: 'プレス',

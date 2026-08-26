@@ -25,7 +25,7 @@ type PageContent = {
 
 const CONTENT: Record<Locale, PageContent> = {
   fr: {
-    metaTitle: 'Ajouter un riddim — Contribuer à la base de données | WMC',
+    metaTitle: 'Ajouter un riddim — Contribuer à la base de données',
     metaDescription:
       'Soumettez un riddim jamaïcain non encore documenté dans la base de données WMC. Contribuez à préserver le patrimoine musical jamaïcain.',
     title: 'Ajouter un riddim',
@@ -40,7 +40,7 @@ const CONTENT: Record<Locale, PageContent> = {
     formTitle: 'Soumettre un riddim',
   },
   en: {
-    metaTitle: 'Add a riddim — Contribute to the database | WMC',
+    metaTitle: 'Add a riddim — Contribute to the database',
     metaDescription:
       'Submit a Jamaican riddim not yet documented in the WMC database. Help preserve Jamaica’s musical heritage.',
     title: 'Add a riddim',
@@ -55,7 +55,7 @@ const CONTENT: Record<Locale, PageContent> = {
     formTitle: 'Submit a riddim',
   },
   es: {
-    metaTitle: 'Añadir un riddim — Contribuir a la base de datos | WMC',
+    metaTitle: 'Añadir un riddim — Contribuir a la base de datos',
     metaDescription:
       'Envía un riddim jamaicano aún no documentado en la base de datos de WMC. Contribuye a preservar el patrimonio musical jamaicano.',
     title: 'Añadir un riddim',
@@ -70,7 +70,7 @@ const CONTENT: Record<Locale, PageContent> = {
     formTitle: 'Enviar un riddim',
   },
   pt: {
-    metaTitle: 'Adicionar um riddim — Contribuir para a base de dados | WMC',
+    metaTitle: 'Adicionar um riddim — Contribuir para a base de dados',
     metaDescription:
       'Envie um riddim jamaicano ainda não documentado na base de dados do WMC. Contribua para preservar o patrimônio musical jamaicano.',
     title: 'Adicionar um riddim',
@@ -85,7 +85,7 @@ const CONTENT: Record<Locale, PageContent> = {
     formTitle: 'Enviar um riddim',
   },
   ja: {
-    metaTitle: 'リディムを追加 — データベースに貢献する | WMC',
+    metaTitle: 'リディムを追加 — データベースに貢献する',
     metaDescription:
       'WMCデータベースにまだ記載されていないジャマイカのriddimを投稿しましょう。ジャマイカの音楽遺産の保存に貢献してください。',
     title: 'リディムを追加',

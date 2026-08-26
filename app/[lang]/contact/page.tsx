@@ -30,7 +30,7 @@ type PageContent = {
 
 const CONTENT: Record<Locale, PageContent> = {
   fr: {
-    metaTitle: 'Contact — Nous contacter | WMC',
+    metaTitle: 'Contact — Nous contacter',
     metaDescription:
       'Contactez l\'équipe WMC pour toute question sur la base de données des riddims jamaïcains, les partenariats ou les demandes presse.',
     title: 'Contact',
@@ -51,7 +51,7 @@ const CONTENT: Record<Locale, PageContent> = {
       'Nous répondons à toutes les demandes dans un délai de 48 à 72 heures ouvrées. Pour les demandes urgentes, merci de le préciser dans l\'objet de votre message.',
   },
   en: {
-    metaTitle: 'Contact — Get in touch | WMC',
+    metaTitle: 'Contact — Get in touch',
     metaDescription:
       'Contact the WMC team with any question about the Jamaican riddims database, partnerships or press enquiries.',
     title: 'Contact',
@@ -72,7 +72,7 @@ const CONTENT: Record<Locale, PageContent> = {
       'We answer all enquiries within 48 to 72 business hours. For urgent requests, please indicate this in the subject line of your message.',
   },
   es: {
-    metaTitle: 'Contacto — Escríbenos | WMC',
+    metaTitle: 'Contacto — Escríbenos',
     metaDescription:
       'Ponte en contacto con el equipo de WMC para cualquier consulta sobre la base de datos de riddims jamaicanos, colaboraciones o solicitudes de prensa.',
     title: 'Contacto',
@@ -93,7 +93,7 @@ const CONTENT: Record<Locale, PageContent> = {
       'Respondemos a todas las consultas en un plazo de 48 a 72 horas hábiles. Para solicitudes urgentes, indícalo en el asunto de tu mensaje.',
   },
   pt: {
-    metaTitle: 'Contato — Fale conosco | WMC',
+    metaTitle: 'Contato — Fale conosco',
     metaDescription:
       'Entre em contato com a equipe da WMC para qualquer dúvida sobre a base de dados de riddims jamaicanos, parcerias ou solicitações de imprensa.',
     title: 'Contato',
@@ -114,7 +114,7 @@ const CONTENT: Record<Locale, PageContent> = {
       'Respondemos a todas as solicitações em um prazo de 48 a 72 horas úteis. Para solicitações urgentes, indique isso no assunto da sua mensagem.',
   },
   ja: {
-    metaTitle: 'お問い合わせ — ご連絡ください | WMC',
+    metaTitle: 'お問い合わせ — ご連絡ください',
     metaDescription:
       'ジャマイカのriddimデータベース、パートナーシップ、報道関係のお問い合わせなど、WMCチームまでお気軽にご連絡ください。',
     title: 'お問い合わせ',
@@ -187,12 +187,16 @@ export default async function ContactPage({
         <section className={styles.section} aria-label={c.emailAria}>
           <div className={styles.infoBlock}>
             <p className={styles.infoLabel}>{c.emailGeneralLabel}</p>
-            <p className={styles.infoValue}>contact@wmc-riddims.com</p>
+            <p className={styles.infoValue}>
+              <a href="mailto:contact@wmc-riddims.com">contact@wmc-riddims.com</a>
+            </p>
           </div>
 
           <div className={styles.infoBlock}>
             <p className={styles.infoLabel}>{c.pressLabel}</p>
-            <p className={styles.infoValue}>presse@wmc-riddims.com</p>
+            <p className={styles.infoValue}>
+              <a href="mailto:presse@wmc-riddims.com">presse@wmc-riddims.com</a>
+            </p>
           </div>
         </section>
 

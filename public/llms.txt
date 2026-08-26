@@ -1,0 +1,24 @@
+# World Music Contest (WMC)
+
+> La référence des riddims jamaïcains : 152 riddims, 1 253 voicings et environ 5,9 milliards de vues cumulées, documentés de 1967 à 2021. Dancehall, reggae, lovers rock et soca, avec pages artistes et producteurs. Site disponible en 5 langues : français (défaut), anglais, espagnol, portugais, japonais.
+
+Un riddim est l'instrumental d'un morceau jamaïcain, réutilisé par des dizaines d'artistes : chaque interprétation s'appelle un voicing. WMC classe les voicings de chaque riddim par popularité de streaming (vues YouTube), avec BPM, producteur, label et année.
+
+## Pages principales
+
+- [Accueil](https://wmc-iota.vercel.app/fr) : présentation et statistiques du catalogue
+- [Explorer](https://wmc-iota.vercel.app/fr/explorer) : recherche et filtres (genre, décennie, producteur)
+- [Artistes](https://wmc-iota.vercel.app/fr/artistes) : répertoire de plus de 400 artistes avec leurs voicings
+- [Producteurs](https://wmc-iota.vercel.app/fr/producteurs) : 30 producteurs documentés (histoire, riddims, artistes clés)
+- [Méthodologie](https://wmc-iota.vercel.app/fr/methodologie) : sources et méthode de collecte des données
+- [À propos](https://wmc-iota.vercel.app/fr/about) : le projet WMC
+- [Contact](https://wmc-iota.vercel.app/fr/contact) : contact général et presse
+
+## Données
+
+- [Sitemap](https://wmc-iota.vercel.app/sitemap.xml) : plus de 3 000 URLs (fiches riddim, artistes, producteurs, 5 langues)
+- Chaque fiche riddim expose un balisage JSON-LD schema.org (MusicComposition, ItemList de MusicRecording)
+
+## Langues
+
+Le contenu existe en français (/fr), anglais (/en), espagnol (/es), portugais (/pt) et japonais (/ja). Exemple : https://wmc-iota.vercel.app/en/explorer

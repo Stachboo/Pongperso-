@@ -22,7 +22,7 @@ type PageContent = {
 
 const CONTENT: Record<Locale, PageContent> = {
   fr: {
-    metaTitle: 'Explorer les Riddims Jamaïcains — Base de données | WMC',
+    metaTitle: 'Explorer les Riddims Jamaïcains — Base de données',
     metaDescription: (totalRiddims) =>
       `Parcourez les ${totalRiddims} riddims jamaïcains documentés sur WMC. ` +
       `Filtrez par genre (Dancehall, Reggae, Lovers Rock), décennie et producteur. ` +
@@ -33,7 +33,7 @@ const CONTENT: Record<Locale, PageContent> = {
     ariaExplore: 'Explorer les riddims',
   },
   en: {
-    metaTitle: 'Explore Jamaican Riddims — Database | WMC',
+    metaTitle: 'Explore Jamaican Riddims — Database',
     metaDescription: (totalRiddims) =>
       `Browse the ${totalRiddims} Jamaican riddims documented on WMC. ` +
       `Filter by genre (Dancehall, Reggae, Lovers Rock), decade and producer. ` +
@@ -44,7 +44,7 @@ const CONTENT: Record<Locale, PageContent> = {
     ariaExplore: 'Explore riddims',
   },
   es: {
-    metaTitle: 'Explora los Riddims Jamaicanos — Base de datos | WMC',
+    metaTitle: 'Explora los Riddims Jamaicanos — Base de datos',
     metaDescription: (totalRiddims) =>
       `Explora los ${totalRiddims} riddims jamaicanos documentados en WMC. ` +
       `Filtra por género (Dancehall, Reggae, Lovers Rock), década y productor. ` +
@@ -55,7 +55,7 @@ const CONTENT: Record<Locale, PageContent> = {
     ariaExplore: 'Explorar los riddims',
   },
   pt: {
-    metaTitle: 'Explore os Riddims Jamaicanos — Banco de dados | WMC',
+    metaTitle: 'Explore os Riddims Jamaicanos — Banco de dados',
     metaDescription: (totalRiddims) =>
       `Explore os ${totalRiddims} riddims jamaicanos documentados na WMC. ` +
       `Filtre por gênero (Dancehall, Reggae, Lovers Rock), década e produtor. ` +
@@ -66,7 +66,7 @@ const CONTENT: Record<Locale, PageContent> = {
     ariaExplore: 'Explorar os riddims',
   },
   ja: {
-    metaTitle: 'ジャマイカのリディムを探索 — データベース | WMC',
+    metaTitle: 'ジャマイカのリディムを探索 — データベース',
     metaDescription: (totalRiddims) =>
       `WMCに収録された${totalRiddims}件のジャマイカのリディムを閲覧できます。` +
       `ジャンル（Dancehall、Reggae、Lovers Rock）、年代、プロデューサーで絞り込み。` +

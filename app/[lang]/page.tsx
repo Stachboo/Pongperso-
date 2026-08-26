@@ -24,7 +24,7 @@ export async function generateMetadata({
   const hreflang = generateHreflang('', locale);
 
   return {
-    title: `${dict.siteTitle} — ${dict.taglineHome}`,
+    title: { absolute: `${dict.siteTitle} — ${dict.taglineHome}` },
     description: dict.metaDescHome,
     openGraph: {
       title: `${dict.siteTitle} — ${dict.taglineHome}`,
@@ -54,8 +54,35 @@ export default async function HomePage({
   const dict = getDictionary(locale);
   const stats = await getCatalogStats();
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': `${BASE_URL}/#website`,
+        url: BASE_URL,
+        name: 'World Music Contest',
+        alternateName: 'WMC',
+        description: dict.metaDescHome,
+        inLanguage: locale,
+        publisher: { '@id': `${BASE_URL}/#organization` },
+      },
+      {
+        '@type': 'Organization',
+        '@id': `${BASE_URL}/#organization`,
+        name: 'WMC — World Music Contest',
+        url: BASE_URL,
+        logo: `${BASE_URL}/logo-512.png`,
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* ── Hero Section ── */}
       <section className={styles.hero} aria-label="Hero">
         {/* Halo radial */}

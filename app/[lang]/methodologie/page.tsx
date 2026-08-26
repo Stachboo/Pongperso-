@@ -37,7 +37,7 @@ type PageContent = {
 
 const CONTENT: Record<Locale, PageContent> = {
   fr: {
-    metaTitle: 'Méthodologie — Comment nous collectons les données | WMC',
+    metaTitle: 'Méthodologie — Comment nous collectons les données',
     metaDescription:
       'Découvrez comment WMC collecte les données de streaming, classe les voicings par popularité et met à jour son catalogue de riddims jamaïcains.',
     title: 'Méthodologie',
@@ -71,7 +71,7 @@ const CONTENT: Record<Locale, PageContent> = {
     ajouterLink: 'Soumettre un riddim →',
   },
   en: {
-    metaTitle: 'Methodology — How we collect the data | WMC',
+    metaTitle: 'Methodology — How we collect the data',
     metaDescription:
       'Learn how WMC collects streaming data, ranks voicings by popularity and keeps its catalogue of Jamaican riddims up to date.',
     title: 'Methodology',
@@ -105,7 +105,7 @@ const CONTENT: Record<Locale, PageContent> = {
     ajouterLink: 'Submit a riddim →',
   },
   es: {
-    metaTitle: 'Metodología — Cómo recopilamos los datos | WMC',
+    metaTitle: 'Metodología — Cómo recopilamos los datos',
     metaDescription:
       'Descubre cómo WMC recopila los datos de streaming, clasifica los voicings por popularidad y actualiza su catálogo de riddims jamaicanos.',
     title: 'Metodología',
@@ -139,7 +139,7 @@ const CONTENT: Record<Locale, PageContent> = {
     ajouterLink: 'Enviar un riddim →',
   },
   pt: {
-    metaTitle: 'Metodologia — Como coletamos os dados | WMC',
+    metaTitle: 'Metodologia — Como coletamos os dados',
     metaDescription:
       'Descubra como a WMC coleta os dados de streaming, classifica os voicings por popularidade e atualiza seu catálogo de riddims jamaicanos.',
     title: 'Metodologia',
@@ -173,7 +173,7 @@ const CONTENT: Record<Locale, PageContent> = {
     ajouterLink: 'Enviar um riddim →',
   },
   ja: {
-    metaTitle: 'メソドロジー — データの収集方法 | WMC',
+    metaTitle: 'メソドロジー — データの収集方法',
     metaDescription:
       'WMC がどのようにストリーミングデータを収集し、voicing を人気順にランク付けし、ジャマイカの riddim カタログを更新しているかをご紹介します。',
     title: 'メソドロジー',
