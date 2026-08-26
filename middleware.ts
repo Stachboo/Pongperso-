@@ -63,7 +63,7 @@ export async function middleware(request: NextRequest) {
 
     // Skip static assets (extensions connues uniquement — ne pas court-circuiter
     // l'auth sur un chemin quelconque contenant un point)
-    if (/\.(?:png|jpe?g|gif|svg|webp|avif|ico|css|js|mjs|json|txt|xml|woff2?|ttf|eot|map|webmanifest|pdf|mp4|webm)$/i.test(pathname)) {
+    if (/\.(?:png|jpe?g|gif|svg|webp|avif|ico|css|js|mjs|json|txt|xml|html?|woff2?|ttf|eot|map|webmanifest|pdf|mp4|webm)$/i.test(pathname)) {
       return NextResponse.next();
     }
 
