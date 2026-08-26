@@ -21,7 +21,7 @@ type PageContent = {
 
 const CONTENT: Record<Locale, PageContent> = {
   fr: {
-    metaTitle: 'Producteurs — Les labels derrière les riddims jamaïcains | WMC',
+    metaTitle: 'Producteurs — Les labels derrière les riddims jamaïcains',
     metaDescription:
       'Découvrez les 18 labels et producteurs qui ont façonné le dancehall jamaïcain : Notnice, Di Genius, Chimney Records, Daseca, Birchill, Rvssian, Arif Cooper et bien d\'autres. Leurs riddims, artistes et histoire.',
     title: 'Producteurs',
@@ -29,7 +29,7 @@ const CONTENT: Record<Locale, PageContent> = {
     documentedSuffix: 'labels documentés',
   },
   en: {
-    metaTitle: 'Producers — The labels behind the Jamaican riddims | WMC',
+    metaTitle: 'Producers — The labels behind the Jamaican riddims',
     metaDescription:
       'Discover the 18 labels and producers who shaped Jamaican dancehall: Notnice, Di Genius, Chimney Records, Daseca, Birchill, Rvssian, Arif Cooper and many more. Their riddims, artists and history.',
     title: 'Producers',
@@ -37,7 +37,7 @@ const CONTENT: Record<Locale, PageContent> = {
     documentedSuffix: 'documented labels',
   },
   es: {
-    metaTitle: 'Productores — Los sellos detrás de los riddims jamaicanos | WMC',
+    metaTitle: 'Productores — Los sellos detrás de los riddims jamaicanos',
     metaDescription:
       'Descubre los 18 sellos y productores que dieron forma al dancehall jamaicano: Notnice, Di Genius, Chimney Records, Daseca, Birchill, Rvssian, Arif Cooper y muchos más. Sus riddims, artistas e historia.',
     title: 'Productores',
@@ -45,7 +45,7 @@ const CONTENT: Record<Locale, PageContent> = {
     documentedSuffix: 'sellos documentados',
   },
   pt: {
-    metaTitle: 'Produtores — Os selos por trás dos riddims jamaicanos | WMC',
+    metaTitle: 'Produtores — Os selos por trás dos riddims jamaicanos',
     metaDescription:
       'Descubra os 18 selos e produtores que moldaram o dancehall jamaicano: Notnice, Di Genius, Chimney Records, Daseca, Birchill, Rvssian, Arif Cooper e muitos outros. Seus riddims, artistas e história.',
     title: 'Produtores',
@@ -53,7 +53,7 @@ const CONTENT: Record<Locale, PageContent> = {
     documentedSuffix: 'selos documentados',
   },
   ja: {
-    metaTitle: 'プロデューサー — ジャマイカのriddimを支えるレーベル | WMC',
+    metaTitle: 'プロデューサー — ジャマイカのriddimを支えるレーベル',
     metaDescription:
       'ジャマイカのdancehallを形づくった18のレーベルとプロデューサーを紹介：Notnice、Di Genius、Chimney Records、Daseca、Birchill、Rvssian、Arif Cooperほか多数。彼らのriddim、アーティスト、そしてその歴史。',
     title: 'プロデューサー',

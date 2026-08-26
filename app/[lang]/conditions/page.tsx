@@ -34,7 +34,7 @@ type PageContent = {
 
 const CONTENT: Record<Locale, PageContent> = {
   fr: {
-    metaTitle: "Conditions d'utilisation | WMC",
+    metaTitle: "Conditions d'utilisation",
     metaDescription:
       "Conditions d'utilisation du site World Music Contest. Règles d'accès, propriété intellectuelle et limitations de responsabilité.",
     title: "Conditions d'utilisation",
@@ -65,7 +65,7 @@ const CONTENT: Record<Locale, PageContent> = {
       "Les présentes conditions d'utilisation sont régies par le droit français. Tout litige relatif à l'utilisation du site sera soumis à la compétence exclusive des tribunaux français.",
   },
   en: {
-    metaTitle: "Terms of Use | WMC",
+    metaTitle: "Terms of Use",
     metaDescription:
       "Terms of use for the World Music Contest website. Access rules, intellectual property and limitations of liability.",
     title: "Terms of Use",
@@ -96,7 +96,7 @@ const CONTENT: Record<Locale, PageContent> = {
       "These terms of use are governed by French law. Any dispute relating to the use of the site shall be subject to the exclusive jurisdiction of the French courts.",
   },
   es: {
-    metaTitle: "Condiciones de uso | WMC",
+    metaTitle: "Condiciones de uso",
     metaDescription:
       "Condiciones de uso del sitio World Music Contest. Normas de acceso, propiedad intelectual y limitaciones de responsabilidad.",
     title: "Condiciones de uso",
@@ -127,7 +127,7 @@ const CONTENT: Record<Locale, PageContent> = {
       "Las presentes condiciones de uso se rigen por la legislación francesa. Todo litigio relativo al uso del sitio se someterá a la competencia exclusiva de los tribunales franceses.",
   },
   pt: {
-    metaTitle: "Condições de uso | WMC",
+    metaTitle: "Condições de uso",
     metaDescription:
       "Condições de uso do site World Music Contest. Regras de acesso, propriedade intelectual e limitações de responsabilidade.",
     title: "Condições de uso",
@@ -158,7 +158,7 @@ const CONTENT: Record<Locale, PageContent> = {
       "As presentes condições de uso são regidas pela lei francesa. Qualquer litígio relativo ao uso do site será submetido à competência exclusiva dos tribunais franceses.",
   },
   ja: {
-    metaTitle: "利用規約 | WMC",
+    metaTitle: "利用規約",
     metaDescription:
       "World Music Contest ウェブサイトの利用規約。アクセス規則、知的財産権および責任の制限について。",
     title: "利用規約",

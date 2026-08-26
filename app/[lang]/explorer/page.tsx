@@ -18,7 +18,7 @@ export async function generateMetadata({
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const dict = getDictionary(locale);
   return {
-    title: `${dict.navExplorer} | ${dict.siteTitle}`,
+    title: dict.navExplorer,
     description: dict.metaDescExplorer,
   };
 }

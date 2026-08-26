@@ -22,7 +22,7 @@ type PageContent = {
 
 const CONTENT: Record<Locale, PageContent> = {
   fr: {
-    metaTitle: 'Artistes — Tous les voicings de riddims jamaïcains | WMC',
+    metaTitle: 'Artistes — Tous les voicings de riddims jamaïcains',
     metaDescription:
       'Découvrez les artistes qui ont enregistré sur des riddims jamaïcains. ' +
       'Vybz Kartel, Sean Paul, Mavado, Chronixx et bien d’autres artistes documentés avec leurs voicings.',
@@ -31,7 +31,7 @@ const CONTENT: Record<Locale, PageContent> = {
     documentedSuffix: 'artistes documentés',
   },
   en: {
-    metaTitle: 'Artists — Every voicing on Jamaican riddims | WMC',
+    metaTitle: 'Artists — Every voicing on Jamaican riddims',
     metaDescription:
       'Discover the artists who recorded on Jamaican riddims. ' +
       'Vybz Kartel, Sean Paul, Mavado, Chronixx and many more artists documented with their voicings.',
@@ -40,7 +40,7 @@ const CONTENT: Record<Locale, PageContent> = {
     documentedSuffix: 'documented artists',
   },
   es: {
-    metaTitle: 'Artistas — Todos los voicings de riddims jamaicanos | WMC',
+    metaTitle: 'Artistas — Todos los voicings de riddims jamaicanos',
     metaDescription:
       'Descubre a los artistas que grabaron sobre riddims jamaicanos. ' +
       'Vybz Kartel, Sean Paul, Mavado, Chronixx y muchos más artistas documentados con sus voicings.',
@@ -49,7 +49,7 @@ const CONTENT: Record<Locale, PageContent> = {
     documentedSuffix: 'artistas documentados',
   },
   pt: {
-    metaTitle: 'Artistas — Todos os voicings de riddims jamaicanos | WMC',
+    metaTitle: 'Artistas — Todos os voicings de riddims jamaicanos',
     metaDescription:
       'Conheça os artistas que gravaram sobre riddims jamaicanos. ' +
       'Vybz Kartel, Sean Paul, Mavado, Chronixx e muitos outros artistas documentados com seus voicings.',
@@ -58,7 +58,7 @@ const CONTENT: Record<Locale, PageContent> = {
     documentedSuffix: 'artistas documentados',
   },
   ja: {
-    metaTitle: 'アーティスト — ジャマイカン riddim のすべての voicing | WMC',
+    metaTitle: 'アーティスト — ジャマイカン riddim のすべての voicing',
     metaDescription:
       'ジャマイカン riddim にレコーディングしたアーティストを紹介します。' +
       'Vybz Kartel、Sean Paul、Mavado、Chronixx など、voicing とともに記録された多数のアーティスト。',

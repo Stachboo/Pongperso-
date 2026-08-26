@@ -47,7 +47,7 @@ type PageContent = {
 
 const CONTENT: Record<Locale, PageContent> = {
   fr: {
-    metaTitle: 'À propos — World Music Contest | WMC',
+    metaTitle: 'À propos — World Music Contest',
     metaDescription:
       'WMC est la base de données mondiale de référence des riddims jamaïcains. Découvrez notre mission, notre méthodologie et notre équipe.',
     headerTitle: 'À propos',
@@ -92,7 +92,7 @@ const CONTENT: Record<Locale, PageContent> = {
       "Notre objectif est simple : préserver et valoriser le patrimoine musical jamaïcain en le rendant accessible au plus grand nombre, dans toutes les langues.",
   },
   en: {
-    metaTitle: 'About — World Music Contest | WMC',
+    metaTitle: 'About — World Music Contest',
     metaDescription:
       'WMC is the world reference database for Jamaican riddims. Discover our mission, our methodology and our team.',
     headerTitle: 'About',
@@ -137,7 +137,7 @@ const CONTENT: Record<Locale, PageContent> = {
       'Our goal is simple: to preserve and showcase Jamaican musical heritage by making it accessible to as many people as possible, in every language.',
   },
   es: {
-    metaTitle: 'Acerca de — World Music Contest | WMC',
+    metaTitle: 'Acerca de — World Music Contest',
     metaDescription:
       'WMC es la base de datos mundial de referencia de los riddims jamaicanos. Descubre nuestra misión, nuestra metodología y nuestro equipo.',
     headerTitle: 'Acerca de',
@@ -182,7 +182,7 @@ const CONTENT: Record<Locale, PageContent> = {
       'Nuestro objetivo es simple: preservar y poner en valor el patrimonio musical jamaicano haciéndolo accesible al mayor número de personas, en todos los idiomas.',
   },
   pt: {
-    metaTitle: 'Sobre — World Music Contest | WMC',
+    metaTitle: 'Sobre — World Music Contest',
     metaDescription:
       'A WMC é a base de dados mundial de referência dos riddims jamaicanos. Conheça a nossa missão, a nossa metodologia e a nossa equipe.',
     headerTitle: 'Sobre',
@@ -227,7 +227,7 @@ const CONTENT: Record<Locale, PageContent> = {
       'Nosso objetivo é simples: preservar e valorizar o patrimônio musical jamaicano, tornando-o acessível ao maior número de pessoas, em todos os idiomas.',
   },
   ja: {
-    metaTitle: 'WMCについて — World Music Contest | WMC',
+    metaTitle: 'WMCについて — World Music Contest',
     metaDescription:
       'WMCはジャマイカのriddimに関する世界的なリファレンスデータベースです。私たちのミッション、方法論、チームをご紹介します。',
     headerTitle: 'WMCについて',

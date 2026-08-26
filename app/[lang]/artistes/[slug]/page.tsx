@@ -47,7 +47,7 @@ export async function generateMetadata({
   const hreflang = generateHreflang(`/artistes/${slug}`, locale);
   const canonicalUrl = `${BASE_URL}/${locale}/artistes/${slug}`;
 
-  const title = `${artist.name} — Riddims & Voicings Jamaïcains | WMC`;
+  const title = `${artist.name} — Riddims & Voicings Jamaïcains`;
   const description =
     `${artist.name} a enregistré ${artist.totalVoicings} voicings sur ` +
     `${artist.riddimCount} riddims jamaïcains dont ${artist.topRiddim}. ` +

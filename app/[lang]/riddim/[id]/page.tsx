@@ -47,7 +47,7 @@ export async function generateMetadata({
   }
 
   const canonicalUrl = `${BASE_URL}/${locale}/riddim/${riddim.id}`;
-  const title = `${riddim.name} — Voicings, Artistes & Histoire | WMC`;
+  const title = `${riddim.name} — Voicings, Artistes & Histoire`;
   const description =
     `Découvrez tous les voicings du ${riddim.name} (${riddim.year}), ` +
     `produit par ${riddim.producer} (${riddim.label}). ` +

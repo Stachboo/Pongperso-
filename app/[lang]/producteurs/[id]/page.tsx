@@ -57,7 +57,7 @@ export async function generateMetadata({
   const hreflang = generateHreflang(`/producteurs/${id}`, locale);
   const canonicalUrl = `${BASE_URL}/${locale}/producteurs/${id}`;
 
-  const title = `${producer.name} (${producer.label}) — Producteur Jamaïcain | WMC`;
+  const title = `${producer.name} (${producer.label}) — Producteur Jamaïcain`;
   const description = producer.description.slice(0, 150).trimEnd() + '…';
 
   return {

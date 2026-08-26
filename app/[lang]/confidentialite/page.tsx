@@ -38,7 +38,7 @@ const CONTACT_EMAIL = 'contact@wmc-riddims.com';
 
 const CONTENT: Record<Locale, PageContent> = {
   fr: {
-    metaTitle: 'Politique de confidentialité | WMC',
+    metaTitle: 'Politique de confidentialité',
     metaDescription:
       'Politique de confidentialité de World Music Contest. Protection des données personnelles, cookies et conformité RGPD.',
     title: 'Politique de confidentialité',
@@ -69,7 +69,7 @@ const CONTENT: Record<Locale, PageContent> = {
       'Le site est hébergé par Vercel Inc. aux États-Unis. Les données de navigation anonymisées transitent par les serveurs de Vercel Edge Network, répartis mondialement pour garantir des temps de chargement optimaux.',
   },
   en: {
-    metaTitle: 'Privacy Policy | WMC',
+    metaTitle: 'Privacy Policy',
     metaDescription:
       'Privacy policy of World Music Contest. Protection of personal data, cookies and GDPR compliance.',
     title: 'Privacy Policy',
@@ -100,7 +100,7 @@ const CONTENT: Record<Locale, PageContent> = {
       'The site is hosted by Vercel Inc. in the United States. Anonymised browsing data passes through the servers of the Vercel Edge Network, distributed worldwide to guarantee optimal loading times.',
   },
   es: {
-    metaTitle: 'Política de privacidad | WMC',
+    metaTitle: 'Política de privacidad',
     metaDescription:
       'Política de privacidad de World Music Contest. Protección de los datos personales, cookies y conformidad con el RGPD.',
     title: 'Política de privacidad',
@@ -131,7 +131,7 @@ const CONTENT: Record<Locale, PageContent> = {
       'El sitio está alojado por Vercel Inc. en los Estados Unidos. Los datos de navegación anonimizados transitan por los servidores de Vercel Edge Network, distribuidos mundialmente para garantizar tiempos de carga óptimos.',
   },
   pt: {
-    metaTitle: 'Política de privacidade | WMC',
+    metaTitle: 'Política de privacidade',
     metaDescription:
       'Política de privacidade do World Music Contest. Proteção dos dados pessoais, cookies e conformidade com a LGPD/RGPD.',
     title: 'Política de privacidade',
@@ -162,7 +162,7 @@ const CONTENT: Record<Locale, PageContent> = {
       'O site é hospedado pela Vercel Inc. nos Estados Unidos. Os dados de navegação anonimizados transitam pelos servidores da Vercel Edge Network, distribuídos mundialmente para garantir tempos de carregamento ideais.',
   },
   ja: {
-    metaTitle: 'プライバシーポリシー | WMC',
+    metaTitle: 'プライバシーポリシー',
     metaDescription:
       'World Music Contest のプライバシーポリシー。個人データの保護、cookies、および GDPR への準拠について。',
     title: 'プライバシーポリシー',

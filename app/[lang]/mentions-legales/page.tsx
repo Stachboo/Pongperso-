@@ -42,7 +42,7 @@ type PageContent = {
 
 const CONTENT: Record<Locale, PageContent> = {
   fr: {
-    metaTitle: 'Mentions légales | WMC',
+    metaTitle: 'Mentions légales',
     metaDescription:
       'Mentions légales du site World Music Contest (WMC). Éditeur, hébergement, responsable de publication et informations juridiques.',
     title: 'Mentions légales',
@@ -78,7 +78,7 @@ const CONTENT: Record<Locale, PageContent> = {
       "WMC n'est affilié à aucun label, aucun artiste, aucune plateforme de streaming ni aucun organisme de certification musicale.",
   },
   en: {
-    metaTitle: 'Legal notice | WMC',
+    metaTitle: 'Legal notice',
     metaDescription:
       'Legal notice for the World Music Contest (WMC) website. Publisher, hosting, publication manager and legal information.',
     title: 'Legal notice',
@@ -114,7 +114,7 @@ const CONTENT: Record<Locale, PageContent> = {
       'WMC is not affiliated with any label, artist, streaming platform or music certification body.',
   },
   es: {
-    metaTitle: 'Aviso legal | WMC',
+    metaTitle: 'Aviso legal',
     metaDescription:
       'Aviso legal del sitio World Music Contest (WMC). Editor, alojamiento, responsable de publicación e información jurídica.',
     title: 'Aviso legal',
@@ -150,7 +150,7 @@ const CONTENT: Record<Locale, PageContent> = {
       'WMC no está afiliado a ningún sello, artista, plataforma de streaming ni organismo de certificación musical.',
   },
   pt: {
-    metaTitle: 'Aviso legal | WMC',
+    metaTitle: 'Aviso legal',
     metaDescription:
       'Aviso legal do site World Music Contest (WMC). Editor, hospedagem, responsável pela publicação e informações jurídicas.',
     title: 'Aviso legal',
@@ -186,7 +186,7 @@ const CONTENT: Record<Locale, PageContent> = {
       'A WMC não é afiliada a nenhuma gravadora, artista, plataforma de streaming ou organismo de certificação musical.',
   },
   ja: {
-    metaTitle: '法的通知 | WMC',
+    metaTitle: '法的通知',
     metaDescription:
       'World Music Contest（WMC）ウェブサイトの法的通知。編集者、ホスティング、公開責任者および法的情報。',
     title: '法的通知',
