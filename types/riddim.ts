@@ -4,6 +4,14 @@
    ══════════════════════════════════════════════════════════════════════════════ */
 
 export interface Voicing {
+  /**
+   * Identifiant stable et immuable d'un voicing. Optionnel dans le type pour
+   * rester compatible avec les anciennes données (rétro-rempli au chargement
+   * côté admin). Toutes les opérations CRUD ciblent un voicing par cet id, et
+   * non plus par (artiste, titre) — ce qui évitait de toucher la mauvaise ligne
+   * en cas de doublon exact au sein d'un riddim.
+   */
+  id?: string;
   artist: string;
   title: string;
   views: number;

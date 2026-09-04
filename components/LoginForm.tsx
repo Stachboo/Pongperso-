@@ -38,13 +38,20 @@ export default function LoginForm({ lang }: { lang: string }) {
 
   return (
     <div className={styles.container}>
+      <div className={styles.bloom} aria-hidden="true" />
       <form className={styles.card} onSubmit={handleSubmit}>
         <div className={styles.header}>
-          <h1 className={styles.title}>Admin</h1>
-          <p className={styles.subtitle}>Connecte-toi pour accéder à l&apos;audit</p>
+          <span className={styles.vinyl} aria-hidden="true">
+            <span className={styles.vinylLabel} />
+            <span className={styles.vinylHole} />
+          </span>
+          <h1 className={styles.title}>
+            RIDDIM CONSOLE <span className={styles.script} aria-hidden="true">admin</span>
+          </h1>
+          <p className={styles.subtitle}>Connecte-toi pour accéder à la gestion</p>
         </div>
 
-        {error && <div className={styles.error}>{error}</div>}
+        {error && <div className={styles.error} role="alert">{error}</div>}
 
         <div className={styles.field}>
           <label className={styles.label} htmlFor="username">Identifiant</label>
@@ -73,7 +80,7 @@ export default function LoginForm({ lang }: { lang: string }) {
         </div>
 
         <button type="submit" className={styles.submitBtn} disabled={loading}>
-          {loading ? 'Connexion...' : 'Se connecter'}
+          {loading ? 'Connexion…' : 'Se connecter'}
         </button>
       </form>
     </div>
