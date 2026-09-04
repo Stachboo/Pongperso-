@@ -38,6 +38,7 @@ export default function Footer({ lang, dict }: FooterProps) {
       title: dict.footerColInfo,
       links: [
         { label: dict.navAbout, href: `/${lang}/about` },
+        { label: 'FAQ', href: `/${lang}/faq` },
         { label: dict.footerMethodology, href: `/${lang}/about#methodologie` },
         { label: dict.footerAddRiddim, href: `/${lang}/about#contribuer` },
         { label: dict.footerContact, href: `/${lang}/about#contact` },
