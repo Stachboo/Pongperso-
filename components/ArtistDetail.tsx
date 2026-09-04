@@ -108,7 +108,7 @@ function DeezerIcon() {
 
 export default async function ArtistDetail({ artist, lang }: ArtistDetailProps) {
   const dict = getDictionary(isValidLocale(lang) ? lang : 'fr');
-  const contextText = generateArtistContextText(artist);
+  const contextText = generateArtistContextText(artist, lang);
   const allArtists = buildArtistList(await getAllRiddims());
   const relatedArtists = getRelatedArtists(artist, allArtists);
 

@@ -132,7 +132,7 @@ export default async function RiddimDetail({ riddim, lang, dict }: RiddimDetailP
   const maxViews = sortedVoicings[0]?.views || 1;
   const topArtist = sortedVoicings[0]?.artist ?? '—';
   const decade = getDecade(riddim.year);
-  const contextText = generateContextText(riddim);
+  const contextText = generateContextText(riddim, lang);
   const similarRiddims = getSimilarRiddims(riddim, 4, await getAllRiddims());
 
   return (
