@@ -19,6 +19,31 @@ function cleanString(value: unknown): string | null {
   return s.length > 0 ? s : null;
 }
 
+/** Génère un identifiant de voicing unique et stable. */
+function newVoicingId(): string {
+  return `v_${crypto.randomUUID()}`;
+}
+
+/**
+ * Rétro-remplit un `id` stable sur chaque voicing qui n'en a pas.
+ * Renvoie true si au moins un id a été ajouté (→ persistance nécessaire).
+ * Migration douce : au premier accès admin, les anciennes données reçoivent
+ * un id immuable, après quoi toutes les opérations ciblent par id.
+ */
+function ensureVoicingIds(riddims: { voicings: { id?: string }[] }[]): boolean {
+  let changed = false;
+  for (const r of riddims) {
+    if (!Array.isArray(r.voicings)) continue;
+    for (const v of r.voicings) {
+      if (!v.id) {
+        v.id = newVoicingId();
+        changed = true;
+      }
+    }
+  }
+  return changed;
+}
+
 async function readRiddims() {
   const { blobs } = await list({ prefix: BLOB_NAME });
 
@@ -57,6 +82,11 @@ async function writeRiddims(data: unknown[]) {
 
 export async function GET() {
   const riddims = await readRiddims();
+  // Migration douce : garantit un id stable sur chaque voicing, et le persiste
+  // une seule fois pour que le client dispose toujours d'identifiants fiables.
+  if (Array.isArray(riddims) && ensureVoicingIds(riddims)) {
+    await writeRiddims(riddims);
+  }
   return NextResponse.json(riddims);
 }
 
@@ -65,11 +95,13 @@ export async function POST(req: NextRequest) {
   const { action } = body;
 
   const riddims = await readRiddims();
+  // Auto-réparation : toute donnée sans id est complétée avant mutation.
+  ensureVoicingIds(riddims);
 
   switch (action) {
     // ─── Déplacer un voicing d'un riddim à un autre ──────────────────────
     case 'move-voicing': {
-      const { fromRiddimId, toRiddimId, voicingArtist, voicingTitle } = body;
+      const { fromRiddimId, toRiddimId, voicingId } = body;
       const fromRiddim = riddims.find((r: { id: number }) => r.id === fromRiddimId);
       const toRiddim = riddims.find((r: { id: number }) => r.id === toRiddimId);
 
@@ -77,11 +109,9 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ error: 'Riddim introuvable' }, { status: 404 });
       }
 
-      const idx = fromRiddim.voicings.findIndex(
-        (v: { artist: string; title: string }) => v.artist === voicingArtist && v.title === voicingTitle
-      );
+      const idx = fromRiddim.voicings.findIndex((v: { id?: string }) => v.id === voicingId);
       if (idx === -1) {
-        return NextResponse.json({ error: `Voicing "${voicingArtist} — ${voicingTitle}" introuvable dans ce riddim` }, { status: 400 });
+        return NextResponse.json({ error: 'Voicing introuvable (rechargez la page)' }, { status: 409 });
       }
 
       const [voicing] = fromRiddim.voicings.splice(idx, 1);
@@ -94,18 +124,16 @@ export async function POST(req: NextRequest) {
 
     // ─── Supprimer un voicing ────────────────────────────────────────────
     case 'delete-voicing': {
-      const { riddimId, voicingArtist, voicingTitle } = body;
+      const { riddimId, voicingId } = body;
       const riddim = riddims.find((r: { id: number }) => r.id === riddimId);
 
       if (!riddim) {
         return NextResponse.json({ error: 'Riddim introuvable' }, { status: 404 });
       }
 
-      const idx = riddim.voicings.findIndex(
-        (v: { artist: string; title: string }) => v.artist === voicingArtist && v.title === voicingTitle
-      );
+      const idx = riddim.voicings.findIndex((v: { id?: string }) => v.id === voicingId);
       if (idx === -1) {
-        return NextResponse.json({ error: `Voicing "${voicingArtist} — ${voicingTitle}" introuvable` }, { status: 400 });
+        return NextResponse.json({ error: 'Voicing introuvable (rechargez la page)' }, { status: 409 });
       }
 
       const [deleted] = riddim.voicings.splice(idx, 1);
@@ -131,7 +159,7 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ error: 'Vues invalides (entier positif attendu)' }, { status: 400 });
       }
 
-      const newVoicing = { artist: cleanArtist, title: cleanTitle, views: normViews };
+      const newVoicing = { id: newVoicingId(), artist: cleanArtist, title: cleanTitle, views: normViews };
       riddim.voicings.push(newVoicing);
       riddim.voicings.sort((a: { views: number }, b: { views: number }) => b.views - a.views);
 
@@ -141,7 +169,7 @@ export async function POST(req: NextRequest) {
 
     // ─── Modifier un voicing existant ─────────────────────────────────────
     case 'edit-voicing': {
-      const { riddimId, originalArtist, originalTitle, artist, title, views } = body;
+      const { riddimId, voicingId, artist, title, views } = body;
       const riddim = riddims.find((r: { id: number }) => r.id === riddimId);
 
       if (!riddim) {
@@ -153,11 +181,9 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ error: 'Artiste et titre requis' }, { status: 400 });
       }
 
-      const idx = riddim.voicings.findIndex(
-        (v: { artist: string; title: string }) => v.artist === originalArtist && v.title === originalTitle
-      );
+      const idx = riddim.voicings.findIndex((v: { id?: string }) => v.id === voicingId);
       if (idx === -1) {
-        return NextResponse.json({ error: `Voicing "${originalArtist} — ${originalTitle}" introuvable` }, { status: 400 });
+        return NextResponse.json({ error: 'Voicing introuvable (rechargez la page)' }, { status: 409 });
       }
 
       // Vues absentes → on conserve l'ancienne valeur
@@ -167,6 +193,7 @@ export async function POST(req: NextRequest) {
       }
 
       riddim.voicings[idx] = {
+        id: riddim.voicings[idx].id,
         artist: editArtist,
         title: editTitle,
         views: editViews,
@@ -178,18 +205,16 @@ export async function POST(req: NextRequest) {
 
     // ─── Réordonner un voicing (monter/descendre) ───────────────────────
     case 'reorder-voicing': {
-      const { riddimId, voicingArtist, voicingTitle, direction } = body;
+      const { riddimId, voicingId, direction } = body;
       const riddim = riddims.find((r: { id: number }) => r.id === riddimId);
 
       if (!riddim) {
         return NextResponse.json({ error: 'Riddim introuvable' }, { status: 404 });
       }
 
-      const voicingIndex = riddim.voicings.findIndex(
-        (v: { artist: string; title: string }) => v.artist === voicingArtist && v.title === voicingTitle
-      );
+      const voicingIndex = riddim.voicings.findIndex((v: { id?: string }) => v.id === voicingId);
       if (voicingIndex === -1) {
-        return NextResponse.json({ error: `Voicing "${voicingArtist} — ${voicingTitle}" introuvable` }, { status: 400 });
+        return NextResponse.json({ error: 'Voicing introuvable (rechargez la page)' }, { status: 409 });
       }
 
       const targetIndex = direction === 'up' ? voicingIndex - 1 : voicingIndex + 1;
@@ -218,7 +243,7 @@ export async function POST(req: NextRequest) {
 
       // Valider et normaliser les voicings fournis
       const rawVoicings = Array.isArray(voicings) ? voicings : [];
-      const cleanVoicings: { artist: string; title: string; views: number }[] = [];
+      const cleanVoicings: { id: string; artist: string; title: string; views: number }[] = [];
       for (const v of rawVoicings) {
         const a = cleanString(v?.artist);
         const t = cleanString(v?.title);
@@ -226,7 +251,7 @@ export async function POST(req: NextRequest) {
         if (!a || !t || vw === null) {
           return NextResponse.json({ error: 'Voicing invalide (artiste, titre et vues positives requis)' }, { status: 400 });
         }
-        cleanVoicings.push({ artist: a, title: t, views: vw });
+        cleanVoicings.push({ id: newVoicingId(), artist: a, title: t, views: vw });
       }
 
       const normYear = normalizeViews(year);
