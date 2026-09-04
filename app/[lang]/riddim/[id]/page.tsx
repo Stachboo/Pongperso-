@@ -4,15 +4,13 @@ import { notFound } from 'next/navigation';
 import { getDictionary, isValidLocale, LOCALES, type Locale } from '@/lib/i18n';
 import type { Riddim } from '@/types/riddim';
 import { getRiddimById, getAllRiddims } from '@/lib/data';
-import { generateHreflang, jsonLdString } from '@/utils/seo';
+import { generateHreflang, jsonLdString, BASE_URL, DATASET_UPDATED } from '@/utils/seo';
 import RiddimDetail from '@/components/RiddimDetail';
 
 /* ══════════════════════════════════════════════════════════════════════════════
    WMC — RIDDIM DETAIL PAGE
    Page de détail d'un riddim avec métadonnées SEO et JSON-LD Schema.org
    ══════════════════════════════════════════════════════════════════════════════ */
-
-const BASE_URL = 'https://wmc-iota.vercel.app';
 
 /* ═══════════════════════════════════════════════════════════════════════════
    generateStaticParams — Routes statiques pour tous les riddims × langues
@@ -88,8 +86,10 @@ function generateJsonLd(riddim: Riddim, locale: Locale) {
     '@graph': [
       {
         '@type': 'MusicComposition',
+        '@id': `${canonicalUrl}#composition`,
         name: riddim.name,
         dateCreated: String(riddim.year),
+        dateModified: DATASET_UPDATED,
         producer: {
           '@type': 'Person',
           name: riddim.producer,
@@ -101,9 +101,12 @@ function generateJsonLd(riddim: Riddim, locale: Locale) {
         genre: riddim.genre,
         inLanguage: 'en',
         url: canonicalUrl,
+        isPartOf: { '@id': `${BASE_URL}/#website` },
+        publisher: { '@id': `${BASE_URL}/#organization` },
       },
       {
         '@type': 'ItemList',
+        '@id': `${canonicalUrl}#voicings`,
         name: `Voicings du ${riddim.name}`,
         numberOfItems: riddim.voicings.length,
         itemListElement: sortedVoicings.map((v, i) => ({

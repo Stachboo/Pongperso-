@@ -198,10 +198,13 @@ export function generateArtistJsonLd(
     '@graph': [
       {
         '@type': isGroup ? 'MusicGroup' : 'Person',
+        '@id': `${canonicalUrl}#artist`,
         name: artist.name,
         genre: artist.styles,
         url: canonicalUrl,
         sameAs: [spotifySearch, youtubeSearch],
+        mainEntityOfPage: canonicalUrl,
+        subjectOf: { '@id': `${baseUrl}/#website` },
       },
       {
         '@type': 'BreadcrumbList',

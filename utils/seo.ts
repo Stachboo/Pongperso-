@@ -9,6 +9,13 @@ import type { Riddim } from '@/types/riddim';
 /** URL de base du site — source unique de vérité */
 export const BASE_URL = 'https://wmc-iota.vercel.app';
 
+/**
+ * Date de dernière revue du jeu de données (catalogue riddims/voicings).
+ * Sert de `dateModified` sur les pages de contenu (signal de fraîcheur GEO).
+ * À incrémenter à chaque révision significative des données.
+ */
+export const DATASET_UPDATED = '2026-09-04';
+
 /** Langues supportées */
 const LANGS = ['fr', 'en', 'es', 'pt', 'ja'] as const;
 
@@ -164,8 +171,10 @@ export function generateRiddimJsonLd(
     '@graph': [
       {
         '@type': 'MusicComposition',
+        '@id': `${canonicalUrl}#composition`,
         name: riddim.name,
         dateCreated: String(riddim.year),
+        dateModified: DATASET_UPDATED,
         producer: {
           '@type': 'Person',
           name: riddim.producer,
@@ -177,9 +186,12 @@ export function generateRiddimJsonLd(
         genre: riddim.genre,
         inLanguage: 'en',
         url: canonicalUrl,
+        isPartOf: { '@id': `${baseUrl}/#website` },
+        publisher: { '@id': `${baseUrl}/#organization` },
       },
       {
         '@type': 'ItemList',
+        '@id': `${canonicalUrl}#voicings`,
         name: `Voicings du ${riddim.name}`,
         numberOfItems: riddim.voicings.length,
         itemListElement: sortedVoicings.map((v, i) => ({

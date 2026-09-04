@@ -97,10 +97,12 @@ function generateProducerJsonLd(
     '@graph': [
       {
         '@type': entityType,
+        '@id': `${canonicalUrl}#producer`,
         name: producer.name,
         description: producer.description,
         foundingDate: producer.founded,
         url: canonicalUrl,
+        subjectOf: { '@id': `${BASE_URL}/#website` },
         ...(entityType === 'Organization' && {
           alternateName: producer.label,
         }),

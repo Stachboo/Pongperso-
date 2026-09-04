@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { LOCALES, isValidLocale, type Locale } from '@/lib/i18n';
-import { generateHreflang } from '@/utils/seo';
+import { generateHreflang, BASE_URL } from '@/utils/seo';
 import styles from '@/styles/static-page.module.css';
 
 /* ══════════════════════════════════════════════════════════════════════════════
@@ -158,7 +158,7 @@ export async function generateMetadata({
     title: CONTENT[locale].metaTitle,
     description: CONTENT[locale].metaDescription,
     alternates: {
-      canonical: `https://wmc-iota.vercel.app/${locale}/presse`,
+      canonical: `${BASE_URL}/${locale}/presse`,
       languages: hreflang,
     },
   };
