@@ -240,7 +240,7 @@ export default async function RiddimDetail({ riddim, lang, dict }: RiddimDetailP
             </div>
             <div className={styles.stat}>
               <span className={styles.statValue}>{topArtist}</span>
-              <span className={styles.statLabel}>Top Artist</span>
+              <span className={styles.statLabel}>{dict.topArtist}</span>
             </div>
             <div className={styles.stat}>
               <span className={styles.statValue}>{decade}</span>
@@ -295,7 +295,7 @@ export default async function RiddimDetail({ riddim, lang, dict }: RiddimDetailP
           <span className={styles.voicingsCount}>({riddim.voicings.length})</span>
         </h2>
 
-        <table className={styles.table} aria-label={`Voicings du riddim ${riddim.name}`}>
+        <table className={styles.table} aria-label={dict.ariaVoicingsList}>
           <thead className={styles.tableHead}>
             <tr>
               <th scope="col">{dict.rank}</th>

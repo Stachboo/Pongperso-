@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { isValidLocale, type Locale } from '@/lib/i18n';
+import { getDictionary, isValidLocale, type Locale } from '@/lib/i18n';
 import { generateHreflang, BASE_URL } from '@/utils/seo';
 import { producers } from '@/data/producers';
 import ProducerCard from '@/components/ProducerCard';
@@ -90,6 +90,7 @@ export default async function ProducteursPage({
   const { lang } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const c = CONTENT[locale];
+  const dict = getDictionary(locale);
 
   return (
     <main className={styles.container}>
@@ -120,7 +121,7 @@ export default async function ProducteursPage({
           <ProducerCard
             key={producer.id}
             producer={producer}
-            lang={locale}
+            dict={dict}
             href={`/${locale}/producteurs/${producer.id}`}
           />
         ))}

@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import type { Producer } from '@/data/producers';
+import type { Dictionary } from '@/lib/i18n';
 import styles from './ProducerCard.module.css';
 
 /* ══════════════════════════════════════════════════════════════════════════════
@@ -11,7 +12,7 @@ import styles from './ProducerCard.module.css';
 
 interface ProducerCardProps {
   producer: Producer;
-  lang: string;
+  dict: Dictionary;
   href: string;
 }
 
@@ -35,7 +36,7 @@ function truncate(text: string, max: number): string {
   return (lastSpace > max * 0.6 ? cut.slice(0, lastSpace) : cut).trimEnd() + '…';
 }
 
-export default function ProducerCard({ producer, lang, href }: ProducerCardProps) {
+export default function ProducerCard({ producer, dict, href }: ProducerCardProps) {
   const borderClass = getBorderClass(producer.style[0]);
 
   return (
@@ -59,7 +60,7 @@ export default function ProducerCard({ producer, lang, href }: ProducerCardProps
       {/* Riddims dans WMC */}
       {producer.riddimIds.length > 0 && (
         <div className={styles.riddimSection}>
-          <span className={styles.riddimLabel}>Riddims dans WMC</span>
+          <span className={styles.riddimLabel}>{dict.producerRiddimsIn}</span>
           <div className={styles.riddimPills}>
             {producer.riddimIds.map((id) => (
               <span key={id} className={styles.riddimPill}>
@@ -73,10 +74,10 @@ export default function ProducerCard({ producer, lang, href }: ProducerCardProps
       {/* Footer — Count + CTA */}
       <div className={styles.footer}>
         <span className={styles.count}>
-          {producer.riddimIds.length} riddim{producer.riddimIds.length > 1 ? 's' : ''}
+          {producer.riddimIds.length} riddims
         </span>
         <span className={styles.cta}>
-          Voir le profil
+          {dict.viewProfile}
           <span className={styles.ctaArrow} aria-hidden="true">→</span>
         </span>
       </div>

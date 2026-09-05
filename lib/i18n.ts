@@ -200,6 +200,22 @@ export interface Dictionary {
   ariaMainNav: string;
   listenOnDeezer: string;
   ariaSearchDeezer: string;
+  /* Correctifs i18n — cartes, tableaux, aria, métadonnées SEO
+     (les valeurs avec {name}/{count}/… sont des gabarits interpolés côté page) */
+  viewProfile: string;
+  producerRiddimsIn: string;
+  tableListen: string;
+  topArtist: string;
+  ariaScrollTop: string;
+  ariaArtistRiddimsOf: string;
+  metaRiddimTitle: string;
+  metaRiddimDesc: string;
+  voicingsOf: string;
+  metaArtistTitle: string;
+  metaArtistDesc: string;
+  artistNotFound: string;
+  metaProducerTitle: string;
+  producerNotFound: string;
 }
 
 const dictionaries: Record<Locale, Dictionary> = {
@@ -384,6 +400,20 @@ const dictionaries: Record<Locale, Dictionary> = {
     formSourcesPlaceholder: 'Liens YouTube, Spotify, Wikipedia, Discogs...',
     formSubmit: 'Envoyer la suggestion',
     formNote: "Les soumissions sont examinées par l'équipe WMC avant intégration. Nous ne garantissons pas l'ajout de chaque suggestion.",
+    viewProfile: 'Voir le profil',
+    producerRiddimsIn: 'Riddims dans WMC',
+    tableListen: 'Écouter',
+    topArtist: 'Artiste phare',
+    ariaScrollTop: 'Retourner en haut de la page',
+    ariaArtistRiddimsOf: 'Riddims de {x}',
+    metaRiddimTitle: '{name} — Voicings, artistes & histoire',
+    metaRiddimDesc: 'Découvrez tous les voicings du {name} ({year}), produit par {producer} ({label}). {count} artistes ont enregistré sur ce riddim {genre} jamaïcain. Classés par popularité.',
+    voicingsOf: 'Voicings du {name}',
+    metaArtistTitle: '{name} — Riddims & voicings jamaïcains',
+    metaArtistDesc: '{name} a enregistré {count} voicings sur {riddims} riddims jamaïcains dont {top}. Découvrez tous ses titres classés par popularité.',
+    artistNotFound: 'Artiste introuvable',
+    metaProducerTitle: '{name} ({label}) — Producteur jamaïcain',
+    producerNotFound: 'Producteur introuvable',
   },
 
   en: {
@@ -567,6 +597,20 @@ const dictionaries: Record<Locale, Dictionary> = {
     formSourcesPlaceholder: 'YouTube, Spotify, Wikipedia, Discogs links...',
     formSubmit: 'Send suggestion',
     formNote: 'Submissions are reviewed by the WMC team before being added. We do not guarantee that every suggestion will be included.',
+    viewProfile: 'View profile',
+    producerRiddimsIn: 'Riddims on WMC',
+    tableListen: 'Listen',
+    topArtist: 'Top artist',
+    ariaScrollTop: 'Back to top',
+    ariaArtistRiddimsOf: 'Riddims by {x}',
+    metaRiddimTitle: '{name} — Voicings, artists & history',
+    metaRiddimDesc: 'Discover every voicing of {name} ({year}), produced by {producer} ({label}). {count} artists recorded on this Jamaican {genre} riddim. Ranked by popularity.',
+    voicingsOf: 'Voicings of {name}',
+    metaArtistTitle: '{name} — Jamaican riddims & voicings',
+    metaArtistDesc: '{name} recorded {count} voicings across {riddims} Jamaican riddims including {top}. Explore all their tracks ranked by popularity.',
+    artistNotFound: 'Artist not found',
+    metaProducerTitle: '{name} ({label}) — Jamaican producer',
+    producerNotFound: 'Producer not found',
   },
 
   es: {
@@ -750,6 +794,20 @@ const dictionaries: Record<Locale, Dictionary> = {
     formSourcesPlaceholder: 'Enlaces de YouTube, Spotify, Wikipedia, Discogs...',
     formSubmit: 'Enviar sugerencia',
     formNote: 'Las propuestas son revisadas por el equipo de WMC antes de su integración. No garantizamos la inclusión de cada sugerencia.',
+    viewProfile: 'Ver el perfil',
+    producerRiddimsIn: 'Riddims en WMC',
+    tableListen: 'Escuchar',
+    topArtist: 'Artista destacado',
+    ariaScrollTop: 'Volver arriba',
+    ariaArtistRiddimsOf: 'Riddims de {x}',
+    metaRiddimTitle: '{name} — Voicings, artistas e historia',
+    metaRiddimDesc: 'Descubre todos los voicings de {name} ({year}), producido por {producer} ({label}). {count} artistas grabaron sobre este riddim {genre} jamaicano. Ordenados por popularidad.',
+    voicingsOf: 'Voicings de {name}',
+    metaArtistTitle: '{name} — Riddims y voicings jamaicanos',
+    metaArtistDesc: '{name} grabó {count} voicings en {riddims} riddims jamaicanos, entre ellos {top}. Descubre todos sus temas ordenados por popularidad.',
+    artistNotFound: 'Artista no encontrado',
+    metaProducerTitle: '{name} ({label}) — Productor jamaicano',
+    producerNotFound: 'Productor no encontrado',
   },
 
   pt: {
@@ -933,6 +991,20 @@ const dictionaries: Record<Locale, Dictionary> = {
     formSourcesPlaceholder: 'Links do YouTube, Spotify, Wikipedia, Discogs...',
     formSubmit: 'Enviar sugestão',
     formNote: 'Os envios são analisados pela equipe do WMC antes da integração. Não garantimos a inclusão de todas as sugestões.',
+    viewProfile: 'Ver o perfil',
+    producerRiddimsIn: 'Riddims na WMC',
+    tableListen: 'Ouvir',
+    topArtist: 'Artista principal',
+    ariaScrollTop: 'Voltar ao topo',
+    ariaArtistRiddimsOf: 'Riddims de {x}',
+    metaRiddimTitle: '{name} — Voicings, artistas e história',
+    metaRiddimDesc: 'Descubra todos os voicings de {name} ({year}), produzido por {producer} ({label}). {count} artistas gravaram neste riddim {genre} jamaicano. Ordenados por popularidade.',
+    voicingsOf: 'Voicings de {name}',
+    metaArtistTitle: '{name} — Riddims e voicings jamaicanos',
+    metaArtistDesc: '{name} gravou {count} voicings em {riddims} riddims jamaicanos, incluindo {top}. Descubra todas as suas faixas ordenadas por popularidade.',
+    artistNotFound: 'Artista não encontrado',
+    metaProducerTitle: '{name} ({label}) — Produtor jamaicano',
+    producerNotFound: 'Produtor não encontrado',
   },
 
   ja: {
@@ -1116,6 +1188,20 @@ const dictionaries: Record<Locale, Dictionary> = {
     formSourcesPlaceholder: 'YouTube、Spotify、Wikipedia、Discogsのリンク...',
     formSubmit: '提案を送信',
     formNote: '送信内容はWMCチームが確認したうえで反映されます。すべての提案の追加を保証するものではありません。',
+    viewProfile: 'プロフィールを見る',
+    producerRiddimsIn: 'WMC のリディム',
+    tableListen: '再生',
+    topArtist: 'トップアーティスト',
+    ariaScrollTop: 'ページ上部に戻る',
+    ariaArtistRiddimsOf: '{x} のリディム',
+    metaRiddimTitle: '{name} — ヴォイシング、アーティスト、歴史',
+    metaRiddimDesc: '{name}（{year}）のすべてのヴォイシングを紹介。{producer}（{label}）制作。{count} 組のアーティストがこのジャマイカの {genre} リディムに録音しました。人気順。',
+    voicingsOf: '{name} のヴォイシング',
+    metaArtistTitle: '{name} — ジャマイカのリディムとヴォイシング',
+    metaArtistDesc: '{name} は {riddims} 組のジャマイカのリディム（{top} を含む）に {count} のヴォイシングを録音しました。人気順ですべての楽曲を紹介します。',
+    artistNotFound: 'アーティストが見つかりません',
+    metaProducerTitle: '{name}（{label}）— ジャマイカのプロデューサー',
+    producerNotFound: 'プロデューサーが見つかりません',
   },
 };
 

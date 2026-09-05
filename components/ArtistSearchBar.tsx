@@ -48,6 +48,7 @@ export default function ArtistSearchBar({ artists, lang, dict }: ArtistSearchBar
               key={a.slug}
               artist={a}
               href={`/${lang}/artistes/${a.slug}`}
+              dict={dict}
             />
           ))}
         </div>

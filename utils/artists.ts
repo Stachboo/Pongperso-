@@ -4,6 +4,7 @@
    ══════════════════════════════════════════════════════════════════════════════ */
 
 import type { Riddim } from '@/types/riddim';
+import type { Dictionary } from '@/lib/i18n';
 import { toArtistSlug, BASE_URL } from '@/utils/seo';
 
 
@@ -248,7 +249,8 @@ export function generateArtistContextText(artist: Artist, locale: string = 'fr')
 export function generateArtistJsonLd(
   artist: Artist,
   lang: string,
-  baseUrl: string
+  baseUrl: string,
+  dict: Dictionary
 ): object {
   const isGroup = /&|ft\.|feat\./i.test(artist.name);
   const canonicalUrl = `${baseUrl}/${lang}/artistes/${artist.slug}`;
@@ -274,13 +276,13 @@ export function generateArtistJsonLd(
           {
             '@type': 'ListItem',
             position: 1,
-            name: 'Accueil',
+            name: dict.navHome,
             item: `${baseUrl}/${lang}`,
           },
           {
             '@type': 'ListItem',
             position: 2,
-            name: 'Artistes',
+            name: dict.navArtists,
             item: `${baseUrl}/${lang}/artistes`,
           },
           {
