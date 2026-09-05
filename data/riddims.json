@@ -242,9 +242,9 @@
   {
     "id": 6,
     "name": "Coolie Dance",
-    "year": 2004,
-    "producer": "Don Corleon",
-    "label": "Don Corleon Records",
+    "year": 2003,
+    "producer": "Cordell 'Scatta' Burrell",
+    "label": "King of Kings",
     "type": "digital",
     "genre": "dancehall",
     "bpm": 95,
@@ -285,13 +285,13 @@
   {
     "id": 7,
     "name": "Punaany",
-    "year": 1992,
-    "producer": "Dave Kelly",
-    "label": "Madhouse Records",
+    "year": 1986,
+    "producer": "King Jammy",
+    "label": "King Jammy's",
     "type": "digital",
     "genre": "dancehall",
     "bpm": 90,
-    "description": "Riddim emblématique de l'ère digitale du dancehall, produit par le légendaire Dave Kelly.",
+    "description": "Riddim emblématique des débuts du dancehall digital, produit par le légendaire King Jammy et immortalisé par « Punanny » d'Admiral Bailey.",
     "voicings": [
       {
         "artist": "Shabba Ranks",
@@ -804,13 +804,13 @@
   {
     "id": 20,
     "name": "Juice",
-    "year": 1998,
-    "producer": "Steely & Clevie",
-    "label": "Steely & Clevie Records",
-    "type": "ragga",
+    "year": 2001,
+    "producer": "Richard 'Shams' Browne",
+    "label": "Call Me Shams / VP Records",
+    "type": "digital",
     "genre": "dancehall",
     "bpm": 94,
-    "description": "Un riddim ragga percutant du duo légendaire Steely & Clevie, incontournable des années 90.",
+    "description": "Un riddim dancehall percutant de la série Riddim Driven, connu pour « Shake Yuh Bam Bam » de T.O.K.",
     "voicings": [
       {
         "artist": "Mr. Vegas",
