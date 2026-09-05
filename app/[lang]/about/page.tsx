@@ -43,6 +43,11 @@ type PageContent = {
   teamTitle: string;
   teamP1: string;
   teamP2: string;
+  understandAria: string;
+  understandTitle: string;
+  understandP1: string;
+  understandP2: string;
+  understandP3: string;
 };
 
 const CONTENT: Record<Locale, PageContent> = {
@@ -90,6 +95,14 @@ const CONTENT: Record<Locale, PageContent> = {
       "WMC est un projet indépendant développé par une équipe passionnée de culture jamaïcaine et de musique mondiale. Nous ne sommes affiliés à aucun label, aucun artiste ni aucune plateforme de streaming.",
     teamP2:
       "Notre objectif est simple : préserver et valoriser le patrimoine musical jamaïcain en le rendant accessible au plus grand nombre, dans toutes les langues.",
+    understandAria: 'Comprendre les riddims',
+    understandTitle: 'Comprendre les riddims',
+    understandP1:
+      "Dans la musique jamaïcaine, un riddim désigne l'instrumentale d'un morceau — la ligne de basse, la batterie et l'accompagnement — indépendamment de la voix. C'est une particularité unique : là où, ailleurs, une chanson associe durablement une mélodie à un interprète, la Jamaïque a fait du riddim un bien commun que des dizaines d'artistes réenregistrent chacun à leur façon.",
+    understandP2:
+      "Chaque interprétation s'appelle un voicing. Un riddim marquant comme le Sleng Teng (1985), considéré comme le premier riddim entièrement numérique, a donné naissance à des centaines de voicings. Le producteur occupe une place centrale : il crée le riddim en studio, puis invite les artistes à poser leur voix — un modèle qui a façonné le dancehall, le reggae et le lovers rock.",
+    understandP3:
+      "Documenter les riddims, c'est cartographier tout un écosystème : les producteurs et leurs labels, les artistes qui gravitent autour, et les milliers de morceaux qui partagent une même fondation rythmique. C'est cette histoire collective, souvent dispersée entre disques, forums et mémoires de sound systems, que ce catalogue rassemble et rend consultable.",
   },
   en: {
     metaTitle: 'About — World Music Contest',
@@ -135,6 +148,14 @@ const CONTENT: Record<Locale, PageContent> = {
       'WMC is an independent project developed by a team passionate about Jamaican culture and world music. We are not affiliated with any label, any artist or any streaming platform.',
     teamP2:
       'Our goal is simple: to preserve and showcase Jamaican musical heritage by making it accessible to as many people as possible, in every language.',
+    understandAria: 'Understanding riddims',
+    understandTitle: 'Understanding riddims',
+    understandP1:
+      'In Jamaican music, a riddim is the instrumental of a track — the bassline, the drums and the backing — separate from the vocal. It is a unique trait: where elsewhere a song ties a melody to a single performer for good, Jamaica turned the riddim into common property that dozens of artists re-record, each in their own way.',
+    understandP2:
+      'Each performance is called a voicing. A landmark riddim like Sleng Teng (1985), regarded as the first fully digital riddim, gave rise to hundreds of voicings. The producer is central: they build the riddim in the studio, then invite artists to lay down their vocals — a model that shaped dancehall, reggae and lovers rock.',
+    understandP3:
+      'Documenting riddims therefore means mapping a whole ecosystem: the producers and their labels, the artists orbiting around them, and the thousands of tracks that share a single rhythmic foundation. It is this collective history — often scattered across records, forums and sound-system memory — that this catalogue gathers and makes searchable.',
   },
   es: {
     metaTitle: 'Acerca de — World Music Contest',
@@ -180,6 +201,14 @@ const CONTENT: Record<Locale, PageContent> = {
       'WMC es un proyecto independiente desarrollado por un equipo apasionado por la cultura jamaicana y la música mundial. No estamos afiliados a ningún sello, ningún artista ni ninguna plataforma de streaming.',
     teamP2:
       'Nuestro objetivo es simple: preservar y poner en valor el patrimonio musical jamaicano haciéndolo accesible al mayor número de personas, en todos los idiomas.',
+    understandAria: 'Entender los riddims',
+    understandTitle: 'Entender los riddims',
+    understandP1:
+      'En la música jamaicana, un riddim es la instrumental de un tema —la línea de bajo, la batería y el acompañamiento— independientemente de la voz. Es un rasgo único: donde en otros lugares una canción une una melodía a un intérprete para siempre, Jamaica convirtió el riddim en un bien común que decenas de artistas regraban, cada uno a su manera.',
+    understandP2:
+      'Cada interpretación se llama voicing. Un riddim emblemático como el Sleng Teng (1985), considerado el primer riddim totalmente digital, dio origen a cientos de voicings. El productor ocupa un lugar central: crea el riddim en el estudio y luego invita a los artistas a poner su voz, un modelo que dio forma al dancehall, el reggae y el lovers rock.',
+    understandP3:
+      'Documentar los riddims significa, por tanto, cartografiar todo un ecosistema: los productores y sus sellos, los artistas que giran a su alrededor y los miles de temas que comparten una misma base rítmica. Es esta historia colectiva —a menudo dispersa entre discos, foros y la memoria de los sound systems— la que este catálogo reúne y hace consultable.',
   },
   pt: {
     metaTitle: 'Sobre — World Music Contest',
@@ -225,6 +254,14 @@ const CONTENT: Record<Locale, PageContent> = {
       'A WMC é um projeto independente desenvolvido por uma equipe apaixonada pela cultura jamaicana e pela música mundial. Não somos afiliados a nenhum selo, nenhum artista nem nenhuma plataforma de streaming.',
     teamP2:
       'Nosso objetivo é simples: preservar e valorizar o patrimônio musical jamaicano, tornando-o acessível ao maior número de pessoas, em todos os idiomas.',
+    understandAria: 'Entender os riddims',
+    understandTitle: 'Entender os riddims',
+    understandP1:
+      'Na música jamaicana, um riddim é a instrumental de uma faixa — a linha de baixo, a bateria e o acompanhamento — independentemente da voz. É uma característica única: onde, em outros lugares, uma canção liga uma melodia a um intérprete para sempre, a Jamaica transformou o riddim num bem comum que dezenas de artistas regravam, cada um à sua maneira.',
+    understandP2:
+      'Cada interpretação chama-se voicing. Um riddim marcante como o Sleng Teng (1985), considerado o primeiro riddim totalmente digital, deu origem a centenas de voicings. O produtor ocupa um lugar central: cria o riddim no estúdio e depois convida os artistas a colocar a sua voz — um modelo que moldou o dancehall, o reggae e o lovers rock.',
+    understandP3:
+      'Documentar os riddims significa, portanto, mapear todo um ecossistema: os produtores e os seus selos, os artistas que gravitam à sua volta e os milhares de faixas que partilham uma mesma base rítmica. É esta história coletiva — muitas vezes dispersa entre discos, fóruns e a memória dos sound systems — que este catálogo reúne e torna consultável.',
   },
   ja: {
     metaTitle: 'WMCについて — World Music Contest',
@@ -270,6 +307,14 @@ const CONTENT: Record<Locale, PageContent> = {
       'WMCは、ジャマイカ文化と世界の音楽を愛するチームによって開発された独立したプロジェクトです。私たちはいかなるレーベル、アーティスト、ストリーミングプラットフォームとも提携していません。',
     teamP2:
       '私たちの目標はシンプルです。ジャマイカの音楽遺産を保存し価値を高め、あらゆる言語で、できるだけ多くの人々がアクセスできるようにすることです。',
+    understandAria: 'リディムを理解する',
+    understandTitle: 'リディムを理解する',
+    understandP1:
+      'ジャマイカ音楽において、riddim とは楽曲のインストゥルメンタル——ベースライン、ドラム、伴奏——を、ボーカルとは切り離して指す言葉です。これは独特の特徴です。他の地域では 1 つの曲がメロディーを 1 人の歌手に固く結びつけるのに対し、ジャマイカは riddim を、何十人ものアーティストがそれぞれのやり方で録音し直す共有財としました。',
+    understandP2:
+      'それぞれの演奏は voicing と呼ばれます。最初の完全デジタル riddim とされる Sleng Teng（1985 年）のような画期的な riddim は、何百もの voicing を生み出しました。プロデューサーは中心的な役割を担います。スタジオで riddim を制作し、アーティストを招いてボーカルを乗せてもらう——このモデルが dancehall、reggae、lovers rock を形づくりました。',
+    understandP3:
+      'したがって riddim を記録するとは、1 つのエコシステム全体を地図化することを意味します。プロデューサーとそのレーベル、その周囲に集まるアーティスト、そして同じリズムの土台を共有する何千もの楽曲です。レコード、フォーラム、サウンドシステムの記憶に散らばりがちなこの集合的な歴史を、このカタログはまとめ、検索できるようにします。',
   },
 };
 
@@ -320,6 +365,14 @@ export default async function AboutPage({
           <h2 className={styles.sectionTitle}>{c.missionTitle}</h2>
           <p className={styles.paragraph}>{c.missionP1}</p>
           <p className={styles.paragraph}>{c.missionP2}</p>
+        </section>
+
+        {/* ═══ COMPRENDRE LES RIDDIMS ═══ */}
+        <section className={styles.section} aria-label={c.understandAria}>
+          <h2 className={styles.sectionTitle}>{c.understandTitle}</h2>
+          <p className={styles.paragraph}>{c.understandP1}</p>
+          <p className={styles.paragraph}>{c.understandP2}</p>
+          <p className={styles.paragraph}>{c.understandP3}</p>
         </section>
 
         {/* ═══ POURQUOI ═══ */}
