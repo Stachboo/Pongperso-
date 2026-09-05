@@ -251,34 +251,34 @@
     "description": "Un riddim dancehall massif qui a dominé les sound systems au milieu des années 2000.",
     "voicings": [
       {
+        "artist": "Sean Paul",
+        "title": "Feel Alright",
+        "views": 1890000
+      },
+      {
         "artist": "Vybz Kartel",
-        "title": "Most Wanted",
-        "views": 15000000
+        "title": "Please",
+        "views": 634000
+      },
+      {
+        "artist": "Bounty Killer",
+        "title": "Yuh Gawn",
+        "views": 109000
       },
       {
         "artist": "Elephant Man",
-        "title": "Willie Bounce",
-        "views": 28000000
-      },
-      {
-        "artist": "Sean Paul",
-        "title": "Never Gonna Be the Same",
-        "views": 35000000
-      },
-      {
-        "artist": "T.O.K.",
-        "title": "Gal You A Lead",
-        "views": 8700000
+        "title": "Head Gone",
+        "views": 33000
       },
       {
         "artist": "Beenie Man",
-        "title": "Hmm Hmm",
-        "views": 6200000
+        "title": "Good Ohh",
+        "views": 13000
       },
       {
-        "artist": "Busy Signal",
-        "title": "Step Out",
-        "views": 11000000
+        "artist": "Kiprich",
+        "title": "Dat Man",
+        "views": 7000
       }
     ]
   },
@@ -294,34 +294,29 @@
     "description": "Riddim emblématique des débuts du dancehall digital, produit par le légendaire King Jammy et immortalisé par « Punanny » d'Admiral Bailey.",
     "voicings": [
       {
+        "artist": "Admiral Bailey",
+        "title": "Punaany",
+        "views": 600000
+      },
+      {
         "artist": "Shabba Ranks",
-        "title": "Ting-A-Ling",
-        "views": 22000000
+        "title": "Needle Eye Pum-Pum",
+        "views": 211000
+      },
+      {
+        "artist": "Cocoa Tea",
+        "title": "Sonia Come Back",
+        "views": 0
       },
       {
         "artist": "Beenie Man",
-        "title": "Slam",
-        "views": 9800000
-      },
-      {
-        "artist": "Mad Cobra",
-        "title": "Press Trigger",
-        "views": 3500000
-      },
-      {
-        "artist": "Buju Banton",
-        "title": "Batty Rider",
-        "views": 7600000
+        "title": "Roll Deep",
+        "views": 0
       },
       {
         "artist": "Lady Saw",
-        "title": "Find a Good Man",
-        "views": 4100000
-      },
-      {
-        "artist": "Bounty Killer",
-        "title": "Down in the Ghetto",
-        "views": 5200000
+        "title": "It's All About The Money",
+        "views": 0
       }
     ]
   },
@@ -365,49 +360,6 @@
         "artist": "Queen Ifrica",
         "title": "Below the Waist",
         "views": 3100000
-      }
-    ]
-  },
-  {
-    "id": 9,
-    "name": "Diseases",
-    "year": 2006,
-    "producer": "Stephen 'Di Genius' McGregor",
-    "label": "Big Ship Records",
-    "type": "digital",
-    "genre": "dancehall",
-    "bpm": 98,
-    "description": "Un riddim dancehall agressif et sombre qui a marqué l'émergence de Di Genius comme producteur majeur.",
-    "voicings": [
-      {
-        "artist": "Vybz Kartel",
-        "title": "Emergency",
-        "views": 18000000
-      },
-      {
-        "artist": "Mavado",
-        "title": "Weh Dem a Do",
-        "views": 11000000
-      },
-      {
-        "artist": "Aidonia",
-        "title": "Lala Land",
-        "views": 8500000
-      },
-      {
-        "artist": "Bounty Killer",
-        "title": "Nuh Fraid",
-        "views": 4300000
-      },
-      {
-        "artist": "Munga",
-        "title": "Bad From Mi Born",
-        "views": 6700000
-      },
-      {
-        "artist": "Busy Signal",
-        "title": "Gyal Anthem",
-        "views": 5200000
       }
     ]
   },
@@ -655,49 +607,6 @@
     ]
   },
   {
-    "id": 16,
-    "name": "Love Bump",
-    "year": 2007,
-    "producer": "Donovan 'Don' Germain",
-    "label": "Penthouse Records",
-    "type": "digital",
-    "genre": "lovers rock",
-    "bpm": 80,
-    "description": "Un riddim doux typique du lovers rock, parfait pour les slow jams jamaïcains.",
-    "voicings": [
-      {
-        "artist": "Beres Hammond",
-        "title": "I Feel Good",
-        "views": 24000000
-      },
-      {
-        "artist": "Tarrus Riley",
-        "title": "Start Anew",
-        "views": 8500000
-      },
-      {
-        "artist": "Jah Cure",
-        "title": "Longing For",
-        "views": 12000000
-      },
-      {
-        "artist": "Alaine",
-        "title": "Sacrifice",
-        "views": 6700000
-      },
-      {
-        "artist": "Romain Virgo",
-        "title": "Wanna Go Home",
-        "views": 4300000
-      },
-      {
-        "artist": "Cecile",
-        "title": "Change the World",
-        "views": 2900000
-      }
-    ]
-  },
-  {
     "id": 17,
     "name": "Filthy",
     "year": 2010,
@@ -722,44 +631,6 @@
         "artist": "Lisa Hyper",
         "title": "Wine and Kotch",
         "views": 5100000
-      }
-    ]
-  },
-  {
-    "id": 18,
-    "name": "Head Concussion",
-    "year": 2012,
-    "producer": "Rvssian",
-    "label": "Head Concussion Records",
-    "type": "digital",
-    "genre": "dancehall",
-    "bpm": 102,
-    "description": "Un riddim signé Rvssian qui a contribué à l'internationalisation du dancehall moderne.",
-    "voicings": [
-      {
-        "artist": "Sean Paul",
-        "title": "Other Side of Love",
-        "views": 48000000
-      },
-      {
-        "artist": "Konshens",
-        "title": "Gal a Bubble",
-        "views": 72000000
-      },
-      {
-        "artist": "Aidonia",
-        "title": "Boom Boom",
-        "views": 12000000
-      },
-      {
-        "artist": "I-Octane",
-        "title": "Wine Slow",
-        "views": 8900000
-      },
-      {
-        "artist": "Demarco",
-        "title": "Duppy Know Who Fi Frighten",
-        "views": 6500000
       }
     ]
   },
@@ -813,34 +684,34 @@
     "description": "Un riddim dancehall percutant de la série Riddim Driven, connu pour « Shake Yuh Bam Bam » de T.O.K.",
     "voicings": [
       {
+        "artist": "T.O.K",
+        "title": "Shake Yuh Bam Bam",
+        "views": 600000
+      },
+      {
         "artist": "Mr. Vegas",
-        "title": "Heads High",
-        "views": 42000000
+        "title": "Go Up",
+        "views": 550000
+      },
+      {
+        "artist": "T.O.K ft. Bounty Killer",
+        "title": "Man Ah Bad Man",
+        "views": 290000
+      },
+      {
+        "artist": "Mad Cobra",
+        "title": "Anything",
+        "views": 270000
+      },
+      {
+        "artist": "Elephant Man",
+        "title": "Behave",
+        "views": 85000
       },
       {
         "artist": "Beenie Man",
-        "title": "Who Am I (Sim Simma)",
-        "views": 88000000
-      },
-      {
-        "artist": "Lady Saw",
-        "title": "Sycamore Tree",
-        "views": 5600000
-      },
-      {
-        "artist": "Bounty Killer",
-        "title": "It's a Party",
-        "views": 7200000
-      },
-      {
-        "artist": "General Degree",
-        "title": "Miyagi",
-        "views": 3800000
-      },
-      {
-        "artist": "Buju Banton",
-        "title": "Champion",
-        "views": 18000000
+        "title": "My Wish",
+        "views": 31000
       }
     ]
   },
