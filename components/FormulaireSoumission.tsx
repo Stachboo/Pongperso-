@@ -18,15 +18,15 @@ export default function FormulaireSoumission({ dict }: { dict: Dictionary }) {
     const data = new FormData(form);
 
     const subject = encodeURIComponent(
-      `[WMC] Suggestion de riddim : ${data.get('riddimName') ?? ''}`
+      dict.formEmailSubject.replace('{name}', String(data.get('riddimName') ?? ''))
     );
     const body = encodeURIComponent(
-      `Nom du riddim : ${data.get('riddimName') ?? ''}\n` +
-      `Année : ${data.get('year') ?? ''}\n` +
-      `Producteur / Label : ${data.get('producer') ?? ''}\n` +
-      `Genre : ${data.get('genre') ?? ''}\n\n` +
-      `Voicings connus :\n${data.get('voicings') ?? ''}\n\n` +
-      `Sources / liens :\n${data.get('sources') ?? ''}`
+      `${dict.formRiddimName} : ${data.get('riddimName') ?? ''}\n` +
+      `${dict.formYearLabel} : ${data.get('year') ?? ''}\n` +
+      `${dict.formProducerLabel} : ${data.get('producer') ?? ''}\n` +
+      `${dict.filterGenre} : ${data.get('genre') ?? ''}\n\n` +
+      `${dict.formVoicingsLabel} :\n${data.get('voicings') ?? ''}\n\n` +
+      `${dict.formSourcesLabel} :\n${data.get('sources') ?? ''}`
     );
 
     window.location.href = `mailto:contact@wmc-riddims.com?subject=${subject}&body=${body}`;

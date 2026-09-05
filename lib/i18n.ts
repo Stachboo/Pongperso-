@@ -216,6 +216,15 @@ export interface Dictionary {
   artistNotFound: string;
   metaProducerTitle: string;
   producerNotFound: string;
+  /* Formulaire — sujet e-mail (gabarit) + console d'accès */
+  formEmailSubject: string;
+  loginSubtitle: string;
+  loginUsername: string;
+  loginPassword: string;
+  loginSubmit: string;
+  loginSubmitting: string;
+  loginErrorCredentials: string;
+  loginErrorNetwork: string;
 }
 
 const dictionaries: Record<Locale, Dictionary> = {
@@ -414,6 +423,14 @@ const dictionaries: Record<Locale, Dictionary> = {
     artistNotFound: 'Artiste introuvable',
     metaProducerTitle: '{name} ({label}) — Producteur jamaïcain',
     producerNotFound: 'Producteur introuvable',
+    formEmailSubject: '[WMC] Suggestion de riddim : {name}',
+    loginSubtitle: 'Connecte-toi pour accéder à la gestion',
+    loginUsername: 'Identifiant',
+    loginPassword: 'Mot de passe',
+    loginSubmit: 'Se connecter',
+    loginSubmitting: 'Connexion…',
+    loginErrorCredentials: 'Identifiant ou mot de passe incorrect',
+    loginErrorNetwork: 'Erreur de connexion',
   },
 
   en: {
@@ -611,6 +628,14 @@ const dictionaries: Record<Locale, Dictionary> = {
     artistNotFound: 'Artist not found',
     metaProducerTitle: '{name} ({label}) — Jamaican producer',
     producerNotFound: 'Producer not found',
+    formEmailSubject: '[WMC] Riddim suggestion: {name}',
+    loginSubtitle: 'Sign in to access management',
+    loginUsername: 'Username',
+    loginPassword: 'Password',
+    loginSubmit: 'Sign in',
+    loginSubmitting: 'Signing in…',
+    loginErrorCredentials: 'Incorrect username or password',
+    loginErrorNetwork: 'Connection error',
   },
 
   es: {
@@ -808,6 +833,14 @@ const dictionaries: Record<Locale, Dictionary> = {
     artistNotFound: 'Artista no encontrado',
     metaProducerTitle: '{name} ({label}) — Productor jamaicano',
     producerNotFound: 'Productor no encontrado',
+    formEmailSubject: '[WMC] Sugerencia de riddim: {name}',
+    loginSubtitle: 'Inicia sesión para acceder a la gestión',
+    loginUsername: 'Usuario',
+    loginPassword: 'Contraseña',
+    loginSubmit: 'Iniciar sesión',
+    loginSubmitting: 'Conectando…',
+    loginErrorCredentials: 'Usuario o contraseña incorrectos',
+    loginErrorNetwork: 'Error de conexión',
   },
 
   pt: {
@@ -1005,6 +1038,14 @@ const dictionaries: Record<Locale, Dictionary> = {
     artistNotFound: 'Artista não encontrado',
     metaProducerTitle: '{name} ({label}) — Produtor jamaicano',
     producerNotFound: 'Produtor não encontrado',
+    formEmailSubject: '[WMC] Sugestão de riddim: {name}',
+    loginSubtitle: 'Inicia sessão para aceder à gestão',
+    loginUsername: 'Utilizador',
+    loginPassword: 'Palavra-passe',
+    loginSubmit: 'Entrar',
+    loginSubmitting: 'A entrar…',
+    loginErrorCredentials: 'Utilizador ou palavra-passe incorretos',
+    loginErrorNetwork: 'Erro de ligação',
   },
 
   ja: {
@@ -1202,6 +1243,14 @@ const dictionaries: Record<Locale, Dictionary> = {
     artistNotFound: 'アーティストが見つかりません',
     metaProducerTitle: '{name}（{label}）— ジャマイカのプロデューサー',
     producerNotFound: 'プロデューサーが見つかりません',
+    formEmailSubject: '[WMC] リディムの提案：{name}',
+    loginSubtitle: 'ログインして管理画面にアクセス',
+    loginUsername: 'ユーザー名',
+    loginPassword: 'パスワード',
+    loginSubmit: 'ログイン',
+    loginSubmitting: 'ログイン中…',
+    loginErrorCredentials: 'ユーザー名またはパスワードが正しくありません',
+    loginErrorNetwork: '接続エラー',
   },
 };
 
