@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata, Viewport } from 'next';
+import { BASE_URL } from '@/utils/seo';
 import '@/styles/tokens.css';
 import '@/styles/globals.css';
 import '@/styles/typography.css';
@@ -10,7 +11,7 @@ import '@/styles/typography.css';
    ══════════════════════════════════════════════════════════════════════════════ */
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://wmc-iota.vercel.app'),
+  metadataBase: new URL(BASE_URL),
   title: {
     default: 'WMC — World Music Contest | Riddims Jamaïcains',
     template: '%s | WMC World Music Contest',

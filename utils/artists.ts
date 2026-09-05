@@ -4,6 +4,7 @@
    ══════════════════════════════════════════════════════════════════════════════ */
 
 import type { Riddim } from '@/types/riddim';
+import type { Dictionary } from '@/lib/i18n';
 import { toArtistSlug, BASE_URL } from '@/utils/seo';
 
 
@@ -152,31 +153,93 @@ export function getRelatedArtists(
  * Génère un texte contextuel SEO pour un artiste.
  * Fonction pure, testable.
  */
-export function generateArtistContextText(artist: Artist): string {
+type CtxLocale = 'fr' | 'en' | 'es' | 'pt' | 'ja';
+
+/** Formatage compact des vues (K / M / B). */
+function compactViews(n: number): string {
+  if (n >= 1_000_000_000) return `${(n / 1_000_000_000).toFixed(1)}B`;
+  if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
+  if (n >= 1_000) return `${Math.round(n / 1_000)}K`;
+  return String(n);
+}
+
+interface ArtistFacts {
+  name: string;
+  mainStyle: string;
+  decades: string;
+  riddimCount: number;
+  totalVoicings: number;
+  totalViews: string;
+  topRiddim: string;
+  topRank: number;
+  topTitle: string;
+  otherRiddims: string;
+}
+
+const ARTIST_BUILDERS: Record<CtxLocale, (f: ArtistFacts) => string> = {
+  fr: (f) => {
+    const lead = `${f.name} est un artiste jamaïcain de ${f.mainStyle}${f.decades ? ` actif dans les années ${f.decades}` : ''}.`;
+    const scale = ` Il figure sur ${f.riddimCount} riddim${f.riddimCount > 1 ? 's' : ''} documenté${f.riddimCount > 1 ? 's' : ''} dans la base WMC, pour ${f.totalVoicings} voicing${f.totalVoicings > 1 ? 's' : ''} totalisant environ ${f.totalViews} vues.`;
+    const top = f.topRiddim ? ` Son apparition la plus marquante est « ${f.topTitle} » sur le ${f.topRiddim}, où il occupe la position #${f.topRank}.` : '';
+    const others = f.otherRiddims ? ` On le retrouve aussi sur ${f.otherRiddims}.` : '';
+    return lead + scale + top + others;
+  },
+  en: (f) => {
+    const lead = `${f.name} is a Jamaican ${f.mainStyle} artist${f.decades ? ` active in the ${f.decades}` : ''}.`;
+    const scale = ` They appear on ${f.riddimCount} riddim${f.riddimCount > 1 ? 's' : ''} documented in the WMC database, across ${f.totalVoicings} voicing${f.totalVoicings > 1 ? 's' : ''} totalling roughly ${f.totalViews} views.`;
+    const top = f.topRiddim ? ` Their most notable appearance is “${f.topTitle}” on the ${f.topRiddim}, where they rank #${f.topRank}.` : '';
+    const others = f.otherRiddims ? ` They also feature on ${f.otherRiddims}.` : '';
+    return lead + scale + top + others;
+  },
+  es: (f) => {
+    const lead = `${f.name} es un artista jamaicano de ${f.mainStyle}${f.decades ? `, activo en los años ${f.decades}` : ''}.`;
+    const scale = ` Aparece en ${f.riddimCount} riddim${f.riddimCount > 1 ? 's' : ''} documentado${f.riddimCount > 1 ? 's' : ''} en la base WMC, con ${f.totalVoicings} voicing${f.totalVoicings > 1 ? 's' : ''} que suman alrededor de ${f.totalViews} reproducciones.`;
+    const top = f.topRiddim ? ` Su aparición más destacada es «${f.topTitle}» en el ${f.topRiddim}, donde ocupa la posición #${f.topRank}.` : '';
+    const others = f.otherRiddims ? ` También figura en ${f.otherRiddims}.` : '';
+    return lead + scale + top + others;
+  },
+  pt: (f) => {
+    const lead = `${f.name} é um artista jamaicano de ${f.mainStyle}${f.decades ? `, ativo nos anos ${f.decades}` : ''}.`;
+    const scale = ` Aparece em ${f.riddimCount} riddim${f.riddimCount > 1 ? 's' : ''} documentado${f.riddimCount > 1 ? 's' : ''} na base WMC, com ${f.totalVoicings} voicing${f.totalVoicings > 1 ? 's' : ''} que somam cerca de ${f.totalViews} visualizações.`;
+    const top = f.topRiddim ? ` Sua aparição mais marcante é «${f.topTitle}» no ${f.topRiddim}, onde ocupa a posição #${f.topRank}.` : '';
+    const others = f.otherRiddims ? ` Também figura em ${f.otherRiddims}.` : '';
+    return lead + scale + top + others;
+  },
+  ja: (f) => {
+    const lead = `${f.name}は、ジャマイカの${f.mainStyle}アーティスト${f.decades ? `で、${f.decades}に活動しています` : ''}。`;
+    const scale = `WMCデータベースには${f.riddimCount}のリディムに登場し、${f.totalVoicings}のボイシングで総再生回数は約${f.totalViews}回にのぼります。`;
+    const top = f.topRiddim ? `最も代表的なのは${f.topRiddim}の「${f.topTitle}」で、ランキング#${f.topRank}に位置しています。` : '';
+    const others = f.otherRiddims ? `${f.otherRiddims}にも参加しています。` : '';
+    return lead + scale + top + others;
+  },
+};
+
+/**
+ * Génère un texte contextuel (résumé extractible) pour un artiste, dans la
+ * langue de la page. Fonction pure, sans donnée inventée : tout est dérivé du
+ * catalogue (riddims, voicings, vues, positions).
+ */
+export function generateArtistContextText(artist: Artist, locale: string = 'fr'): string {
   const mainStyle = artist.styles[0] ?? 'dancehall';
-  const decadesStr = artist.decades.join(', ');
+  const totalViews = artist.riddims.reduce((s, r) => s + r.views, 0);
   const topEntry = artist.riddims[0];
-  const topTitle = topEntry?.title ?? '';
+  const otherRiddims = artist.riddims.slice(1, 3).map((r) => r.riddimName).join(', ');
 
-  let text =
-    `${artist.name} est un artiste jamaïcain de ${mainStyle} ` +
-    `actif dans les années ${decadesStr}. `;
+  const facts: ArtistFacts = {
+    name: artist.name,
+    mainStyle,
+    decades: artist.decades.join(', '),
+    riddimCount: artist.riddimCount,
+    totalVoicings: artist.totalVoicings,
+    totalViews: compactViews(totalViews),
+    topRiddim: artist.topRiddim ?? '',
+    topRank: artist.topRank ?? 0,
+    topTitle: topEntry?.title ?? '',
+    otherRiddims,
+  };
 
-  text +=
-    `Il apparaît sur ${artist.riddimCount} riddim${artist.riddimCount > 1 ? 's' : ''} ` +
-    `documenté${artist.riddimCount > 1 ? 's' : ''} dans la base WMC`;
-
-  if (artist.topRiddim) {
-    text += `, dont ${artist.topRiddim} où il occupe la position #${artist.topRank}`;
-  }
-
-  text += '.';
-
-  if (topTitle) {
-    text += ` Parmi ses titres les plus notables : ${topTitle}.`;
-  }
-
-  return text;
+  const build = ARTIST_BUILDERS[(locale as CtxLocale)] ?? ARTIST_BUILDERS.fr;
+  return build(facts);
 }
 
 
@@ -186,7 +249,8 @@ export function generateArtistContextText(artist: Artist): string {
 export function generateArtistJsonLd(
   artist: Artist,
   lang: string,
-  baseUrl: string
+  baseUrl: string,
+  dict: Dictionary
 ): object {
   const isGroup = /&|ft\.|feat\./i.test(artist.name);
   const canonicalUrl = `${baseUrl}/${lang}/artistes/${artist.slug}`;
@@ -198,10 +262,13 @@ export function generateArtistJsonLd(
     '@graph': [
       {
         '@type': isGroup ? 'MusicGroup' : 'Person',
+        '@id': `${canonicalUrl}#artist`,
         name: artist.name,
         genre: artist.styles,
         url: canonicalUrl,
         sameAs: [spotifySearch, youtubeSearch],
+        mainEntityOfPage: canonicalUrl,
+        subjectOf: { '@id': `${baseUrl}/#website` },
       },
       {
         '@type': 'BreadcrumbList',
@@ -209,13 +276,13 @@ export function generateArtistJsonLd(
           {
             '@type': 'ListItem',
             position: 1,
-            name: 'Accueil',
+            name: dict.navHome,
             item: `${baseUrl}/${lang}`,
           },
           {
             '@type': 'ListItem',
             position: 2,
-            name: 'Artistes',
+            name: dict.navArtists,
             item: `${baseUrl}/${lang}/artistes`,
           },
           {

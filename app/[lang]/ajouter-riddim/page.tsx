@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { LOCALES, isValidLocale, getDictionary, type Locale } from '@/lib/i18n';
-import { generateHreflang } from '@/utils/seo';
+import { generateHreflang, BASE_URL } from '@/utils/seo';
 import FormulaireSoumission from '@/components/FormulaireSoumission';
 import styles from '@/styles/static-page.module.css';
 
@@ -118,7 +118,7 @@ export async function generateMetadata({
     title: CONTENT[locale].metaTitle,
     description: CONTENT[locale].metaDescription,
     alternates: {
-      canonical: `https://wmc-iota.vercel.app/${locale}/ajouter-riddim`,
+      canonical: `${BASE_URL}/${locale}/ajouter-riddim`,
       languages: hreflang,
     },
   };

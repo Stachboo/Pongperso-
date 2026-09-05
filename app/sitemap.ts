@@ -17,6 +17,7 @@ const STATIC_PATHS = [
   '/artistes',
   '/producteurs',
   '/about',
+  '/faq',
   '/methodologie',
   '/contact',
   '/presse',

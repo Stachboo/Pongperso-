@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { isValidLocale, LOCALES, type Locale } from '@/lib/i18n';
+import { getDictionary, isValidLocale, LOCALES, type Locale, type Dictionary } from '@/lib/i18n';
 import { generateHreflang, BASE_URL, jsonLdString } from '@/utils/seo';
 import { producers } from '@/data/producers';
 import ProducerDetail from '@/components/ProducerDetail';
@@ -48,16 +48,19 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang, id } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
+  const dict = getDictionary(locale);
   const producer = producers.find((p) => p.id === id);
 
   if (!producer) {
-    return { title: 'Producteur introuvable' };
+    return { title: dict.producerNotFound };
   }
 
   const hreflang = generateHreflang(`/producteurs/${id}`, locale);
   const canonicalUrl = `${BASE_URL}/${locale}/producteurs/${id}`;
 
-  const title = `${producer.name} (${producer.label}) — Producteur Jamaïcain`;
+  const title = dict.metaProducerTitle
+    .replace('{name}', producer.name)
+    .replace('{label}', producer.label);
   const description = producer.description.slice(0, 150).trimEnd() + '…';
 
   return {
@@ -87,7 +90,8 @@ export async function generateMetadata({
 
 function generateProducerJsonLd(
   producer: (typeof producers)[number],
-  locale: string
+  locale: string,
+  dict: Dictionary
 ): object {
   const canonicalUrl = `${BASE_URL}/${locale}/producteurs/${producer.id}`;
   const entityType = INDIVIDUAL_PRODUCERS.has(producer.id) ? 'Person' : 'Organization';
@@ -97,10 +101,12 @@ function generateProducerJsonLd(
     '@graph': [
       {
         '@type': entityType,
+        '@id': `${canonicalUrl}#producer`,
         name: producer.name,
         description: producer.description,
         foundingDate: producer.founded,
         url: canonicalUrl,
+        subjectOf: { '@id': `${BASE_URL}/#website` },
         ...(entityType === 'Organization' && {
           alternateName: producer.label,
         }),
@@ -111,13 +117,13 @@ function generateProducerJsonLd(
           {
             '@type': 'ListItem',
             position: 1,
-            name: 'Accueil',
+            name: dict.navHome,
             item: `${BASE_URL}/${locale}`,
           },
           {
             '@type': 'ListItem',
             position: 2,
-            name: 'Producteurs',
+            name: dict.navProducers,
             item: `${BASE_URL}/${locale}/producteurs`,
           },
           {
@@ -142,13 +148,14 @@ export default async function ProducteurPage({
 }) {
   const { lang, id } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
+  const dict = getDictionary(locale);
   const producer = producers.find((p) => p.id === id);
 
   if (!producer) {
     notFound();
   }
 
-  const jsonLd = generateProducerJsonLd(producer, locale);
+  const jsonLd = generateProducerJsonLd(producer, locale, dict);
 
   return (
     <>

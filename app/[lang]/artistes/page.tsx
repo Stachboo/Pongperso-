@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { isValidLocale, getDictionary, type Locale } from '@/lib/i18n';
 import { getAllRiddims } from '@/lib/data';
-import { generateHreflang } from '@/utils/seo';
+import { generateHreflang, BASE_URL } from '@/utils/seo';
 import { buildArtistList } from '@/utils/artists';
 import ArtistSearchBar from '@/components/ArtistSearchBar';
 import styles from './page.module.css';
@@ -84,7 +84,7 @@ export async function generateMetadata({
     title,
     description,
     alternates: {
-      canonical: `https://wmc-iota.vercel.app/${locale}/artistes`,
+      canonical: `${BASE_URL}/${locale}/artistes`,
       languages: hreflang,
     },
   };

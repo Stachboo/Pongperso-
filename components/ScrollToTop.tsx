@@ -8,7 +8,7 @@ import styles from './ScrollToTop.module.css';
    Bouton de retour en haut de page avec apparition au scroll
    ══════════════════════════════════════════════════════════════════════════════ */
 
-export default function ScrollToTop() {
+export default function ScrollToTop({ label }: { label: string }) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -39,7 +39,7 @@ export default function ScrollToTop() {
       className={`${styles.button} ${isVisible ? styles.visible : ''}`}
       role="button"
       tabIndex={0}
-      aria-label="Retourner en haut de la page"
+      aria-label={label}
       onClick={scrollToTop}
       onKeyDown={handleKeyDown}
     >

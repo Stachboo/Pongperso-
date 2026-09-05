@@ -299,6 +299,26 @@
   max-width: 640px;
 }
 
+.sources {
+  margin-top: 1rem;
+  max-width: 640px;
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+.sourcesLabel {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+}
+.sourceLink {
+  color: var(--color-brand-gold);
+  text-decoration: none;
+}
+.sourceLink:hover {
+  text-decoration: underline;
+}
+
 
 /* ═══════════════════════════════════════════════════════════════════════════
    SECTION C — Tableau des voicings

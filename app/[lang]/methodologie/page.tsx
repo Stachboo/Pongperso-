@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { LOCALES, isValidLocale, type Locale } from '@/lib/i18n';
-import { generateHreflang } from '@/utils/seo';
+import { generateHreflang, BASE_URL } from '@/utils/seo';
 import styles from '@/styles/static-page.module.css';
 
 /* ══════════════════════════════════════════════════════════════════════════════
@@ -29,6 +29,14 @@ type PageContent = {
   majTitle: string;
   majP1: string;
   majP2: string;
+  ariaPerimetre: string;
+  perimetreTitle: string;
+  perimetreP1: string;
+  perimetreP2: string;
+  ariaLimites: string;
+  limitesTitle: string;
+  limitesP1: string;
+  limitesP2: string;
   ariaAjouter: string;
   ajouterTitle: string;
   ajouterP1: string;
@@ -64,6 +72,18 @@ const CONTENT: Record<Locale, PageContent> = {
       'Le catalogue est mis à jour manuellement par l’équipe WMC. Les données ne sont pas en temps réel. Les chiffres de streaming sont des estimations basées sur les données publiquement disponibles au moment de la dernière mise à jour.',
     majP2:
       'Nous nous efforçons de maintenir le catalogue aussi complet et précis que possible, mais des erreurs ou omissions peuvent exister. Si vous constatez une inexactitude, n’hésitez pas à nous la signaler.',
+    ariaPerimetre: 'Périmètre du catalogue',
+    perimetreTitle: 'Périmètre du catalogue',
+    perimetreP1:
+      'La base documente 152 riddims et 1 253 voicings, pour un total d’environ 5,9 milliards de vues cumulées, sur la période 1967-2021. Elle couvre les grandes familles de la musique jamaïcaine — dancehall, reggae, lovers rock et soca — avec une représentation particulièrement forte du dancehall numérique des années 1990-2000.',
+    perimetreP2:
+      'Au-delà des riddims, le catalogue relie chaque voicing à son artiste et à son producteur : plus de 400 artistes et 30 producteurs et labels y sont référencés, chacun avec sa propre fiche. Cet inter-maillage permet de naviguer d’un riddim vers ses artistes, puis vers leurs autres riddims, et de reconstituer les réseaux de collaboration du studio jamaïcain.',
+    ariaLimites: 'Limites et estimations',
+    limitesTitle: 'Limites et estimations',
+    limitesP1:
+      'Les chiffres de vues sont approximatifs par nature. Beaucoup de voicings sont antérieurs à l’ère du streaming : leurs vues sont alors estimées à partir des données publiques disponibles, et signalées comme telles dans l’interface (statut « estimé » plutôt que « vérifié »). Une valeur ronde (par exemple 5 000 000) indique presque toujours une estimation.',
+    limitesP2:
+      'Le catalogue est mis à jour manuellement et n’est pas exhaustif : des riddims, des voicings ou des métadonnées peuvent manquer. Nous privilégions la précision à l’exhaustivité et documentons nos incertitudes plutôt que de les masquer. Toute correction signalée est la bienvenue.',
     ariaAjouter: 'Ajouter un riddim',
     ajouterTitle: 'Ajouter un riddim',
     ajouterP1:
@@ -98,6 +118,18 @@ const CONTENT: Record<Locale, PageContent> = {
       'The catalogue is updated manually by the WMC team. The data is not real-time. Streaming figures are estimates based on publicly available data at the time of the last update.',
     majP2:
       'We strive to keep the catalogue as complete and accurate as possible, but errors or omissions may occur. If you spot an inaccuracy, please feel free to report it to us.',
+    ariaPerimetre: 'Catalogue coverage',
+    perimetreTitle: 'Catalogue coverage',
+    perimetreP1:
+      'The database documents 152 riddims and 1,253 voicings, totalling roughly 5.9 billion cumulative views across the 1967-2021 period. It covers the main branches of Jamaican music — dancehall, reggae, lovers rock and soca — with especially strong coverage of digital dancehall from the 1990s and 2000s.',
+    perimetreP2:
+      'Beyond the riddims, the catalogue links every voicing to its artist and producer: more than 400 artists and 30 producers and labels are referenced, each with a dedicated page. This cross-linking lets you move from a riddim to its artists, then to their other riddims, and reconstruct the collaboration networks of the Jamaican studio.',
+    ariaLimites: 'Limitations and estimates',
+    limitesTitle: 'Limitations and estimates',
+    limitesP1:
+      'View figures are approximate by nature. Many voicings predate the streaming era: their views are then estimated from available public data and flagged as such in the interface (“estimated” status rather than “verified”). A round value (for example 5,000,000) almost always indicates an estimate.',
+    limitesP2:
+      'The catalogue is maintained manually and is not exhaustive: riddims, voicings or metadata may be missing. We favour accuracy over completeness and document our uncertainties rather than hiding them. Any correction you report is welcome.',
     ariaAjouter: 'Add a riddim',
     ajouterTitle: 'Add a riddim',
     ajouterP1:
@@ -132,6 +164,18 @@ const CONTENT: Record<Locale, PageContent> = {
       'El catálogo se actualiza manualmente por el equipo de WMC. Los datos no son en tiempo real. Las cifras de streaming son estimaciones basadas en los datos disponibles públicamente en el momento de la última actualización.',
     majP2:
       'Nos esforzamos por mantener el catálogo lo más completo y preciso posible, pero pueden existir errores u omisiones. Si detectas una inexactitud, no dudes en comunicárnosla.',
+    ariaPerimetre: 'Alcance del catálogo',
+    perimetreTitle: 'Alcance del catálogo',
+    perimetreP1:
+      'La base documenta 152 riddims y 1 253 voicings, con un total de unos 5,9 mil millones de reproducciones acumuladas, en el periodo 1967-2021. Abarca las grandes familias de la música jamaicana —dancehall, reggae, lovers rock y soca— con una presencia especialmente fuerte del dancehall digital de los años 1990 y 2000.',
+    perimetreP2:
+      'Más allá de los riddims, el catálogo vincula cada voicing con su artista y su productor: hay más de 400 artistas y 30 productores y sellos referenciados, cada uno con su propia ficha. Este entrelazado permite pasar de un riddim a sus artistas, luego a sus otros riddims, y reconstruir las redes de colaboración del estudio jamaicano.',
+    ariaLimites: 'Límites y estimaciones',
+    limitesTitle: 'Límites y estimaciones',
+    limitesP1:
+      'Las cifras de reproducciones son aproximadas por naturaleza. Muchos voicings son anteriores a la era del streaming: sus reproducciones se estiman entonces a partir de los datos públicos disponibles y se señalan como tales en la interfaz (estado «estimado» en lugar de «verificado»). Un valor redondo (por ejemplo 5 000 000) casi siempre indica una estimación.',
+    limitesP2:
+      'El catálogo se mantiene manualmente y no es exhaustivo: pueden faltar riddims, voicings o metadatos. Priorizamos la precisión sobre la exhaustividad y documentamos nuestras incertidumbres en lugar de ocultarlas. Cualquier corrección que nos comuniques es bienvenida.',
     ariaAjouter: 'Añadir un riddim',
     ajouterTitle: 'Añadir un riddim',
     ajouterP1:
@@ -166,6 +210,18 @@ const CONTENT: Record<Locale, PageContent> = {
       'O catálogo é atualizado manualmente pela equipe da WMC. Os dados não são em tempo real. Os números de streaming são estimativas baseadas nos dados publicamente disponíveis no momento da última atualização.',
     majP2:
       'Nós nos esforçamos para manter o catálogo o mais completo e preciso possível, mas erros ou omissões podem existir. Se você notar uma imprecisão, não hesite em nos informar.',
+    ariaPerimetre: 'Abrangência do catálogo',
+    perimetreTitle: 'Abrangência do catálogo',
+    perimetreP1:
+      'A base documenta 152 riddims e 1 253 voicings, num total de cerca de 5,9 mil milhões de visualizações acumuladas, no período 1967-2021. Abrange as grandes famílias da música jamaicana — dancehall, reggae, lovers rock e soca — com uma presença especialmente forte do dancehall digital dos anos 1990 e 2000.',
+    perimetreP2:
+      'Além dos riddims, o catálogo liga cada voicing ao seu artista e produtor: mais de 400 artistas e 30 produtores e selos estão referenciados, cada um com a sua própria página. Esse entrelaçamento permite passar de um riddim para os seus artistas, depois para os seus outros riddims, e reconstruir as redes de colaboração do estúdio jamaicano.',
+    ariaLimites: 'Limites e estimativas',
+    limitesTitle: 'Limites e estimativas',
+    limitesP1:
+      'Os números de visualizações são aproximados por natureza. Muitos voicings são anteriores à era do streaming: suas visualizações são então estimadas a partir dos dados públicos disponíveis e sinalizadas como tais na interface (status «estimado» em vez de «verificado»). Um valor redondo (por exemplo 5 000 000) quase sempre indica uma estimativa.',
+    limitesP2:
+      'O catálogo é mantido manualmente e não é exaustivo: riddims, voicings ou metadados podem estar em falta. Privilegiamos a precisão em vez da exaustividade e documentamos as nossas incertezas em vez de as esconder. Qualquer correção que nos comunique é bem-vinda.',
     ariaAjouter: 'Adicionar um riddim',
     ajouterTitle: 'Adicionar um riddim',
     ajouterP1:
@@ -200,6 +256,18 @@ const CONTENT: Record<Locale, PageContent> = {
       'カタログは WMC チームによって手動で更新されます。データはリアルタイムではありません。ストリーミングの数値は、最終更新時点で公開されているデータに基づく推定値です。',
     majP2:
       'カタログをできる限り完全かつ正確に保つよう努めていますが、誤りや漏れが存在する可能性があります。不正確な点にお気づきの場合は、遠慮なくお知らせください。',
+    ariaPerimetre: 'カタログの範囲',
+    perimetreTitle: 'カタログの範囲',
+    perimetreP1:
+      'データベースは 152 の riddim と 1,253 の voicing を収録し、1967 年から 2021 年までの期間で累計約 59 億回の再生数に相当します。ジャマイカ音楽の主要なジャンル（dancehall、reggae、lovers rock、soca）を対象とし、特に 1990〜2000 年代のデジタル dancehall を手厚くカバーしています。',
+    perimetreP2:
+      'riddim だけでなく、カタログは各 voicing をそのアーティストとプロデューサーに結び付けています。400 人以上のアーティストと 30 のプロデューサー・レーベルがそれぞれ専用ページとともに登録されています。この相互リンクにより、riddim からそのアーティストへ、さらに彼らの別の riddim へとたどり、ジャマイカのスタジオの協働ネットワークを再構築できます。',
+    ariaLimites: '制約と推定',
+    limitesTitle: '制約と推定',
+    limitesP1:
+      '再生回数は本質的に概算です。多くの voicing はストリーミング時代よりも前のものであり、その再生回数は入手可能な公開データから推定され、インターフェース上でその旨（「確認済み」ではなく「推定」ステータス）が示されます。切りのよい値（例：5,000,000）は、ほぼ常に推定値を示します。',
+    limitesP2:
+      'カタログは手動で更新され、網羅的ではありません。riddim、voicing、メタデータが欠けている場合があります。私たちは網羅性よりも正確さを重視し、不確かな点を隠すのではなく明示します。誤りのご指摘はいつでも歓迎します。',
     ariaAjouter: 'riddim を追加する',
     ajouterTitle: 'riddim を追加する',
     ajouterP1:
@@ -226,7 +294,7 @@ export async function generateMetadata({
     title: c.metaTitle,
     description: c.metaDescription,
     alternates: {
-      canonical: `https://wmc-iota.vercel.app/${locale}/methodologie`,
+      canonical: `${BASE_URL}/${locale}/methodologie`,
       languages: hreflang,
     },
   };
@@ -267,6 +335,20 @@ export default async function MethodologiePage({
             <li className={styles.orderedItem}>{c.criteresItem2}</li>
             <li className={styles.orderedItem}>{c.criteresItem3}</li>
           </ol>
+        </section>
+
+        {/* ═══ PÉRIMÈTRE ═══ */}
+        <section className={styles.section} aria-label={c.ariaPerimetre}>
+          <h2 className={styles.sectionTitle}>{c.perimetreTitle}</h2>
+          <p className={styles.paragraph}>{c.perimetreP1}</p>
+          <p className={styles.paragraph}>{c.perimetreP2}</p>
+        </section>
+
+        {/* ═══ LIMITES ═══ */}
+        <section className={styles.section} aria-label={c.ariaLimites}>
+          <h2 className={styles.sectionTitle}>{c.limitesTitle}</h2>
+          <p className={styles.paragraph}>{c.limitesP1}</p>
+          <p className={styles.paragraph}>{c.limitesP2}</p>
         </section>
 
         {/* ═══ MISE À JOUR ═══ */}

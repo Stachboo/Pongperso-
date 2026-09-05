@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { isValidLocale, LOCALES, type Locale } from '@/lib/i18n';
+import { getDictionary, isValidLocale, LOCALES, type Locale } from '@/lib/i18n';
 import { getAllRiddims } from '@/lib/data';
 import { generateHreflang, BASE_URL, jsonLdString } from '@/utils/seo';
 import { buildArtistList, getArtistBySlug, generateArtistJsonLd } from '@/utils/artists';
@@ -38,20 +38,22 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang, slug } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
+  const dict = getDictionary(locale);
   const artist = getArtistBySlug(slug, await getAllRiddims());
 
   if (!artist) {
-    return { title: 'Artiste introuvable' };
+    return { title: dict.artistNotFound };
   }
 
   const hreflang = generateHreflang(`/artistes/${slug}`, locale);
   const canonicalUrl = `${BASE_URL}/${locale}/artistes/${slug}`;
 
-  const title = `${artist.name} — Riddims & Voicings Jamaïcains`;
-  const description =
-    `${artist.name} a enregistré ${artist.totalVoicings} voicings sur ` +
-    `${artist.riddimCount} riddims jamaïcains dont ${artist.topRiddim}. ` +
-    `Découvrez tous ses titres classés par popularité.`;
+  const title = dict.metaArtistTitle.replace('{name}', artist.name);
+  const description = dict.metaArtistDesc
+    .replace('{name}', artist.name)
+    .replace('{count}', String(artist.totalVoicings))
+    .replace('{riddims}', String(artist.riddimCount))
+    .replace('{top}', artist.topRiddim ?? '');
 
   return {
     title,
@@ -85,13 +87,14 @@ export default async function ArtistePage({
 }) {
   const { lang, slug } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
+  const dict = getDictionary(locale);
   const artist = getArtistBySlug(slug, await getAllRiddims());
 
   if (!artist) {
     notFound();
   }
 
-  const jsonLd = generateArtistJsonLd(artist, locale, BASE_URL);
+  const jsonLd = generateArtistJsonLd(artist, locale, BASE_URL, dict);
 
   return (
     <>

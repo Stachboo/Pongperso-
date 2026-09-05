@@ -45,7 +45,7 @@ export default async function LangLayout({
           {children}
         </PageWrapper>
         <Footer lang={locale} dict={dict} />
-        <ScrollToTop />
+        <ScrollToTop label={dict.ariaScrollTop} />
         <ShareButton dict={dict} />
         <Analytics />
         <SpeedInsights />

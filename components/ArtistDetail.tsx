@@ -108,7 +108,7 @@ function DeezerIcon() {
 
 export default async function ArtistDetail({ artist, lang }: ArtistDetailProps) {
   const dict = getDictionary(isValidLocale(lang) ? lang : 'fr');
-  const contextText = generateArtistContextText(artist);
+  const contextText = generateArtistContextText(artist, lang);
   const allArtists = buildArtistList(await getAllRiddims());
   const relatedArtists = getRelatedArtists(artist, allArtists);
 
@@ -227,13 +227,13 @@ export default async function ArtistDetail({ artist, lang }: ArtistDetailProps) 
       <div className={styles.divider} />
 
       {/* ═══ SECTION C — Tableau des riddims ═══ */}
-      <section aria-label="Riddims de l'artiste" className={styles.riddimSection}>
+      <section aria-label={dict.artistRiddimsTitle} className={styles.riddimSection}>
         <h2 className={styles.sectionTitle}>
           {dict.artistRiddimsTitle}
           <span className={styles.riddimCount}>({artist.riddims.length})</span>
         </h2>
 
-        <table className={styles.table} aria-label={`Riddims de ${artist.name}`}>
+        <table className={styles.table} aria-label={dict.ariaArtistRiddimsOf.replace('{x}', artist.name)}>
           <thead className={styles.tableHead}>
             <tr>
               <th scope="col">{dict.tableRank}</th>
@@ -241,7 +241,7 @@ export default async function ArtistDetail({ artist, lang }: ArtistDetailProps) 
               <th scope="col">{dict.tableTitle}</th>
               <th scope="col">{dict.tableYear}</th>
               <th scope="col">{dict.tableStyle}</th>
-              <th scope="col" className={styles.thActions}>Écouter</th>
+              <th scope="col" className={styles.thActions}>{dict.tableListen}</th>
             </tr>
           </thead>
           <tbody>
@@ -317,7 +317,7 @@ export default async function ArtistDetail({ artist, lang }: ArtistDetailProps) 
             <div className={styles.relatedGrid}>
               {relatedArtists.map((a) => (
                 <div key={a.slug} className={styles.relatedCard}>
-                  <ArtistCard artist={a} href={`/${lang}/artistes/${a.slug}`} />
+                  <ArtistCard artist={a} href={`/${lang}/artistes/${a.slug}`} dict={dict} />
                 </div>
               ))}
             </div>

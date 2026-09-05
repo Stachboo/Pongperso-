@@ -1,18 +1,16 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getDictionary, isValidLocale, LOCALES, type Locale } from '@/lib/i18n';
+import { getDictionary, isValidLocale, LOCALES, type Locale, type Dictionary } from '@/lib/i18n';
 import type { Riddim } from '@/types/riddim';
 import { getRiddimById, getAllRiddims } from '@/lib/data';
-import { generateHreflang, jsonLdString } from '@/utils/seo';
+import { generateHreflang, jsonLdString, BASE_URL, DATASET_UPDATED } from '@/utils/seo';
 import RiddimDetail from '@/components/RiddimDetail';
 
 /* ══════════════════════════════════════════════════════════════════════════════
    WMC — RIDDIM DETAIL PAGE
    Page de détail d'un riddim avec métadonnées SEO et JSON-LD Schema.org
    ══════════════════════════════════════════════════════════════════════════════ */
-
-const BASE_URL = 'https://wmc-iota.vercel.app';
 
 /* ═══════════════════════════════════════════════════════════════════════════
    generateStaticParams — Routes statiques pour tous les riddims × langues
@@ -47,12 +45,14 @@ export async function generateMetadata({
   }
 
   const canonicalUrl = `${BASE_URL}/${locale}/riddim/${riddim.id}`;
-  const title = `${riddim.name} — Voicings, Artistes & Histoire`;
-  const description =
-    `Découvrez tous les voicings du ${riddim.name} (${riddim.year}), ` +
-    `produit par ${riddim.producer} (${riddim.label}). ` +
-    `${riddim.voicings.length} artistes ont enregistré sur ce riddim ${riddim.genre} jamaïcain. ` +
-    `Classés par popularité.`;
+  const title = dict.metaRiddimTitle.replace('{name}', riddim.name);
+  const description = dict.metaRiddimDesc
+    .replace('{name}', riddim.name)
+    .replace('{year}', String(riddim.year))
+    .replace('{producer}', riddim.producer)
+    .replace('{label}', riddim.label)
+    .replace('{count}', String(riddim.voicings.length))
+    .replace('{genre}', riddim.genre);
 
   return {
     title,
@@ -79,7 +79,7 @@ export async function generateMetadata({
    JSON-LD Schema.org — MusicComposition + ItemList + BreadcrumbList
    ═══════════════════════════════════════════════════════════════════════════ */
 
-function generateJsonLd(riddim: Riddim, locale: Locale) {
+function generateJsonLd(riddim: Riddim, locale: Locale, dict: Dictionary) {
   const canonicalUrl = `${BASE_URL}/${locale}/riddim/${riddim.id}`;
   const sortedVoicings = [...riddim.voicings].sort((a, b) => b.views - a.views);
 
@@ -88,8 +88,10 @@ function generateJsonLd(riddim: Riddim, locale: Locale) {
     '@graph': [
       {
         '@type': 'MusicComposition',
+        '@id': `${canonicalUrl}#composition`,
         name: riddim.name,
         dateCreated: String(riddim.year),
+        dateModified: DATASET_UPDATED,
         producer: {
           '@type': 'Person',
           name: riddim.producer,
@@ -101,10 +103,13 @@ function generateJsonLd(riddim: Riddim, locale: Locale) {
         genre: riddim.genre,
         inLanguage: 'en',
         url: canonicalUrl,
+        isPartOf: { '@id': `${BASE_URL}/#website` },
+        publisher: { '@id': `${BASE_URL}/#organization` },
       },
       {
         '@type': 'ItemList',
-        name: `Voicings du ${riddim.name}`,
+        '@id': `${canonicalUrl}#voicings`,
+        name: dict.voicingsOf.replace('{name}', riddim.name),
         numberOfItems: riddim.voicings.length,
         itemListElement: sortedVoicings.map((v, i) => ({
           '@type': 'ListItem',
@@ -129,13 +134,13 @@ function generateJsonLd(riddim: Riddim, locale: Locale) {
           {
             '@type': 'ListItem',
             position: 1,
-            name: 'Accueil',
+            name: dict.navHome,
             item: `${BASE_URL}/${locale}`,
           },
           {
             '@type': 'ListItem',
             position: 2,
-            name: 'Riddims',
+            name: dict.statsRiddimsShort,
             item: `${BASE_URL}/${locale}/explorer`,
           },
           {
@@ -167,7 +172,7 @@ export default async function RiddimPage({
     notFound();
   }
 
-  const jsonLd = generateJsonLd(riddim, locale);
+  const jsonLd = generateJsonLd(riddim, locale, dict);
 
   return (
     <>

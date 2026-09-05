@@ -2,10 +2,12 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { getDictionary, isValidLocale } from '@/lib/i18n';
 import styles from './LoginForm.module.css';
 
 export default function LoginForm({ lang }: { lang: string }) {
   const router = useRouter();
+  const dict = getDictionary(isValidLocale(lang) ? lang : 'fr');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -27,10 +29,10 @@ export default function LoginForm({ lang }: { lang: string }) {
         router.push(`/${lang}/audit`);
         router.refresh();
       } else {
-        setError('Identifiant ou mot de passe incorrect');
+        setError(dict.loginErrorCredentials);
       }
     } catch {
-      setError('Erreur de connexion');
+      setError(dict.loginErrorNetwork);
     } finally {
       setLoading(false);
     }
@@ -48,13 +50,13 @@ export default function LoginForm({ lang }: { lang: string }) {
           <h1 className={styles.title}>
             RIDDIM CONSOLE <span className={styles.script} aria-hidden="true">admin</span>
           </h1>
-          <p className={styles.subtitle}>Connecte-toi pour accéder à la gestion</p>
+          <p className={styles.subtitle}>{dict.loginSubtitle}</p>
         </div>
 
         {error && <div className={styles.error} role="alert">{error}</div>}
 
         <div className={styles.field}>
-          <label className={styles.label} htmlFor="username">Identifiant</label>
+          <label className={styles.label} htmlFor="username">{dict.loginUsername}</label>
           <input
             id="username"
             type="text"
@@ -67,7 +69,7 @@ export default function LoginForm({ lang }: { lang: string }) {
         </div>
 
         <div className={styles.field}>
-          <label className={styles.label} htmlFor="password">Mot de passe</label>
+          <label className={styles.label} htmlFor="password">{dict.loginPassword}</label>
           <input
             id="password"
             type="password"
@@ -80,7 +82,7 @@ export default function LoginForm({ lang }: { lang: string }) {
         </div>
 
         <button type="submit" className={styles.submitBtn} disabled={loading}>
-          {loading ? 'Connexion…' : 'Se connecter'}
+          {loading ? dict.loginSubmitting : dict.loginSubmit}
         </button>
       </form>
     </div>

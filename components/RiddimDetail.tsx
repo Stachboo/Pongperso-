@@ -1,9 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import type { Riddim } from '@/types/riddim';
-import type { Dictionary } from '@/lib/i18n';
+import { isValidLocale, type Dictionary, type Locale } from '@/lib/i18n';
 import { getTotalViews, formatViews, getYoutubeSearchUrl, getDeezerSearchUrl, getAllRiddims } from '@/lib/data';
 import { generateContextText } from '@/utils/generateContextText';
+import { getRiddimEditorial, EDITORIAL_SECTION_TITLE, EDITORIAL_SOURCES_LABEL } from '@/data/riddimEditorial';
 import RiddimCard from '@/components/RiddimCard';
 import styles from './RiddimDetail.module.css';
 
@@ -132,7 +133,10 @@ export default async function RiddimDetail({ riddim, lang, dict }: RiddimDetailP
   const maxViews = sortedVoicings[0]?.views || 1;
   const topArtist = sortedVoicings[0]?.artist ?? '—';
   const decade = getDecade(riddim.year);
-  const contextText = generateContextText(riddim);
+  const contextText = generateContextText(riddim, lang);
+  const locale: Locale = isValidLocale(lang) ? lang : 'fr';
+  const editorial = getRiddimEditorial(riddim.id);
+  const editorialText = editorial?.text[locale];
   const similarRiddims = getSimilarRiddims(riddim, 4, await getAllRiddims());
 
   return (
@@ -236,7 +240,7 @@ export default async function RiddimDetail({ riddim, lang, dict }: RiddimDetailP
             </div>
             <div className={styles.stat}>
               <span className={styles.statValue}>{topArtist}</span>
-              <span className={styles.statLabel}>Top Artist</span>
+              <span className={styles.statLabel}>{dict.topArtist}</span>
             </div>
             <div className={styles.stat}>
               <span className={styles.statValue}>{decade}</span>
@@ -260,6 +264,28 @@ export default async function RiddimDetail({ riddim, lang, dict }: RiddimDetailP
         <p className={styles.contextText}>{contextText}</p>
       </section>
 
+      {/* ═══ SECTION B′ — Histoire & influence (éditorial sourcé, riddims phares) ═══ */}
+      {editorial && editorialText && (
+        <>
+          <div className={styles.divider} />
+          <section aria-label={EDITORIAL_SECTION_TITLE[locale]} className={styles.contextSection}>
+            <h2 className={styles.sectionTitle}>{EDITORIAL_SECTION_TITLE[locale]}</h2>
+            <p className={styles.contextText}>{editorialText}</p>
+            <p className={styles.sources}>
+              <span className={styles.sourcesLabel}>{EDITORIAL_SOURCES_LABEL[locale]} : </span>
+              {editorial.sources.map((s, i) => (
+                <React.Fragment key={i}>
+                  {i > 0 && ' · '}
+                  <a href={s.url} className={styles.sourceLink} target="_blank" rel="noopener noreferrer">
+                    {s.title}
+                  </a>
+                </React.Fragment>
+              ))}
+            </p>
+          </section>
+        </>
+      )}
+
       <div className={styles.divider} />
 
       {/* ═══ SECTION C — Tableau des voicings ═══ */}
@@ -269,7 +295,7 @@ export default async function RiddimDetail({ riddim, lang, dict }: RiddimDetailP
           <span className={styles.voicingsCount}>({riddim.voicings.length})</span>
         </h2>
 
-        <table className={styles.table} aria-label={`Voicings du riddim ${riddim.name}`}>
+        <table className={styles.table} aria-label={dict.ariaVoicingsList}>
           <thead className={styles.tableHead}>
             <tr>
               <th scope="col">{dict.rank}</th>

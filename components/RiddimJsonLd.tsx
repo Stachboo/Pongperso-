@@ -3,6 +3,7 @@ import type { Riddim } from '@/types/riddim';
 import type { Artist } from '@/utils/artists';
 import { generateRiddimJsonLd, BASE_URL, jsonLdString } from '@/utils/seo';
 import { generateArtistJsonLd } from '@/utils/artists';
+import { getDictionary, isValidLocale } from '@/lib/i18n';
 
 /* ══════════════════════════════════════════════════════════════════════════════
    WMC — RIDDIM JSON-LD
@@ -39,7 +40,8 @@ export function RiddimJsonLd({ riddim, lang }: RiddimJsonLdProps) {
  * Server Component — aucune hydratation côté client.
  */
 export function ArtistJsonLd({ artist, lang }: ArtistJsonLdProps) {
-  const jsonLd = generateArtistJsonLd(artist, lang, BASE_URL);
+  const dict = getDictionary(isValidLocale(lang) ? lang : 'fr');
+  const jsonLd = generateArtistJsonLd(artist, lang, BASE_URL, dict);
 
   return (
     <script

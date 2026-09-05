@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import type { Artist } from '@/utils/artists';
+import type { Dictionary } from '@/lib/i18n';
 import styles from './ArtistCard.module.css';
 
 /* ══════════════════════════════════════════════════════════════════════════════
@@ -11,6 +12,7 @@ import styles from './ArtistCard.module.css';
 interface ArtistCardProps {
   artist: Artist;
   href: string;
+  dict: Dictionary;
 }
 
 /** 6 dégradés prédéfinis générés depuis le hash du nom */
@@ -53,7 +55,7 @@ function genreBadgeClass(genre: string): string {
 }
 
 
-export default function ArtistCard({ artist, href }: ArtistCardProps) {
+export default function ArtistCard({ artist, href, dict }: ArtistCardProps) {
   const mainStyle = artist.styles[0] ?? '';
 
   return (
@@ -70,7 +72,7 @@ export default function ArtistCard({ artist, href }: ArtistCardProps) {
         <div
           className={styles.avatar}
           style={{ background: getGradient(artist.name) }}
-          aria-label={`${artist.name}, artiste`}
+          aria-label={dict.ariaArtistAvatar.replace('{x}', artist.name)}
         >
           <span className={styles.initials}>{getInitials(artist.name)}</span>
         </div>
@@ -86,7 +88,7 @@ export default function ArtistCard({ artist, href }: ArtistCardProps) {
           </span>
           <span className={styles.stat}>
             <span className={styles.statValue}>#{artist.topRank}</span>
-            <span className={styles.statLabel}>meilleur rang</span>
+            <span className={styles.statLabel}>{dict.artistBestRank}</span>
           </span>
         </div>
 

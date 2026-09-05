@@ -275,6 +275,35 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: true, createdRiddim: newRiddim });
     }
 
+    // ─── Modifier les métadonnées d'un riddim ────────────────────────────
+    case 'edit-riddim': {
+      const { riddimId, name, year, producer, label, type, genre, bpm, description } = body;
+      const riddim = riddims.find((r: { id: number }) => r.id === riddimId);
+
+      if (!riddim) {
+        return NextResponse.json({ error: 'Riddim introuvable' }, { status: 404 });
+      }
+      const cleanName = cleanString(name);
+      const cleanProducer = cleanString(producer);
+      if (!cleanName || !cleanProducer) {
+        return NextResponse.json({ error: 'Nom et producteur requis' }, { status: 400 });
+      }
+      const normYear = normalizeViews(year);
+      const normBpm = normalizeViews(bpm);
+
+      riddim.name = cleanName;
+      riddim.producer = cleanProducer;
+      riddim.year = normYear ?? riddim.year;
+      riddim.label = cleanString(label) ?? '';
+      riddim.type = cleanString(type) ?? riddim.type;
+      riddim.genre = cleanString(genre) ?? riddim.genre;
+      riddim.bpm = normBpm ?? 0;
+      if (typeof description === 'string') riddim.description = description;
+
+      await writeRiddims(riddims);
+      return NextResponse.json({ success: true, updatedRiddim: riddim });
+    }
+
     default:
       return NextResponse.json({ error: `Action inconnue: ${action}` }, { status: 400 });
   }
