@@ -328,13 +328,13 @@
   {
     "id": 8,
     "name": "Playground",
-    "year": 2005,
-    "producer": "Don Corleon",
-    "label": "Don Corleon Records",
+    "year": 1997,
+    "producer": "Jeremy Harding",
+    "label": "2 Hard",
     "type": "digital",
     "genre": "dancehall",
     "bpm": 92,
-    "description": "Un riddim doux et mélodique qui a porté certains des plus gros hits dancehall des années 2000.",
+    "description": "Un riddim dancehall influencé par le hip-hop, immortalisé par « Who Am I (Sim Simma) » de Beenie Man et « Infiltrate » de Sean Paul.",
     "voicings": [
       {
         "artist": "Busy Signal",
@@ -500,13 +500,13 @@
   {
     "id": 12,
     "name": "Buyout",
-    "year": 2013,
-    "producer": "Rvssian",
-    "label": "Head Concussion Records",
+    "year": 2001,
+    "producer": "Tony 'CD' Kelly",
+    "label": "VP / Greensleeves",
     "type": "digital",
     "genre": "dancehall",
     "bpm": 108,
-    "description": "Un riddim moderne et énergique du producteur Rvssian qui a dominé les clubs et les ondes.",
+    "description": "Un riddim dancehall de la série Riddim Driven, immortalisé par « Like Glue » de Sean Paul.",
     "voicings": [
       {
         "artist": "Popcaan",
@@ -543,13 +543,13 @@
   {
     "id": 13,
     "name": "Drum Song",
-    "year": 2008,
-    "producer": "Troyton Music",
-    "label": "Troyton Music",
-    "type": "digital",
-    "genre": "dancehall",
+    "year": 1967,
+    "producer": "Jackie Mittoo (Studio One)",
+    "label": "Studio One",
+    "type": "classique",
+    "genre": "reggae",
     "bpm": 105,
-    "description": "Un riddim rapide et percussif qui a été un favori des sound systems.",
+    "description": "Riddim fondateur de Studio One signé Jackie Mittoo, relické pendant des décennies (Gregory Isaacs, Buju Banton, Sizzla).",
     "voicings": [
       {
         "artist": "Busy Signal",
@@ -4348,7 +4348,7 @@
   },
   {
     "name": "Jambe An",
-    "year": 2015,
+    "year": 2014,
     "producer": "DJ Kurt Riley",
     "label": "Techniques Records / VPAL",
     "type": "digital",
