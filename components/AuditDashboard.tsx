@@ -92,6 +92,7 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
   const [showCreateRiddim, setShowCreateRiddim] = useState(false);
   const [newRiddim, setNewRiddim] = useState(EMPTY_RIDDIM);
   const [newRiddimVoicings, setNewRiddimVoicings] = useState<{ artist: string; title: string; views: number }[]>([]);
+  const [editRiddim, setEditRiddim] = useState<{ id: number; name: string; year: number; producer: string; label: string; type: string; genre: string; bpm: number; description: string } | null>(null);
   const [loading, setLoading] = useState(false);
   const [toasts, setToasts] = useState<Toast[]>([]);
   const [flashId, setFlashId] = useState<string | null>(null);
@@ -291,6 +292,12 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
     }
   };
 
+  const handleEditRiddim = async () => {
+    if (!editRiddim || !editRiddim.name || !editRiddim.producer) return;
+    const result = await apiCall({ action: 'edit-riddim', riddimId: editRiddim.id, ...editRiddim }, 'Riddim modifié');
+    if (result) setEditRiddim(null);
+  };
+
   const filterIndex = filterStatus === 'all' ? 0 : filterStatus === 'estimated' ? 1 : 2;
 
   return (
@@ -473,9 +480,21 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
                     {currentRiddim.bpm > 0 && <span className={styles.mono}>{currentRiddim.bpm} BPM</span>}
                   </div>
                 </div>
-                <button className={styles.addVoicingBtn} onClick={() => setShowAddVoicing(v => !v)}>
-                  <span aria-hidden="true">+</span> Voicing
-                </button>
+                <div className={styles.detailBarActions}>
+                  <button
+                    className={styles.addVoicingBtn}
+                    onClick={() => setEditRiddim({
+                      id: currentRiddim.id, name: currentRiddim.name, year: currentRiddim.year,
+                      producer: currentRiddim.producer, label: currentRiddim.label, type: currentRiddim.type,
+                      genre: currentRiddim.genre, bpm: currentRiddim.bpm, description: currentRiddim.description,
+                    })}
+                  >
+                    <span aria-hidden="true">✎</span> Métadonnées
+                  </button>
+                  <button className={styles.addVoicingBtn} onClick={() => setShowAddVoicing(v => !v)}>
+                    <span aria-hidden="true">+</span> Voicing
+                  </button>
+                </div>
               </div>
 
               {showAddVoicing && (
@@ -647,6 +666,67 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
       )}
 
       {/* ─── Modale : créer un riddim ────────────────────────────────────────── */}
+      {/* ─── Modale : modifier les métadonnées d'un riddim ───────────────────── */}
+      {editRiddim && (
+        <Modal title="Modifier le riddim" accent="gold" large onClose={() => setEditRiddim(null)}>
+          <div className={styles.formGrid}>
+            <div className={styles.formGroup}>
+              <label className={styles.formLabel} htmlFor="er-name">Nom *</label>
+              <input id="er-name" type="text" className={styles.formInput} value={editRiddim.name}
+                onChange={e => setEditRiddim({ ...editRiddim, name: e.target.value })} />
+            </div>
+            <div className={styles.formGroup}>
+              <label className={styles.formLabel} htmlFor="er-prod">Producteur *</label>
+              <input id="er-prod" type="text" className={styles.formInput} value={editRiddim.producer}
+                onChange={e => setEditRiddim({ ...editRiddim, producer: e.target.value })} />
+            </div>
+            <div className={styles.formGroup}>
+              <label className={styles.formLabel} htmlFor="er-year">Année</label>
+              <input id="er-year" type="number" className={styles.formInput} value={editRiddim.year}
+                onChange={e => setEditRiddim({ ...editRiddim, year: Number(e.target.value) || editRiddim.year })} />
+            </div>
+            <div className={styles.formGroup}>
+              <label className={styles.formLabel} htmlFor="er-label">Label</label>
+              <input id="er-label" type="text" className={styles.formInput} value={editRiddim.label}
+                onChange={e => setEditRiddim({ ...editRiddim, label: e.target.value })} />
+            </div>
+            <div className={styles.formGroup}>
+              <label className={styles.formLabel} htmlFor="er-genre">Genre</label>
+              <select id="er-genre" className={styles.formSelect} value={editRiddim.genre}
+                onChange={e => setEditRiddim({ ...editRiddim, genre: e.target.value })}>
+                <option value="dancehall">Dancehall</option>
+                <option value="reggae">Reggae</option>
+                <option value="lovers rock">Lovers Rock</option>
+                <option value="soca">Soca</option>
+              </select>
+            </div>
+            <div className={styles.formGroup}>
+              <label className={styles.formLabel} htmlFor="er-type">Type</label>
+              <select id="er-type" className={styles.formSelect} value={editRiddim.type}
+                onChange={e => setEditRiddim({ ...editRiddim, type: e.target.value })}>
+                <option value="digital">Digital</option>
+                <option value="classique">Classique</option>
+                <option value="ragga">Ragga</option>
+              </select>
+            </div>
+            <div className={styles.formGroup}>
+              <label className={styles.formLabel} htmlFor="er-bpm">BPM</label>
+              <input id="er-bpm" type="number" className={styles.formInput} value={editRiddim.bpm || ''}
+                onChange={e => setEditRiddim({ ...editRiddim, bpm: Number(e.target.value) || 0 })} />
+            </div>
+          </div>
+          <div className={styles.formGroup}>
+            <label className={styles.formLabel} htmlFor="er-desc">Description</label>
+            <textarea id="er-desc" className={styles.formTextarea} rows={3} value={editRiddim.description}
+              onChange={e => setEditRiddim({ ...editRiddim, description: e.target.value })} />
+          </div>
+          <div className={styles.modalActions}>
+            <button onClick={handleEditRiddim} className={styles.confirmBtn} disabled={!editRiddim.name || !editRiddim.producer || loading}>Enregistrer</button>
+            <button onClick={() => setEditRiddim(null)} className={styles.cancelBtn}>Annuler</button>
+          </div>
+        </Modal>
+      )}
+
       {showCreateRiddim && (
         <Modal title="Créer un nouveau riddim" accent="gold" large onClose={() => { setShowCreateRiddim(false); setNewRiddim(EMPTY_RIDDIM); setNewRiddimVoicings([]); }}>
           <div className={styles.formGrid}>
