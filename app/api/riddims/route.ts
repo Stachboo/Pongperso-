@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { revalidateTag } from 'next/cache';
-import { put, list } from '@vercel/blob';
+import { put, list, BlobPreconditionFailedError } from '@vercel/blob';
 import { RIDDIMS_TAG } from '@/lib/data';
 import { verifyToken } from '@/lib/auth';
 
@@ -45,35 +45,34 @@ function ensureVoicingIds(riddims: { voicings: { id?: string }[] }[]): boolean {
   return changed;
 }
 
-async function readRiddims(initialize = true) {
-  const { blobs } = await list({ prefix: BLOB_NAME });
+class StaleCatalogueError extends Error {}
 
-  if (blobs.length === 0) {
-    // Premier lancement : seed depuis le fichier local embarqué dans le build
+async function readRiddims() {
+  const { blobs } = await list({ prefix: BLOB_NAME });
+  const blob = blobs.find((item) => item.pathname === BLOB_NAME);
+
+  if (!blob) {
+    // La copie évite de modifier en mémoire le module JSON partagé entre requêtes.
     const localData = await import('@/data/riddims.json');
-    const data = (localData as { default: unknown[] }).default;
-    // Upload initial dans le Blob pour les prochaines lectures
-    if (initialize) await put(BLOB_NAME, JSON.stringify(data, null, 2), {
-      access: 'public',
-      addRandomSuffix: false,
-      allowOverwrite: true,
-      contentType: 'application/json',
-      cacheControlMaxAge: 0,
-    });
-    return data;
+    const data = JSON.parse(JSON.stringify((localData as { default: unknown[] }).default));
+    return { riddims: data, etag: null };
   }
 
-  // Cache-busting par uploadedAt : jamais de version CDN périmée
-  const url = `${blobs[0].url}?v=${blobs[0].uploadedAt.getTime()}`;
+  // Le CDN peut servir un objet périmé même si la requête contourne le cache local.
+  // On compare l'ETag reçu à la version actuelle du listing avant toute utilisation.
+  if (!blob.etag) throw new StaleCatalogueError();
+  const url = `${blob.url}?v=${blob.uploadedAt.getTime()}`;
   const response = await fetch(url, { cache: 'no-store' });
-  return response.json();
+  if (!response.ok || response.headers.get('etag') !== blob.etag) throw new StaleCatalogueError();
+  return { riddims: await response.json(), etag: blob.etag };
 }
 
-async function writeRiddims(data: unknown[]) {
+async function writeRiddims(data: unknown[], etag: string | null) {
   await put(BLOB_NAME, JSON.stringify(data, null, 2), {
     access: 'public',
     addRandomSuffix: false,
-    allowOverwrite: true,
+    allowOverwrite: etag !== null,
+    ...(etag !== null ? { ifMatch: etag } : {}),
     contentType: 'application/json',
     cacheControlMaxAge: 0,
   });
@@ -84,24 +83,54 @@ async function writeRiddims(data: unknown[]) {
 }
 
 export async function GET(req: NextRequest) {
+  try {
+    return await readCatalogue(req);
+  } catch (error) {
+    return catalogueError(error);
+  }
+}
+
+async function readCatalogue(req: NextRequest) {
   const authenticated = await verifyToken(req.cookies.get('wmc-auth')?.value);
-  const riddims = await readRiddims(authenticated);
+  const { riddims, etag } = await readRiddims();
   // Migration douce : garantit un id stable sur chaque voicing, et le persiste
   // une seule fois pour que le client dispose toujours d'identifiants fiables.
-  if (authenticated && Array.isArray(riddims) && ensureVoicingIds(riddims)) {
-    await writeRiddims(riddims);
+  if (authenticated && Array.isArray(riddims)) {
+    const changed = ensureVoicingIds(riddims);
+    if (etag === null || changed) await writeRiddims(riddims, etag);
   }
-  return NextResponse.json(riddims, { headers: { 'Cache-Control': 'private, no-store' } });
+  return NextResponse.json(riddims, {
+    headers: {
+      'Cache-Control': 'private, no-store',
+      'X-WMC-Catalogue-Consistency': etag === null ? 'seed' : 'verified',
+    },
+  });
+}
+
+function catalogueError(error: unknown) {
+  if (typeof BlobPreconditionFailedError === 'function' && error instanceof BlobPreconditionFailedError) {
+    return NextResponse.json({ error: 'Le catalogue a changé. Rechargez la page avant de réessayer.' }, { status: 409 });
+  }
+  if (!(error instanceof StaleCatalogueError)) console.error('Lecture ou écriture du catalogue impossible', error);
+  return NextResponse.json({ error: 'Le catalogue est temporairement indisponible. Veuillez réessayer.' }, { status: 503 });
 }
 
 export async function POST(req: NextRequest) {
   if (!(await verifyToken(req.cookies.get('wmc-auth')?.value))) {
     return NextResponse.json({ error: 'Non autorisé' }, { status: 401 });
   }
+  try {
+    return await updateCatalogue(req);
+  } catch (error) {
+    return catalogueError(error);
+  }
+}
+
+async function updateCatalogue(req: NextRequest) {
   const body = await req.json();
   const { action } = body;
 
-  const riddims = await readRiddims();
+  const { riddims, etag } = await readRiddims();
   // Auto-réparation : toute donnée sans id est complétée avant mutation.
   ensureVoicingIds(riddims);
 
@@ -125,7 +154,7 @@ export async function POST(req: NextRequest) {
       toRiddim.voicings.push(voicing);
       toRiddim.voicings.sort((a: { views: number }, b: { views: number }) => b.views - a.views);
 
-      await writeRiddims(riddims);
+      await writeRiddims(riddims, etag);
       return NextResponse.json({ success: true, movedVoicing: voicing });
     }
 
@@ -144,7 +173,7 @@ export async function POST(req: NextRequest) {
       }
 
       const [deleted] = riddim.voicings.splice(idx, 1);
-      await writeRiddims(riddims);
+      await writeRiddims(riddims, etag);
       return NextResponse.json({ success: true, deletedVoicing: deleted });
     }
 
@@ -170,7 +199,7 @@ export async function POST(req: NextRequest) {
       riddim.voicings.push(newVoicing);
       riddim.voicings.sort((a: { views: number }, b: { views: number }) => b.views - a.views);
 
-      await writeRiddims(riddims);
+      await writeRiddims(riddims, etag);
       return NextResponse.json({ success: true, addedVoicing: newVoicing });
     }
 
@@ -206,7 +235,7 @@ export async function POST(req: NextRequest) {
         views: editViews,
       };
 
-      await writeRiddims(riddims);
+      await writeRiddims(riddims, etag);
       return NextResponse.json({ success: true, updatedVoicing: riddim.voicings[idx] });
     }
 
@@ -234,7 +263,7 @@ export async function POST(req: NextRequest) {
       riddim.voicings[voicingIndex] = riddim.voicings[targetIndex];
       riddim.voicings[targetIndex] = temp;
 
-      await writeRiddims(riddims);
+      await writeRiddims(riddims, etag);
       return NextResponse.json({ success: true });
     }
 
@@ -278,7 +307,7 @@ export async function POST(req: NextRequest) {
       };
 
       riddims.push(newRiddim);
-      await writeRiddims(riddims);
+      await writeRiddims(riddims, etag);
       return NextResponse.json({ success: true, createdRiddim: newRiddim });
     }
 
@@ -307,7 +336,7 @@ export async function POST(req: NextRequest) {
       riddim.bpm = normBpm ?? 0;
       if (typeof description === 'string') riddim.description = description;
 
-      await writeRiddims(riddims);
+      await writeRiddims(riddims, etag);
       return NextResponse.json({ success: true, updatedRiddim: riddim });
     }
 

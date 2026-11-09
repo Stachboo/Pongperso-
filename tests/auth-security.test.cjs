@@ -13,7 +13,7 @@ function load(relative, mocks = {}) {
   const source = fs.readFileSync(filename, 'utf8');
   const js = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020, jsx: ts.JsxEmit.ReactJSX } }).outputText;
   const module = { exports: {} };
-  const context = { module, exports: module.exports, process, crypto: webcrypto, TextEncoder, btoa, atob, Date, Number, Array, Uint8Array, console,
+  const context = { module, exports: module.exports, process, crypto: webcrypto, TextEncoder, btoa, atob, Date, Number, Array, Uint8Array, console, fetch: mocks.$fetch || globalThis.fetch,
     require(name) {
       if (Object.hasOwn(mocks, name)) return mocks[name];
       if (name === '@/lib/auth') return load('lib/auth.ts');
@@ -100,6 +100,7 @@ test('anonymous catalogue reads never initialize or migrate storage', async () =
   assert.equal(response.status, 200);
   assert.equal(response.body.length, 1);
   assert.equal(response.headers['Cache-Control'], 'private, no-store');
+  assert.equal(response.headers['X-WMC-Catalogue-Consistency'], 'seed');
   assert.equal(writes, 0);
 });
 
@@ -147,4 +148,88 @@ test('the audit page rejects a direct unauthenticated server render', async () =
     '@/components/AuditDashboard': {},
   });
   await assert.rejects(page({ params: { lang: 'fr' } }), /redirected/);
+});
+
+test('a stale CDN response cannot be used to overwrite the current catalogue', async () => {
+  process.env.AUTH_SECRET = 'test-secret-for-unit-tests';
+  const token = await load('lib/auth.ts').createToken('test-admin');
+  let writes = 0;
+  const { POST } = load('app/api/riddims/route.ts', {
+    'next/server': { NextResponse }, 'next/cache': { revalidateTag() {} }, '@/lib/data': {},
+    '@vercel/blob': { list: async () => ({ blobs: [{ pathname: 'riddims.json', url: 'https://example.test/riddims.json', etag: '"new"', uploadedAt: new Date() }] }), put: async () => { writes++; } },
+    $fetch: async () => ({ ok: true, headers: { get: () => '"old"' }, json: async () => [{ id: 1, voicings: [] }] }),
+  });
+  const response = await POST({ cookies: { get: () => ({ value: token }) }, json: async () => ({ action: 'add-voicing', riddimId: 1, artist: 'A', title: 'B' }) });
+  assert.equal(response.status, 503);
+  assert.equal(writes, 0);
+});
+
+test('catalogue reads fail closed if an ETag is missing or the blob request fails', async () => {
+  process.env.AUTH_SECRET = 'test-secret-for-unit-tests';
+  const request = { cookies: { get: () => undefined } };
+  for (const [blob, fetch] of [
+    [{ pathname: 'riddims.json', url: 'https://example.test/riddims.json', uploadedAt: new Date() }, async () => { throw new Error('must not fetch without an ETag'); }],
+    [{ pathname: 'riddims.json', url: 'https://example.test/riddims.json', etag: '"current"', uploadedAt: new Date() }, async () => ({ ok: true, headers: { get: () => null } })],
+    [{ pathname: 'riddims.json', url: 'https://example.test/riddims.json', etag: '"current"', uploadedAt: new Date() }, async () => ({ ok: false, headers: { get: () => '"current"' } })],
+  ]) {
+    const { GET } = load('app/api/riddims/route.ts', {
+      'next/server': { NextResponse }, 'next/cache': { revalidateTag() {} }, '@/lib/data': {},
+      '@vercel/blob': { list: async () => ({ blobs: [blob] }) }, $fetch: fetch,
+    });
+    const response = await GET(request);
+    assert.equal(response.status, 503);
+  }
+});
+
+test('catalogue signals a verified blob only when the ETags match', async () => {
+  process.env.AUTH_SECRET = 'test-secret-for-unit-tests';
+  const { GET } = load('app/api/riddims/route.ts', {
+    'next/server': { NextResponse }, 'next/cache': { revalidateTag() {} }, '@/lib/data': {},
+    '@vercel/blob': { list: async () => ({ blobs: [{ pathname: 'riddims.json', url: 'https://example.test/riddims.json', etag: '"current"', uploadedAt: new Date() }] }) },
+    $fetch: async () => ({ ok: true, headers: { get: () => '"current"' }, json: async () => [{ id: 1, voicings: [] }] }),
+  });
+  const response = await GET({ cookies: { get: () => undefined } });
+  assert.equal(response.status, 200);
+  assert.equal(response.headers['X-WMC-Catalogue-Consistency'], 'verified');
+});
+
+test('an update uses the ETag of the content read as an atomic precondition', async () => {
+  process.env.AUTH_SECRET = 'test-secret-for-unit-tests';
+  const token = await load('lib/auth.ts').createToken('test-admin');
+  let putOptions;
+  const { POST } = load('app/api/riddims/route.ts', {
+    'next/server': { NextResponse }, 'next/cache': { revalidateTag() {} }, '@/lib/data': {},
+    '@vercel/blob': { list: async () => ({ blobs: [{ pathname: 'riddims.json', url: 'https://example.test/riddims.json', etag: '"current"', uploadedAt: new Date() }] }), put: async (_name, _body, options) => { putOptions = options; } },
+    $fetch: async () => ({ ok: true, headers: { get: () => '"current"' }, json: async () => [{ id: 1, voicings: [] }] }),
+  });
+  const response = await POST({ cookies: { get: () => ({ value: token }) }, json: async () => ({ action: 'add-voicing', riddimId: 1, artist: 'A', title: 'B' }) });
+  assert.equal(response.status, 200);
+  assert.equal(putOptions.ifMatch, '"current"');
+});
+
+test('concurrent modification returns a conflict without reporting success', async () => {
+  process.env.AUTH_SECRET = 'test-secret-for-unit-tests';
+  const token = await load('lib/auth.ts').createToken('test-admin');
+  class BlobPreconditionFailedError extends Error {}
+  const { POST } = load('app/api/riddims/route.ts', {
+    'next/server': { NextResponse }, 'next/cache': { revalidateTag() {} }, '@/lib/data': {},
+    '@vercel/blob': { BlobPreconditionFailedError, list: async () => ({ blobs: [{ pathname: 'riddims.json', url: 'https://example.test/riddims.json', etag: '"current"', uploadedAt: new Date() }] }), put: async () => { throw new BlobPreconditionFailedError(); } },
+    $fetch: async () => ({ ok: true, headers: { get: () => '"current"' }, json: async () => [{ id: 1, voicings: [] }] }),
+  });
+  const response = await POST({ cookies: { get: () => ({ value: token }) }, json: async () => ({ action: 'add-voicing', riddimId: 1, artist: 'A', title: 'B' }) });
+  assert.equal(response.status, 409);
+});
+
+test('initial catalogue creation does not permit overwriting a concurrently created blob', async () => {
+  process.env.AUTH_SECRET = 'test-secret-for-unit-tests';
+  const token = await load('lib/auth.ts').createToken('test-admin');
+  let putOptions;
+  const { POST } = load('app/api/riddims/route.ts', {
+    'next/server': { NextResponse }, 'next/cache': { revalidateTag() {} }, '@/lib/data': {},
+    '@vercel/blob': { list: async () => ({ blobs: [] }), put: async (_name, _body, options) => { putOptions = options; } },
+    '@/data/riddims.json': { default: [{ id: 1, voicings: [] }] },
+  });
+  const response = await POST({ cookies: { get: () => ({ value: token }) }, json: async () => ({ action: 'add-voicing', riddimId: 1, artist: 'A', title: 'B' }) });
+  assert.equal(response.status, 200);
+  assert.equal(putOptions.allowOverwrite, false);
 });

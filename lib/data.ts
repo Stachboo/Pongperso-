@@ -3,7 +3,7 @@
    Lecture des riddims depuis Vercel Blob (source de vérité runtime), mise en
    cache et taguée 'riddims'. Les pages sont servies depuis le cache (rapides) et
    se régénèrent en live quand l'admin appelle revalidateTag('riddims') — sans
-   redéploiement. Repli sur le JSON du repo au build ou si le Blob est indisponible.
+   redéploiement. Repli sur le JSON du repo pour un magasin vide ou un build local sans accès Blob.
    ══════════════════════════════════════════════════════════════════════════════ */
 
 import { unstable_cache } from 'next/cache';
@@ -13,33 +13,39 @@ import seedData from '@/data/riddims.json';
 
 const BLOB_NAME = 'riddims.json';
 
-/** Données embarquées dans le build — repli si le Blob n'est pas disponible. */
+/** Données embarquées — utilisées pour initialiser un magasin vide. */
 const seed: Riddim[] = seedData as Riddim[];
 
 /** Tag de cache partagé — invalidé par l'API après chaque écriture admin. */
 export const RIDDIMS_TAG = 'riddims';
 
-/** Lecture brute depuis le Blob, avec cache-busting par uploadedAt. */
+/** Ne met jamais une erreur ou une ancienne version CDN en cache comme catalogue actuel. */
 async function readRiddimsFromBlob(): Promise<Riddim[]> {
-  try {
-    const { blobs } = await list({ prefix: BLOB_NAME });
-    if (blobs.length === 0) return seed;
-    // La query ?v=<uploadedAt> change à chaque écriture → jamais de CDN périmé.
-    const url = `${blobs[0].url}?v=${blobs[0].uploadedAt.getTime()}`;
-    const res = await fetch(url);
-    if (!res.ok) return seed;
-    return (await res.json()) as Riddim[];
-  } catch {
+  const hasBlobCredentials = Boolean(process.env.BLOB_READ_WRITE_TOKEN ||
+    (process.env.VERCEL_OIDC_TOKEN && process.env.BLOB_STORE_ID));
+  if (process.env.NEXT_PHASE === 'phase-production-build' && !process.env.VERCEL && !hasBlobCredentials) {
     return seed;
   }
+
+  const { blobs } = await list({ prefix: BLOB_NAME });
+  if (blobs.length === 0) return seed;
+  const blob = blobs.find((item) => item.pathname === BLOB_NAME);
+  if (!blob || !blob.etag) throw new Error('Métadonnées du catalogue Blob indisponibles');
+  const res = await fetch(`${blob.url}?v=${blob.uploadedAt.getTime()}`, { cache: 'no-store' });
+  if (!res.ok) throw new Error(`Lecture du catalogue Blob impossible (HTTP ${res.status})`);
+  if (res.headers.get('etag') !== blob.etag) throw new Error('Catalogue Blob temporairement périmé');
+  const data: unknown = await res.json();
+  if (!Array.isArray(data)) throw new Error('Catalogue Blob invalide');
+  return data as Riddim[];
 }
 
 /**
  * Tous les riddims — mis en cache et tagués 'riddims'.
- * Servis depuis le cache jusqu'à une invalidation via revalidateTag('riddims').
+ * Revalidés au plus tard après 60 secondes ou via revalidateTag('riddims').
  */
 export const getAllRiddims = unstable_cache(readRiddimsFromBlob, ['all-riddims'], {
   tags: [RIDDIMS_TAG],
+  revalidate: 60,
 });
 
 /** Un riddim par ID. */

@@ -162,9 +162,18 @@ export default function AuditDashboard({ riddims: initialRiddims, lang }: AuditD
     try {
       const res = await fetch('/api/riddims');
       const data = await res.json();
+      if (!res.ok) {
+        throw new Error(typeof data?.error === 'string' ? data.error : 'Erreur serveur');
+      }
+      if (!Array.isArray(data)) {
+        throw new Error('Réponse du catalogue invalide');
+      }
       setRiddims(data);
-    } catch { /* ignore */ }
-  }, []);
+    } catch (err) {
+      const detail = err instanceof Error ? err.message : 'Erreur réseau';
+      pushToast('error', `Actualisation impossible : ${detail}. Les données affichées peuvent être anciennes.`);
+    }
+  }, [pushToast]);
 
   // Au montage, remplacer les données figées du build par l'état réel du Blob.
   useEffect(() => {
