@@ -16,9 +16,9 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function LoginPage({
   params,
 }: {
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }) {
-  const { lang } = params;
+  const { lang } = await params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
 
   return <LoginForm lang={locale} />;

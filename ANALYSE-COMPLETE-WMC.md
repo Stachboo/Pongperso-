@@ -142,7 +142,7 @@ Pongperso-/
 ### .env.local
 ```
 ADMIN_USERNAME=admin
-ADMIN_PASSWORD=WMC-riddim-2024!
+ADMIN_PASSWORD=<mot-de-passe-unique-et-fort>
 AUTH_SECRET=<64-char hex>
 BLOB_READ_WRITE_TOKEN=<vercel blob token>
 DEPLOY_HOOK_URL=<vercel deploy hook URL>

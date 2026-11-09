@@ -78,11 +78,12 @@ const CONTENT: Record<Locale, PageContent> = {
   },
 };
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { lang: string };
-}): Promise<Metadata> {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ lang: string }>;
+  }
+): Promise<Metadata> {
+  const params = await props.params;
   const { lang } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   // /riddims duplique /explorer (même catalogue) ; /explorer est la page liée
@@ -114,11 +115,12 @@ export async function generateMetadata({
   };
 }
 
-export default async function RiddimsPage({
-  params,
-}: {
-  params: { lang: string };
-}) {
+export default async function RiddimsPage(
+  props: {
+    params: Promise<{ lang: string }>;
+  }
+) {
+  const params = await props.params;
   const { lang } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const dict = getDictionary(locale);

@@ -30,11 +30,12 @@ export async function generateStaticParams() {
    generateMetadata — SEO title, description, OpenGraph, Twitter
    ═══════════════════════════════════════════════════════════════════════════ */
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { lang: string; id: string };
-}): Promise<Metadata> {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ lang: string; id: string }>;
+  }
+): Promise<Metadata> {
+  const params = await props.params;
   const { lang, id } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const dict = getDictionary(locale);
@@ -158,11 +159,12 @@ function generateJsonLd(riddim: Riddim, locale: Locale, dict: Dictionary) {
    PAGE COMPONENT
    ═══════════════════════════════════════════════════════════════════════════ */
 
-export default async function RiddimPage({
-  params,
-}: {
-  params: { lang: string; id: string };
-}) {
+export default async function RiddimPage(
+  props: {
+    params: Promise<{ lang: string; id: string }>;
+  }
+) {
+  const params = await props.params;
   const { lang, id } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const dict = getDictionary(locale);

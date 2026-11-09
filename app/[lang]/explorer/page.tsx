@@ -9,11 +9,12 @@ import ExplorerClient from '@/components/ExplorerClient';
    Catalogue filtrable de tous les riddims
    ══════════════════════════════════════════════════════════════════════════════ */
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { lang: string };
-}): Promise<Metadata> {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ lang: string }>;
+  }
+): Promise<Metadata> {
+  const params = await props.params;
   const { lang } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const dict = getDictionary(locale);
@@ -23,11 +24,12 @@ export async function generateMetadata({
   };
 }
 
-export default async function ExplorerPage({
-  params,
-}: {
-  params: { lang: string };
-}) {
+export default async function ExplorerPage(
+  props: {
+    params: Promise<{ lang: string }>;
+  }
+) {
+  const params = await props.params;
   const { lang } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const dict = getDictionary(locale);

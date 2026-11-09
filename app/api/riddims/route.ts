@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { revalidateTag } from 'next/cache';
 import { put, list } from '@vercel/blob';
 import { RIDDIMS_TAG } from '@/lib/data';
+import { verifyToken } from '@/lib/auth';
 
 const BLOB_NAME = 'riddims.json';
 
@@ -44,7 +45,7 @@ function ensureVoicingIds(riddims: { voicings: { id?: string }[] }[]): boolean {
   return changed;
 }
 
-async function readRiddims() {
+async function readRiddims(initialize = true) {
   const { blobs } = await list({ prefix: BLOB_NAME });
 
   if (blobs.length === 0) {
@@ -52,9 +53,10 @@ async function readRiddims() {
     const localData = await import('@/data/riddims.json');
     const data = (localData as { default: unknown[] }).default;
     // Upload initial dans le Blob pour les prochaines lectures
-    await put(BLOB_NAME, JSON.stringify(data, null, 2), {
+    if (initialize) await put(BLOB_NAME, JSON.stringify(data, null, 2), {
       access: 'public',
       addRandomSuffix: false,
+      allowOverwrite: true,
       contentType: 'application/json',
       cacheControlMaxAge: 0,
     });
@@ -71,26 +73,31 @@ async function writeRiddims(data: unknown[]) {
   await put(BLOB_NAME, JSON.stringify(data, null, 2), {
     access: 'public',
     addRandomSuffix: false,
+    allowOverwrite: true,
     contentType: 'application/json',
     cacheControlMaxAge: 0,
   });
 
   // Régénérer en live les pages publiques qui lisent les riddims (ISR à la
   // demande) — pas de redéploiement, mise à jour quasi-instantanée.
-  revalidateTag(RIDDIMS_TAG);
+  revalidateTag(RIDDIMS_TAG, { expire: 0 });
 }
 
-export async function GET() {
-  const riddims = await readRiddims();
+export async function GET(req: NextRequest) {
+  const authenticated = await verifyToken(req.cookies.get('wmc-auth')?.value);
+  const riddims = await readRiddims(authenticated);
   // Migration douce : garantit un id stable sur chaque voicing, et le persiste
   // une seule fois pour que le client dispose toujours d'identifiants fiables.
-  if (Array.isArray(riddims) && ensureVoicingIds(riddims)) {
+  if (authenticated && Array.isArray(riddims) && ensureVoicingIds(riddims)) {
     await writeRiddims(riddims);
   }
-  return NextResponse.json(riddims);
+  return NextResponse.json(riddims, { headers: { 'Cache-Control': 'private, no-store' } });
 }
 
 export async function POST(req: NextRequest) {
+  if (!(await verifyToken(req.cookies.get('wmc-auth')?.value))) {
+    return NextResponse.json({ error: 'Non autorisé' }, { status: 401 });
+  }
   const body = await req.json();
   const { action } = body;
 

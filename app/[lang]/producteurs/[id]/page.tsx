@@ -41,11 +41,12 @@ export async function generateStaticParams() {
    generateMetadata — SEO
    ═══════════════════════════════════════════════════════════════════════════ */
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { lang: string; id: string };
-}): Promise<Metadata> {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ lang: string; id: string }>;
+  }
+): Promise<Metadata> {
+  const params = await props.params;
   const { lang, id } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const dict = getDictionary(locale);
@@ -141,11 +142,12 @@ function generateProducerJsonLd(
    PAGE COMPONENT
    ═══════════════════════════════════════════════════════════════════════════ */
 
-export default async function ProducteurPage({
-  params,
-}: {
-  params: { lang: string; id: string };
-}) {
+export default async function ProducteurPage(
+  props: {
+    params: Promise<{ lang: string; id: string }>;
+  }
+) {
+  const params = await props.params;
   const { lang, id } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const dict = getDictionary(locale);

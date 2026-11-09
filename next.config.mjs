@@ -2,6 +2,7 @@
 const nextConfig = {
   poweredByHeader: false,
   compress: true,
+  ...(process.env.NEXT_BUILD_WORKERS === '2' ? { experimental: { cpus: 2 } } : {}),
 
   async headers() {
     return [

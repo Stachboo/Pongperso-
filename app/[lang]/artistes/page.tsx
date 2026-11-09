@@ -68,11 +68,12 @@ const CONTENT: Record<Locale, PageContent> = {
   },
 };
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { lang: string };
-}): Promise<Metadata> {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ lang: string }>;
+  }
+): Promise<Metadata> {
+  const params = await props.params;
   const { lang } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const hreflang = generateHreflang('/artistes', locale);
@@ -90,11 +91,12 @@ export async function generateMetadata({
   };
 }
 
-export default async function ArtistesPage({
-  params,
-}: {
-  params: { lang: string };
-}) {
+export default async function ArtistesPage(
+  props: {
+    params: Promise<{ lang: string }>;
+  }
+) {
+  const params = await props.params;
   const { lang } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const allArtists = buildArtistList(await getAllRiddims());

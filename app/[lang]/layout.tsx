@@ -18,13 +18,18 @@ export async function generateStaticParams() {
   return LOCALES.map((lang) => ({ lang }));
 }
 
-export default async function LangLayout({
-  children,
-  params,
-}: {
-  children: React.ReactNode;
-  params: { lang: string };
-}) {
+export default async function LangLayout(
+  props: {
+    children: React.ReactNode;
+    params: Promise<{ lang: string }>;
+  }
+) {
+  const params = await props.params;
+
+  const {
+    children
+  } = props;
+
   const { lang } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const dict = getDictionary(locale);

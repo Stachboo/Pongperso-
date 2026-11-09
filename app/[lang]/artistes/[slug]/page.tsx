@@ -31,11 +31,12 @@ export async function generateStaticParams() {
    generateMetadata — SEO
    ═══════════════════════════════════════════════════════════════════════════ */
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { lang: string; slug: string };
-}): Promise<Metadata> {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ lang: string; slug: string }>;
+  }
+): Promise<Metadata> {
+  const params = await props.params;
   const { lang, slug } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const dict = getDictionary(locale);
@@ -80,11 +81,12 @@ export async function generateMetadata({
    PAGE COMPONENT
    ═══════════════════════════════════════════════════════════════════════════ */
 
-export default async function ArtistePage({
-  params,
-}: {
-  params: { lang: string; slug: string };
-}) {
+export default async function ArtistePage(
+  props: {
+    params: Promise<{ lang: string; slug: string }>;
+  }
+) {
+  const params = await props.params;
   const { lang, slug } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const dict = getDictionary(locale);

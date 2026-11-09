@@ -194,11 +194,12 @@ export async function generateStaticParams() {
   return LOCALES.map((lang) => ({ lang }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { lang: string };
-}): Promise<Metadata> {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ lang: string }>;
+  }
+): Promise<Metadata> {
+  const params = await props.params;
   const { lang } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const hreflang = generateHreflang('/conditions', locale);
@@ -214,11 +215,12 @@ export async function generateMetadata({
   };
 }
 
-export default async function ConditionsPage({
-  params,
-}: {
-  params: { lang: string };
-}) {
+export default async function ConditionsPage(
+  props: {
+    params: Promise<{ lang: string }>;
+  }
+) {
+  const params = await props.params;
   const { lang } = params;
   const locale: Locale = isValidLocale(lang) ? lang : 'fr';
   const c = CONTENT[locale];

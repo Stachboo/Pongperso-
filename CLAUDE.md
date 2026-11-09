@@ -152,7 +152,7 @@ Branche `claude/salam-akhi-uqmwmb` = alignée sur main (commit `8f24da4`). Rien 
 ### TODO prochaine session (par priorité)
 
 1. **[HIGH sécurité — le propriétaire décidera]** Secrets/creds admin par défaut codés en dur
-   (`app/api/auth/route.ts:3-5`, `middleware.ts:4`). Le mot de passe `WMC-riddim-2024!` est
+   (`app/api/auth/route.ts:3-5`, `middleware.ts:4`). L'ancien mot de passe est
    DÉJÀ dans l'historique git → compromis. Action : (a) retirer les fallbacks (throw si env
    absente), (b) régénérer ADMIN_PASSWORD + AUTH_SECRET sur Vercel, (c) idéalement hasher le mdp.
    Vérifier d'abord que les 3 env vars sont bien sur Vercel avant de throw (sinon build/prod casse).
