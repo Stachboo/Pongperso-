@@ -169,6 +169,7 @@ test('catalogue reads fail closed if an ETag is missing or the blob request fail
   const request = { cookies: { get: () => undefined } };
   for (const [blob, fetch] of [
     [{ pathname: 'riddims.json', url: 'https://example.test/riddims.json', uploadedAt: new Date() }, async () => { throw new Error('must not fetch without an ETag'); }],
+    [{ pathname: 'riddims.json', url: 'https://example.test/riddims.json', etag: 'W/"current"', uploadedAt: new Date() }, async () => { throw new Error('must not fetch with a weak storage ETag'); }],
     [{ pathname: 'riddims.json', url: 'https://example.test/riddims.json', etag: '"current"', uploadedAt: new Date() }, async () => ({ ok: true, headers: { get: () => null } })],
     [{ pathname: 'riddims.json', url: 'https://example.test/riddims.json', etag: '"current"', uploadedAt: new Date() }, async () => ({ ok: false, headers: { get: () => '"current"' } })],
   ]) {
@@ -205,6 +206,34 @@ test('an update uses the ETag of the content read as an atomic precondition', as
   const response = await POST({ cookies: { get: () => ({ value: token }) }, json: async () => ({ action: 'add-voicing', riddimId: 1, artist: 'A', title: 'B' }) });
   assert.equal(response.status, 200);
   assert.equal(putOptions.ifMatch, '"current"');
+});
+
+test('a compressed response with a matching weak ETag preserves the strong ETag for conditional writes', async () => {
+  process.env.AUTH_SECRET = 'test-secret-for-unit-tests';
+  const token = await load('lib/auth.ts').createToken('test-admin');
+  let putOptions;
+  const { POST } = load('app/api/riddims/route.ts', {
+    'next/server': { NextResponse }, 'next/cache': { revalidateTag() {} }, '@/lib/data': {},
+    '@vercel/blob': { list: async () => ({ blobs: [{ pathname: 'riddims.json', url: 'https://example.test/riddims.json', etag: '"current"', uploadedAt: new Date() }] }), put: async (_name, _body, options) => { putOptions = options; } },
+    $fetch: async () => ({ ok: true, headers: { get: () => 'W/"current"' }, json: async () => [{ id: 1, voicings: [] }] }),
+  });
+  const response = await POST({ cookies: { get: () => ({ value: token }) }, json: async () => ({ action: 'add-voicing', riddimId: 1, artist: 'A', title: 'B' }) });
+  assert.equal(response.status, 200);
+  assert.equal(putOptions.ifMatch, '"current"');
+});
+
+test('a compressed stale response with a different weak ETag is rejected', async () => {
+  process.env.AUTH_SECRET = 'test-secret-for-unit-tests';
+  const token = await load('lib/auth.ts').createToken('test-admin');
+  let writes = 0;
+  const { POST } = load('app/api/riddims/route.ts', {
+    'next/server': { NextResponse }, 'next/cache': { revalidateTag() {} }, '@/lib/data': {},
+    '@vercel/blob': { list: async () => ({ blobs: [{ pathname: 'riddims.json', url: 'https://example.test/riddims.json', etag: '"current"', uploadedAt: new Date() }] }), put: async () => { writes++; } },
+    $fetch: async () => ({ ok: true, headers: { get: () => 'W/"old"' }, json: async () => [{ id: 1, voicings: [] }] }),
+  });
+  const response = await POST({ cookies: { get: () => ({ value: token }) }, json: async () => ({ action: 'add-voicing', riddimId: 1, artist: 'A', title: 'B' }) });
+  assert.equal(response.status, 503);
+  assert.equal(writes, 0);
 });
 
 test('concurrent modification returns a conflict without reporting success', async () => {

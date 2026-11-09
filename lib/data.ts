@@ -33,7 +33,11 @@ async function readRiddimsFromBlob(): Promise<Riddim[]> {
   if (!blob || !blob.etag) throw new Error('Métadonnées du catalogue Blob indisponibles');
   const res = await fetch(`${blob.url}?v=${blob.uploadedAt.getTime()}`, { cache: 'no-store' });
   if (!res.ok) throw new Error(`Lecture du catalogue Blob impossible (HTTP ${res.status})`);
-  if (res.headers.get('etag') !== blob.etag) throw new Error('Catalogue Blob temporairement périmé');
+  // La compression HTTP peut ajouter le préfixe faible W/ au même ETag.
+  const responseEtag = res.headers.get('etag');
+  if (!responseEtag || responseEtag.replace(/^W\//, '') !== blob.etag) {
+    throw new Error('Catalogue Blob temporairement périmé');
+  }
   const data: unknown = await res.json();
   if (!Array.isArray(data)) throw new Error('Catalogue Blob invalide');
   return data as Riddim[];

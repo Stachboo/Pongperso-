@@ -60,10 +60,15 @@ async function readRiddims() {
 
   // Le CDN peut servir un objet périmé même si la requête contourne le cache local.
   // On compare l'ETag reçu à la version actuelle du listing avant toute utilisation.
-  if (!blob.etag) throw new StaleCatalogueError();
+  if (!blob.etag || blob.etag.startsWith('W/')) throw new StaleCatalogueError();
   const url = `${blob.url}?v=${blob.uploadedAt.getTime()}`;
   const response = await fetch(url, { cache: 'no-store' });
-  if (!response.ok || response.headers.get('etag') !== blob.etag) throw new StaleCatalogueError();
+  const responseEtag = response.headers.get('etag');
+  // Le CDN peut ajouter W/ lorsque la réponse est compressée ; ifMatch utilise
+  // toujours l'ETag fort retourné par le stockage, sans modifier sa valeur.
+  if (!response.ok || !responseEtag || responseEtag.replace(/^W\//, '') !== blob.etag) {
+    throw new StaleCatalogueError();
+  }
   return { riddims: await response.json(), etag: blob.etag };
 }
 

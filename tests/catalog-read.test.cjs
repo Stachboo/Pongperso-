@@ -70,10 +70,18 @@ test('HTTP errors cannot be cached as a successful catalog', async () => {
 });
 
 test('a missing or stale CDN ETag cannot be cached as current data', async () => {
-  for (const etag of [null, '"stale"']) {
+  for (const etag of [null, '"stale"', 'W/"stale"']) {
     const result = loadCatalog({ list: async () => ({ blobs: [entry] }), fetch: async () => ({ ok: true, headers: { get: () => etag }, json: async () => [{ id: 1 }] }), env: runtime });
     await assert.rejects(result.catalog());
   }
+});
+
+test('a compressed CDN response with the same weak ETag is current', async () => {
+  const fresh = [{ id: 2, name: 'Fresh', voicings: [] }];
+  const result = loadCatalog({ list: async () => ({ blobs: [entry] }), fetch: async () => ({
+    ok: true, headers: { get: () => `W/${entry.etag}` }, json: async () => fresh,
+  }), env: runtime });
+  assert.equal(await result.catalog(), fresh);
 });
 
 test('missing authoritative ETag and unrelated prefix matches are rejected', async () => {
